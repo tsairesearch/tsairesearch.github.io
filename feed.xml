@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://sanelydeep.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sanelydeep.github.io/" rel="alternate" type="text/html" /><updated>2019-09-27T16:08:06-05:00</updated><id>https://sanelydeep.github.io/</id><title type="html">Sanely Deep</title><entry><title type="html">Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization</title><link href="https://sanelydeep.github.io/evasion/" rel="alternate" type="text/html" title="Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization" /><published>2019-03-20T00:00:00-05:00</published><updated>2019-03-20T00:00:00-05:00</updated><id>https://sanelydeep.github.io/evasion</id><content type="html" xml:base="https://sanelydeep.github.io/evasion/">&lt;d-front-matter&gt;
+  &lt;script type=&quot;text/json&quot;&gt;{
+  &quot;authors&quot;: [
+    {
+      &quot;author&quot;: &quot;Suda Bharadwaj&quot;,
+      &quot;authorURL&quot;: &quot;https://www.linkedin.com/in/suda-bharadwaj-23784137&quot;,
+      &quot;affiliation&quot;: &quot;Aerospace Engineering &amp; Engineering Mechanics, The University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.robotics.utexas.edu&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Louis Ly&quot;,
+      &quot;authorURL&quot;: &quot;https://longlouisly.github.io/&quot;,
+      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, The University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Bo Wu&quot;,
+      &quot;authorURL&quot;: &quot;https://users.oden.utexas.edu/~bwu/&quot;,
+      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, The University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
+      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, The University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Ufuk Topcu&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ae.utexas.edu/facultysites/topcu/wiki/index.php/Main_Page&quot;,
+      &quot;affiliation&quot;: &quot;Aerospace Engineering and Engineering Mechanics, The University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    }
+  ]
+  }&lt;/script&gt;
+&lt;/d-front-matter&gt;
+
+&lt;d-title&gt;
+ &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
+  &lt;h1&gt;Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization&lt;/h1&gt;
+    
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization&quot; src=&quot;https://sanelydeep.github.io//assets/images/github_avatar.jpg&quot; /&gt;
+    
+ &lt;/div&gt;
+
+
+&lt;/d-title&gt;
+
+&lt;d-article&gt;
+
+&lt;p&gt;We study a two-player game with a quantitative surveillance requirement on an
+adversarial target moving in a discrete state space and a secondary objective
+to maximize short-term visibility of the environment. We impose the
+surveillance requirement as a temporal logic constraint. We then use a greedy
+approach to determine vantage points that optimize a notion of information
+gain, namely, the number of newly-seen states. By using a convolutional neural
+network trained on a class of environments, we can efficiently approximate
+the information gain at each potential vantage point. Subsequent vantage points
+are chosen such that moving to that location will not jeopardize the
+surveillance requirement, regardless of any future action chosen by the
+target. Our method combines guarantees of correctness from formal methods with
+the scalability of machine learning to provide an efficient approach for
+surveillance-constrained visibility optimization.&lt;/p&gt;
+
+&lt;h3&gt; Simulations &lt;/h3&gt;
+
+
+&lt;div style=&quot;grid-column: text;&quot;&gt;
+
+&lt;figure&gt;
+&lt;div style=&quot;display: inline; float: left; width: 50%; text-align: center&quot;&gt;
+&lt;iframe frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://drive.google.com/file/d/1Is8AIsAQB5zL1iCdtaKLMpL33oYpqV99/preview&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;display: inline; float: left; width: 50%; text-align: center&quot;&gt;
+&lt;iframe frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://drive.google.com/file/d/1Ppf2gh0pmyD7lAZO9WCxh04ln7RaUEtX/preview&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;figcaption&gt;
+We present videos demonstrating the agent's strategies synthesized by our
+algorithm.  The blue circle corresponds to the controlled agent and the orange
+circle corresponds to the hostile target.  Red cells are obstacles that cannot
+be passed through and obscure vision. Black cells correspond to states
+the agent cannot see.
+
+The video on the left shows an agent with the surveillance
+objective: always mantain visibility of the target. Notice the agent tends to stay still until it is necessary to move.
+On the right video, the agent must also patrol the environment, in addition to the surveillance requirement.
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt; Publications &lt;/h3&gt;
+
+&lt;p&gt;
+&lt;li&gt; Suda Bharadwaj, Louis Ly, Bo Wu, Richard Tsai, and Ufuk Topcu. &quot;Strategy synthesis for surveillance-evasion games with learning-enabled visibility optimization.&quot; 2019 Conference on Decision and Control (CDC). IEEE, 2019. &lt;/li&gt;
+&lt;/p&gt;
+
+
+
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/github_avatar.jpg" /></entry><entry><title type="html">Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning</title><link href="https://sanelydeep.github.io/autonomous/" rel="alternate" type="text/html" title="Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning" /><published>2018-06-15T00:00:00-05:00</published><updated>2018-06-15T00:00:00-05:00</updated><id>https://sanelydeep.github.io/autonomous</id><content type="html" xml:base="https://sanelydeep.github.io/autonomous/">&lt;d-front-matter&gt;
+  &lt;script type=&quot;text/json&quot;&gt;{
+  &quot;authors&quot;: [
+    {
+      &quot;author&quot;: &quot;Louis Ly&quot;,
+      &quot;authorURL&quot;: &quot;https://longlouisly.github.io/&quot;,
+      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
+      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
+    }
+  ]
+  }&lt;/script&gt;
+&lt;/d-front-matter&gt;
+
+&lt;d-title&gt;
+ &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
+  &lt;h1&gt;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&lt;/h1&gt;
+    
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io//assets/images/github_avatar.jpg&quot; /&gt;
+    
+ &lt;/div&gt;
+
+
+&lt;/d-title&gt;
+
+&lt;d-article&gt;
+
+&lt;p&gt;We develop a new state-of-the-art deep learning strategy for prescribing vantage points for optimal sensor placement. This approach uses a robust volumetric visibility computation to efficiently model arbitrary geometries. We present several simulations on urban environments below.&lt;/p&gt;
+
+&lt;h3&gt; 2D Urban Simulations &lt;/h3&gt;
+
+
+&lt;div style=&quot;grid-column: text;&quot;&gt;
+
+&lt;figure&gt;
+&lt;div style=&quot;display: inline; float: left; width: 50%; text-align: center&quot;&gt;
+&lt;iframe frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://drive.google.com/file/d/1-dvc6IDh0ItwHaS78-vBv2u5VY8ojRmb/preview&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;display: inline; float: left; width: 50%; text-align: center&quot;&gt;
+&lt;iframe frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://drive.google.com/file/d/1hm9AromseSBybcNxtV7DK-pWTb_gcCeW/preview&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;figcaption&gt;
+A demonstration of two different policies for generating vantage points using deep learning, set over an aerial view of a 150m x 150m area in Austin. The agent starts in an initially unknown environment. At prescribed vantage point, it takes an omni-directional sensor measurement encoding line-of-sight information. Red dot indicates current position. Blue disks are previous vantage points. White regions are visible at the current positon. Light gray regions were visible at previous vantage points. Dark gray regions are currently occluded. Black lines indicate boundaries of reconstructed buildings.
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+&lt;h3&gt; 3D Urban Simulations &lt;/h3&gt;
+
+A 3D simulation of a 250m x 250m environment based on Castle Square Parks in Boston.
+
+&lt;div style=&quot;column-grid: middle &quot;&gt;
+&lt;figure&gt;
+&lt;div style=&quot;text-align: center&quot;&gt;
+&lt;iframe width=&quot;720px&quot; height=&quot;480px&quot; allowfullscreen=&quot;true&quot; src=&quot;https://drive.google.com/file/d/15_xI-qUFzMb8ydbnPq2CrZ2CNEa0Fab7/preview&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+ &lt;figcaption&gt;
+   Video demonstrating the exploration of an initially unknown environment using sparse sensor measurements. The green spheres indicate the vantage point. The gray surface is the reconstruction of the environment based on line of sight measurements taken from the sequence of vantage points. New vantage points are computed in virtually real time using our new deep learning strategy. Best viewed in full screen. 
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+&lt;figure&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/sight1.jpg&quot; /&gt;
+&lt;figcaption&gt;
+Surveillance of urban environment using 2 sensors represented by green spheres. Yellow regions are visible from one of the sensors. Red regions are visible from both sensors. For clarity, visualization only includes visibility of regions near ground level. Two sample paths across the courtyard are shown. The cyan path uses the shadows of structure to minimize detection while the magenta path naively crosses through.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;h3&gt; 3D MOUT Site &lt;/h3&gt;
+
+Realistic LiDAR simulations of a virtual Military Operations in Urban Terrain (MOUT) site. Vantage points are generated using a previous approach.
+
+
+&lt;div style=&quot;grid-column: text;&quot;&gt;
+
+&lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
+&lt;figure&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout1_textured.jpg&quot; /&gt;
+&lt;figcaption&gt;
+A 20m region around a patio area with tree cover from the virtual MOUT site.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
+&lt;figure&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout1_points.jpg&quot; /&gt;
+&lt;figcaption&gt;
+The integrated visibility volume of the patio area generated from 16 vantage points, shown as red circles.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+&lt;div style=&quot;grid-column: text;&quot;&gt;
+
+&lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
+&lt;figure&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout3_textured.jpg&quot; /&gt;
+&lt;figcaption&gt;
+A close-up of the patio area with complex geometries such as columns and tree trunks.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
+&lt;figure&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout3_recon.jpg&quot; /&gt;
+&lt;figcaption&gt;
+A coarse reconstruction of the patio generated from the visibility volume.
+Despite the low resolution, the topology of the structures are preserved.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+&lt;div style=&quot;grid-column: text;&quot;&gt;
+
+&lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
+&lt;figure&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout2_textured.jpg&quot; /&gt;
+&lt;figcaption&gt;
+A larger, 50m region around a church with several buildings.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
+&lt;figure&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout2_recon.jpg&quot; /&gt;
+&lt;figcaption&gt;
+A reconstruction of the building surface using 1,896,786 points generated from 11 vantage locations.
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+
+
+&lt;h3&gt; Publications &lt;/h3&gt;
+
+&lt;p&gt;
+&lt;li&gt; L. Ly and R. Tsai. Autonomous exploration, reconstruction, and surveillance of 3D environments aided by deep learning. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019.&lt;/li&gt;
+&lt;li&gt; M. Hielsberg, R. Tsai, P. Guo, and C. Chen. Visibility-based urban exploration and learning using point clouds. 2013.  &lt;/li&gt;
+&lt;li&gt; L. Valente, R. Tsai, and S. Soatto. Information-seeking control under visibility-based uncertainty. Journal of Mathematical Imaging and Vision, 48(2), 339-358, 2014 &lt;/li&gt;
+&lt;li&gt; R. Takei, R. Tsai, Z. Zhou, and Y. Landa. An efficient algorithm for a visibility-based surveillance-evasion game. Communications in Mathematical Sciences, Vol (12) No 7, pp.1303-1327, 2014 &lt;/li&gt;
+&lt;li&gt; Y. Landa and R. Tsai. Visibility of point clouds and exploratory path planning in unknown environments. Communications in Mathematical Sciences., 6(4), 2008.
+&lt;li&gt; C.-Y. Kao and R. Tsai. Properties of a level set algorithm for the visibility problems. Journal of Scientiﬁc Computing, 35(2-3), June 2008.
+&lt;li&gt; Y. Landa, D. Galkowski, Y. Huang, A. Joshi, C. Lee, K. Leung, G. Malla, J. Treanor, V. Voroninski, A. Bertozzi, and Y.-H. Tsai. Robotic path planning and visibility with limited sensor data. American Control Conference, 2007. ACC ’07, pages 5425–5430, July 2007.
+&lt;li&gt; Y. Landa, R. Tsai, and L. Cheng. Visibility of point clouds and mapping of unknown environments. In Springer Notes in Computational Science and Engineering, pages 1014–1025, 2006.
+&lt;li&gt; L.-T. Cheng and Y.-H. Tsai. Visibility optimization using variational approaches. Commun. Math. Sci., 3(3):425–451, 2005
+&lt;li&gt; Y.-H. R. Tsai, L.-T. Cheng, S. Osher, P. Burchard, and G. Sapiro. Visibility and its dynamics in a PDE based implicit framework. J. Comput. Phys., 199(1):260–290, 2004.
+&lt;li&gt; H. Jin, A. J. Yezzi, Y.-H. Tsai, L.-T. Cheng, and S. Soatto. Estimation of 3D surface shape and smooth radiance from 2D images: a level set approach. J. Sci. Comput., 19(1-3):267–292, 2003. &lt;/li&gt;
+&amp;lt;/p&amp;gt;
+
+
+
+&amp;lt;/d-article&amp;gt;
+&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/p&gt;&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/github_avatar.jpg" /></entry></feed>
