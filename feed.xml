@@ -1,4 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://sanelydeep.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sanelydeep.github.io/" rel="alternate" type="text/html" /><updated>2019-09-27T16:08:06-05:00</updated><id>https://sanelydeep.github.io/</id><title type="html">Sanely Deep</title><entry><title type="html">Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization</title><link href="https://sanelydeep.github.io/evasion/" rel="alternate" type="text/html" title="Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization" /><published>2019-03-20T00:00:00-05:00</published><updated>2019-03-20T00:00:00-05:00</updated><id>https://sanelydeep.github.io/evasion</id><content type="html" xml:base="https://sanelydeep.github.io/evasion/">&lt;d-front-matter&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://sanelydeep.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sanelydeep.github.io/" rel="alternate" type="text/html" /><updated>2019-10-04T16:19:53-05:00</updated><id>https://sanelydeep.github.io/</id><title type="html">Sanely Deep</title><entry><title type="html">Parareal</title><link href="https://sanelydeep.github.io/parareal/" rel="alternate" type="text/html" title="Parareal" /><published>2019-10-04T00:00:00-05:00</published><updated>2019-10-04T00:00:00-05:00</updated><id>https://sanelydeep.github.io/parareal</id><content type="html" xml:base="https://sanelydeep.github.io/parareal/">&lt;d-front-matter&gt;
+  &lt;script type=&quot;text/json&quot;&gt;{
+  &quot;authors&quot;: [
+    {
+      &quot;author&quot;: &quot;Hieu Nguyen&quot;,
+      &quot;authorURL&quot;: &quot;https://www.oden.utexas.edu/&quot;,
+      &quot;affiliation&quot;: &quot;Oden Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
+      &quot;affiliation&quot;: &quot;Oden Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    }
+  ]
+  }&lt;/script&gt;
+&lt;/d-front-matter&gt;
+
+&lt;d-title&gt;
+ &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
+  &lt;h1&gt;Parareal&lt;/h1&gt;
+    
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Parareal&quot; src=&quot;https://sanelydeep.github.io//assets/images/wave/waveinmarmousi.gif&quot; /&gt;
+    
+ &lt;/div&gt;
+
+
+&lt;/d-title&gt;
+
+&lt;d-article&gt;
+
+&lt;p&gt;We are developing a data-driven parallel-in-time iterative method to solve the homogeneous second-order wave equation. The new method involves a coarse-scale propagator and a fine-scale propagator which fully resolves the medium using finer spatial grid and shorter time steps. The fine-scale propagator is run in parallel for short time subintervals. The two propagators are coupled in an iterative way similar to the standard parareal method. We train a Neural Network, which structure mimics the physics of wave propagation, to enhance the accuracy of the coarse-scale propagator such that the parareal iteration stabilizes and hence converges.&lt;/p&gt;
+
+&lt;h3&gt; Simulation &lt;/h3&gt;
+
+
+&lt;div style=&quot;column-grid: middle &quot;&gt;
+
+&lt;figure&gt;
+&lt;div style=&quot;display: block; width: 90%; text-align: center&quot;&gt;
+&lt;iframe width=&quot;547px&quot; height=&quot;547px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://sanelydeep.github.io/assets/images/wave/waveinmarmousi.gif&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;figcaption&gt;
+Wave propagating through Marmousi velocity profile.
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt; Publications &lt;/h3&gt;
+
+&lt;p&gt;
+&lt;li&gt; G. Ariel, H. Nguyen, and R. Tsai. &quot;\theta-parareal schemes.&quot; arXiv preprint arXiv:1704.06882 (2017). &lt;/li&gt;
+&lt;li&gt; H. Nguyen, and R. Tsai. &quot;A stable parareal-like method for the second order wave equation.&quot; arXiv preprint arXiv:1905.00473 (2019).&lt;/li&gt;
+&lt;/p&gt;
+
+
+
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/wave/waveinmarmousi.gif" /></entry><entry><title type="html">Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization</title><link href="https://sanelydeep.github.io/evasion/" rel="alternate" type="text/html" title="Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization" /><published>2019-03-20T00:00:00-05:00</published><updated>2019-03-20T00:00:00-05:00</updated><id>https://sanelydeep.github.io/evasion</id><content type="html" xml:base="https://sanelydeep.github.io/evasion/">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -39,7 +101,7 @@
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization&quot; src=&quot;https://sanelydeep.github.io//assets/images/github_avatar.jpg&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization&quot; src=&quot;https://sanelydeep.github.io//assets/images/evasion/patrol.gif&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -101,7 +163,7 @@ On the right video, the agent must also patrol the environment, in addition to t
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/github_avatar.jpg" /></entry><entry><title type="html">Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning</title><link href="https://sanelydeep.github.io/autonomous/" rel="alternate" type="text/html" title="Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning" /><published>2018-06-15T00:00:00-05:00</published><updated>2018-06-15T00:00:00-05:00</updated><id>https://sanelydeep.github.io/autonomous</id><content type="html" xml:base="https://sanelydeep.github.io/autonomous/">&lt;d-front-matter&gt;
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/evasion/patrol.gif" /></entry><entry><title type="html">Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning</title><link href="https://sanelydeep.github.io/autonomous/" rel="alternate" type="text/html" title="Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning" /><published>2018-06-15T00:00:00-05:00</published><updated>2018-06-15T00:00:00-05:00</updated><id>https://sanelydeep.github.io/autonomous</id><content type="html" xml:base="https://sanelydeep.github.io/autonomous/">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -124,7 +186,7 @@ On the right video, the agent must also patrol the environment, in addition to t
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io//assets/images/github_avatar.jpg&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io//assets/images/autonomous/3d.gif&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -278,4 +340,66 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
 
 
 &amp;lt;/d-article&amp;gt;
-&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/p&gt;&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/github_avatar.jpg" /></entry></feed>
+&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/p&gt;&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/autonomous/3d.gif" /></entry><entry><title type="html">Point source identification in non-linear advection-diffusion-reaction systems</title><link href="https://sanelydeep.github.io/source/" rel="alternate" type="text/html" title="Point source identification in non-linear advection-diffusion-reaction systems" /><published>2012-02-14T00:00:00-06:00</published><updated>2012-02-14T00:00:00-06:00</updated><id>https://sanelydeep.github.io/source</id><content type="html" xml:base="https://sanelydeep.github.io/source/">&lt;d-front-matter&gt;
+  &lt;script type=&quot;text/json&quot;&gt;{
+  &quot;authors&quot;: [
+    {
+      &quot;author&quot;: &quot;Alexander Mamonov&quot;,
+      &quot;authorURL&quot;: &quot;https://www.math.uh.edu/~mamonov/&quot;,
+      &quot;affiliation&quot;: &quot;Department of Mathematics, University of Houston&quot;,
+      &quot;affiliationURL&quot;: &quot;http://www.uh.edu/&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
+      &quot;affiliation&quot;: &quot;Oden Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    }
+  ]
+  }&lt;/script&gt;
+&lt;/d-front-matter&gt;
+
+&lt;d-title&gt;
+ &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
+  &lt;h1&gt;Point source identification in non-linear advection-diffusion-reaction systems&lt;/h1&gt;
+    
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Point source identification in non-linear advection-diffusion-reaction systems&quot; src=&quot;https://sanelydeep.github.io//assets/images/point/fig7.png&quot; /&gt;
+    
+ &lt;/div&gt;
+
+
+&lt;/d-title&gt;
+
+&lt;d-article&gt;
+
+&lt;p&gt; We consider a problem of identification of point sources in time dependent advection-diffusion systems with a non-linear reaction term. The linear counterpart of the problem in question can be reduced to solving a system of non-linear algebraic equations via the use of adjoint equations. We extend this approach by constructing an algorithm that solves the problem iteratively to account for the non-linearity of the reaction term. We study the question of improving the quality of source identification by adding more measurements adaptively using the solution obtained previously with a smaller number of measurements. &lt;/p&gt;
+
+
+&lt;h3&gt; Simulation &lt;/h3&gt;
+
+
+&lt;div style=&quot;column-grid: middle &quot;&gt;
+
+&lt;figure&gt;
+&lt;div style=&quot;display: block; width: 90%; text-align: center&quot;&gt;
+&lt;iframe width=&quot;547px&quot; height=&quot;547px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://sanelydeep.github.io//assets/images/point/fig7.png&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;figcaption&gt;
+
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt; Publications &lt;/h3&gt;
+
+&lt;p&gt;
+&lt;li&gt; A. Mamonov and R. Tsai. Point Source Identification in Non-Linear Advection-Diffusion-Reaction Systems.  Inverse Problems 29, 2013  &lt;/li&gt;
+&lt;/p&gt;
+
+
+
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/point/fig7.png" /></entry></feed>
