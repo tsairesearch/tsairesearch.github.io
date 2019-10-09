@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://sanelydeep.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://sanelydeep.github.io/" rel="alternate" type="text/html" /><updated>2019-10-04T16:19:53-05:00</updated><id>https://sanelydeep.github.io/</id><title type="html">Sanely Deep</title><entry><title type="html">Parareal</title><link href="https://sanelydeep.github.io/parareal/" rel="alternate" type="text/html" title="Parareal" /><published>2019-10-04T00:00:00-05:00</published><updated>2019-10-04T00:00:00-05:00</updated><id>https://sanelydeep.github.io/parareal</id><content type="html" xml:base="https://sanelydeep.github.io/parareal/">&lt;d-front-matter&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-10-09T10:19:35-05:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Parareal</title><link href="https://tsairesearch.github.io/parareal/" rel="alternate" type="text/html" title="Parareal" /><published>2019-10-04T00:00:00-05:00</published><updated>2019-10-04T00:00:00-05:00</updated><id>https://tsairesearch.github.io/parareal</id><content type="html" xml:base="https://tsairesearch.github.io/parareal/">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -21,7 +21,7 @@
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Parareal&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Parareal&quot; src=&quot;https://sanelydeep.github.io//assets/images/wave/waveinmarmousi.gif&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Parareal&quot; src=&quot;https://tsairesearch.github.io//assets/images/wave/waveinmarmousi.gif&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -39,7 +39,7 @@
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 90%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;547px&quot; height=&quot;547px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://sanelydeep.github.io/assets/images/wave/waveinmarmousi.gif&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;547px&quot; height=&quot;547px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/wave/waveinmarmousi.gif&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;figcaption&gt;
@@ -60,7 +60,7 @@ Wave propagating through Marmousi velocity profile.
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/wave/waveinmarmousi.gif" /></entry><entry><title type="html">Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization</title><link href="https://sanelydeep.github.io/evasion/" rel="alternate" type="text/html" title="Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization" /><published>2019-03-20T00:00:00-05:00</published><updated>2019-03-20T00:00:00-05:00</updated><id>https://sanelydeep.github.io/evasion</id><content type="html" xml:base="https://sanelydeep.github.io/evasion/">&lt;d-front-matter&gt;
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/wave/waveinmarmousi.gif" /></entry><entry><title type="html">Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization</title><link href="https://tsairesearch.github.io/evasion/" rel="alternate" type="text/html" title="Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization" /><published>2019-03-20T00:00:00-05:00</published><updated>2019-03-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/evasion</id><content type="html" xml:base="https://tsairesearch.github.io/evasion/">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -101,7 +101,7 @@ Wave propagating through Marmousi velocity profile.
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization&quot; src=&quot;https://sanelydeep.github.io//assets/images/evasion/patrol.gif&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization&quot; src=&quot;https://tsairesearch.github.io//assets/images/evasion/patrol.gif&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -163,7 +163,7 @@ On the right video, the agent must also patrol the environment, in addition to t
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/evasion/patrol.gif" /></entry><entry><title type="html">Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning</title><link href="https://sanelydeep.github.io/autonomous/" rel="alternate" type="text/html" title="Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning" /><published>2018-06-15T00:00:00-05:00</published><updated>2018-06-15T00:00:00-05:00</updated><id>https://sanelydeep.github.io/autonomous</id><content type="html" xml:base="https://sanelydeep.github.io/autonomous/">&lt;d-front-matter&gt;
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/evasion/patrol.gif" /></entry><entry><title type="html">Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning</title><link href="https://tsairesearch.github.io/autonomous/" rel="alternate" type="text/html" title="Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning" /><published>2018-06-15T00:00:00-05:00</published><updated>2018-06-15T00:00:00-05:00</updated><id>https://tsairesearch.github.io/autonomous</id><content type="html" xml:base="https://tsairesearch.github.io/autonomous/">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -186,7 +186,7 @@ On the right video, the agent must also patrol the environment, in addition to t
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io//assets/images/autonomous/3d.gif&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io//assets/images/autonomous/3d.gif&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -236,7 +236,7 @@ A 3D simulation of a 250m x 250m environment based on Castle Square Parks in Bos
 
 
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/sight1.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/sight1.jpg&quot; /&gt;
 &lt;figcaption&gt;
 Surveillance of urban environment using 2 sensors represented by green spheres. Yellow regions are visible from one of the sensors. Red regions are visible from both sensors. For clarity, visualization only includes visibility of regions near ground level. Two sample paths across the courtyard are shown. The cyan path uses the shadows of structure to minimize detection while the magenta path naively crosses through.
 &lt;/figcaption&gt;
@@ -252,7 +252,7 @@ Realistic LiDAR simulations of a virtual Military Operations in Urban Terrain (M
 
 &lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout1_textured.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout1_textured.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A 20m region around a patio area with tree cover from the virtual MOUT site.
 &lt;/figcaption&gt;
@@ -261,7 +261,7 @@ A 20m region around a patio area with tree cover from the virtual MOUT site.
 
 &lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout1_points.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout1_points.jpg&quot; /&gt;
 &lt;figcaption&gt;
 The integrated visibility volume of the patio area generated from 16 vantage points, shown as red circles.
 &lt;/figcaption&gt;
@@ -275,7 +275,7 @@ The integrated visibility volume of the patio area generated from 16 vantage poi
 
 &lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout3_textured.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout3_textured.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A close-up of the patio area with complex geometries such as columns and tree trunks.
 &lt;/figcaption&gt;
@@ -284,7 +284,7 @@ A close-up of the patio area with complex geometries such as columns and tree tr
 
 &lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout3_recon.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout3_recon.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A coarse reconstruction of the patio generated from the visibility volume.
 Despite the low resolution, the topology of the structures are preserved.
@@ -300,7 +300,7 @@ Despite the low resolution, the topology of the structures are preserved.
 
 &lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout2_textured.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout2_textured.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A larger, 50m region around a church with several buildings.
 &lt;/figcaption&gt;
@@ -309,7 +309,7 @@ A larger, 50m region around a church with several buildings.
 
 &lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://sanelydeep.github.io/assets/images/autonomous/mout2_recon.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout2_recon.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A reconstruction of the building surface using 1,896,786 points generated from 11 vantage locations.
 &lt;/figcaption&gt;
@@ -340,7 +340,7 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
 
 
 &amp;lt;/d-article&amp;gt;
-&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/p&gt;&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/autonomous/3d.gif" /></entry><entry><title type="html">Point source identification in non-linear advection-diffusion-reaction systems</title><link href="https://sanelydeep.github.io/source/" rel="alternate" type="text/html" title="Point source identification in non-linear advection-diffusion-reaction systems" /><published>2012-02-14T00:00:00-06:00</published><updated>2012-02-14T00:00:00-06:00</updated><id>https://sanelydeep.github.io/source</id><content type="html" xml:base="https://sanelydeep.github.io/source/">&lt;d-front-matter&gt;
+&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/p&gt;&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/autonomous/3d.gif" /></entry><entry><title type="html">Point source identification in non-linear advection-diffusion-reaction systems</title><link href="https://tsairesearch.github.io/source/" rel="alternate" type="text/html" title="Point source identification in non-linear advection-diffusion-reaction systems" /><published>2012-02-14T00:00:00-06:00</published><updated>2012-02-14T00:00:00-06:00</updated><id>https://tsairesearch.github.io/source</id><content type="html" xml:base="https://tsairesearch.github.io/source/">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -363,7 +363,7 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Point source identification in non-linear advection-diffusion-reaction systems&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Point source identification in non-linear advection-diffusion-reaction systems&quot; src=&quot;https://sanelydeep.github.io//assets/images/point/fig7.png&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Point source identification in non-linear advection-diffusion-reaction systems&quot; src=&quot;https://tsairesearch.github.io//assets/images/point/fig7.png&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -382,7 +382,7 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 90%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;547px&quot; height=&quot;547px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://sanelydeep.github.io//assets/images/point/fig7.png&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;547px&quot; height=&quot;547px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io//assets/images/point/fig7.png&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;figcaption&gt;
@@ -402,4 +402,4 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://sanelydeep.github.io/assets/images/point/fig7.png" /></entry></feed>
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/point/fig7.png" /></entry></feed>
