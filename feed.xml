@@ -1,4 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-10-09T10:19:35-05:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Parareal</title><link href="https://tsairesearch.github.io/parareal/" rel="alternate" type="text/html" title="Parareal" /><published>2019-10-04T00:00:00-05:00</published><updated>2019-10-04T00:00:00-05:00</updated><id>https://tsairesearch.github.io/parareal</id><content type="html" xml:base="https://tsairesearch.github.io/parareal/">&lt;d-front-matter&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-10-20T00:09:49-05:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Transfer Learning</title><link href="https://tsairesearch.github.io/transfer-learning/" rel="alternate" type="text/html" title="Transfer Learning" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/transfer-learning</id><content type="html" xml:base="https://tsairesearch.github.io/transfer-learning/">&lt;h2 id=&quot;introduction&quot;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Suppose $f(x;w_1,\dots,w_n)$ is a neural network which acts on $x$ using operations defined by the trained weights $w_i$.&lt;/p&gt;</content><author><name>louis</name></author><category term="notes" /><summary type="html">Introduction</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /></entry><entry><title type="html">Syllabus</title><link href="https://tsairesearch.github.io/syllabus/" rel="alternate" type="text/html" title="Syllabus" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/syllabus</id><content type="html" xml:base="https://tsairesearch.github.io/syllabus/">&lt;p&gt;Welcome to the zoo. 
+A tentative list of topics to be covered in this course.&lt;/p&gt;
+
+&lt;h3 id=&quot;survey-of-some-deep-learning-architectures-and-the-related-applications&quot;&gt;Survey of some deep learning architectures and the related applications:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;the basic multi-layer neural networks&lt;/li&gt;
+  &lt;li&gt;Convolutional Neural networks&lt;/li&gt;
+  &lt;li&gt;residual neural networks&lt;/li&gt;
+  &lt;li&gt;Generative Adversarial Networks (GANs) and the Wasserstein GANs&lt;/li&gt;
+  &lt;li&gt;recurrent neural network (RNN)&lt;/li&gt;
+  &lt;li&gt;LSTMs&lt;/li&gt;
+  &lt;li&gt;graph conv nets&lt;/li&gt;
+  &lt;li&gt;convolutions on point sets&lt;/li&gt;
+  &lt;li&gt;encoder-decoders&lt;/li&gt;
+  &lt;li&gt;Reinforcement learning (value iteration, policy iteration)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;survey-of-algorithmic-components&quot;&gt;Survey of algorithmic components:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;stochastic gradient descent algorithms&lt;/li&gt;
+  &lt;li&gt;backpropagation and automatic differentiation&lt;/li&gt;
+  &lt;li&gt;computational graphs&lt;/li&gt;
+  &lt;li&gt;search algorithms: Monte-Carlo Tree Search used in AlphaGo&lt;/li&gt;
+  &lt;li&gt;Classical multi-level algorithms: multigrid methods&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;approximation-theory&quot;&gt;Approximation Theory:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Classical multi-resolution analysis (wavelet)&lt;/li&gt;
+  &lt;li&gt;Compressive sensing&lt;/li&gt;
+  &lt;li&gt;Single layer universal approximation theory&lt;/li&gt;
+  &lt;li&gt;Some multiple layer approximation theory&lt;/li&gt;
+  &lt;li&gt;the curse of dimensionality&lt;/li&gt;
+  &lt;li&gt;Over-fitting and generalization&lt;/li&gt;
+  &lt;li&gt;overparameterization&lt;/li&gt;
+  &lt;li&gt;“linear algebra”: KH Lim stuff??&lt;/li&gt;
+  &lt;li&gt;Manifold learning&lt;/li&gt;
+  &lt;li&gt;transfer learning&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;optimization-algorithms-and-theories&quot;&gt;Optimization algorithms and theories:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Efficient algorithms for finding a/the minimum of a loss function&lt;/li&gt;
+  &lt;li&gt;mini-batch and minimizing variances,&lt;/li&gt;
+  &lt;li&gt;Nesterov’s algorithm, ADAM&lt;/li&gt;
+  &lt;li&gt;How to select your mini-batches?&lt;/li&gt;
+  &lt;li&gt;Duality, saddle point problems&lt;/li&gt;
+  &lt;li&gt;Primal-dual type splitting algorithms (e.g. ADMM)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dynamical-system&quot;&gt;Dynamical system:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;stability of discrete dynamical systems&lt;/li&gt;
+  &lt;li&gt;optimal control of dynamical systems&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;optimal-transport-theory-and-algorithms&quot;&gt;Optimal Transport Theory and algorithms:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The Benamou-Brenier formulation and related algorithms&lt;/li&gt;
+  &lt;li&gt;Sinkhorn algorithm&lt;/li&gt;
+  &lt;li&gt;Information Geometry and Fisher-Rao?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;some-novel-applications&quot;&gt;Some novel applications:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Beyond image processing and facial recognition&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;deep-learning-for-scientific-computing&quot;&gt;Deep learning for scientific computing:&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Wave propagation&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>louis</name></author><category term="notes" /><summary type="html">Welcome to the zoo. A tentative list of topics to be covered in this course.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /></entry><entry><title type="html">Parareal</title><link href="https://tsairesearch.github.io/parareal/" rel="alternate" type="text/html" title="Parareal" /><published>2019-10-04T00:00:00-05:00</published><updated>2019-10-04T00:00:00-05:00</updated><id>https://tsairesearch.github.io/parareal</id><content type="html" xml:base="https://tsairesearch.github.io/parareal/">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {

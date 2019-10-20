@@ -100,7 +100,7 @@ ${sa}
 ${ta}
 </style>
 <span id='katex-container'></span>
-`);class T extends Gn(ca(HTMLElement)){static set katexOptions(e){T._katexOptions=e,T.katexOptions.delimiters&&(T.katexAdded?T.katexLoadedCallback():T.addKatex())}static get katexOptions(){return T._katexOptions||(T._katexOptions={delimiters:[{left:'$$',right:'$$',display:!1}]}),T._katexOptions}static katexLoadedCallback(){const e=document.querySelectorAll('d-math');for(const t of e)t.renderContent();if(T.katexOptions.delimiters){const e=document.querySelector('d-article');la(e,T.katexOptions)}}static addKatex(){document.head.insertAdjacentHTML('beforeend',sa);const e=document.createElement('script');e.src='https://distill.pub/third-party/katex/katex.min.js',e.async=!0,e.onload=T.katexLoadedCallback,e.crossorigin='anonymous',document.head.appendChild(e),T.katexAdded=!0}get options(){const e={displayMode:this.hasAttribute('block')};return Object.assign(e,T.katexOptions)}connectedCallback(){super.connectedCallback(),T.katexAdded||T.addKatex()}renderContent(){if('undefined'!=typeof katex){const e=this.root.querySelector('#katex-container');katex.render(this.textContent,e,this.options)}}}T.katexAdded=!1,T.inlineMathRendered=!1,window.DMath=T;class ua extends HTMLElement{static get is(){return'd-front-matter'}constructor(){super();const e=new MutationObserver((e)=>{for(const t of e)if('SCRIPT'===t.target.nodeName||'characterData'===t.type){const e=s(this);this.notify(e)}});e.observe(this,{childList:!0,characterData:!0,subtree:!0})}notify(e){const t=new CustomEvent('onFrontMatterChanged',{detail:e,bubbles:!0});document.dispatchEvent(t)}}var pa=function(e,t){const n=e.body,a=n.querySelector('d-article');if(!a)return void console.warn('No d-article tag found; skipping adding optional components!');let i=e.querySelector('d-byline');i||(t.authors?(i=e.createElement('d-byline'),n.insertBefore(i,a)):console.warn('No authors found in front matter; please add them before submission!'));let d=e.querySelector('d-title');if(!d){let t=e.createElement('d-title');n.insertBefore(t,i)}let r=d.querySelector('h1');r||(r=e.createElement('h1'),r.textContent=t.title,d.insertBefore(r,d.firstChild));const o='undefined'!=typeof t.password;let l=n.querySelector('d-interstitial');if(o&&!l){const a='undefined'!=typeof window,i=a&&window.location.hostname.includes('localhost');a&&i||(l=e.createElement('d-interstitial'),l.password=t.password,n.insertBefore(l,n.firstChild))}else!o&&l&&l.parentElement.removeChild(this);let s=e.querySelector('d-appendix');s||(s=e.createElement('d-appendix'),e.body.appendChild(s));let c=e.querySelector('d-footnote-list');c||(c=e.createElement('d-footnote-list'),s.appendChild(c));let u=e.querySelector('d-citation-list');u||(u=e.createElement('d-citation-list'),s.appendChild(u))};const ga=new Qn,fa={frontMatter:ga,waitingOn:{bibliography:[],citations:[]},listeners:{onCiteKeyCreated(e){const[t,n]=e.detail;if(!ga.citationsCollected)return void fa.waitingOn.citations.push(()=>fa.listeners.onCiteKeyCreated(e));if(!ga.bibliographyParsed)return void fa.waitingOn.bibliography.push(()=>fa.listeners.onCiteKeyCreated(e));const a=n.map((e)=>ga.citations.indexOf(e));t.numbers=a;const i=n.map((e)=>ga.bibliography.get(e));t.entries=i},onCiteKeyChanged(){ga.citations=t(),ga.citationsCollected=!0;for(const e of fa.waitingOn.citations.slice())e();const e=document.querySelector('d-citation-list'),n=new Map(ga.citations.map((e)=>{return[e,ga.bibliography.get(e)]}));e.citations=n;const a=document.querySelectorAll('d-cite');for(const e of a){const t=e.keys,n=t.map((e)=>ga.citations.indexOf(e));e.numbers=n;const a=t.map((e)=>ga.bibliography.get(e));e.entries=a}},onCiteKeyRemoved(e){fa.listeners.onCiteKeyChanged(e)},onBibliographyChanged(e){const t=document.querySelector('d-citation-list'),n=e.detail;ga.bibliography=n,ga.bibliographyParsed=!0;for(const t of fa.waitingOn.bibliography.slice())t();if(!ga.citationsCollected)return void fa.waitingOn.citations.push(function(){fa.listeners.onBibliographyChanged({target:e.target,detail:e.detail})});if(t.hasAttribute('distill-prerendered'))console.info('Citation list was prerendered; not updating it.');else{const e=new Map(ga.citations.map((e)=>{return[e,ga.bibliography.get(e)]}));t.citations=e}},onFootnoteChanged(){const e=document.querySelector('d-footnote-list');if(e){const t=document.querySelectorAll('d-footnote');e.footnotes=t}},onFrontMatterChanged(t){const n=t.detail;e(ga,n);const a=document.querySelector('d-interstitial');a&&('undefined'==typeof ga.password?a.parentElement.removeChild(a):a.password=ga.password);const i=document.body.hasAttribute('distill-prerendered');if(!i&&c()){pa(document,ga);const e=document.querySelector('distill-appendix');e&&(e.frontMatter=ga);const t=document.querySelector('d-byline');t&&(t.frontMatter=ga),n.katex&&(T.katexOptions=n.katex)}},DOMContentLoaded(){if(fa.loaded)return void console.warn('Controller received DOMContentLoaded but was already loaded!');if(!c())return void console.warn('Controller received DOMContentLoaded before appropriate document.readyState!');fa.loaded=!0,console.log('Runlevel 4: Controller running DOMContentLoaded');const e=document.querySelector('d-front-matter'),n=s(e);fa.listeners.onFrontMatterChanged({detail:n}),ga.citations=t(),ga.citationsCollected=!0;for(const e of fa.waitingOn.citations.slice())e();if(ga.bibliographyParsed)for(const e of fa.waitingOn.bibliography.slice())e();const a=document.querySelector('d-footnote-list');if(a){const e=document.querySelectorAll('d-footnote');a.footnotes=e}}}};const ba='html {\n  font-size: 14px;\n\tline-height: 1.6em;\n  /* font-family: "Libre Franklin", "Helvetica Neue", sans-serif; */\n  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;\n  /*, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/\n  text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%;\n}\n\n@media(min-width: 768px) {\n  html {\n    font-size: 16px;\n  }\n}\n\nbody {\n  margin: 0;\n}\n\na {\n  color: #004276;\n}\n\nfigure {\n  margin: 0;\n}\n\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n\ntable th {\n\ttext-align: left;\n}\n\ntable thead {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.05);\n}\n\ntable thead th {\n  padding-bottom: 0.5em;\n}\n\ntable tbody :first-child td {\n  padding-top: 0.5em;\n}\n\npre {\n  overflow: auto;\n  max-width: 100%;\n}\n\np {\n  margin-top: 0;\n  margin-bottom: 1em;\n}\n\nsup, sub {\n  vertical-align: baseline;\n  position: relative;\n  top: -0.4em;\n  line-height: 1em;\n}\n\nsub {\n  top: 0.4em;\n}\n\n.kicker,\n.marker {\n  font-size: 15px;\n  font-weight: 600;\n  color: rgba(0, 0, 0, 0.5);\n}\n\n\n/* Headline */\n\n@media(min-width: 1024px) {\n  d-title h1 span {\n    display: block;\n  }\n}\n\n/* Figure */\n\nfigure {\n  position: relative;\n  margin-bottom: 2.5em;\n  margin-top: 1.5em;\n}\n\nfigcaption+figure {\n\n}\n\nfigure img {\n  width: 100%;\n}\n\nfigure svg text,\nfigure svg tspan {\n}\n\nfigcaption,\n.figcaption {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 12px;\n  line-height: 1.5em;\n}\n\n@media(min-width: 1024px) {\nfigcaption,\n.figcaption {\n    font-size: 13px;\n  }\n}\n\nfigure.external img {\n  background: white;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);\n  padding: 18px;\n  box-sizing: border-box;\n}\n\nfigcaption a {\n  color: rgba(0, 0, 0, 0.6);\n}\n\nfigcaption b,\nfigcaption strong, {\n  font-weight: 600;\n  color: rgba(0, 0, 0, 1.0);\n}\n'+'@supports not (display: grid) {\n  .base-grid,\n  distill-header,\n  d-title,\n  d-abstract,\n  d-article,\n  d-appendix,\n  distill-appendix,\n  d-byline,\n  d-footnote-list,\n  d-citation-list,\n  distill-footer {\n    display: block;\n    padding: 8px;\n  }\n}\n\n.base-grid,\ndistill-header,\nd-title,\nd-abstract,\nd-article,\nd-appendix,\ndistill-appendix,\nd-byline,\nd-footnote-list,\nd-citation-list,\ndistill-footer {\n  display: grid;\n  justify-items: stretch;\n  grid-template-columns: [screen-start] 8px [page-start kicker-start text-start gutter-start middle-start] 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end] 8px [screen-end];\n  grid-column-gap: 8px;\n}\n\n.grid {\n  display: grid;\n  grid-column-gap: 8px;\n}\n\n@media(min-width: 768px) {\n  .base-grid,\n  distill-header,\n  d-title,\n  d-abstract,\n  d-article,\n  d-appendix,\n  distill-appendix,\n  d-byline,\n  d-footnote-list,\n  d-citation-list,\n  distill-footer {\n    grid-template-columns: [screen-start] 1fr [page-start kicker-start middle-start text-start] 45px 45px 45px 45px 45px 45px 45px 45px [ kicker-end text-end gutter-start] 45px [middle-end] 45px [page-end gutter-end] 1fr [screen-end];\n    grid-column-gap: 16px;\n  }\n\n  .grid {\n    grid-column-gap: 16px;\n  }\n}\n\n@media(min-width: 1000px) {\n  .base-grid,\n  distill-header,\n  d-title,\n  d-abstract,\n  d-article,\n  d-appendix,\n  distill-appendix,\n  d-byline,\n  d-footnote-list,\n  d-citation-list,\n  distill-footer {\n    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 50px [middle-start] 50px [text-start kicker-end] 50px 50px 50px 50px 50px 50px 50px 50px [text-end gutter-start] 50px [middle-end] 50px [page-end gutter-end] 1fr [screen-end];\n    grid-column-gap: 16px;\n  }\n\n  .grid {\n    grid-column-gap: 16px;\n  }\n}\n\n@media(min-width: 1180px) {\n  .base-grid,\n  distill-header,\n  d-title,\n  d-abstract,\n  d-article,\n  d-appendix,\n  distill-appendix,\n  d-byline,\n  d-footnote-list,\n  d-citation-list,\n  distill-footer {\n    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];\n    grid-column-gap: 32px;\n  }\n\n  .grid {\n    grid-column-gap: 32px;\n  }\n}\n\n\n\n\n.base-grid {\n  grid-column: screen;\n}\n\n/* .l-body,\nd-article > *  {\n  grid-column: text;\n}\n\n.l-page,\nd-title > *,\nd-figure {\n  grid-column: page;\n} */\n\n.l-gutter {\n  grid-column: gutter;\n}\n\n.l-text,\n.l-body {\n  grid-column: text;\n}\n\n.l-page {\n  grid-column: page;\n}\n\n.l-body-outset {\n  grid-column: middle;\n}\n\n.l-page-outset {\n  grid-column: page;\n}\n\n.l-screen {\n  grid-column: screen;\n}\n\n.l-screen-inset {\n  grid-column: screen;\n  padding-left: 16px;\n  padding-left: 16px;\n}\n\n\n/* Aside */\n\nd-article aside {\n  grid-column: gutter;\n  font-size: 12px;\n  line-height: 1.6em;\n  color: rgba(0, 0, 0, 0.6)\n}\n\n@media(min-width: 768px) {\n  aside {\n    grid-column: gutter;\n  }\n\n  .side {\n    grid-column: gutter;\n  }\n}\n'+'d-title {\n  padding: 2rem 0 1.5rem;\n  contain: layout style;\n  overflow-x: hidden;\n}\n\n@media(min-width: 768px) {\n  d-title {\n    padding: 4rem 0 1.5rem;\n  }\n}\n\nd-title h1 {\n  grid-column: text;\n  font-size: 40px;\n  font-weight: 700;\n  line-height: 1.1em;\n  margin: 0 0 0.5rem;\n}\n\n@media(min-width: 768px) {\n  d-title h1 {\n    font-size: 50px;\n  }\n}\n\nd-title p {\n  font-weight: 300;\n  font-size: 1.2rem;\n  line-height: 1.55em;\n  grid-column: text;\n}\n\nd-title .status {\n  margin-top: 0px;\n  font-size: 12px;\n  color: #009688;\n  opacity: 0.8;\n  grid-column: kicker;\n}\n\nd-title .status span {\n  line-height: 1;\n  display: inline-block;\n  padding: 6px 0;\n  border-bottom: 1px solid #80cbc4;\n  font-size: 11px;\n  text-transform: uppercase;\n}\n'+'d-byline {\n  contain: content;\n  overflow: hidden;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  font-size: 0.8rem;\n  line-height: 1.8em;\n  padding: 1.5rem 0;\n  min-height: 1.8em;\n}\n\n\nd-byline .byline {\n  grid-template-columns: 1fr 1fr;\n  grid-column: text;\n}\n\n@media(min-width: 768px) {\n  d-byline .byline {\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n  }\n}\n\nd-byline .authors-affiliations {\n  grid-column-end: span 4;\n  grid-template-columns: 1fr 1fr;\n  margin-bottom: 1em;\n}\n\n@media(min-width: 768px) {\n  d-byline .authors-affiliations {\n    margin-bottom: 0;\n  }\n}\n\nd-byline h3 {\n  font-size: 0.6rem;\n  font-weight: 400;\n  color: rgba(0, 0, 0, 0.5);\n  margin: 0;\n  text-transform: uppercase;\n}\n\nd-byline p {\n  margin: 0;\n}\n\nd-byline a,\nd-article d-byline a {\n  color: rgba(0, 0, 0, 0.8);\n  text-decoration: none;\n  border-bottom: none;\n}\n\nd-article d-byline a:hover {\n  text-decoration: underline;\n  border-bottom: none;\n}\n\nd-byline p.author {\n  font-weight: 500;\n}\n\nd-byline .affiliations {\n\n}\n'+'d-article {\n  contain: layout style;\n  overflow-x: hidden;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  padding-top: 2rem;\n  color: rgba(0, 0, 0, 0.8);\n}\n\nd-article > * {\n  grid-column: text;\n}\n\n@media(min-width: 768px) {\n  d-article {\n    font-size: 16px;\n  }\n}\n\n@media(min-width: 1024px) {\n  d-article {\n    font-size: 1.06rem;\n    line-height: 1.7em;\n  }\n}\n\n\n/* H2 */\n\n\nd-article .marker {\n  text-decoration: none;\n  border: none;\n  counter-reset: section;\n  grid-column: kicker;\n  line-height: 1.7em;\n}\n\nd-article .marker:hover {\n  border: none;\n}\n\nd-article .marker span {\n  padding: 0 3px 4px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  position: relative;\n  top: 4px;\n}\n\nd-article .marker:hover span {\n  color: rgba(0, 0, 0, 0.7);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.7);\n}\n\nd-article h2 {\n  font-weight: 600;\n  font-size: 24px;\n  line-height: 1.25em;\n  margin: 2rem 0 1.5rem 0;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding-bottom: 1rem;\n}\n\n@media(min-width: 1024px) {\n  d-article h2 {\n    font-size: 36px;\n  }\n}\n\n/* H3 */\n\nd-article h3 {\n  font-weight: 700;\n  font-size: 18px;\n  line-height: 1.4em;\n  margin-bottom: 1em;\n  margin-top: 2em;\n}\n\n@media(min-width: 1024px) {\n  d-article h3 {\n    font-size: 20px;\n  }\n}\n\n/* H4 */\n\nd-article h4 {\n  font-weight: 600;\n  text-transform: uppercase;\n  font-size: 14px;\n  line-height: 1.4em;\n}\n\nd-article a {\n  color: inherit;\n}\n\nd-article p,\nd-article ul,\nd-article ol,\nd-article blockquote {\n  margin-top: 0;\n  margin-bottom: 1em;\n  margin-left: 0;\n  margin-right: 0;\n}\n\nd-article blockquote {\n  border-left: 2px solid rgba(0, 0, 0, 0.2);\n  padding-left: 2em;\n  font-style: italic;\n  color: rgba(0, 0, 0, 0.6);\n}\n\nd-article a {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.4);\n  text-decoration: none;\n}\n\nd-article a:hover {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.8);\n}\n\nd-article .link {\n  text-decoration: underline;\n  cursor: pointer;\n}\n\nd-article ul,\nd-article ol {\n  padding-left: 24px;\n}\n\nd-article li {\n  margin-bottom: 1em;\n  margin-left: 0;\n  padding-left: 0;\n}\n\nd-article li:last-child {\n  margin-bottom: 0;\n}\n\nd-article pre {\n  font-size: 14px;\n  margin-bottom: 20px;\n}\n\nd-article hr {\n  grid-column: screen;\n  width: 100%;\n  border: none;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  margin-top: 60px;\n  margin-bottom: 60px;\n}\n\nd-article section {\n  margin-top: 60px;\n  margin-bottom: 60px;\n}\n\nd-article span.equation-mimic {\n  font-family: georgia;\n  font-size: 115%;\n  font-style: italic;\n}\n\nd-article > d-code,\nd-article section > d-code  {\n  display: block;\n}\n\nd-article > d-math[block],\nd-article section > d-math[block]  {\n  display: block;\n}\n\n@media (max-width: 768px) {\n  d-article > d-code,\n  d-article section > d-code,\n  d-article > d-math[block],\n  d-article section > d-math[block] {\n      overflow-x: scroll;\n      -ms-overflow-style: none;  // IE 10+\n      overflow: -moz-scrollbars-none;  // Firefox\n  }\n\n  d-article > d-code::-webkit-scrollbar,\n  d-article section > d-code::-webkit-scrollbar,\n  d-article > d-math[block]::-webkit-scrollbar,\n  d-article section > d-math[block]::-webkit-scrollbar {\n    display: none;  // Safari and Chrome\n  }\n}\n\nd-article .citation {\n  color: #668;\n  cursor: pointer;\n}\n\nd-include {\n  width: auto;\n  display: block;\n}\n\nd-figure {\n  contain: layout style;\n}\n\n/* KaTeX */\n\n.katex, .katex-prerendered {\n  contain: content;\n  display: inline-block;\n}\n\n/* Tables */\n\nd-article table {\n  border-collapse: collapse;\n  margin-bottom: 1.5rem;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n}\n\nd-article table th {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n}\n\nd-article table td {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.05);\n}\n\nd-article table tr:last-of-type td {\n  border-bottom: none;\n}\n\nd-article table th,\nd-article table td {\n  font-size: 15px;\n  padding: 2px 8px;\n}\n\nd-article table tbody :first-child td {\n  padding-top: 2px;\n}\n'+ta+'@media print {\n\n  @page {\n    size: 8in 11in;\n    @bottom-right {\n      content: counter(page) " of " counter(pages);\n    }\n  }\n\n  html {\n    /* no general margins -- CSS Grid takes care of those */\n  }\n\n  p, code {\n    page-break-inside: avoid;\n  }\n\n  h2, h3 {\n    page-break-after: avoid;\n  }\n\n  d-header {\n    visibility: hidden;\n  }\n\n  d-footer {\n    display: none!important;\n  }\n\n}\n',ha=[{name:'WebComponents',support:function(){return'customElements'in window&&'attachShadow'in Element.prototype&&'getRootNode'in Element.prototype&&'content'in document.createElement('template')&&'Promise'in window&&'from'in Array},url:'https://distill.pub/third-party/polyfills/webcomponents-lite.js'},{name:'IntersectionObserver',support:function(){return'IntersectionObserver'in window&&'IntersectionObserverEntry'in window},url:'https://distill.pub/third-party/polyfills/intersection-observer.js'}];class ma{static browserSupportsAllFeatures(){return ha.every((e)=>e.support())}static load(e){const t=function(t){t.loaded=!0,console.info('Runlevel 0: Polyfill has finished loading: '+t.name),ma.neededPolyfills.every((e)=>e.loaded)&&(console.info('Runlevel 0: All required polyfills have finished loading.'),console.info('Runlevel 0->1.'),window.distillRunlevel=1,e())};for(const n of ma.neededPolyfills)p(n,t)}static get neededPolyfills(){return ma._neededPolyfills||(ma._neededPolyfills=ha.filter((e)=>!e.support())),ma._neededPolyfills}}const ya=ea('d-abstract',`
+`);class T extends Gn(ca(HTMLElement)){static set katexOptions(e){T._katexOptions=e,T.katexOptions.delimiters&&(T.katexAdded?T.katexLoadedCallback():T.addKatex())}static get katexOptions(){return T._katexOptions||(T._katexOptions={delimiters:[{left:'$$',right:'$$',display:!1}]}),T._katexOptions}static katexLoadedCallback(){const e=document.querySelectorAll('d-math');for(const t of e)t.renderContent();if(T.katexOptions.delimiters){const e=document.querySelector('d-article');la(e,T.katexOptions)}}static addKatex(){document.head.insertAdjacentHTML('beforeend',sa);const e=document.createElement('script');e.src='https://distill.pub/third-party/katex/katex.min.js',e.async=!0,e.onload=T.katexLoadedCallback,e.crossorigin='anonymous',document.head.appendChild(e),T.katexAdded=!0}get options(){const e={displayMode:this.hasAttribute('block')};return Object.assign(e,T.katexOptions)}connectedCallback(){super.connectedCallback(),T.katexAdded||T.addKatex()}renderContent(){if('undefined'!=typeof katex){const e=this.root.querySelector('#katex-container');katex.render(this.textContent,e,this.options)}}}T.katexAdded=!1,T.inlineMathRendered=!1,window.DMath=T;class ua extends HTMLElement{static get is(){return'd-front-matter'}constructor(){super();const e=new MutationObserver((e)=>{for(const t of e)if('SCRIPT'===t.target.nodeName||'characterData'===t.type){const e=s(this);this.notify(e)}});e.observe(this,{childList:!0,characterData:!0,subtree:!0})}notify(e){const t=new CustomEvent('onFrontMatterChanged',{detail:e,bubbles:!0});document.dispatchEvent(t)}}var pa=function(e,t){const n=e.body,a=n.querySelector('d-article');if(!a)return void console.warn('No d-article tag found; skipping adding optional components!');let i=e.querySelector('d-byline');i||(t.authors?(i=e.createElement('d-byline'),n.insertBefore(i,a)):console.warn('No authors found in front matter; please add them before submission!'));let d=e.querySelector('d-title');if(!d){let t=e.createElement('d-title');n.insertBefore(t,i)}let r=d.querySelector('h1');r||(r=e.createElement('h1'),r.textContent=t.title,d.insertBefore(r,d.firstChild));const o='undefined'!=typeof t.password;let l=n.querySelector('d-interstitial');if(o&&!l){const a='undefined'!=typeof window,i=a&&window.location.hostname.includes('localhost');a&&i||(l=e.createElement('d-interstitial'),l.password=t.password,n.insertBefore(l,n.firstChild))}else!o&&l&&l.parentElement.removeChild(this);let s=e.querySelector('d-appendix');s||(s=e.createElement('d-appendix'),e.body.appendChild(s));let c=e.querySelector('d-footnote-list');c||(c=e.createElement('d-footnote-list'),s.appendChild(c));let u=e.querySelector('d-citation-list');u||(u=e.createElement('d-citation-list'),s.appendChild(u))};const ga=new Qn,fa={frontMatter:ga,waitingOn:{bibliography:[],citations:[]},listeners:{onCiteKeyCreated(e){const[t,n]=e.detail;if(!ga.citationsCollected)return void fa.waitingOn.citations.push(()=>fa.listeners.onCiteKeyCreated(e));if(!ga.bibliographyParsed)return void fa.waitingOn.bibliography.push(()=>fa.listeners.onCiteKeyCreated(e));const a=n.map((e)=>ga.citations.indexOf(e));t.numbers=a;const i=n.map((e)=>ga.bibliography.get(e));t.entries=i},onCiteKeyChanged(){ga.citations=t(),ga.citationsCollected=!0;for(const e of fa.waitingOn.citations.slice())e();const e=document.querySelector('d-citation-list'),n=new Map(ga.citations.map((e)=>{return[e,ga.bibliography.get(e)]}));e.citations=n;const a=document.querySelectorAll('d-cite');for(const e of a){const t=e.keys,n=t.map((e)=>ga.citations.indexOf(e));e.numbers=n;const a=t.map((e)=>ga.bibliography.get(e));e.entries=a}},onCiteKeyRemoved(e){fa.listeners.onCiteKeyChanged(e)},onBibliographyChanged(e){const t=document.querySelector('d-citation-list'),n=e.detail;ga.bibliography=n,ga.bibliographyParsed=!0;for(const t of fa.waitingOn.bibliography.slice())t();if(!ga.citationsCollected)return void fa.waitingOn.citations.push(function(){fa.listeners.onBibliographyChanged({target:e.target,detail:e.detail})});if(t.hasAttribute('distill-prerendered'))console.info('Citation list was prerendered; not updating it.');else{const e=new Map(ga.citations.map((e)=>{return[e,ga.bibliography.get(e)]}));t.citations=e}},onFootnoteChanged(){const e=document.querySelector('d-footnote-list');if(e){const t=document.querySelectorAll('d-footnote');e.footnotes=t}},onFrontMatterChanged(t){const n=t.detail;e(ga,n);const a=document.querySelector('d-interstitial');a&&('undefined'==typeof ga.password?a.parentElement.removeChild(a):a.password=ga.password);const i=document.body.hasAttribute('distill-prerendered');if(!i&&c()){pa(document,ga);const e=document.querySelector('distill-appendix');e&&(e.frontMatter=ga);const t=document.querySelector('d-byline');t&&(t.frontMatter=ga),n.katex&&(T.katexOptions=n.katex)}},DOMContentLoaded(){if(fa.loaded)return void console.warn('Controller received DOMContentLoaded but was already loaded!');if(!c())return void console.warn('Controller received DOMContentLoaded before appropriate document.readyState!');fa.loaded=!0,console.log('Runlevel 4: Controller running DOMContentLoaded');const e=document.querySelector('d-front-matter'),n=s(e);fa.listeners.onFrontMatterChanged({detail:n}),ga.citations=t(),ga.citationsCollected=!0;for(const e of fa.waitingOn.citations.slice())e();if(ga.bibliographyParsed)for(const e of fa.waitingOn.bibliography.slice())e();const a=document.querySelector('d-footnote-list');if(a){const e=document.querySelectorAll('d-footnote');a.footnotes=e}}}};const ba='html {\n  font-size: 14px;\n\tline-height: 1.6em;\n  /* font-family: "Libre Franklin", "Helvetica Neue", sans-serif; */\n  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;\n  /*, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";*/\n  text-size-adjust: 100%;\n  -ms-text-size-adjust: 100%;\n  -webkit-text-size-adjust: 100%;\n}\n\n@media(min-width: 768px) {\n  html {\n    font-size: 16px;\n  }\n}\n\nbody {\n  margin: 0;\n}\n\na {\n  color: #004276;\n}\n\nfigure {\n  margin: 0;\n}\n\ntable {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n}\n\ntable th {\n\ttext-align: left;\n}\n\ntable thead {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.05);\n}\n\ntable thead th {\n  padding-bottom: 0.5em;\n}\n\ntable tbody :first-child td {\n  padding-top: 0.5em;\n}\n\npre {\n  overflow: auto;\n  max-width: 100%;\n}\n\np {\n  margin-top: 0;\n  margin-bottom: 1em;\n}\n\nsup, sub {\n  vertical-align: baseline;\n  position: relative;\n  top: -0.4em;\n  line-height: 1em;\n}\n\nsub {\n  top: 0.4em;\n}\n\n.kicker,\n.marker {\n  font-size: 15px;\n  font-weight: 600;\n  color: rgba(0, 0, 0, 0.5);\n}\n\n\n/* Headline */\n\n@media(min-width: 1024px) {\n  d-title h1 span {\n    display: block;\n  }\n}\n\n/* Figure */\n\nfigure {\n  position: relative;\n  margin-bottom: 2.5em;\n  margin-top: 1.5em;\n}\n\nfigcaption+figure {\n\n}\n\nfigure img {\n  width: 100%;\n}\n\nfigure svg text,\nfigure svg tspan {\n}\n\nfigcaption,\n.figcaption {\n  color: rgba(0, 0, 0, 0.6);\n  font-size: 12px;\n  line-height: 1.5em;\n}\n\n@media(min-width: 1024px) {\nfigcaption,\n.figcaption {\n    font-size: 13px;\n  }\n}\n\nfigure.external img {\n  background: white;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);\n  padding: 18px;\n  box-sizing: border-box;\n}\n\nfigcaption a {\n  color: rgba(0, 0, 0, 0.6);\n}\n\nfigcaption b,\nfigcaption strong, {\n  font-weight: 600;\n  color: rgba(0, 0, 0, 1.0);\n}\n'+'@supports not (display: grid) {\n  .base-grid,\n  distill-header,\n  d-title,\n  d-abstract,\n  d-article,\n  d-appendix,\n  distill-appendix,\n  d-byline,\n  d-footnote-list,\n  d-citation-list,\n  distill-footer {\n    display: block;\n    padding: 8px;\n  }\n}\n\n.base-grid,\ndistill-header,\nd-title,\nd-abstract,\nd-article,\nd-appendix,\ndistill-appendix,\nd-byline,\nd-footnote-list,\nd-citation-list,\ndistill-footer {\n  display: grid;\n  justify-items: stretch;\n  grid-template-columns: [screen-start] 8px [page-start kicker-start text-start gutter-start middle-start] 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr [text-end page-end gutter-end kicker-end middle-end] 8px [screen-end];\n  grid-column-gap: 8px;\n}\n\n.grid {\n  display: grid;\n  grid-column-gap: 8px;\n}\n\n@media(min-width: 768px) {\n  .base-grid,\n  distill-header,\n  d-title,\n  d-abstract,\n  d-article,\n  d-appendix,\n  distill-appendix,\n  d-byline,\n  d-footnote-list,\n  d-citation-list,\n  distill-footer {\n    grid-template-columns: [screen-start] 1fr [page-start kicker-start middle-start text-start] 45px 45px 45px 45px 45px 45px 45px 45px [ kicker-end text-end gutter-start] 45px [middle-end] 45px [page-end gutter-end] 1fr [screen-end];\n    grid-column-gap: 16px;\n  }\n\n  .grid {\n    grid-column-gap: 16px;\n  }\n}\n\n@media(min-width: 1000px) {\n  .base-grid,\n  distill-header,\n  d-title,\n  d-abstract,\n  d-article,\n  d-appendix,\n  distill-appendix,\n  d-byline,\n  d-footnote-list,\n  d-citation-list,\n  distill-footer {\n    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 50px [middle-start] 50px [text-start kicker-end] 50px 50px 50px 50px 50px 50px 50px 50px [text-end gutter-start] 50px [middle-end] 50px [page-end gutter-end] 1fr [screen-end];\n    grid-column-gap: 16px;\n  }\n\n  .grid {\n    grid-column-gap: 16px;\n  }\n}\n\n@media(min-width: 1180px) {\n  .base-grid,\n  distill-header,\n  d-title,\n  d-abstract,\n  d-article,\n  d-appendix,\n  distill-appendix,\n  d-byline,\n  d-footnote-list,\n  d-citation-list,\n  distill-footer {\n    grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];\n    grid-column-gap: 32px;\n  }\n\n  .grid {\n    grid-column-gap: 32px;\n  }\n}\n\n\n\n\n.base-grid {\n  grid-column: screen;\n}\n\n/* .l-body,\nd-article > *  {\n  grid-column: text;\n}\n\n.l-page,\nd-title > *,\nd-figure {\n  grid-column: page;\n} */\n\n.l-gutter {\n  grid-column: gutter;\n}\n\n.l-text,\n.l-body {\n  grid-column: text;\n}\n\n.l-page {\n  grid-column: page;\n}\n\n.l-body-outset {\n  grid-column: middle;\n}\n\n.l-page-outset {\n  grid-column: page;\n}\n\n.l-screen {\n  grid-column: screen;\n}\n\n.l-screen-inset {\n  grid-column: screen;\n  padding-left: 16px;\n  padding-left: 16px;\n}\n\n\n/* Aside */\n\nd-article aside {\n  grid-column: gutter;\n  font-size: 12px;\n  line-height: 1.6em;\n  color: rgba(0, 0, 0, 0.6)\n}\n\n@media(min-width: 768px) {\n  aside {\n    grid-column: gutter;\n  }\n\n  .side {\n    grid-column: gutter;\n  }\n}\n'+'d-title {\n  padding: 2rem 0 1.5rem;\n  contain: layout style;\n  overflow-x: hidden;\n}\n\n@media(min-width: 768px) {\n  d-title {\n    padding: 4rem 0 1.5rem;\n  }\n}\n\nd-title h1 {\n  grid-column: text;\n  font-size: 40px;\n  font-weight: 700;\n  line-height: 1.1em;\n  margin: 0 0 0.5rem;\n}\n\n@media(min-width: 768px) {\n  d-title h1 {\n    font-size: 50px;\n  }\n}\n\nd-title p {\n  font-weight: 300;\n  font-size: 1.2rem;\n  line-height: 1.55em;\n  grid-column: text;\n}\n\nd-title .status {\n  margin-top: 0px;\n  font-size: 12px;\n  color: #009688;\n  opacity: 0.8;\n  grid-column: kicker;\n}\n\nd-title .status span {\n  line-height: 1;\n  display: inline-block;\n  padding: 6px 0;\n  border-bottom: 1px solid #80cbc4;\n  font-size: 11px;\n  text-transform: uppercase;\n}\n'+'d-byline {\n  contain: content;\n  overflow: hidden;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  font-size: 0.8rem;\n  line-height: 1.8em;\n  padding: 1.5rem 0;\n  min-height: 1.8em;\n}\n\n\nd-byline .byline {\n  grid-template-columns: 1fr 1fr;\n  grid-column: text;\n}\n\n@media(min-width: 768px) {\n  d-byline .byline {\n    grid-template-columns: 1fr 1fr 1fr 1fr;\n  }\n}\n\nd-byline .authors-affiliations {\n  grid-column-end: span 4;\n  grid-template-columns: 1fr 1fr;\n  margin-bottom: 1em;\n}\n\n@media(min-width: 768px) {\n  d-byline .authors-affiliations {\n    margin-bottom: 0;\n  }\n}\n\nd-byline h3 {\n  font-size: 0.6rem;\n  font-weight: 400;\n  color: rgba(0, 0, 0, 0.5);\n  margin: 0;\n  text-transform: uppercase;\n}\n\nd-byline p {\n  margin: 0;\n}\n\nd-byline a,\nd-article d-byline a {\n  color: rgba(0, 0, 0, 0.8);\n  text-decoration: none;\n  border-bottom: none;\n}\n\nd-article d-byline a:hover {\n  text-decoration: underline;\n  border-bottom: none;\n}\n\nd-byline p.author {\n  font-weight: 500;\n}\n\nd-byline .affiliations {\n\n}\n'+'d-article {\n  contain: layout style;\n  overflow-x: hidden;\n  border-top: 1px solid rgba(0, 0, 0, 0.1);\n  padding-top: 2rem;\n  color: rgba(0, 0, 0, 0.8);\n}\n\nd-article > * {\n  grid-column: text;\n}\n\n@media(min-width: 768px) {\n  d-article {\n    font-size: 16px;\n  }\n}\n\n@media(min-width: 1024px) {\n  d-article {\n    font-size: 1.06rem;\n    line-height: 1.7em;\n  }\n}\n\n\n/* H2 */\n\n\nd-article .marker {\n  text-decoration: none;\n  border: none;\n  counter-reset: section;\n  grid-column: kicker;\n  line-height: 1.7em;\n}\n\nd-article .marker:hover {\n  border: none;\n}\n\nd-article .marker span {\n  padding: 0 3px 4px;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n  position: relative;\n  top: 4px;\n}\n\nd-article .marker:hover span {\n  color: rgba(0, 0, 0, 0.7);\n  border-bottom: 1px solid rgba(0, 0, 0, 0.7);\n}\n\nd-article h2 {\n  font-weight: 600;\n  font-size: 24px;\n  line-height: 1.25em;\n  margin: 2rem 0 1.5rem 0;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding-bottom: 1rem;\n}\n\n@media(min-width: 1024px) {\n  d-article h2 {\n    font-size: 26px;\n  }\n}\n\n/* H3 */\n\nd-article h3 {\n  font-weight: 700;\n  font-size: 18px;\n  line-height: 1.4em;\n  margin-bottom: 1em;\n  margin-top: 2em;\n}\n\n@media(min-width: 1024px) {\n  d-article h3 {\n    font-size: 20px;\n  }\n}\n\n/* H4 */\n\nd-article h4 {\n  font-weight: 600;\n  text-transform: uppercase;\n  font-size: 14px;\n  line-height: 1.4em;\n}\n\nd-article a {\n  color: inherit;\n}\n\nd-article p,\nd-article ul,\nd-article ol,\nd-article blockquote {\n  margin-top: 0;\n  margin-bottom: 1em;\n  margin-left: 0;\n  margin-right: 0;\n}\n\nd-article blockquote {\n  border-left: 2px solid rgba(0, 0, 0, 0.2);\n  padding-left: 2em;\n  font-style: italic;\n  color: rgba(0, 0, 0, 0.6);\n}\n\nd-article a {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.4);\n  text-decoration: none;\n}\n\nd-article a:hover {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.8);\n}\n\nd-article .link {\n  text-decoration: underline;\n  cursor: pointer;\n}\n\nd-article ul,\nd-article ol {\n  padding-left: 24px;\n}\n\nd-article li {\n  margin-bottom: 1em;\n  margin-left: 0;\n  padding-left: 0;\n}\n\nd-article li:last-child {\n  margin-bottom: 0;\n}\n\nd-article pre {\n  font-size: 14px;\n  margin-bottom: 20px;\n}\n\nd-article hr {\n  grid-column: screen;\n  width: 100%;\n  border: none;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  margin-top: 60px;\n  margin-bottom: 60px;\n}\n\nd-article section {\n  margin-top: 60px;\n  margin-bottom: 60px;\n}\n\nd-article span.equation-mimic {\n  font-family: georgia;\n  font-size: 115%;\n  font-style: italic;\n}\n\nd-article > d-code,\nd-article section > d-code  {\n  display: block;\n}\n\nd-article > d-math[block],\nd-article section > d-math[block]  {\n  display: block;\n}\n\n@media (max-width: 768px) {\n  d-article > d-code,\n  d-article section > d-code,\n  d-article > d-math[block],\n  d-article section > d-math[block] {\n      overflow-x: scroll;\n      -ms-overflow-style: none;  // IE 10+\n      overflow: -moz-scrollbars-none;  // Firefox\n  }\n\n  d-article > d-code::-webkit-scrollbar,\n  d-article section > d-code::-webkit-scrollbar,\n  d-article > d-math[block]::-webkit-scrollbar,\n  d-article section > d-math[block]::-webkit-scrollbar {\n    display: none;  // Safari and Chrome\n  }\n}\n\nd-article .citation {\n  color: #668;\n  cursor: pointer;\n}\n\nd-include {\n  width: auto;\n  display: block;\n}\n\nd-figure {\n  contain: layout style;\n}\n\n/* KaTeX */\n\n.katex, .katex-prerendered {\n  contain: content;\n  display: inline-block;\n}\n\n/* Tables */\n\nd-article table {\n  border-collapse: collapse;\n  margin-bottom: 1.5rem;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n}\n\nd-article table th {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.2);\n}\n\nd-article table td {\n  border-bottom: 1px solid rgba(0, 0, 0, 0.05);\n}\n\nd-article table tr:last-of-type td {\n  border-bottom: none;\n}\n\nd-article table th,\nd-article table td {\n  font-size: 15px;\n  padding: 2px 8px;\n}\n\nd-article table tbody :first-child td {\n  padding-top: 2px;\n}\n'+ta+'@media print {\n\n  @page {\n    size: 8in 11in;\n    @bottom-right {\n      content: counter(page) " of " counter(pages);\n    }\n  }\n\n  html {\n    /* no general margins -- CSS Grid takes care of those */\n  }\n\n  p, code {\n    page-break-inside: avoid;\n  }\n\n  h2, h3 {\n    page-break-after: avoid;\n  }\n\n  d-header {\n    visibility: hidden;\n  }\n\n  d-footer {\n    display: none!important;\n  }\n\n}\n',ha=[{name:'WebComponents',support:function(){return'customElements'in window&&'attachShadow'in Element.prototype&&'getRootNode'in Element.prototype&&'content'in document.createElement('template')&&'Promise'in window&&'from'in Array},url:'https://distill.pub/third-party/polyfills/webcomponents-lite.js'},{name:'IntersectionObserver',support:function(){return'IntersectionObserver'in window&&'IntersectionObserverEntry'in window},url:'https://distill.pub/third-party/polyfills/intersection-observer.js'}];class ma{static browserSupportsAllFeatures(){return ha.every((e)=>e.support())}static load(e){const t=function(t){t.loaded=!0,console.info('Runlevel 0: Polyfill has finished loading: '+t.name),ma.neededPolyfills.every((e)=>e.loaded)&&(console.info('Runlevel 0: All required polyfills have finished loading.'),console.info('Runlevel 0->1.'),window.distillRunlevel=1,e())};for(const n of ma.neededPolyfills)p(n,t)}static get neededPolyfills(){return ma._neededPolyfills||(ma._neededPolyfills=ha.filter((e)=>!e.support())),ma._neededPolyfills}}const ya=ea('d-abstract',`
 <style>
   :host {
     font-size: 1.25rem;
@@ -655,7 +655,7 @@ distill-header .nav a {
    <!-- The Scientific AI Research Group -->
   </a>
   <nav class="nav">
-    <a href="/">Home</a>
+    <a href="/notes">Notes</a>
   </nav>
 </div>
 `,!1);class jr extends Ar(HTMLElement){}const Or=`
@@ -928,20 +928,26 @@ distill-header .nav a {
     <meta name=author content="The Scientific AI Research Group">
 
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Home | The Scientific AI Research Group</title>
+<title>Transfer Learning | The Scientific AI Research Group</title>
 <meta name="generator" content="Jekyll v3.7.3" />
-<meta property="og:title" content="Home" />
+<meta property="og:title" content="Transfer Learning" />
+<meta name="author" content="louis" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://tsairesearch.github.io/" />
-<meta property="og:url" content="https://tsairesearch.github.io/" />
+<meta name="description" content="Transfer learning uses a pre-existing model to complete a different task." />
+<meta property="og:description" content="Transfer learning uses a pre-existing model to complete a different task." />
+<link rel="canonical" href="https://tsairesearch.github.io/transfer-learning/" />
+<meta property="og:url" content="https://tsairesearch.github.io/transfer-learning/" />
 <meta property="og:site_name" content="The Scientific AI Research Group" />
+<meta property="og:image" content="https://tsairesearch.github.io/assets/images/github_avatar.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-10-20T00:00:00-05:00" />
 <script type="application/ld+json">
-{"@type":"WebSite","headline":"Home","url":"https://tsairesearch.github.io/","name":"The Scientific AI Research Group","@context":"http://schema.org"}</script>
+{"@type":"BlogPosting","dateModified":"2019-10-20T00:00:00-05:00","datePublished":"2019-10-20T00:00:00-05:00","headline":"Transfer Learning","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/transfer-learning/"},"url":"https://tsairesearch.github.io/transfer-learning/","image":"https://tsairesearch.github.io/assets/images/github_avatar.jpg","author":{"@type":"Person","name":"louis"},"description":"Transfer learning uses a pre-existing model to complete a different task.","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     
     <link rel="icon" href="https://tsairesearch.github.io/assets/images/favicon/favicon.ico" />
-    <link rel="canonical" href="https://tsairesearch.github.io/">
+    <link rel="canonical" href="https://tsairesearch.github.io/transfer-learning/">
     <link rel="alternate" type="application/rss+xml" title="" href="https://tsairesearch.github.io/feed.xml" />
 
 
@@ -956,261 +962,92 @@ distill-header .nav a {
     <distill-header> </distill-header>  <!-- This gets called to generate it, but it is defined in style.html -->
 
     
-
-    <d-article>
-
-<div style="grid-column: text">
-
-  <h3 style="text-align: center">The Scientific AI Research Group</h3>
-  <p style="text-align: center;  margin-bottom:0"></p>
-
-  <figure  style="margin-top: 0">
-    <img style="display: block; max-width: 40%; margin-bottom: 2rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="The Scientific AI Research Group" src="https://tsairesearch.github.io/assets/images/profile.jpg" />
-    <figcaption style="grid-column: text; color: rgba(0,0,0,0.8); font-size: 17px ">
-        <p> We are a research group at UT Austin led by Dr. Richard Tsai. Our work includes time-parallelizable multiscale coupling algorithms for initial value problems, nonlinear interface dynamics, partial differential equations on surfaces, multiscale modeling, wave propagation, image processing, sensor networks, robotic path planning problems, and machine learning approaches for scientific computing. </p>
-    </figcaption>
-  </figure>
-
-
-</div>
-
-<div style="grid-column: middle">
-
-<section style="margin-top: 4rem">
-<h3 style="text-align: left; border-bottom: none"> Recent News </h3>
-<li> Our paper "Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization" accepted at CDC 2019. </li>
-<li> Our paper "Autonomous Exploration, Reconstruction, and Surveillance of 3D Environments Aided by Deep Learning" accepted at ICRA 2019. </li>
-
-<h3 style="text-align: left; border-bottom: none"> Projects </h3>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
-        
-    
-        
-    
-        
-			
+
+    <!-- TODO: modularize this -->
 <style>
-* { box-sizing: border-box; }
 
-/* Create two unequal columns that floats next to each other */
-.column {
-    float: left;
-    padding: 10px;
+.tags {
+    text-decoration: none;
+    border-bottom: none;
+    border-radius: 3px;
+    padding: 0px 3px;
+    margin: 5px 1px;
+    background: #ededed;
 }
 
-.left {
-  width: 15%;
+.tags:link {
+    color: rgba(0,0,0,0.8);
 }
 
-.right {
-  width: 85%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.url:hover .title{
-    color: #28f;  // TODO: Make this a variable
+.tags:hover {
+    color: #28f;
+    border-bottom: none;
 }
 </style>
 
 
 
-<hr style="margin-top: 1rem; margin-bottom: 1rem"> </hr>
+<d-title>
 
-<a class="url" href="https://tsairesearch.github.io/parareal/">
-<div class="row">
 
-  <div class="column left">
-    <img width=100% src="https://tsairesearch.github.io/assets/images/wave/waveinmarmousi.gif">
-    <!-- <img width=100%  src="https://tsairesearch.github.io/assets/images/profile.jpg" > -->
-  </div>
 
-  <div class="column right">
-    <h3 class="title" style="margin-top: 0; margin-bottom: 0;">Parareal</h3>
-    <p>We are developing a data-driven parallel-in-time iterative method to solve the homogeneous second-order wave equation.</p>
+ <div style="grid-column: screen; text-align: center">
+  <h1>Transfer Learning</h1>
+    
 
-    <aside align="right"><time datetime="04-10-2019">Oct 04 2019</time></aside> 
-  </div>
 
-</div>
-</a>
+    
+    
+
+    
+  <p style="margin-bottom: 2rem"> <font color=#555>
+    <time datetime="20-10-2019"> October 20, 2019 </time>  
+     
+  </font>
+  </p>
 
         
     
-        
-			
-<style>
-* { box-sizing: border-box; }
 
-/* Create two unequal columns that floats next to each other */
-.column {
-    float: left;
-    padding: 10px;
-}
+ </div>
 
-.left {
-  width: 15%;
-}
 
-.right {
-  width: 85%;
-}
+  <d-figure style="grid-column: middle;">
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
+  </d-figure>
 
-.url:hover .title{
-    color: #28f;  // TODO: Make this a variable
-}
-</style>
+</d-title>
 
 
 
-<hr style="margin-top: 1rem; margin-bottom: 1rem"> </hr>
+<d-article>
 
-<a class="url" href="https://tsairesearch.github.io/evasion/">
-<div class="row">
 
-  <div class="column left">
-    <img width=100% src="https://tsairesearch.github.io/assets/images/evasion/patrol.gif">
-    <!-- <img width=100%  src="https://tsairesearch.github.io/assets/images/profile.jpg" > -->
-  </div>
+  <!-- mathjax -->
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
 
-  <div class="column right">
-    <h3 class="title" style="margin-top: 0; margin-bottom: 0;">Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization</h3>
-    <p>We study a two-player game with a quantitative surveillance requirement on an adversarial target moving in a discrete state space and a secondary objective to maximize short-term visibility of the environment.</p>
+<h2 id="introduction">Introduction</h2>
 
-    <aside align="right"><time datetime="20-03-2019">Mar 20 2019</time></aside> 
-  </div>
-
-</div>
-</a>
-
-        
-    
-        
-			
-<style>
-* { box-sizing: border-box; }
-
-/* Create two unequal columns that floats next to each other */
-.column {
-    float: left;
-    padding: 10px;
-}
-
-.left {
-  width: 15%;
-}
-
-.right {
-  width: 85%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.url:hover .title{
-    color: #28f;  // TODO: Make this a variable
-}
-</style>
+<p>Suppose $f(x;w_1,\dots,w_n)$ is a neural network which acts on $x$ using operations defined by the trained weights $w_i$.</p>
 
 
 
-<hr style="margin-top: 1rem; margin-bottom: 1rem"> </hr>
-
-<a class="url" href="https://tsairesearch.github.io/autonomous/">
-<div class="row">
-
-  <div class="column left">
-    <img width=100% src="https://tsairesearch.github.io/assets/images/autonomous/3d.gif">
-    <!-- <img width=100%  src="https://tsairesearch.github.io/assets/images/profile.jpg" > -->
-  </div>
-
-  <div class="column right">
-    <h3 class="title" style="margin-top: 0; margin-bottom: 0;">Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning</h3>
-    <p>We develop a new state-of-the-art deep learning strategy for prescribing vantage points for optimal sensor placement. This approach uses a robust volumetric visibility computation to efficiently model arbitrary geometries.</p>
-
-    <aside align="right"><time datetime="15-06-2018">Jun 15 2018</time></aside> 
-  </div>
-
-</div>
-</a>
-
-        
-    
-        
-			
-<style>
-* { box-sizing: border-box; }
-
-/* Create two unequal columns that floats next to each other */
-.column {
-    float: left;
-    padding: 10px;
-}
-
-.left {
-  width: 15%;
-}
-
-.right {
-  width: 85%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.url:hover .title{
-    color: #28f;  // TODO: Make this a variable
-}
-</style>
 
 
 
-<hr style="margin-top: 1rem; margin-bottom: 1rem"> </hr>
-
-<a class="url" href="https://tsairesearch.github.io/source/">
-<div class="row">
-
-  <div class="column left">
-    <img width=100% src="https://tsairesearch.github.io/assets/images/point/fig7.png">
-    <!-- <img width=100%  src="https://tsairesearch.github.io/assets/images/profile.jpg" > -->
-  </div>
-
-  <div class="column right">
-    <h3 class="title" style="margin-top: 0; margin-bottom: 0;">Point source identification in non-linear advection-diffusion-reaction systems</h3>
-    <p>We consider a problem of identification of point sources in time dependent advection-diffusion systems with a non-linear reaction term.</p>
-
-    <aside align="right"><time datetime="14-02-2012">Feb 14 2012</time></aside> 
-  </div>
-
-</div>
-</a>
-
-        
-    
-</section>
 
 
-</div>
+
+
 </d-article>
 
 
