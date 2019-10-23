@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-10-22T22:26:52-05:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Syllabus</title><link href="https://tsairesearch.github.io/notes/syllabus" rel="alternate" type="text/html" title="Syllabus" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/notes/syllabus</id><content type="html" xml:base="https://tsairesearch.github.io/notes/syllabus">&lt;p&gt;Welcome to the zoo!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-10-22T22:34:52-05:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Syllabus</title><link href="https://tsairesearch.github.io/notes/syllabus" rel="alternate" type="text/html" title="Syllabus" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/notes/syllabus</id><content type="html" xml:base="https://tsairesearch.github.io/notes/syllabus">&lt;p&gt;Welcome to the zoo!&lt;/p&gt;
 
 &lt;p&gt;A tentative list of topics to be covered in this course.&lt;/p&gt;
 
@@ -602,6 +602,7 @@ shown as red stars.
 
 &lt;p&gt;
 &lt;li&gt; Y. Li, S. Osher, and R. Tsai. &quot;Heat Source Identification Based Onconstrained Minimization.&quot; Inverse Problems and Imaging 8.1 (2014): 199-221.&lt;/li&gt;
+&lt;li&gt; M. Burger,  Y. Landa, N. Tanushev, and R. Tsai. &quot;Discovering a point source in unknown environments.&quot; Algorithmic Foundation of Robotics VIII. Springer, Berlin, Heidelberg, 2009. 663-678.&lt;/li&gt;
 &lt;/p&gt;
 
 
