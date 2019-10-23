@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-10-22T22:34:52-05:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Syllabus</title><link href="https://tsairesearch.github.io/notes/syllabus" rel="alternate" type="text/html" title="Syllabus" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/notes/syllabus</id><content type="html" xml:base="https://tsairesearch.github.io/notes/syllabus">&lt;p&gt;Welcome to the zoo!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-10-23T15:03:39-05:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Mathematics in Deep Learning —Syllabus</title><link href="https://tsairesearch.github.io/notes/syllabus" rel="alternate" type="text/html" title="Mathematics in Deep Learning ---Syllabus" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/notes/syllabus</id><content type="html" xml:base="https://tsairesearch.github.io/notes/syllabus">&lt;p&gt;Welcome to the zoo!&lt;/p&gt;
 
 &lt;p&gt;A tentative list of topics to be covered in this course.&lt;/p&gt;
 
@@ -8,14 +8,15 @@
 
 &lt;h3 id=&quot;deep-learning-architectures-and-the-related-applications&quot;&gt;Deep learning architectures and the related applications:&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;basic multi-layer neural networks&lt;/li&gt;
-  &lt;li&gt;convolutional Neural networks&lt;/li&gt;
-  &lt;li&gt;residual neural networks&lt;/li&gt;
+  &lt;li&gt;basic multi-layer neural networks (NNs)&lt;/li&gt;
+  &lt;li&gt;convolutional Neural networks (CNNs)&lt;/li&gt;
+  &lt;li&gt;residual neural networks (ResNets)&lt;/li&gt;
   &lt;li&gt;generative adversarial networks (GANs) and the Wasserstein GANs&lt;/li&gt;
   &lt;li&gt;recurrent neural network (RNN)&lt;/li&gt;
   &lt;li&gt;LSTMs&lt;/li&gt;
-  &lt;li&gt;convolutional Neural networks for graphs&lt;/li&gt;
-  &lt;li&gt;convolutions on point sets&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;convolutional Neural networks for graphs&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;encoder-decoders&lt;/li&gt;
   &lt;li&gt;reinforcement learning (value iteration, policy iteration)&lt;/li&gt;
 &lt;/ul&gt;
@@ -35,9 +36,15 @@
 &lt;ul&gt;
   &lt;li&gt;classical multi-resolution analysis (wavelet)&lt;/li&gt;
   &lt;li&gt;compressive sensing&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The curse of dimensionality!&lt;/p&gt;
+
+&lt;ul&gt;
   &lt;li&gt;single layer universal approximation theory&lt;/li&gt;
-  &lt;li&gt;multi-layer neural network approximation theory&lt;/li&gt;
-  &lt;li&gt;the curse of dimensionality&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;multi-layer neural network approximation theory&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;over-parameterization and generalization&lt;/li&gt;
   &lt;li&gt;linear algebra: defining notions of distances from data matrices&lt;/li&gt;
   &lt;li&gt;manifold learning&lt;/li&gt;
@@ -45,6 +52,8 @@
   &lt;li&gt;adversarial attacks&lt;/li&gt;
   &lt;li&gt;differential privacy&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;random-graphs-and-random-matrices&quot;&gt;Random graphs and random matrices:&lt;/h3&gt;
 
 &lt;h3 id=&quot;optimization-algorithms-and-theories&quot;&gt;Optimization algorithms and theories:&lt;/h3&gt;
 
@@ -54,7 +63,12 @@
   &lt;li&gt;duality, saddle point problems&lt;/li&gt;
   &lt;li&gt;primal-dual type splitting algorithms&lt;/li&gt;
   &lt;li&gt;Nesterov’s algorithm&lt;/li&gt;
-  &lt;li&gt;how to select your mini-batches?&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;how to select your mini-batches?&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;which loss function?&lt;/li&gt;
+  &lt;li&gt;the vanishing gradient problem of using &lt;em&gt;Sigmoids&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;cross-entropy&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;dynamical-system&quot;&gt;Dynamical system:&lt;/h3&gt;
@@ -62,11 +76,16 @@
   &lt;li&gt;stability&lt;/li&gt;
   &lt;li&gt;automatic step size control&lt;/li&gt;
   &lt;li&gt;optimal control of dynamical systems&lt;/li&gt;
+  &lt;li&gt;Decoupling algorithms&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;optimal-transport-theory-and-algorithms&quot;&gt;Optimal transport theory and algorithms:&lt;/h3&gt;
 
 &lt;ul&gt;
+  &lt;li&gt;Comparing probability densities&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Earth mover’s distances “convexify”&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;The Benamou-Brenier fluid formulation and related algorithms&lt;/li&gt;
   &lt;li&gt;Sinkhorn algorithm&lt;/li&gt;
   &lt;li&gt;Information Geometry&lt;/li&gt;
@@ -82,7 +101,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;wave propagation&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>louis</name></author><category term="notes" /><summary type="html">Welcome to the zoo!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /></entry><entry><title type="html">Multiscale coupling algorithms using parareal style structures</title><link href="https://tsairesearch.github.io/projects/parareal" rel="alternate" type="text/html" title="Multiscale coupling algorithms using parareal style structures" /><published>2019-10-04T00:00:00-05:00</published><updated>2019-10-04T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/parareal</id><content type="html" xml:base="https://tsairesearch.github.io/projects/parareal">&lt;d-front-matter&gt;
+&lt;/ul&gt;</content><author><name>Louis and Richard</name></author><category term="notes" /><summary type="html">Welcome to the zoo!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /></entry><entry><title type="html">Multiscale coupling algorithms using parareal style structures</title><link href="https://tsairesearch.github.io/projects/parareal" rel="alternate" type="text/html" title="Multiscale coupling algorithms using parareal style structures" /><published>2019-10-04T00:00:00-05:00</published><updated>2019-10-04T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/parareal</id><content type="html" xml:base="https://tsairesearch.github.io/projects/parareal">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
