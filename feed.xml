@@ -1,4 +1,233 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-10-23T15:03:39-05:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Mathematics in Deep Learning —Syllabus</title><link href="https://tsairesearch.github.io/notes/syllabus" rel="alternate" type="text/html" title="Mathematics in Deep Learning ---Syllabus" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/notes/syllabus</id><content type="html" xml:base="https://tsairesearch.github.io/notes/syllabus">&lt;p&gt;Welcome to the zoo!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-11-06T10:20:32-06:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Nearest Neighbor Sampling of Point Sets Using Random Rays</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Nearest Neighbor Sampling of Point Sets Using Random Rays" /><published>2019-11-06T00:00:00-06:00</published><updated>2019-11-06T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;d-front-matter&gt;
+  &lt;script type=&quot;text/json&quot;&gt;{
+  &quot;authors&quot;: [
+    {
+      &quot;author&quot;: &quot;Lewis Liu&quot;,
+      &quot;authorURL&quot;: &quot;https://www.iam.ubc.ca/liangchen-liu/&quot;,
+      &quot;affiliation&quot;: &quot;Department of Mathematics, The University of British Columbia&quot;,
+      &quot;affiliationURL&quot;: &quot;https://ubc.ca&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Louis Ly&quot;,
+      &quot;authorURL&quot;: &quot;https://longlouisly.github.io/&quot;,
+      &quot;affiliation&quot;: &quot;Oden Institute for Computational Engineering and Sciences, The University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Colin Macdonald&quot;,
+      &quot;authorURL&quot;: &quot;https://www.math.ubc.ca/~cbm/&quot;,
+      &quot;affiliation&quot;: &quot;Department of Mathematics, The University of British Columbia&quot;,
+      &quot;affiliationURL&quot;: &quot;https://ubc.ca&quot;
+    },
+
+    {
+      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
+      &quot;affiliation&quot;: &quot;Oden Institute for Computational Engineering and Sciences, The University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    }
+  ]
+  }&lt;/script&gt;
+&lt;/d-front-matter&gt;
+
+&lt;d-title&gt;
+ &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
+  &lt;h1&gt;Nearest Neighbor Sampling of Point Sets Using Random Rays&lt;/h1&gt;
+    
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Nearest Neighbor Sampling of Point Sets Using Random Rays&quot; src=&quot;https://tsairesearch.github.io//assets/images/rays/airplane_ray.png&quot; /&gt;
+    
+ &lt;/div&gt;
+
+
+&lt;/d-title&gt;
+
+&lt;d-article&gt;
+
+&lt;p&gt; We propose a new framework for the sampling, compression, and analysis of
+distributions of point sets embedded in Euclidean spaces. A set of randomly
+selected rays are projected onto their closest points in the data set and thus
+form the signature of the data set. From the signature, statistical
+information about the data set, as well as certain geometrical information can
+be extracted, independent of the ray set. We show that the cost of the sampling
+approach is asymptotically independent of the ray sets.  Finally, we present a
+neural network model using the  signature for classification of point
+sets in three dimensions. &lt;/p&gt;
+
+&lt;h3&gt; Examples &lt;/h3&gt;
+
+
+&lt;div style=&quot;grid-column: screen &quot;&gt;
+
+&lt;figure&gt;
+&lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
+&lt;iframe width=&quot;1296px&quot; height=&quot;850px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/grid.png&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;figcaption&gt;
+&lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+(Row 1) Visualization of a two rays (black) through points sampled from various objects (gray). Closest point pairs are shown in green and red. (Row 2) Plot of distance from points along the ray to the corresponding closest points on the object. (Rows 3-5) The $x$, $y$, and $z$ coordinates of the closest points to the ray.
+&lt;/div&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;grid-column: screen &quot;&gt;
+
+&lt;figure&gt;
+&lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
+&lt;iframe width=&quot;1000px&quot; height=&quot;500px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/airplane_side.png&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;figcaption&gt;
+&lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+Rays are more likely to sample salient features in the point cloud. Larger points are repeated more often.
+We can control the number of points by increasing the number of rays. Each ray contains 30 sample points.  
+&lt;/div&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+
+
+
+&lt;h3&gt; Experiments &lt;/h3&gt;
+
+
+&lt;div style=&quot;grid-column: screen; margin-left: auto; margin-right: auto; text-align: center &quot;&gt;
+
+&lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 80%; text-align: center&quot;&gt;
+&lt;figure&gt;
+&lt;figcaption&gt;
+&lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 100%; text-align: center&quot;&gt;
+Comparison of our neural network model against PointNet on ModelNet point cloud classification dataset.
+&lt;/div&gt;
+&lt;/figcaption&gt;
+
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th class=&quot;tg-0pky&quot;&gt;Model&lt;/th&gt;
+    &lt;th class=&quot;tg-0pky&quot;&gt;ModelNet10 (2048)&lt;/th&gt;
+    &lt;th class=&quot;tg-0pky&quot;&gt;ModelNet40 (2048)&lt;/th&gt;
+    &lt;th class=&quot;tg-0pky&quot;&gt;ModelNet40 (1024)&lt;/th&gt;
+    &lt;th class=&quot;tg-0pky&quot;&gt;ModelNet40 (4096)&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;PointNet (paper)&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;-&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;-&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;89.2%&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;-&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;PointNet.pytorch&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;92.07% (on 256 pts)&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;85.3% (on 1024 pts)&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;87.52%&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;85.4%&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;Ours&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;95.04%&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;90.03%&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;90.6%&lt;/td&gt;
+    &lt;td class=&quot;tg-0pky&quot;&gt;90.44%&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+&lt;figure&gt;
+&lt;figcaption&gt;
+&lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 100%; text-align: center&quot;&gt;
+Sensitivity of the neural network models to the input size. $m$ is the number of rays, $N^\ast$ is the number of points used, and $N$ is the total number of points in the original point set.
+&lt;/div&gt;
+&lt;/figcaption&gt;
+
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Our model on ModelNet10 (N=2048)&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;$m/32$&lt;/td&gt;
+    &lt;td&gt;100%&lt;/td&gt;
+    &lt;td&gt;50%&lt;/td&gt;
+    &lt;td&gt;25%&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;$N^\ast/N$&lt;/td&gt;
+    &lt;td&gt;15.38%&lt;/td&gt;
+    &lt;td&gt;8.59%&lt;/td&gt;
+    &lt;td&gt;4.59%&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Performance/Accuracy&lt;/td&gt;
+    &lt;td&gt;94.60%&lt;/td&gt;
+    &lt;td&gt;95.04%&lt;/td&gt;
+    &lt;td&gt;94.60%&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Our model on ModelNet40 (N=1024)&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;$m/32$&lt;/td&gt;
+    &lt;td&gt;100%&lt;/td&gt;
+    &lt;td&gt;50%&lt;/td&gt;
+    &lt;td&gt;25%&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;$N^\ast/N$&lt;/td&gt;
+    &lt;td&gt;25.10%&lt;/td&gt;
+    &lt;td&gt;14.75%&lt;/td&gt;
+    &lt;td&gt;8.17%&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Performance/Accuracy&lt;/td&gt;
+    &lt;td&gt;90.56%&lt;/td&gt;
+    &lt;td&gt;90.60%&lt;/td&gt;
+    &lt;td&gt;89.82%&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;PointNet on ModelNet40 (N=1024)&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+    &lt;th&gt;&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;$N^\ast/N$&lt;/td&gt;
+    &lt;td&gt;100%&lt;/td&gt;
+    &lt;td&gt;50%&lt;/td&gt;
+    &lt;td&gt;12.5%&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Performance/Accuracy&lt;/td&gt;
+    &lt;td&gt;89.2%&lt;/td&gt;
+    &lt;td&gt;86.8%&lt;/td&gt;
+    &lt;td&gt;69%&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/figure&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" /></entry><entry><title type="html">Mathematics in Deep Learning —Syllabus</title><link href="https://tsairesearch.github.io/notes/syllabus" rel="alternate" type="text/html" title="Mathematics in Deep Learning ---Syllabus" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/notes/syllabus</id><content type="html" xml:base="https://tsairesearch.github.io/notes/syllabus">&lt;p&gt;Welcome to the zoo!&lt;/p&gt;
 
 &lt;p&gt;A tentative list of topics to be covered in this course.&lt;/p&gt;
 
@@ -266,7 +495,7 @@ On the right video, the agent must also patrol the environment, in addition to t
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/evasion/patrol.gif" /></entry><entry><title type="html">Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning</title><link href="https://tsairesearch.github.io/projects/autonomous" rel="alternate" type="text/html" title="Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning" /><published>2018-06-15T00:00:00-05:00</published><updated>2018-06-15T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/autonomous</id><content type="html" xml:base="https://tsairesearch.github.io/projects/autonomous">&lt;d-front-matter&gt;
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/evasion/patrol.gif" /></entry><entry><title type="html">AI-enabled Exploration and Surveillance</title><link href="https://tsairesearch.github.io/projects/autonomous" rel="alternate" type="text/html" title="AI-enabled Exploration and Surveillance" /><published>2018-06-15T00:00:00-05:00</published><updated>2018-06-15T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/autonomous</id><content type="html" xml:base="https://tsairesearch.github.io/projects/autonomous">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -287,9 +516,9 @@ On the right video, the agent must also patrol the environment, in addition to t
 
 &lt;d-title&gt;
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
-  &lt;h1&gt;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&lt;/h1&gt;
+  &lt;h1&gt;AI-enabled Exploration and Surveillance&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io//assets/images/autonomous/3d.gif&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io//assets/images/autonomous/3d.gif&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -339,7 +568,7 @@ A 3D simulation of a 250m x 250m environment based on Castle Square Parks in Bos
 
 
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/sight1.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/sight1.jpg&quot; /&gt;
 &lt;figcaption&gt;
 Surveillance of urban environment using 2 sensors represented by green spheres. Yellow regions are visible from one of the sensors. Red regions are visible from both sensors. For clarity, visualization only includes visibility of regions near ground level. Two sample paths across the courtyard are shown. The cyan path uses the shadows of structure to minimize detection while the magenta path naively crosses through.
 &lt;/figcaption&gt;
@@ -355,7 +584,7 @@ Realistic LiDAR simulations of a virtual Military Operations in Urban Terrain (M
 
 &lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout1_textured.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout1_textured.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A 20m region around a patio area with tree cover from the virtual MOUT site.
 &lt;/figcaption&gt;
@@ -364,7 +593,7 @@ A 20m region around a patio area with tree cover from the virtual MOUT site.
 
 &lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout1_points.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout1_points.jpg&quot; /&gt;
 &lt;figcaption&gt;
 The integrated visibility volume of the patio area generated from 16 vantage points, shown as red circles.
 &lt;/figcaption&gt;
@@ -378,7 +607,7 @@ The integrated visibility volume of the patio area generated from 16 vantage poi
 
 &lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout3_textured.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout3_textured.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A close-up of the patio area with complex geometries such as columns and tree trunks.
 &lt;/figcaption&gt;
@@ -387,7 +616,7 @@ A close-up of the patio area with complex geometries such as columns and tree tr
 
 &lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout3_recon.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout3_recon.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A coarse reconstruction of the patio generated from the visibility volume.
 Despite the low resolution, the topology of the structures are preserved.
@@ -403,7 +632,7 @@ Despite the low resolution, the topology of the structures are preserved.
 
 &lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout2_textured.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout2_textured.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A larger, 50m region around a church with several buildings.
 &lt;/figcaption&gt;
@@ -412,7 +641,7 @@ A larger, 50m region around a church with several buildings.
 
 &lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Autonomous Exploration, Reconstruction, and Surveillance Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout2_recon.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout2_recon.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A reconstruction of the building surface using 1,896,786 points generated from 11 vantage locations.
 &lt;/figcaption&gt;
@@ -440,7 +669,9 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
 &lt;li&gt; H. Jin, A. J. Yezzi, Y.-H. Tsai, L.-T. Cheng, and S. Soatto. Estimation of 3D surface shape and smooth radiance from 2D images: a level set approach. J. Sci. Comput., 19(1-3):267–292, 2003. &lt;/li&gt;
 &amp;lt;/p&amp;gt;
 
-
+&lt;h3&gt; Acknowledgements &lt;/h3&gt;
+&lt;p&gt;This work is supported by ARO MURI W911NF-07-1-0185 and W911NF-12-1-0519 grants.
+&lt;/p&gt;
 
 &amp;lt;/d-article&amp;gt;
 &lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/p&gt;&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/autonomous/3d.gif" /></entry><entry><title type="html">Point source identification in non-linear advection-diffusion-reaction systems</title><link href="https://tsairesearch.github.io/projects/source" rel="alternate" type="text/html" title="Point source identification in non-linear advection-diffusion-reaction systems" /><published>2012-02-14T00:00:00-06:00</published><updated>2012-02-14T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/source</id><content type="html" xml:base="https://tsairesearch.github.io/projects/source">&lt;d-front-matter&gt;

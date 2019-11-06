@@ -928,22 +928,25 @@ distill-header .nav a {
     <meta name=author content="The Scientific AI Research Group">
 
     <!-- Begin Jekyll SEO tag v2.4.0 -->
-<title>Exploration | The Scientific AI Research Group</title>
+<title>Nearest Neighbor Sampling of Point Sets Using Random Rays | The Scientific AI Research Group</title>
 <meta name="generator" content="Jekyll v3.7.3" />
-<meta property="og:title" content="Exploration" />
+<meta property="og:title" content="Nearest Neighbor Sampling of Point Sets Using Random Rays" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://tsairesearch.github.io/notes/exploration" />
-<meta property="og:url" content="https://tsairesearch.github.io/notes/exploration" />
+<meta name="description" content="We propose a new framework for the sampling, compression, and analysis of distributions of point sets embedded in Euclidean spaces. A set of randomly selected rays are projected onto their closest points in the data set and thus form the signature of the data set." />
+<meta property="og:description" content="We propose a new framework for the sampling, compression, and analysis of distributions of point sets embedded in Euclidean spaces. A set of randomly selected rays are projected onto their closest points in the data set and thus form the signature of the data set." />
+<link rel="canonical" href="https://tsairesearch.github.io/projects/rays" />
+<meta property="og:url" content="https://tsairesearch.github.io/projects/rays" />
 <meta property="og:site_name" content="The Scientific AI Research Group" />
+<meta property="og:image" content="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-11-06T10:20:32-06:00" />
+<meta property="article:published_time" content="2019-11-06T00:00:00-06:00" />
 <script type="application/ld+json">
-{"@type":"BlogPosting","dateModified":"2019-11-06T10:20:32-06:00","datePublished":"2019-11-06T10:20:32-06:00","headline":"Exploration","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/notes/exploration"},"url":"https://tsairesearch.github.io/notes/exploration","@context":"http://schema.org"}</script>
+{"@type":"BlogPosting","dateModified":"2019-11-06T00:00:00-06:00","datePublished":"2019-11-06T00:00:00-06:00","headline":"Nearest Neighbor Sampling of Point Sets Using Random Rays","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/projects/rays"},"url":"https://tsairesearch.github.io/projects/rays","image":"https://tsairesearch.github.io/assets/images/rays/airplane_ray.png","description":"We propose a new framework for the sampling, compression, and analysis of distributions of point sets embedded in Euclidean spaces. A set of randomly selected rays are projected onto their closest points in the data set and thus form the signature of the data set.","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     
     <link rel="icon" href="https://tsairesearch.github.io/assets/images/favicon/favicon.ico" />
-    <link rel="canonical" href="https://tsairesearch.github.io/notes/exploration">
+    <link rel="canonical" href="https://tsairesearch.github.io/projects/rays">
     <link rel="alternate" type="application/rss+xml" title="" href="https://tsairesearch.github.io/feed.xml" />
 
 
@@ -958,56 +961,243 @@ distill-header .nav a {
     <distill-header> </distill-header>  <!-- This gets called to generate it, but it is defined in style.html -->
 
     
-
-    <d-article>
-
-<div style="grid-column: middle; margin-top: 0">
-<h1 style="text-align: center; border-bottom: none"> Notes </h1>
-
-<style>
-
-.tags {
-    border-bottom: none;
-    border-radius: 3px;
-    padding: 0px 3px;
-    margin: 5px 1px;
-    background: #ededed;
-}
-.tags:hover {
-    color: #28f;
-    border-bottom: none;
-}
-
-</style>
-
- <div style="grid-column: middle; text-align: center">
-
-Filter by topic: &nbsp;
-
-            
-                <a class="tags" href="https://tsairesearch.github.io/notes">all</a>
-            
-
-    
-    
-        
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
+    <d-front-matter>
+  <script type="text/json">{
+  "authors": [
+    {
+      "author": "Lewis Liu",
+      "authorURL": "https://www.iam.ubc.ca/liangchen-liu/",
+      "affiliation": "Department of Mathematics, The University of British Columbia",
+      "affiliationURL": "https://ubc.ca"
+    },
+    {
+      "author": "Louis Ly",
+      "authorURL": "https://longlouisly.github.io/",
+      "affiliation": "Oden Institute for Computational Engineering and Sciences, The University of Texas at Austin",
+      "affiliationURL": "https://www.ices.utexas.edu"
+    },
+    {
+      "author": "Colin Macdonald",
+      "authorURL": "https://www.math.ubc.ca/~cbm/",
+      "affiliation": "Department of Mathematics, The University of British Columbia",
+      "affiliationURL": "https://ubc.ca"
+    },
 
+    {
+      "author": "Yen-Hsi Richard Tsai",
+      "authorURL": "https://www.ma.utexas.edu/users/ytsai/",
+      "affiliation": "Oden Institute for Computational Engineering and Sciences, The University of Texas at Austin",
+      "affiliationURL": "https://www.oden.utexas.edu"
+    }
+  ]
+  }</script>
+</d-front-matter>
+
+<d-title>
+ <div style="grid-column: screen; text-align: center">
+  <h1>Nearest Neighbor Sampling of Point Sets Using Random Rays</h1>
     
+    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Nearest Neighbor Sampling of Point Sets Using Random Rays" src="https://tsairesearch.github.io//assets/images/rays/airplane_ray.png" />
     
+ </div>
+
+
+</d-title>
+
+<d-article>
+
+<p> We propose a new framework for the sampling, compression, and analysis of
+distributions of point sets embedded in Euclidean spaces. A set of randomly
+selected rays are projected onto their closest points in the data set and thus
+form the signature of the data set. From the signature, statistical
+information about the data set, as well as certain geometrical information can
+be extracted, independent of the ray set. We show that the cost of the sampling
+approach is asymptotically independent of the ray sets.  Finally, we present a
+neural network model using the  signature for classification of point
+sets in three dimensions. </p>
+
+<h3> Examples </h3>
+
+
+<div style="grid-column: screen ">
+
+<figure>
+<div style="display: block; width: 100%; text-align: center">
+<iframe width="1296px" height="850px" frameborder="0" allowfullscreen="true" src="https://tsairesearch.github.io/assets/images/rays/grid.png"></iframe>
+</div>
+
+<figcaption>
+<div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+(Row 1) Visualization of a two rays (black) through points sampled from various objects (gray). Closest point pairs are shown in green and red. (Row 2) Plot of distance from points along the ray to the corresponding closest points on the object. (Rows 3-5) The $x$, $y$, and $z$ coordinates of the closest points to the ray.
+</div>
+</figcaption>
+</figure>
+</div>
+
+<div style="grid-column: screen ">
+
+<figure>
+<div style="display: block; width: 100%; text-align: center">
+<iframe width="1000px" height="500px" frameborder="0" allowfullscreen="true" src="https://tsairesearch.github.io/assets/images/rays/airplane_side.png"></iframe>
+</div>
+
+<figcaption>
+<div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+Rays are more likely to sample salient features in the point cloud. Larger points are repeated more often.
+We can control the number of points by increasing the number of rays. Each ray contains 30 sample points.  
+</div>
+</figcaption>
+</figure>
+</div>
+
+
+
+<h3> Experiments </h3>
+
+
+<div style="grid-column: screen; margin-left: auto; margin-right: auto; text-align: center ">
+
+<div style="display: block; margin-right: auto; margin-left: auto; width: 80%; text-align: center">
+<figure>
+<figcaption>
+<div style="display: block; margin-right: auto; margin-left: auto; width: 100%; text-align: center">
+Comparison of our neural network model against PointNet on ModelNet point cloud classification dataset.
+</div>
+</figcaption>
+
+
+<table>
+  <tr>
+    <th class="tg-0pky">Model</th>
+    <th class="tg-0pky">ModelNet10 (2048)</th>
+    <th class="tg-0pky">ModelNet40 (2048)</th>
+    <th class="tg-0pky">ModelNet40 (1024)</th>
+    <th class="tg-0pky">ModelNet40 (4096)</th>
+  </tr>
+  <tr>
+    <td class="tg-0pky">PointNet (paper)</td>
+    <td class="tg-0pky">-</td>
+    <td class="tg-0pky">-</td>
+    <td class="tg-0pky">89.2%</td>
+    <td class="tg-0pky">-</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">PointNet.pytorch</td>
+    <td class="tg-0pky">92.07% (on 256 pts)</td>
+    <td class="tg-0pky">85.3% (on 1024 pts)</td>
+    <td class="tg-0pky">87.52%</td>
+    <td class="tg-0pky">85.4%</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">Ours</td>
+    <td class="tg-0pky">95.04%</td>
+    <td class="tg-0pky">90.03%</td>
+    <td class="tg-0pky">90.6%</td>
+    <td class="tg-0pky">90.44%</td>
+  </tr>
+</table>
+
+</figure>
+</div>
+
+<div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+<figure>
+<figcaption>
+<div style="display: block; margin-right: auto; margin-left: auto; width: 100%; text-align: center">
+Sensitivity of the neural network models to the input size. $m$ is the number of rays, $N^\ast$ is the number of points used, and $N$ is the total number of points in the original point set.
+</div>
+</figcaption>
+
+
+<table>
+  <tr>
+    <th>Our model on ModelNet10 (N=2048)</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>$m/32$</td>
+    <td>100%</td>
+    <td>50%</td>
+    <td>25%</td>
+  </tr>
+  <tr>
+    <td>$N^\ast/N$</td>
+    <td>15.38%</td>
+    <td>8.59%</td>
+    <td>4.59%</td>
+  </tr>
+  <tr>
+    <td>Performance/Accuracy</td>
+    <td>94.60%</td>
+    <td>95.04%</td>
+    <td>94.60%</td>
+  </tr>
+</table>
+
+
+<table>
+  <tr>
+    <th>Our model on ModelNet40 (N=1024)</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>$m/32$</td>
+    <td>100%</td>
+    <td>50%</td>
+    <td>25%</td>
+  </tr>
+  <tr>
+    <td>$N^\ast/N$</td>
+    <td>25.10%</td>
+    <td>14.75%</td>
+    <td>8.17%</td>
+  </tr>
+  <tr>
+    <td>Performance/Accuracy</td>
+    <td>90.56%</td>
+    <td>90.60%</td>
+    <td>89.82%</td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <th>PointNet on ModelNet40 (N=1024)</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>$N^\ast/N$</td>
+    <td>100%</td>
+    <td>50%</td>
+    <td>12.5%</td>
+  </tr>
+  <tr>
+    <td>Performance/Accuracy</td>
+    <td>89.2%</td>
+    <td>86.8%</td>
+    <td>69%</td>
+  </tr>
+</table>
+</figure>
+</div>
 
 </div>
 
-<div style="margin-bottom: 2rem"> </div>
 
-
-
-
-
-
-
-</div>
 </d-article>
 
 
