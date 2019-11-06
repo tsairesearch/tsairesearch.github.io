@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-11-06T10:20:32-06:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Nearest Neighbor Sampling of Point Sets Using Random Rays</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Nearest Neighbor Sampling of Point Sets Using Random Rays" /><published>2019-11-06T00:00:00-06:00</published><updated>2019-11-06T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;d-front-matter&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-11-06T10:46:59-06:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Sampling and Classification of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Classification of Point Clouds" /><published>2019-11-06T00:00:00-06:00</published><updated>2019-11-06T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -32,9 +32,9 @@
 
 &lt;d-title&gt;
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
-  &lt;h1&gt;Nearest Neighbor Sampling of Point Sets Using Random Rays&lt;/h1&gt;
+  &lt;h1&gt;Sampling and Classification of Point Clouds&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Nearest Neighbor Sampling of Point Sets Using Random Rays&quot; src=&quot;https://tsairesearch.github.io//assets/images/rays/airplane_ray.png&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Sampling and Classification of Point Clouds&quot; src=&quot;https://tsairesearch.github.io//assets/images/rays/airplane_ray.png&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -89,7 +89,7 @@ We can control the number of points by increasing the number of rays. Each ray c
 
 
 
-&lt;h3&gt; Experiments &lt;/h3&gt;
+&lt;h3&gt; Classification using Deep Neural Networks &lt;/h3&gt;
 
 
 &lt;div style=&quot;grid-column: screen; margin-left: auto; margin-right: auto; text-align: center &quot;&gt;
@@ -98,7 +98,7 @@ We can control the number of points by increasing the number of rays. Each ray c
 &lt;figure&gt;
 &lt;figcaption&gt;
 &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 100%; text-align: center&quot;&gt;
-Comparison of our neural network model against PointNet on ModelNet point cloud classification dataset.
+Comparison of our deep neural network model against PointNet on ModelNet point cloud classification dataset.
 &lt;/div&gt;
 &lt;/figcaption&gt;
 
@@ -141,7 +141,7 @@ Comparison of our neural network model against PointNet on ModelNet point cloud 
 &lt;figure&gt;
 &lt;figcaption&gt;
 &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 100%; text-align: center&quot;&gt;
-Sensitivity of the neural network models to the input size. $m$ is the number of rays, $N^\ast$ is the number of points used, and $N$ is the total number of points in the original point set.
+Sensitivity of the neural network models to the input size. Here, $m$ is the number of rays, $N^\ast$ is the number of points used, and $N$ is the total number of points in the original point set.
 &lt;/div&gt;
 &lt;/figcaption&gt;
 
