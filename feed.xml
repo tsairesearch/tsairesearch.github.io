@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-11-07T12:51:47-06:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Sampling and Classification of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Classification of Point Clouds" /><published>2019-11-06T00:00:00-06:00</published><updated>2019-11-06T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;d-front-matter&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-11-24T00:25:23-06:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;autonomous-exploration-and-surveillance&quot;&gt;Autonomous Exploration and Surveillance&lt;/h3&gt;
+
+&lt;h3 id=&quot;source-localization&quot;&gt;Source Localization&lt;/h3&gt;
+
+&lt;h3 id=&quot;wave&quot;&gt;Wave&lt;/h3&gt;</content><author><name></name></author><category term="papers" /><summary type="html">Autonomous Exploration and Surveillance</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /></entry><entry><title type="html">Sampling and Classification of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Classification of Point Clouds" /><published>2019-11-06T00:00:00-06:00</published><updated>2019-11-06T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -300,12 +304,36 @@ Sensitivity of the neural network models to the input size. Here, $m$ is the num
   &lt;li&gt;cross-entropy&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;h4 id=&quot;training-issues&quot;&gt;Training issues&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;The problem with Sigmoids: Sigmoid “saturates” by approaching 1, as the input increases. (ReLU just keeps increasing)  When Sigmoid(x) is very close to 1, it’s gradient is very close to 0, and gives little information for gradient descent algorithms.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The dying ReLu problem: ReLU neurons becomes inactive (only outputs zero regardless of inputs. Little theoretical results about this phen
+ omenon).
+    &lt;ul&gt;
+      &lt;li&gt;Remedy type 1: modify the network architecture, and possibly replace the activation function&lt;/li&gt;
+      &lt;li&gt;Remedy type 2: introduce additional training steps – normalization techniques and introducing “dropouts”&lt;/li&gt;
+      &lt;li&gt;Remedy type 3: initialization&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;batch normalization (Cf. Ioffe and Szegedy, 2015): It is a technique that inserts layers into the deep neural network that transform the output for the batch to be zero mean unit variance.&lt;/li&gt;
+  &lt;li&gt;weight initialization: carefully choose random initial weights with suitable variances (Cf: Hanin and Rolnick, How to start training: the effect of initialization and architecture)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h5 id=&quot;initialization-for-training-neural-networks&quot;&gt;Initialization for training neural networks&lt;/h5&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For ReLU networks: Karniadakis proposes randomize asymmetric initialization&lt;/li&gt;
+&lt;/ul&gt;
+
 &lt;h3 id=&quot;dynamical-system&quot;&gt;Dynamical system:&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;stability&lt;/li&gt;
   &lt;li&gt;automatic step size control&lt;/li&gt;
   &lt;li&gt;optimal control of dynamical systems&lt;/li&gt;
   &lt;li&gt;Decoupling algorithms&lt;/li&gt;
+  &lt;li&gt;Impulse method&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;optimal-transport-theory-and-algorithms&quot;&gt;Optimal transport theory and algorithms:&lt;/h3&gt;
@@ -319,6 +347,8 @@ Sensitivity of the neural network models to the input size. Here, $m$ is the num
   &lt;li&gt;Sinkhorn algorithm&lt;/li&gt;
   &lt;li&gt;Information Geometry&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h3 id=&quot;mean-field-games&quot;&gt;Mean field games&lt;/h3&gt;
 
 &lt;h3 id=&quot;some-novel-applications&quot;&gt;Some novel applications:&lt;/h3&gt;
 

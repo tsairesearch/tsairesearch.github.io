@@ -1108,12 +1108,36 @@ distill-header .nav a {
   <li>cross-entropy</li>
 </ul>
 
+<h4 id="training-issues">Training issues</h4>
+<ul>
+  <li>
+    <p>The problem with Sigmoids: Sigmoid “saturates” by approaching 1, as the input increases. (ReLU just keeps increasing)  When Sigmoid(x) is very close to 1, it’s gradient is very close to 0, and gives little information for gradient descent algorithms.</p>
+  </li>
+  <li>The dying ReLu problem: ReLU neurons becomes inactive (only outputs zero regardless of inputs. Little theoretical results about this phen
+ omenon).
+    <ul>
+      <li>Remedy type 1: modify the network architecture, and possibly replace the activation function</li>
+      <li>Remedy type 2: introduce additional training steps – normalization techniques and introducing “dropouts”</li>
+      <li>Remedy type 3: initialization</li>
+    </ul>
+  </li>
+  <li>batch normalization (Cf. Ioffe and Szegedy, 2015): It is a technique that inserts layers into the deep neural network that transform the output for the batch to be zero mean unit variance.</li>
+  <li>weight initialization: carefully choose random initial weights with suitable variances (Cf: Hanin and Rolnick, How to start training: the effect of initialization and architecture)</li>
+</ul>
+
+<h5 id="initialization-for-training-neural-networks">Initialization for training neural networks</h5>
+
+<ul>
+  <li>For ReLU networks: Karniadakis proposes randomize asymmetric initialization</li>
+</ul>
+
 <h3 id="dynamical-system">Dynamical system:</h3>
 <ul>
   <li>stability</li>
   <li>automatic step size control</li>
   <li>optimal control of dynamical systems</li>
   <li>Decoupling algorithms</li>
+  <li>Impulse method</li>
 </ul>
 
 <h3 id="optimal-transport-theory-and-algorithms">Optimal transport theory and algorithms:</h3>
@@ -1127,6 +1151,8 @@ distill-header .nav a {
   <li>Sinkhorn algorithm</li>
   <li>Information Geometry</li>
 </ul>
+
+<h3 id="mean-field-games">Mean field games</h3>
 
 <h3 id="some-novel-applications">Some novel applications:</h3>
 
