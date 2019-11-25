@@ -1046,6 +1046,24 @@ sets in three dimensions. </p>
 
 <figure>
 <div style="display: block; width: 100%; text-align: center">
+<iframe width="800px" height="365px" frameborder="0" allowfullscreen="true" src="https://tsairesearch.github.io/assets/images/rays/voronoi.png"></iframe>
+</div>
+
+<figcaption>
+<div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+Two rays (black)
+sense nearest neighbors of the point set (blue). Singular
+points, such as the tip of the tail, have larger Voronoi cells
+(dashed lines) and are more likely to be sampled. Closest
+point pairs are shown in green and red.
+
+</div>
+</figcaption>
+</figure>
+
+
+<figure>
+<div style="display: block; width: 100%; text-align: center">
 <iframe width="1000px" height="500px" frameborder="0" allowfullscreen="true" src="https://tsairesearch.github.io/assets/images/rays/airplane_side.png"></iframe>
 </div>
 
@@ -1061,6 +1079,40 @@ We can control the number of points by increasing the number of rays. Each ray c
 
 
 <h3> Classification using Deep Neural Networks </h3>
+
+<div style="grid-column: screen ">
+<figure>
+<div style="display: block; width: 100%; text-align: center">
+<iframe width="900px" height="250px" frameborder="0" allowfullscreen="true" src="https://tsairesearch.github.io/assets/images/rays/architecture.png"></iframe>
+</div>
+
+<figcaption>
+<div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+Neural network architecture for point cloud classification based on ray signatures.
+
+</div>
+</figcaption>
+</figure>
+
+<figure>
+<div style="display: block; width: 100%; text-align: center">
+<iframe width="600px" height="320px" frameborder="0" allowfullscreen="true" src="https://tsairesearch.github.io/assets/images/rays/missing_data.png"></iframe>
+</div>
+
+<figcaption>
+<div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+Comparison of our neural network (RayNN) against other prominent methods on ModelNet40 dataset with missing data.
+Our model is robust, even when the data consists of only a few number of points.
+
+</div>
+</figcaption>
+</figure>
+
+
+
+</div>
+
+
 
 
 <div style="grid-column: screen; margin-left: auto; margin-right: auto; text-align: center ">

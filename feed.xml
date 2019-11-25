@@ -1,8 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-11-24T00:25:23-06:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;autonomous-exploration-and-surveillance&quot;&gt;Autonomous Exploration and Surveillance&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-11-25T02:07:10-06:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019.
+&lt;a href=&quot;https://arxiv.org/abs/1809.06025&quot;&gt;[paper]&lt;/a&gt;
+&lt;a href=&quot;http://helper.ipam.ucla.edu/publications/glws3/glws3_15672.pdf&quot;&gt;[slides]&lt;/a&gt;
+&lt;a href=&quot;http://www.ipam.ucla.edu/abstract/?tid=15672&amp;amp;pcode=GLWS3&quot;&gt;[talk]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Strategy synthesis for surveillance-evasion games with learning-enabled visibility optimization. Suda Bharadwaj, Louis Ly, Bo Wu, Yen-Hsi Richard Tai, and Ufuk Topcu. 2019 Conference on Decisions and Control (CDC). IEEE, 2019.
+&lt;a href=&quot;https://arxiv.org/abs/1911.07394&quot;&gt;[paper]&lt;/a&gt;
+&lt;a href=&quot;http://helper.ipam.ucla.edu/publications/glws3/glws3_15672.pdf&quot;&gt;[slides]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;An efficient algorithm for a visibility-based surveillance-evasion game. Ryo Takei, Yen-Hsi Richard Tsai, Zhengyuan Zhou, and Yanina Landa. Communications in Mathematical Sciences 12.7 (2014): 1303-1327.
+&lt;a href=&quot;https://www.intlpress.com/site/pub/pages/journals/items/cms/content/vols/0012/0007/a007/&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A practical path-planning algorithm for a simple car: a Hamilton-Jacobi approach. Ryo Takei, Yen-Hsi Richard Tsai, Haochong Shen, and Yanina Landa. Proceedings of the 2010 American control conference. IEEE, 2010.
+&lt;a href=&quot;ftp://ftp.math.ucla.edu/pub/camreport/cam09-74.pdf&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h3 id=&quot;source-localization&quot;&gt;Source Localization&lt;/h3&gt;
+&lt;h3 id=&quot;point-sets&quot;&gt;Point sets&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Nearest neighbor sampling of point sets using random rays. Liangchen Liu, Louis Ly, Colin Macdonald, and Yen-Hsi Richard Tsai. Preprint 2019
+&lt;a href=&quot;https://arxiv.org&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 
-&lt;h3 id=&quot;wave&quot;&gt;Wave&lt;/h3&gt;</content><author><name></name></author><category term="papers" /><summary type="html">Autonomous Exploration and Surveillance</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /></entry><entry><title type="html">Sampling and Classification of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Classification of Point Clouds" /><published>2019-11-06T00:00:00-06:00</published><updated>2019-11-06T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;d-front-matter&gt;
+&lt;h3 id=&quot;source-localization&quot;&gt;Source localization&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Autonomous source discovery and navigation in complicated environments. Yanina Landa,  Haochong Shen, Ryo Takei, Yen-Hsi Richard Tsai. Preprint 2009.
+&lt;a href=&quot;ftp://ftp.math.ucla.edu/pub/camreport/cam09-73.pdf&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Discovery of point sources in the Helmholtz equation posed in unknown domains with obstacles. Yanina Landa, Nicolay Tanushev, Yen-Hsi Richard Tsai. Communications in Mathematical Sciences 9.3 (2011): 903-928.
+&lt;a href=&quot;https://www.intlpress.com/site/pub/pages/journals/items/cms/content/vols/0009/0003/a011/&quot;&gt;[paper]&lt;/a&gt;
+&lt;a href=&quot;https://www.dropbox.com/s/h3pesvk99rom90r/inverse_source_problem_nonlinear-helmholtz.pdf?dl=0&quot;&gt;[slides]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Point source identification in nonlinear advection–diffusion–reaction systems. Alexander Mamonov and Yen-Hsi Richard Tsai. Inverse Problems 29.3 (2013): 035009.
+&lt;a href=&quot;ftp://ftp.math.ucla.edu/pub/camreport/cam12-15.pdf&quot;&gt;[paper]&lt;/a&gt;
+&lt;a href=&quot;https://www.dropbox.com/s/mnk5a3j3xiozh43/srcid-talk-richard.pdf?dl=0&quot;&gt;[slides]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Heat source identification based onconstrained minimization. Yingying Li, Stanley Osher, and Yen-Hsi Richard Tsai. Inverse Problems and Imaging 8.1 (2014): 199-221.
+&lt;a href=&quot;https://www.researchgate.net/profile/Richard_Tsai3/publication/264998169_Heat_source_identification_based_on_L1_constrained_minimization/links/54cbafab0cf24601c088b3d8/Heat-source-identification-based-on-L1-constrained-minimization.pdf&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;multiscale-coupling-algorithms&quot;&gt;Multiscale coupling algorithms&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A stable parareal-like method for the second order wave equation. Hieu Nguyen and Richard Tsai. Preprint 2019.
+&lt;a href=&quot;https://arxiv.org/abs/1905.00473&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="papers" /><summary type="html">Exploration and surveillance Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019. [paper] [slides] [talk]</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /></entry><entry><title type="html">Sampling and Classification of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Classification of Point Clouds" /><published>2019-11-06T00:00:00-06:00</published><updated>2019-11-06T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -79,6 +131,24 @@ sets in three dimensions. &lt;/p&gt;
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
+&lt;iframe width=&quot;800px&quot; height=&quot;365px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/voronoi.png&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;figcaption&gt;
+&lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+Two rays (black)
+sense nearest neighbors of the point set (blue). Singular
+points, such as the tip of the tail, have larger Voronoi cells
+(dashed lines) and are more likely to be sampled. Closest
+point pairs are shown in green and red.
+
+&lt;/div&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+&lt;figure&gt;
+&lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
 &lt;iframe width=&quot;1000px&quot; height=&quot;500px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/airplane_side.png&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
@@ -94,6 +164,40 @@ We can control the number of points by increasing the number of rays. Each ray c
 
 
 &lt;h3&gt; Classification using Deep Neural Networks &lt;/h3&gt;
+
+&lt;div style=&quot;grid-column: screen &quot;&gt;
+&lt;figure&gt;
+&lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
+&lt;iframe width=&quot;900px&quot; height=&quot;250px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/architecture.png&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;figcaption&gt;
+&lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+Neural network architecture for point cloud classification based on ray signatures.
+
+&lt;/div&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+&lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
+&lt;iframe width=&quot;600px&quot; height=&quot;320px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/missing_data.png&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;figcaption&gt;
+&lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+Comparison of our neural network (RayNN) against other prominent methods on ModelNet40 dataset with missing data.
+Our model is robust, even when the data consists of only a few number of points.
+
+&lt;/div&gt;
+&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+
+
+&lt;/div&gt;
+
+
 
 
 &lt;div style=&quot;grid-column: screen; margin-left: auto; margin-right: auto; text-align: center &quot;&gt;
