@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-11-25T02:07:10-06:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-11-26T10:16:21-06:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019.
@@ -24,7 +24,7 @@
 &lt;h3 id=&quot;point-sets&quot;&gt;Point sets&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;Nearest neighbor sampling of point sets using random rays. Liangchen Liu, Louis Ly, Colin Macdonald, and Yen-Hsi Richard Tsai. Preprint 2019
-&lt;a href=&quot;https://arxiv.org&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
+&lt;a href=&quot;https://arxiv.org/abs/1911.10737&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&quot;source-localization&quot;&gt;Source localization&lt;/h3&gt;
