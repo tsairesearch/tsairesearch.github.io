@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-11-26T10:16:21-06:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.3">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2019-12-09T14:23:13-06:00</updated><id>https://tsairesearch.github.io/</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019.
@@ -52,8 +52,8 @@
 &lt;h3 id=&quot;multiscale-coupling-algorithms&quot;&gt;Multiscale coupling algorithms&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;A stable parareal-like method for the second order wave equation. Hieu Nguyen and Richard Tsai. Preprint 2019.
-&lt;a href=&quot;https://arxiv.org/abs/1905.00473&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;A stable parareal-like method for the second order wave equation. Hieu Nguyen and Richard Tsai. Journal of Computational Physics (2020). Accepted.
+&lt;a href=&quot;https://doi.org/10.1016/j.jcp.2019.109156&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</content><author><name></name></author><category term="papers" /><summary type="html">Exploration and surveillance Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019. [paper] [slides] [talk]</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /></entry><entry><title type="html">Sampling and Classification of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Classification of Point Clouds" /><published>2019-11-06T00:00:00-06:00</published><updated>2019-11-06T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
@@ -520,8 +520,8 @@ Wave propagating through Marmousi velocity profile.
 &lt;h3&gt; Publications &lt;/h3&gt;
 
 &lt;p&gt;
+&lt;li&gt; H. Nguyen, and R. Tsai. &quot;A stable parareal-like method for the second order wave equation.&quot; Journal of Computational Physics (2020). Accepted.&lt;/li&gt;
 &lt;li&gt; G. Ariel, H. Nguyen, and R. Tsai. &quot;\theta-parareal schemes.&quot; arXiv preprint arXiv:1704.06882 (2017). &lt;/li&gt;
-&lt;li&gt; H. Nguyen, and R. Tsai. &quot;A stable parareal-like method for the second order wave equation.&quot; arXiv preprint arXiv:1905.00473 (2019).&lt;/li&gt;
 &lt;/p&gt;
 
 
