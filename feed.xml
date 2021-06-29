@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-06-29T17:44:42-05:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Selected Papers</title><link href="http://localhost:4000/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>http://localhost:4000/papers</id><content type="html" xml:base="http://localhost:4000/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2021-06-29T17:47:48-05:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019.
@@ -60,7 +60,7 @@
 
 &lt;ul&gt;
   &lt;li&gt;ReLU deep neural networks and linear finite elements. Juncai He, Lin Li, Jinchao Xu and Chunyue Zheng. Journal of Computational Mathematics 38(3) (2020): 502-527. &lt;a href=&quot;https://www.global-sci.org/intro/article_detail/jcm/15798.html&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="papers" /><summary type="html">Exploration and surveillance Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019. [paper] [slides] [talk]</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/github_avatar.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/github_avatar.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sampling and Classification of Point Clouds</title><link href="http://localhost:4000/projects/rays" rel="alternate" type="text/html" title="Sampling and Classification of Point Clouds" /><published>2019-11-06T00:00:00-06:00</published><updated>2019-11-06T00:00:00-06:00</updated><id>http://localhost:4000/projects/rays</id><content type="html" xml:base="http://localhost:4000/projects/rays">&lt;d-front-matter&gt;
+&lt;/ul&gt;</content><author><name></name></author><category term="papers" /><summary type="html">Exploration and surveillance Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019. [paper] [slides] [talk]</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sampling and Classification of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Classification of Point Clouds" /><published>2019-11-06T00:00:00-06:00</published><updated>2019-11-06T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -96,7 +96,7 @@
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Sampling and Classification of Point Clouds&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Sampling and Classification of Point Clouds&quot; src=&quot;http://localhost:4000//assets/images/rays/airplane_ray.png&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Sampling and Classification of Point Clouds&quot; src=&quot;https://tsairesearch.github.io//assets/images/rays/airplane_ray.png&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -122,7 +122,7 @@ sets in three dimensions. &lt;/p&gt;
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;1296px&quot; height=&quot;850px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;http://localhost:4000/assets/images/rays/grid.png&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;1296px&quot; height=&quot;850px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/grid.png&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;figcaption&gt;
@@ -137,7 +137,7 @@ sets in three dimensions. &lt;/p&gt;
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;800px&quot; height=&quot;365px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;http://localhost:4000/assets/images/rays/voronoi.png&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;800px&quot; height=&quot;365px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/voronoi.png&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;figcaption&gt;
@@ -155,7 +155,7 @@ point pairs are shown in green and red.
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;1000px&quot; height=&quot;500px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;http://localhost:4000/assets/images/rays/airplane_side.png&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;1000px&quot; height=&quot;500px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/airplane_side.png&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;figcaption&gt;
@@ -174,7 +174,7 @@ We can control the number of points by increasing the number of rays. Each ray c
 &lt;div style=&quot;grid-column: screen &quot;&gt;
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;900px&quot; height=&quot;250px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;http://localhost:4000/assets/images/rays/architecture.png&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;900px&quot; height=&quot;250px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/architecture.png&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;figcaption&gt;
@@ -187,7 +187,7 @@ Neural network architecture for point cloud classification based on ray signatur
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;600px&quot; height=&quot;320px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;http://localhost:4000/assets/images/rays/missing_data.png&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;600px&quot; height=&quot;320px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/missing_data.png&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;figcaption&gt;
@@ -341,7 +341,7 @@ Sensitivity of the neural network models to the input size. Here, $m$ is the num
 &lt;/div&gt;
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/rays/airplane_ray.png" /><media:content medium="image" url="http://localhost:4000/assets/images/rays/airplane_ray.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Mathematics in Deep Learning —Syllabus</title><link href="http://localhost:4000/notes/syllabus" rel="alternate" type="text/html" title="Mathematics in Deep Learning —Syllabus" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>http://localhost:4000/notes/syllabus</id><content type="html" xml:base="http://localhost:4000/notes/syllabus">&lt;p&gt;Welcome to the zoo!&lt;/p&gt;
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Mathematics in Deep Learning —Syllabus</title><link href="https://tsairesearch.github.io/notes/syllabus" rel="alternate" type="text/html" title="Mathematics in Deep Learning —Syllabus" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/notes/syllabus</id><content type="html" xml:base="https://tsairesearch.github.io/notes/syllabus">&lt;p&gt;Welcome to the zoo!&lt;/p&gt;
 
 &lt;p&gt;A tentative list of topics to be covered in this course.&lt;/p&gt;
 
@@ -470,7 +470,7 @@ Sensitivity of the neural network models to the input size. Here, $m$ is the num
 
 &lt;ul&gt;
   &lt;li&gt;wave propagation&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Louis and Richard</name></author><category term="notes" /><summary type="html">Welcome to the zoo!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/github_avatar.jpg" /><media:content medium="image" url="http://localhost:4000/assets/images/github_avatar.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Multiscale coupling algorithms using parareal style structures</title><link href="http://localhost:4000/projects/parareal" rel="alternate" type="text/html" title="Multiscale coupling algorithms using parareal style structures" /><published>2019-10-04T00:00:00-05:00</published><updated>2019-10-04T00:00:00-05:00</updated><id>http://localhost:4000/projects/parareal</id><content type="html" xml:base="http://localhost:4000/projects/parareal">&lt;d-front-matter&gt;
+&lt;/ul&gt;</content><author><name>Louis and Richard</name></author><category term="notes" /><summary type="html">Welcome to the zoo!</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Multiscale coupling algorithms using parareal style structures</title><link href="https://tsairesearch.github.io/projects/parareal" rel="alternate" type="text/html" title="Multiscale coupling algorithms using parareal style structures" /><published>2019-10-04T00:00:00-05:00</published><updated>2019-10-04T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/parareal</id><content type="html" xml:base="https://tsairesearch.github.io/projects/parareal">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -493,7 +493,7 @@ Sensitivity of the neural network models to the input size. Here, $m$ is the num
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Multiscale coupling algorithms using parareal style structures&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Multiscale coupling algorithms using parareal style structures&quot; src=&quot;http://localhost:4000//assets/images/wave/waveinmarmousi.gif&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Multiscale coupling algorithms using parareal style structures&quot; src=&quot;https://tsairesearch.github.io//assets/images/wave/waveinmarmousi.gif&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -511,7 +511,7 @@ Sensitivity of the neural network models to the input size. Here, $m$ is the num
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 90%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;547px&quot; height=&quot;547px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;http://localhost:4000/assets/images/wave/waveinmarmousi.gif&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;547px&quot; height=&quot;547px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/wave/waveinmarmousi.gif&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;figcaption&gt;
@@ -532,7 +532,7 @@ Wave propagating through Marmousi velocity profile.
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/wave/waveinmarmousi.gif" /><media:content medium="image" url="http://localhost:4000/assets/images/wave/waveinmarmousi.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization</title><link href="http://localhost:4000/projects/evasion" rel="alternate" type="text/html" title="Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization" /><published>2019-03-20T00:00:00-05:00</published><updated>2019-03-20T00:00:00-05:00</updated><id>http://localhost:4000/projects/evasion</id><content type="html" xml:base="http://localhost:4000/projects/evasion">&lt;d-front-matter&gt;
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/wave/waveinmarmousi.gif" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/wave/waveinmarmousi.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization</title><link href="https://tsairesearch.github.io/projects/evasion" rel="alternate" type="text/html" title="Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization" /><published>2019-03-20T00:00:00-05:00</published><updated>2019-03-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/evasion</id><content type="html" xml:base="https://tsairesearch.github.io/projects/evasion">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -573,7 +573,7 @@ Wave propagating through Marmousi velocity profile.
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization&quot; src=&quot;http://localhost:4000//assets/images/evasion/patrol.gif&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Strategy Synthesis for Surveillance-Evasion Games with Learning-enabled Visibility Optimization&quot; src=&quot;https://tsairesearch.github.io//assets/images/evasion/patrol.gif&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -635,7 +635,7 @@ On the right video, the agent must also patrol the environment, in addition to t
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/evasion/patrol.gif" /><media:content medium="image" url="http://localhost:4000/assets/images/evasion/patrol.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AI-enabled Exploration and Surveillance</title><link href="http://localhost:4000/projects/autonomous" rel="alternate" type="text/html" title="AI-enabled Exploration and Surveillance" /><published>2018-06-15T00:00:00-05:00</published><updated>2018-06-15T00:00:00-05:00</updated><id>http://localhost:4000/projects/autonomous</id><content type="html" xml:base="http://localhost:4000/projects/autonomous">&lt;d-front-matter&gt;
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/evasion/patrol.gif" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/evasion/patrol.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AI-enabled Exploration and Surveillance</title><link href="https://tsairesearch.github.io/projects/autonomous" rel="alternate" type="text/html" title="AI-enabled Exploration and Surveillance" /><published>2018-06-15T00:00:00-05:00</published><updated>2018-06-15T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/autonomous</id><content type="html" xml:base="https://tsairesearch.github.io/projects/autonomous">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -658,7 +658,7 @@ On the right video, the agent must also patrol the environment, in addition to t
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;AI-enabled Exploration and Surveillance&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;http://localhost:4000//assets/images/autonomous/3d.gif&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io//assets/images/autonomous/3d.gif&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -708,7 +708,7 @@ A 3D simulation of a 250m x 250m environment based on Castle Square Parks in Bos
 
 
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;http://localhost:4000/assets/images/autonomous/sight1.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/sight1.jpg&quot; /&gt;
 &lt;figcaption&gt;
 Surveillance of urban environment using 2 sensors represented by green spheres. Yellow regions are visible from one of the sensors. Red regions are visible from both sensors. For clarity, visualization only includes visibility of regions near ground level. Two sample paths across the courtyard are shown. The cyan path uses the shadows of structure to minimize detection while the magenta path naively crosses through.
 &lt;/figcaption&gt;
@@ -724,7 +724,7 @@ Realistic LiDAR simulations of a virtual Military Operations in Urban Terrain (M
 
 &lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;http://localhost:4000/assets/images/autonomous/mout1_textured.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout1_textured.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A 20m region around a patio area with tree cover from the virtual MOUT site.
 &lt;/figcaption&gt;
@@ -733,7 +733,7 @@ A 20m region around a patio area with tree cover from the virtual MOUT site.
 
 &lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;http://localhost:4000/assets/images/autonomous/mout1_points.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout1_points.jpg&quot; /&gt;
 &lt;figcaption&gt;
 The integrated visibility volume of the patio area generated from 16 vantage points, shown as red circles.
 &lt;/figcaption&gt;
@@ -747,7 +747,7 @@ The integrated visibility volume of the patio area generated from 16 vantage poi
 
 &lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;http://localhost:4000/assets/images/autonomous/mout3_textured.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout3_textured.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A close-up of the patio area with complex geometries such as columns and tree trunks.
 &lt;/figcaption&gt;
@@ -756,7 +756,7 @@ A close-up of the patio area with complex geometries such as columns and tree tr
 
 &lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;http://localhost:4000/assets/images/autonomous/mout3_recon.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout3_recon.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A coarse reconstruction of the patio generated from the visibility volume.
 Despite the low resolution, the topology of the structures are preserved.
@@ -772,7 +772,7 @@ Despite the low resolution, the topology of the structures are preserved.
 
 &lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;http://localhost:4000/assets/images/autonomous/mout2_textured.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout2_textured.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A larger, 50m region around a church with several buildings.
 &lt;/figcaption&gt;
@@ -781,7 +781,7 @@ A larger, 50m region around a church with several buildings.
 
 &lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
 &lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;http://localhost:4000/assets/images/autonomous/mout2_recon.jpg&quot; /&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout2_recon.jpg&quot; /&gt;
 &lt;figcaption&gt;
 A reconstruction of the building surface using 1,896,786 points generated from 11 vantage locations.
 &lt;/figcaption&gt;
@@ -814,7 +814,7 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
 &lt;/p&gt;
 
 &amp;lt;/d-article&amp;gt;
-&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/p&gt;&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/autonomous/3d.gif" /><media:content medium="image" url="http://localhost:4000/assets/images/autonomous/3d.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Point source identification in non-linear advection-diffusion-reaction systems</title><link href="http://localhost:4000/projects/source" rel="alternate" type="text/html" title="Point source identification in non-linear advection-diffusion-reaction systems" /><published>2012-02-14T00:00:00-06:00</published><updated>2012-02-14T00:00:00-06:00</updated><id>http://localhost:4000/projects/source</id><content type="html" xml:base="http://localhost:4000/projects/source">&lt;d-front-matter&gt;
+&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/p&gt;&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/autonomous/3d.gif" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/autonomous/3d.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Point source identification in non-linear advection-diffusion-reaction systems</title><link href="https://tsairesearch.github.io/projects/source" rel="alternate" type="text/html" title="Point source identification in non-linear advection-diffusion-reaction systems" /><published>2012-02-14T00:00:00-06:00</published><updated>2012-02-14T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/source</id><content type="html" xml:base="https://tsairesearch.github.io/projects/source">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -837,7 +837,7 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Point source identification in non-linear advection-diffusion-reaction systems&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Point source identification in non-linear advection-diffusion-reaction systems&quot; src=&quot;http://localhost:4000//assets/images/point/fig7.png&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Point source identification in non-linear advection-diffusion-reaction systems&quot; src=&quot;https://tsairesearch.github.io//assets/images/point/fig7.png&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -856,7 +856,7 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 90%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;547px&quot; height=&quot;547px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;http://localhost:4000//assets/images/point/fig7.png&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;547px&quot; height=&quot;547px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io//assets/images/point/fig7.png&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;figcaption&gt;
@@ -876,7 +876,7 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/point/fig7.png" /><media:content medium="image" url="http://localhost:4000/assets/images/point/fig7.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Heat Source Identification Based on L1 Constrained Minimization</title><link href="http://localhost:4000/projects/heat" rel="alternate" type="text/html" title="Heat Source Identification Based on L1 Constrained Minimization" /><published>2011-01-25T00:00:00-06:00</published><updated>2011-01-25T00:00:00-06:00</updated><id>http://localhost:4000/projects/heat</id><content type="html" xml:base="http://localhost:4000/projects/heat">&lt;d-front-matter&gt;
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/point/fig7.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/point/fig7.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Heat Source Identification Based on L1 Constrained Minimization</title><link href="https://tsairesearch.github.io/projects/heat" rel="alternate" type="text/html" title="Heat Source Identification Based on L1 Constrained Minimization" /><published>2011-01-25T00:00:00-06:00</published><updated>2011-01-25T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/heat</id><content type="html" xml:base="https://tsairesearch.github.io/projects/heat">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -905,7 +905,7 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Heat Source Identification Based on L1 Constrained Minimization&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Heat Source Identification Based on L1 Constrained Minimization&quot; src=&quot;http://localhost:4000//assets/images/heat/heat.png&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Heat Source Identification Based on L1 Constrained Minimization&quot; src=&quot;https://tsairesearch.github.io//assets/images/heat/heat.png&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -934,7 +934,7 @@ measurements in order to improve the reconstruction of the sparse initial data.
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;1050px&quot; height=&quot;827px&quot; frameborder=&quot;0&quot; src=&quot;http://localhost:4000/assets/images/heat/fig6.png&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;1050px&quot; height=&quot;827px&quot; frameborder=&quot;0&quot; src=&quot;https://tsairesearch.github.io/assets/images/heat/fig6.png&quot;&gt;&lt;/iframe&gt;
 
 &lt;figcaption&gt;
 Recovery of the heat source $u_0$ from 60 randomly selected measurements with 1% noise on a $32 \times 32$ grid.
@@ -947,7 +947,7 @@ Recovery of the heat source $u_0$ from 60 randomly selected measurements with 1%
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;839px&quot; height=&quot;844px&quot; frameborder=&quot;0&quot; src=&quot;http://localhost:4000/assets/images/heat/fig7.png&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;839px&quot; height=&quot;844px&quot; frameborder=&quot;0&quot; src=&quot;https://tsairesearch.github.io/assets/images/heat/fig7.png&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 
 &lt;figcaption&gt;
@@ -964,7 +964,7 @@ recovered source.
 
 &lt;figure&gt;
 &lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;904px&quot; height=&quot;850px&quot; frameborder=&quot;0&quot; src=&quot;http://localhost:4000/assets/images/heat/fig10.png&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;904px&quot; height=&quot;850px&quot; frameborder=&quot;0&quot; src=&quot;https://tsairesearch.github.io/assets/images/heat/fig10.png&quot;&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;figcaption&gt;
 &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
@@ -997,4 +997,4 @@ shown as red stars.
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/heat/heat.png" /><media:content medium="image" url="http://localhost:4000/assets/images/heat/heat.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/heat/heat.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/heat/heat.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
