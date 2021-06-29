@@ -755,7 +755,7 @@ distill-header .nav a {
 
   </p>
 
-  <p style="margin-top: 0"> Designed by Louis Ly © 2020 </p>
+  <p style="margin-top: 0"> Designed by Louis Ly © 2021 </p>
 
 
 
@@ -927,22 +927,24 @@ distill-header .nav a {
     <meta name=description content="">
     <meta name=author content="The Scientific AI Research Group">
 
-    <!-- Begin Jekyll SEO tag v2.4.0 -->
+    <!-- Begin Jekyll SEO tag v2.7.1 -->
 <title>README | The Scientific AI Research Group</title>
-<meta name="generator" content="Jekyll v3.7.3" />
+<meta name="generator" content="Jekyll v3.9.0" />
 <meta property="og:title" content="README" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://tsairesearch.github.io/README/" />
-<meta property="og:url" content="https://tsairesearch.github.io/README/" />
+<link rel="canonical" href="http://localhost:4000/README/" />
+<meta property="og:url" content="http://localhost:4000/README/" />
 <meta property="og:site_name" content="The Scientific AI Research Group" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="README" />
 <script type="application/ld+json">
-{"@type":"WebPage","headline":"README","url":"https://tsairesearch.github.io/README/","@context":"http://schema.org"}</script>
+{"headline":"README","url":"http://localhost:4000/README/","@type":"WebPage","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     
-    <link rel="icon" href="https://tsairesearch.github.io/assets/images/favicon/favicon.ico" />
-    <link rel="canonical" href="https://tsairesearch.github.io/README/">
-    <link rel="alternate" type="application/rss+xml" title="" href="https://tsairesearch.github.io/feed.xml" />
+    <link rel="icon" href="http://localhost:4000/assets/images/favicon/favicon.ico" />
+    <link rel="canonical" href="http://localhost:4000/README/">
+    <link rel="alternate" type="application/rss+xml" title="" href="http://localhost:4000/feed.xml" />
 
 
 
@@ -1021,11 +1023,43 @@ distill-header .nav a {
   <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
 
+<h2 id="setup">Setup</h2>
+
+<p>Please install bundler, ruby, and jekyll. See https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#prerequisites</p>
+
+<p>Please note that the repo longlouisly/tsairesearch.github.io contains the source code for the website.
+While tsairesearch/tsairesearch.github.io repo contains the public facing html files.
+You will make your edits in source code, “build” the website, and then upload the files in _site to the public repo.
+That is:</p>
+
+<ul>
+  <li>Clone this repo</li>
+  <li>Create a directory called _site</li>
+  <li>Clone tsairesearch/tsairesearch.github.io in _site</li>
+  <li>Make edits</li>
+  <li>Commit your source code changes to longlouisly repo.</li>
+  <li>Commit your public facing changes to tsairesearch repo.</li>
+</ul>
+
+<h2 id="to-make-edits-to-the-public-page">To make edits to the public page</h2>
+<ul>
+  <li>You will likely make your changes in the _posts directory.</li>
+  <li>To start, you can edit an existing file. You can also create a new file, following the same structure as existing file.</li>
+  <li>Then execute the serve.sh script (bundle exec jekyll serve).</li>
+  <li>From here, the website can be previewed locally at localhost:4000.</li>
+  <li>
+    <p>Note that some changes take a while to appear due to your local cache.</p>
+  </li>
+  <li>Once you are satisfied, edit the serve.sh script by commenting the “jekyll serve” line and uncommenting “bundle exec jekyll build”.</li>
+  <li>The “build” command will populate changes to the _site directory.</li>
+  <li>Then commit all the changes in _site to the public directory. The changes should update the website https://tsairesearch.github.io/ within a few minutes.</li>
+</ul>
+
 <h2 id="jekyll-from-scratch">Jekyll from Scratch</h2>
 
 <p>To create a barebones jekyll project:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new scratch --blank
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new scratch --blank
 cd scratch
 echo "source 'http://rubygems.org'
 gem 'github-pages'" &gt; Gemfile
@@ -1036,6 +1070,7 @@ bundle exec jekyll serve
 <p>From here, the website can be previewed locally at localhost:4000.</p>
 
 <h3 id="jekyll-structure">Jekyll Structure</h3>
+<p>One can google for more info about jekyll. These are notes for my reference.</p>
 
 <ul>
   <li>index.html is the landing page</li>
@@ -1053,8 +1088,8 @@ bundle exec jekyll serve
   <li>_drafts has pages that are published during local build using: jekyll serve –draft</li>
   <li>MathJax can be included by adding this to the page:
     <ul>
-      <li><code class="highlighter-rouge">&lt;script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;&lt;/script&gt;</code></li>
-      <li>Then use $ to write latex like so: <script type="math/tex">e^{\pi i} +1=0</script></li>
+      <li><code class="language-plaintext highlighter-rouge">&lt;script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"&gt;&lt;/script&gt;</code></li>
+      <li>Then use $ to write latex like so: \(e^{\pi i} +1=0\)</li>
     </ul>
   </li>
   <li>Jekyll is powerful through its use of layouts and includes to generate pages. Jekyll uses permalinks to set urls, what happens at each url is defined by the corresponding page with whatever layout and includes it uses, and variables from site and post.</li>
