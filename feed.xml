@@ -1,4 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2021-06-30T10:24:28-05:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2021-06-30T18:10:47-05:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Deep learning and the Low Dimensional Manifold Hypothesis</title><link href="https://tsairesearch.github.io/projects/lowdim" rel="alternate" type="text/html" title="Deep learning and the Low Dimensional Manifold Hypothesis" /><published>2021-06-30T00:00:00-05:00</published><updated>2021-06-30T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/lowdim</id><content type="html" xml:base="https://tsairesearch.github.io/projects/lowdim">&lt;d-title&gt;
+ &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
+  &lt;h1&gt;Deep learning and the Low Dimensional Manifold Hypothesis&lt;/h1&gt;
+    
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Deep learning and the Low Dimensional Manifold Hypothesis&quot; src=&quot;https://tsairesearch.github.io//assets/images/lowdim/streamplot1.png&quot; /&gt;
+    
+ &lt;/div&gt;
+
+
+&lt;/d-title&gt;
+
+&lt;d-article&gt;
+
+&lt;p&gt; We study how the low dimensional manifold hypothesis of data will interact with deep learning models. &lt;/p&gt;
+
+
+
+
+
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html">Deep learning and the Low Dimensional Manifold Hypothesis</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot1.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot1.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019.
