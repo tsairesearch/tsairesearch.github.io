@@ -928,24 +928,28 @@ distill-header .nav a {
     <meta name=author content="The Scientific AI Research Group">
 
     <!-- Begin Jekyll SEO tag v2.7.1 -->
-<title>Visibility | The Scientific AI Research Group</title>
+<title>Numerical Wave Propagation Aided by Deep Learning | The Scientific AI Research Group</title>
 <meta name="generator" content="Jekyll v3.9.0" />
-<meta property="og:title" content="Visibility" />
+<meta property="og:title" content="Numerical Wave Propagation Aided by Deep Learning" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://tsairesearch.github.io/notes/visibility" />
-<meta property="og:url" content="https://tsairesearch.github.io/notes/visibility" />
+<meta name="description" content="We propose a deep learning approach for wave propagation in media with multiscale wave speed, using a second-order linear wave equation model." />
+<meta property="og:description" content="We propose a deep learning approach for wave propagation in media with multiscale wave speed, using a second-order linear wave equation model." />
+<link rel="canonical" href="https://tsairesearch.github.io/projects/wavelnn" />
+<meta property="og:url" content="https://tsairesearch.github.io/projects/wavelnn" />
 <meta property="og:site_name" content="The Scientific AI Research Group" />
+<meta property="og:image" content="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2021-08-17T11:27:18-05:00" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Visibility" />
+<meta property="article:published_time" content="2021-08-16T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" />
+<meta property="twitter:title" content="Numerical Wave Propagation Aided by Deep Learning" />
 <script type="application/ld+json">
-{"headline":"Visibility","dateModified":"2021-08-17T11:27:18-05:00","datePublished":"2021-08-17T11:27:18-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/notes/visibility"},"url":"https://tsairesearch.github.io/notes/visibility","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"Numerical Wave Propagation Aided by Deep Learning","dateModified":"2021-08-16T00:00:00-05:00","datePublished":"2021-08-16T00:00:00-05:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/projects/wavelnn"},"description":"We propose a deep learning approach for wave propagation in media with multiscale wave speed, using a second-order linear wave equation model.","url":"https://tsairesearch.github.io/projects/wavelnn","@type":"BlogPosting","image":"https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     
     <link rel="icon" href="https://tsairesearch.github.io/assets/images/favicon/favicon.ico" />
-    <link rel="canonical" href="https://tsairesearch.github.io/notes/visibility">
+    <link rel="canonical" href="https://tsairesearch.github.io/projects/wavelnn">
     <link rel="alternate" type="application/rss+xml" title="" href="https://tsairesearch.github.io/feed.xml" />
 
 
@@ -960,56 +964,76 @@ distill-header .nav a {
     <distill-header> </distill-header>  <!-- This gets called to generate it, but it is defined in style.html -->
 
     
-
-    <d-article>
-
-<div style="grid-column: middle; margin-top: 0">
-<h1 style="text-align: center; border-bottom: none"> Notes </h1>
-
-<style>
-
-.tags {
-    border-bottom: none;
-    border-radius: 3px;
-    padding: 0px 3px;
-    margin: 5px 1px;
-    background: #ededed;
-}
-.tags:hover {
-    color: #28f;
-    border-bottom: none;
-}
-
-</style>
-
- <div style="grid-column: middle; text-align: center">
-
-Filter by topic: &nbsp;
-
-            
-                <a class="tags" href="https://tsairesearch.github.io/notes">all</a>
-            
-
-    
-    
-        
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
+    <d-front-matter>
 
+  <script type="text/json">{
+  "authors": [
+    {
+      "author": "Hieu Nguyen",
+      "authorURL": "https://dmi.unibas.ch/de/personen/hieu-huu-nguyen/",
+      "affiliation": "Department of Mathematics and Computer Science, University of Basel",
+      "affiliationURL": "https://dmi.unibas.ch/en/"
+    },
+    {
+      "author": "Yen-Hsi Richard Tsai",
+      "authorURL": "https://www.ma.utexas.edu/users/ytsai/",
+      "affiliation": "Department of Mathematics and Oden Institute for Computational Engineering and Sciences, University of Texas at Austin",
+      "affiliationURL": "https://www.oden.utexas.edu"
+    }
+  ]
+  }</script>
+
+</d-front-matter>
+
+<d-title>
+ <div style="grid-column: screen; text-align: center">
+  <h1>Numerical Wave Propagation Aided by Deep Learning</h1>
     
+    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Numerical Wave Propagation Aided by Deep Learning" src="https://tsairesearch.github.io//assets/images/wavelnn/testvelmodels.png" />
     
+ </div>
+
+
+</d-title>
+
+<d-article>
+
+<p> We propose a deep learning approach for wave propagation in media with multiscale wave speed, using a second-order linear wave equation model. We use neural networks to enhance the accuracy of a given inaccurate coarse solver, which under-resolves a class of multiscale wave media and wave fields of in- terest. Our approach involves generating training data by the given computa- tionally efficient coarse solver and another sufficiently accurate solver, applied to a class of wave media (described by their wave speed profiles) and initial wave fields. We find that the trained neural networks can approximate the nonlinear dependence of the propagation on the wave speed as long as the causality is appropriately sampled in training data. We combine the neural- network-enhanced coarse solver with the parareal algorithm and demonstrate that the coupled approach improves the stability of parareal algorithms for wave propagation and improves the accuracy of the enhanced coarse solvers. </p>
+
+
+<h3> Simulation </h3>
+
+
+<div style="column-grid: middle ">
+<figure>
+<div style="display: block; width: 90%; text-align: center">
+<iframe width="881px" height="703px" frameborder="0" allowfullscreen="true" src="https://tsairesearch.github.io//assets/images/wavelnn/testvelmodels.png"></iframe>
+</div>
+
+<figcaption>
+
+</figcaption>
+
+</figure>
 
 </div>
 
-<div style="margin-bottom: 2rem"> </div>
+
+<h3> Publications </h3>
+
+<p>
+<li> H. Nguyen and R. Tsai. Numerical Wave Propagation Aided by Deep Learning. ArXiv:2107.13184, 2021  </li>
+</p>
 
 
-
-
-
-
-
-</div>
 </d-article>
 
 

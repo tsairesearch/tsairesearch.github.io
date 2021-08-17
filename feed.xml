@@ -1,8 +1,70 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2021-06-30T20:44:52-05:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Deep learning and the Low Dimensional Manifold Hypothesis</title><link href="https://tsairesearch.github.io/projects/lowdim" rel="alternate" type="text/html" title="Deep learning and the Low Dimensional Manifold Hypothesis" /><published>2021-06-30T00:00:00-05:00</published><updated>2021-06-30T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/lowdim</id><content type="html" xml:base="https://tsairesearch.github.io/projects/lowdim">&lt;d-title&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2021-08-17T11:27:18-05:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Numerical Wave Propagation Aided by Deep Learning</title><link href="https://tsairesearch.github.io/projects/wavelnn" rel="alternate" type="text/html" title="Numerical Wave Propagation Aided by Deep Learning" /><published>2021-08-16T00:00:00-05:00</published><updated>2021-08-16T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/wavelnn</id><content type="html" xml:base="https://tsairesearch.github.io/projects/wavelnn">&lt;d-front-matter&gt;
+
+  &lt;script type=&quot;text/json&quot;&gt;{
+  &quot;authors&quot;: [
+    {
+      &quot;author&quot;: &quot;Hieu Nguyen&quot;,
+      &quot;authorURL&quot;: &quot;https://dmi.unibas.ch/de/personen/hieu-huu-nguyen/&quot;,
+      &quot;affiliation&quot;: &quot;Department of Mathematics and Computer Science, University of Basel&quot;,
+      &quot;affiliationURL&quot;: &quot;https://dmi.unibas.ch/en/&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
+      &quot;affiliation&quot;: &quot;Department of Mathematics and Oden Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    }
+  ]
+  }&lt;/script&gt;
+
+&lt;/d-front-matter&gt;
+
+&lt;d-title&gt;
+ &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
+  &lt;h1&gt;Numerical Wave Propagation Aided by Deep Learning&lt;/h1&gt;
+    
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Numerical Wave Propagation Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io//assets/images/wavelnn/testvelmodels.png&quot; /&gt;
+    
+ &lt;/div&gt;
+
+
+&lt;/d-title&gt;
+
+&lt;d-article&gt;
+
+&lt;p&gt; We propose a deep learning approach for wave propagation in media with multiscale wave speed, using a second-order linear wave equation model. We use neural networks to enhance the accuracy of a given inaccurate coarse solver, which under-resolves a class of multiscale wave media and wave fields of in- terest. Our approach involves generating training data by the given computa- tionally efficient coarse solver and another sufficiently accurate solver, applied to a class of wave media (described by their wave speed profiles) and initial wave fields. We find that the trained neural networks can approximate the nonlinear dependence of the propagation on the wave speed as long as the causality is appropriately sampled in training data. We combine the neural- network-enhanced coarse solver with the parareal algorithm and demonstrate that the coupled approach improves the stability of parareal algorithms for wave propagation and improves the accuracy of the enhanced coarse solvers. &lt;/p&gt;
+
+
+&lt;h3&gt; Simulation &lt;/h3&gt;
+
+
+&lt;div style=&quot;column-grid: middle &quot;&gt;
+&lt;figure&gt;
+&lt;div style=&quot;display: block; width: 90%; text-align: center&quot;&gt;
+&lt;iframe width=&quot;881px&quot; height=&quot;703px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io//assets/images/wavelnn/testvelmodels.png&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+&lt;figcaption&gt;
+
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt; Publications &lt;/h3&gt;
+
+&lt;p&gt;
+&lt;li&gt; H. Nguyen and R. Tsai. Numerical Wave Propagation Aided by Deep Learning. ArXiv:2107.13184, 2021  &lt;/li&gt;
+&lt;/p&gt;
+
+
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Deep learning and the Low Dimensional Manifold Hypothesis</title><link href="https://tsairesearch.github.io/projects/lowdim" rel="alternate" type="text/html" title="Deep learning and the Low Dimensional Manifold Hypothesis" /><published>2021-06-30T00:00:00-05:00</published><updated>2021-06-30T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/lowdim</id><content type="html" xml:base="https://tsairesearch.github.io/projects/lowdim">&lt;d-title&gt;
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Deep learning and the Low Dimensional Manifold Hypothesis&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Deep learning and the Low Dimensional Manifold Hypothesis&quot; src=&quot;https://tsairesearch.github.io//assets/images/lowdim/streamplot1.png&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Deep learning and the Low Dimensional Manifold Hypothesis&quot; src=&quot;https://tsairesearch.github.io//assets/images/lowdim/streamplot_sigma.png&quot; /&gt;
     
  &lt;/div&gt;
 
@@ -17,7 +79,7 @@
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html">Deep learning and the Low Dimensional Manifold Hypothesis</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot1.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot1.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html">Deep learning and the Low Dimensional Manifold Hypothesis</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019.
