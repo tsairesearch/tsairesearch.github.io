@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2022-03-21T12:14:54-05:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Previous Photos</title><link href="https://tsairesearch.github.io/photos" rel="alternate" type="text/html" title="Previous Photos" /><published>2021-09-27T00:00:00-05:00</published><updated>2021-09-27T00:00:00-05:00</updated><id>https://tsairesearch.github.io/photos</id><content type="html" xml:base="https://tsairesearch.github.io/photos">&lt;figure&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.0">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2022-03-21T12:30:04-05:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Previous Photos</title><link href="https://tsairesearch.github.io/photos" rel="alternate" type="text/html" title="Previous Photos" /><published>2021-09-27T00:00:00-05:00</published><updated>2021-09-27T00:00:00-05:00</updated><id>https://tsairesearch.github.io/photos</id><content type="html" xml:base="https://tsairesearch.github.io/photos">&lt;figure&gt;
 &lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Previous Photos&quot; src=&quot;https://tsairesearch.github.io/assets/images/profile.jpg&quot; /&gt;
 &lt;/figure&gt;</content><author><name></name></author><category term="photos" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Numerical Wave Propagation Aided by Deep Learning</title><link href="https://tsairesearch.github.io/projects/wavelnn" rel="alternate" type="text/html" title="Numerical Wave Propagation Aided by Deep Learning" /><published>2021-08-16T00:00:00-05:00</published><updated>2021-08-16T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/wavelnn</id><content type="html" xml:base="https://tsairesearch.github.io/projects/wavelnn">&lt;d-front-matter&gt;
 
@@ -67,7 +67,33 @@
 &lt;/p&gt;
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Deep learning and the Low Dimensional Manifold Hypothesis</title><link href="https://tsairesearch.github.io/projects/lowdim" rel="alternate" type="text/html" title="Deep learning and the Low Dimensional Manifold Hypothesis" /><published>2021-06-30T00:00:00-05:00</published><updated>2021-06-30T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/lowdim</id><content type="html" xml:base="https://tsairesearch.github.io/projects/lowdim">&lt;d-title&gt;
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Deep learning and the Low Dimensional Manifold Hypothesis</title><link href="https://tsairesearch.github.io/projects/lowdim" rel="alternate" type="text/html" title="Deep learning and the Low Dimensional Manifold Hypothesis" /><published>2021-06-30T00:00:00-05:00</published><updated>2021-06-30T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/lowdim</id><content type="html" xml:base="https://tsairesearch.github.io/projects/lowdim">&lt;d-front-matter&gt;
+
+  &lt;script type=&quot;text/json&quot;&gt;{
+  &quot;authors&quot;: [
+    {
+      &quot;author&quot;: &quot;Juncai He&quot;,
+      &quot;authorURL&quot;: &quot;https://juncaihe.github.io/&quot;,
+      &quot;affiliation&quot;: &quot;Department of Mathematics, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.ma.utexas.edu/&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
+      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Rachel Ward&quot;,
+      &quot;authorURL&quot;: &quot;https://sites.google.com/prod/view/rward&quot;,
+      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
+    }
+  ]
+  }&lt;/script&gt;
+&lt;/d-front-matter&gt;
+
+&lt;d-title&gt;
 
 &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
   &lt;h1&gt;Deep learning and the Low Dimensional Manifold Hypothesis&lt;/h1&gt;
@@ -77,15 +103,15 @@
  &lt;/div&gt;
 &lt;/d-title&gt;
 
-&lt;div&gt;
-The low dimensional manifold hypothesis posits that the data found in many applications, such as those involving natural images, lie (approximately) on low dimensional manifolds embedded in a high dimensional Euclidean space.
-In this setting, a typical neural network defines a function that takes a finite number of vectors in the embedding space as input. 
-However, one often needs to consider evaluating the optimized network at points outside the training distribution.
-This project considers the case in which the training data is dis- tributed in a linear subspace of Rd. We derive estimates on the variation of the learning function, defined by a neural network, in the direction transversal to the subspace. We study the potential regularization effects associated with the network’s depth and noise in the codimension of the data manifold. We also present additional side effects in training due to the presence of noise.
-&lt;/div&gt;
+&lt;d-article&gt;
 
+&lt;p&gt;
+The low dimensional manifold hypothesis posits that the data found in many applications, such as those involving natural images, lie (approximately) on low dimensional manifolds embedded in a high dimensional Euclidean space. In this setting, a typical neural network defines a function that takes a finite number of vectors in the embedding space as input. 
+However, one often needs to consider evaluating the optimized network at points outside the training distribution. This project considers the case in which the training data is dis- tributed in a linear subspace of Rd. We derive estimates on the variation of the learning function, defined by a neural network, in the direction transversal to the subspace. We study the potential regularization effects associated with the network’s depth and noise in the codimension of the data manifold. We also present additional side effects in training due to the presence of noise.
+&lt;/p&gt;
 &lt;h3&gt; Main results &lt;/h3&gt;
 
+&lt;p&gt;
 &lt;ol&gt;
   &lt;li&gt;If the data points, including noise, lie on $M$, the linear network’s depth may
 provide certain regularization or side effects. For ReLU neural networks, we prove that $\frac{\partial f}{\partial n_M}$ is sensitive to the initialization of a set of “untrainable” parameters.&lt;/li&gt;
@@ -98,12 +124,13 @@ then:
 &lt;/li&gt;
   &lt;li&gt;The stability-accuracy trade-off. The role of noise can be interpreted as a stabilizer for a model when evaluated on points outside of the (clean) data distribution. However, adding noise to the data set will impact of the accuracy of the network's generalization error (for evaluation within the data distribution). For nonlinear data manifolds, uniform noise may render the labeled data incompatible.&lt;/li&gt;
 &lt;/ol&gt;
-
+&lt;/p&gt;
 &lt;h3&gt; Publications &lt;/h3&gt;
 
 &lt;p&gt;
 &lt;li&gt; J. He, R. Tsai and R. Ward. &quot;Side-effects of Learning from Low Dimensional Data Embedded in an Euclidean Space&quot;. ArXiv: 2203.00614, 2022. &lt;/li&gt;
-&lt;/p&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
+&lt;/p&gt;
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019.
@@ -938,7 +965,6 @@ A reconstruction of the building surface using 1,896,786 points generated from 1
 &lt;h3&gt; Acknowledgements &lt;/h3&gt;
 &lt;p&gt;This work is supported by ARO MURI W911NF-07-1-0185 and W911NF-12-1-0519 grants.
 &lt;/p&gt;
-
 &amp;lt;/d-article&amp;gt;
 &lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/p&gt;&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/autonomous/3d.gif" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/autonomous/3d.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Point source identification in non-linear advection-diffusion-reaction systems</title><link href="https://tsairesearch.github.io/projects/source" rel="alternate" type="text/html" title="Point source identification in non-linear advection-diffusion-reaction systems" /><published>2012-02-14T00:00:00-06:00</published><updated>2012-02-14T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/source</id><content type="html" xml:base="https://tsairesearch.github.io/projects/source">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{

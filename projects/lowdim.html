@@ -972,7 +972,33 @@ distill-header .nav a {
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
-    <d-title>
+    <d-front-matter>
+
+  <script type="text/json">{
+  "authors": [
+    {
+      "author": "Juncai He",
+      "authorURL": "https://juncaihe.github.io/",
+      "affiliation": "Department of Mathematics, University of Texas at Austin",
+      "affiliationURL": "https://www.ma.utexas.edu/"
+    },
+    {
+      "author": "Yen-Hsi Richard Tsai",
+      "authorURL": "https://www.ma.utexas.edu/users/ytsai/",
+      "affiliation": "Institute for Computational Engineering and Sciences, University of Texas at Austin",
+      "affiliationURL": "https://www.ices.utexas.edu"
+    },
+    {
+      "author": "Rachel Ward",
+      "authorURL": "https://sites.google.com/prod/view/rward",
+      "affiliation": "Institute for Computational Engineering and Sciences, University of Texas at Austin",
+      "affiliationURL": "https://www.ices.utexas.edu"
+    }
+  ]
+  }</script>
+</d-front-matter>
+
+<d-title>
 
 <div style="grid-column: screen; text-align: center">
   <h1>Deep learning and the Low Dimensional Manifold Hypothesis</h1>
@@ -982,15 +1008,15 @@ distill-header .nav a {
  </div>
 </d-title>
 
-<div>
-The low dimensional manifold hypothesis posits that the data found in many applications, such as those involving natural images, lie (approximately) on low dimensional manifolds embedded in a high dimensional Euclidean space.
-In this setting, a typical neural network defines a function that takes a finite number of vectors in the embedding space as input. 
-However, one often needs to consider evaluating the optimized network at points outside the training distribution.
-This project considers the case in which the training data is dis- tributed in a linear subspace of Rd. We derive estimates on the variation of the learning function, defined by a neural network, in the direction transversal to the subspace. We study the potential regularization effects associated with the network’s depth and noise in the codimension of the data manifold. We also present additional side effects in training due to the presence of noise.
-</div>
+<d-article>
 
+<p>
+The low dimensional manifold hypothesis posits that the data found in many applications, such as those involving natural images, lie (approximately) on low dimensional manifolds embedded in a high dimensional Euclidean space. In this setting, a typical neural network defines a function that takes a finite number of vectors in the embedding space as input. 
+However, one often needs to consider evaluating the optimized network at points outside the training distribution. This project considers the case in which the training data is dis- tributed in a linear subspace of Rd. We derive estimates on the variation of the learning function, defined by a neural network, in the direction transversal to the subspace. We study the potential regularization effects associated with the network’s depth and noise in the codimension of the data manifold. We also present additional side effects in training due to the presence of noise.
+</p>
 <h3> Main results </h3>
 
+<p>
 <ol>
   <li>If the data points, including noise, lie on $M$, the linear network’s depth may
 provide certain regularization or side effects. For ReLU neural networks, we prove that $\frac{\partial f}{\partial n_M}$ is sensitive to the initialization of a set of “untrainable” parameters.</li>
@@ -1003,12 +1029,13 @@ then:
 </li>
   <li>The stability-accuracy trade-off. The role of noise can be interpreted as a stabilizer for a model when evaluated on points outside of the (clean) data distribution. However, adding noise to the data set will impact of the accuracy of the network's generalization error (for evaluation within the data distribution). For nonlinear data manifolds, uniform noise may render the labeled data incompatible.</li>
 </ol>
-
+</p>
 <h3> Publications </h3>
 
 <p>
 <li> J. He, R. Tsai and R. Ward. "Side-effects of Learning from Low Dimensional Data Embedded in an Euclidean Space". ArXiv: 2203.00614, 2022. </li>
 </p>
+</d-article>
 
 
     
