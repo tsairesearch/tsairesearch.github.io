@@ -755,7 +755,7 @@ distill-header .nav a {
 
   </p>
 
-  <p style="margin-top: 0"> Designed by Louis Ly © 2022 </p>
+  <p style="margin-top: 0"> Designed by Louis Ly © 2023 </p>
 
 
 
@@ -927,18 +927,19 @@ distill-header .nav a {
     <meta name=description content="">
     <meta name=author content="The Scientific AI Research Group">
 
-    <!-- Begin Jekyll SEO tag v2.7.1 -->
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
 <title>README | The Scientific AI Research Group</title>
-<meta name="generator" content="Jekyll v3.9.0" />
+<meta name="generator" content="Jekyll v3.9.2" />
 <meta property="og:title" content="README" />
 <meta property="og:locale" content="en_US" />
 <link rel="canonical" href="https://tsairesearch.github.io/README/" />
 <meta property="og:url" content="https://tsairesearch.github.io/README/" />
 <meta property="og:site_name" content="The Scientific AI Research Group" />
+<meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="README" />
 <script type="application/ld+json">
-{"headline":"README","url":"https://tsairesearch.github.io/README/","@type":"WebPage","@context":"https://schema.org"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"README","url":"https://tsairesearch.github.io/README/"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -1027,7 +1028,38 @@ distill-header .nav a {
 
 <p>Please install bundler, ruby, and jekyll. See https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#prerequisites</p>
 
-<p>Please note that the repo longlouisly/tsairesearch.github.io contains the source code for the website.
+<p>And this guide: https://jekyllrb.com/docs/installation/macos/</p>
+
+<hr />
+
+<p>Some plugins that required:  jekyll-seo-tag, jekyll-gist, jekyll-assets, jekyll-feed, jemoji, jekyll-feed. 
+Make sure they are in the plugin section under <code class="language-plaintext highlighter-rouge">_config.yml</code></p>
+
+<p>The following gems need to be installed, and make sure the following matches with the <code class="language-plaintext highlighter-rouge">Gemfile</code>:</p>
+
+<p>gem ‘nokogiri’
+gem ‘rack’, ‘~&gt; 2.0.9’
+gem ‘rspec’
+gem “sprockets”, “~&gt; 3.7”
+gem “jekyll”, “~&gt; 3.9.2”
+gem ‘jekyll-seo-tag’
+gem ‘jekyll-gist’
+gem ‘jekyll-assets’, ‘~&gt; 3.0’, ‘&gt;= 3.0.12’
+gem ‘jekyll-feed’
+gem ‘jemoji’
+gem “kramdown-parser-gfm”</p>
+
+<p>You might need to resolve the versions of the plugin and jekyll being used. The current working version is</p>
+
+<ul>
+  <li>Jekyll 3.9.2</li>
+  <li>Ruby <strong>2.7.6</strong> (this is important for the sprockets to work, or any 2.7.x)</li>
+  <li>sprockets 3.7 (one of the place uses the old version of sprockets writing so it has to stay the old version)</li>
+</ul>
+
+<hr />
+
+<p>Please note that the repo lclewis/tsairesearch.github.io contains the source code for the website.
 While tsairesearch/tsairesearch.github.io repo contains the public facing html files.
 You will make your edits in source code, “build” the website, and then upload the files in _site to the public repo.
 That is:</p>
@@ -1052,7 +1084,7 @@ That is:</p>
   </li>
   <li>Once you are satisfied, edit the serve.sh script by commenting the “jekyll serve” line and uncommenting “bundle exec jekyll build”.</li>
   <li>The “build” command will populate changes to the _site directory.</li>
-  <li>Then commit all the changes in _site to the public directory. The changes should update the website https://tsairesearch.github.io/ within a few minutes.</li>
+  <li>Then commit all the changes in _site to the<img src="./static/media/icon.06a6aa23.png" alt="img" /> public directory. The changes should update the website https://tsairesearch.github.io/ within a few minutes.</li>
 </ul>
 
 <h2 id="jekyll-from-scratch">Jekyll from Scratch</h2>
@@ -1098,9 +1130,12 @@ bundle exec jekyll serve
 <h2 id="reminder">REMINDER</h2>
 <ul>
   <li>the _notes directory is only used for tags. create a file for each tag.</li>
-  <li>all posts (projects/notes) should go in _posts. filename should be date-title.markdown, otherwise it will not display!</li>
+  <li>
+    <p>all posts (projects/notes) should go in _posts. filename should be date-title.markdown, otherwise it will not display!</p>
+  </li>
+  <li>Change loading instructions (description/photo) for the webpage in _config.yml</li>
+  <li></li>
 </ul>
-
 
 
 
