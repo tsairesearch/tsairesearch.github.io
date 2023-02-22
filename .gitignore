@@ -1,0 +1,10 @@
+_site
+.sass-cache
+Gemfile.lock
+trash
+.DS_Store
+Cache
+.jekyll-cache
+
+
+/old_gem_list

@@ -1065,12 +1065,20 @@ You will make your edits in source code, “build” the website, and then uploa
 That is:</p>
 
 <ul>
-  <li>Clone this repo</li>
-  <li>Create a directory called _site</li>
+  <li>Clone this control repo to a local folder</li>
+  <li>Create a directory called _site inside the cloned repo</li>
   <li>Clone tsairesearch/tsairesearch.github.io in _site</li>
-  <li>Make edits</li>
-  <li>Commit your source code changes to longlouisly repo.</li>
-  <li>Commit your public facing changes to tsairesearch repo.</li>
+  <li>Make edits in the local folder</li>
+  <li>Commit your source code changes to the control repo from the local folder.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">$git remote get-url origin</code> links to the control repo</li>
+    </ul>
+  </li>
+  <li>Commit your public facing changes to tsairesearch repo from _site.
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">$git remote get-url origin</code> links to the public repo</li>
+    </ul>
+  </li>
 </ul>
 
 <h2 id="to-make-edits-to-the-public-page">To make edits to the public page</h2>
@@ -1079,12 +1087,11 @@ That is:</p>
   <li>To start, you can edit an existing file. You can also create a new file, following the same structure as existing file.</li>
   <li>Then execute the serve.sh script (bundle exec jekyll serve).</li>
   <li>From here, the website can be previewed locally at localhost:4000.</li>
-  <li>
-    <p>Note that some changes take a while to appear due to your local cache.</p>
-  </li>
+  <li>Note that some changes take a while to appear due to your local cache.</li>
   <li>Once you are satisfied, edit the serve.sh script by commenting the “jekyll serve” line and uncommenting “bundle exec jekyll build”.</li>
   <li>The “build” command will populate changes to the _site directory.</li>
-  <li>Then commit all the changes in _site to the<img src="./static/media/icon.06a6aa23.png" alt="img" /> public directory. The changes should update the website https://tsairesearch.github.io/ within a few minutes.</li>
+  <li>Then commit all the changes in _site to the public directory. The changes should update the website https://tsairesearch.github.io/ within a few minutes.
+<!--- ![img](./static/media/icon.06a6aa23.png) --></li>
 </ul>
 
 <h2 id="jekyll-from-scratch">Jekyll from Scratch</h2>
@@ -1130,12 +1137,11 @@ bundle exec jekyll serve
 <h2 id="reminder">REMINDER</h2>
 <ul>
   <li>the _notes directory is only used for tags. create a file for each tag.</li>
-  <li>
-    <p>all posts (projects/notes) should go in _posts. filename should be date-title.markdown, otherwise it will not display!</p>
-  </li>
-  <li>Change loading instructions (description/photo) for the webpage in _config.yml</li>
-  <li></li>
+  <li>all posts (projects/notes) should go in _posts. filename should be date-title.markdown, otherwise it will not display!</li>
+  <li>To change the main description for the webpage: go to _config.yml</li>
+  <li>To change some text descriptions for the webpage: modify the index.html directly using <code class="language-plaintext highlighter-rouge">HTML</code>.</li>
 </ul>
+
 
 
 
