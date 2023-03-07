@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2023-02-21T18:51:33-06:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Previous Photos</title><link href="https://tsairesearch.github.io/photos" rel="alternate" type="text/html" title="Previous Photos" /><published>2023-02-20T00:00:00-06:00</published><updated>2023-02-20T00:00:00-06:00</updated><id>https://tsairesearch.github.io/photos</id><content type="html" xml:base="https://tsairesearch.github.io/photos">&lt;h3&gt; 2021 &lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2023-03-07T14:58:52-06:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Previous Photos</title><link href="https://tsairesearch.github.io/photos" rel="alternate" type="text/html" title="Previous Photos" /><published>2023-02-20T00:00:00-06:00</published><updated>2023-02-20T00:00:00-06:00</updated><id>https://tsairesearch.github.io/photos</id><content type="html" xml:base="https://tsairesearch.github.io/photos">&lt;h3&gt; 2021 &lt;/h3&gt;
 &lt;figure&gt;
 &lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Previous Photos&quot; src=&quot;https://tsairesearch.github.io/assets/images/old_profile/group_photo-2021.png&quot; /&gt;
 &lt;/figure&gt;
@@ -69,9 +69,10 @@
 &lt;h3&gt; Publications &lt;/h3&gt;
 
 &lt;p&gt;
-&lt;li&gt; H. Nguyen and R. Tsai. Numerical Wave Propagation Aided by Deep Learning. ArXiv:2107.13184, 2021  &lt;/li&gt;
+&lt;li&gt; Nguyen, H., &amp;amp; Tsai, R. (2023). Numerical wave propagation aided by deep learning. Journal of Computational Physics, 475, 111828. &lt;/li&gt;
 &lt;/p&gt;
 
+&lt;!-- H. Nguyen and R. Tsai. Numerical Wave Propagation Aided by Deep Learning. ArXiv:2107.13184, 2021--&gt;
 
 &lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Deep learning and the Low Dimensional Manifold Hypothesis</title><link href="https://tsairesearch.github.io/projects/lowdim" rel="alternate" type="text/html" title="Deep learning and the Low Dimensional Manifold Hypothesis" /><published>2021-06-30T00:00:00-05:00</published><updated>2021-06-30T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/lowdim</id><content type="html" xml:base="https://tsairesearch.github.io/projects/lowdim">&lt;d-front-matter&gt;
 
@@ -134,8 +135,12 @@ then:
 &lt;h3&gt; Publications &lt;/h3&gt;
 
 &lt;p&gt;
-&lt;li&gt; J. He, R. Tsai and R. Ward. &quot;Side-effects of Learning from Low Dimensional Data Embedded in an Euclidean Space&quot;. ArXiv: 2203.00614, 2022. &lt;/li&gt;
+&lt;li&gt; He, J., Tsai, R., &amp;amp; Ward, R. (2023). Side effects of learning from low-dimensional data embedded in a Euclidean space. Research in the Mathematical Sciences, 10(1), 13.
+&lt;/li&gt;
 &lt;/p&gt;
+&lt;!--J. He, R. Tsai and R. Ward. &quot;Side-effects of Learning from Low Dimensional Data Embedded in an Euclidean Space&quot;. ArXiv: 2203.00614, 2022. 
+--&gt;
+
 &lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
 &lt;ul&gt;
   &lt;li&gt;

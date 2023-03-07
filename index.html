@@ -960,27 +960,74 @@ distill-header .nav a {
 
     
 
-    <d-article>
+    <!-- /* Mannually define style */ -->
+<style>
+* {
+  box-sizing: border-box;
+}
 
-<div style="grid-column: text">
+.row {
+  display: flex;
+}
 
+/* Create two equal columns that sits next to each other */
+.column {
+  flex: 48.44%;
+  padding: 5px;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: -50px;
+  width: 115%;
+}
+
+</style>
+
+<d-article>
+<!-- A narrower scale  -->
+<!-- <div style="grid-column: text"> -->
+
+<!-- A wider scale -->
+<!-- <div style="grid-column: middle"> -->
+<div class="header">
   <h3 style="text-align: center">The Scientific AI Research Group</h3>
   <p style="text-align: center;  margin-bottom:0"></p>
 
   <figure  style="margin-top: 0">
-    <img style="display: block; max-width: 70%; margin-bottom: 2rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="The Scientific AI Research Group" src="https://tsairesearch.github.io/assets/images/group_photo-2023.jpg" />
+  <div class="row">
+    <div class="column">
+      <img style="display: block; width: 100%; margin-bottom: 2rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="The Scientific AI Research Group" src="https://tsairesearch.github.io/assets/images/group_photo-2023.jpg" />
+    </div>
+    <div class="column">
+      <img style="display: block; width: 100%; margin-bottom: 2rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="The Scientific AI Research Group" src="https://tsairesearch.github.io/assets/images/group_photo-2023.gif" />
+    </div>
+  </div>
+    <!-- <img style="display: block; max-width: 70%; margin-bottom: 2rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="The Scientific AI Research Group" src="https://tsairesearch.github.io/assets/images/group_photo-2023.jpg" /> -->
+
     <figcaption style="grid-column: text; color: rgba(0,0,0,0.8); font-size: 17px ">
         <p> We are a research group at UT Austin led by Dr. Richard Tsai. Our current focus is on developing machine learning approaches that complements the more classical techniques for challenging scientific computing tasks.  The types of scientific computing problems that we have considered include time-parallelizable multiscale coupling algorithms for initial value problems, nonlinear interface dynamics, partial differential equations on surfaces, multiscale modeling, wave propagation, image processing, sensor networks, robotic path planning problems. Our research are supported by National Science Foundation and the Army Research Office. </p>
     </figcaption>
   </figure>
-
-
 </div>
+
 
 <div style="grid-column: middle">
 
 <section style="margin-top: 4rem">
 <h3 style="text-align: left; border-bottom: none"> Recent News </h3>
+
+<li> Invited talk by Prof. <a
+    href="https://www.ae.utexas.edu/people/faculty/faculty-directory/fridovich-keil">David Fridovich-Keil </a>
+    (UT Austin Aerospace Engineering and Oden Institute), Mar 3, 2023. </li>
+<li> Invited talk by Dr. <a
+    href="https://sites.google.com/view/kevin-miller/home"> Kevin Miller</a>
+        (UT Austin Oden Institute), Feb 17, 2023. </li>
 <li> Invited talk "Coupling Deep Learning with Full Waveform Inversion" by Prof. <a
     href="http://www.columbia.edu/~kr2002/">Kui Ren</a>
     (Columbia University), Feb. 2022. </li>
@@ -999,35 +1046,36 @@ distill-header .nav a {
 <li> Invited talk "Applied differential geometry and harmonic
   analysis in deep learning regularization" by Prof. <a
     href="https://people.math.umass.edu/~zhu/">Wei Zhu</a>
-  (University of Massachusetts Amherst), Spet. 2021. </li>
-<li> Hsi-Wei Hsieh and Lukas Taus join the group. Welcome! </li>
-<li> Nan Sheldon and Nicolas Savignon join the group. Welcome! </li>
+  (University of Massachusetts Amherst), Sept. 2021. </li>
 <li> Invited talk "The metric entropy and n-widths of shallow neural networks" by Dr. <a
     href="http://personal.psu.edu/jus1949/">Jonathan Siegel</a>
   (Penn State University), May 2021. </li>
 <li> Invited talk "Analysis of geometric shapes with oriented varifolds" by Dr. <a
     href="https://www.linkedin.com/in/hsi-wei-hsieh">Hsi-Wei
     Hsieh</a> (Johns Hopkins University), Mar. 2021. </li>
-<li> Our paper "A stable parareal-like method for the second
-  order wave equation" accepted at JCP 2020. </li>
-<li> Our paper "Strategy synthesis for surveillance-evasion
-  games with learning-enabled visibility optimization"
-  accepted at CDC 2019. </li>
-<li> Our paper "Autonomous exploration, reconstruction, and
-  surveillance of 3d environments aided by deep learning"
-  accepted at ICRA 2019. </li>
+
 <!-- <section style="margin-top: 4rem"> -->
 <h3 style="text-align: left; border-bottom: none"> People </h3>
+<p><b><i> Faculty:</i></b></p>
 <p> <a href="https://web.ma.utexas.edu/users/ytsai/">Richard Tsai</a><br>
+<!-- <h4 style="text-align: left; border-bottom: none"> Postdocs: </h4> -->
+<p><b><i> Postdocs:</i></b></p>
   <a href="https://web.njit.edu/~agt6/">Axel G Turnquist</a><br>
   <!-- <a href="https://juncaihe.github.io">Juncai He</a><br> -->
   <!-- <a href="https://www.linkedin.com/in/hsi-wei-hsieh">Hsi-Wei Hsieh </a> -->
 </p>
-<p></p>
+<!-- <p></p> -->
+<!-- <h4 style="text-align: left; border-bottom: none"> Graduate Students: </h4> -->
+<p><b><i> Graduate Students:</i></b></p>
 <p> Rui Fang <br>
  Lewis Liu <br>
  Lukas Taus <br>
  Anastasia Ruch </p>
+ <!-- <h4 style="text-align: left; border-bottom: none">  Undergraduate Members:</h4> -->
+<p><b><i> Undergraduate Members:</i></b></p>
+<p>Sahithi Adduri<br>
+  Kate Gianvecchio
+</p>
  <p> Some previous photos of group members and activities can be found
    <a class="url" href="https://tsairesearch.github.io/photos"> here. </a>
  </p>

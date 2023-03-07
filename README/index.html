@@ -1123,7 +1123,7 @@ bundle exec jekyll serve
   <li>_includes has partial html and or markdown that can be imported into other files using {% include partial.html %}</li>
   <li>pages in _post accessed using {{site.posts}}. If the date is in the file name, it becomes accessible using {{post.date}} or it can be overwritten. Defaults to modified time if none given. Permalink variable defines the url for that page. Falls under {{post.url}}, which is probably default to the title.</li>
   <li>collections are defined in _config.yml. Define collection_name and then set output: true so that it creates a page for each file you have in _collection_name/file.markdown. Each of those files can have a layout defined. The url for each page is defined by permalink setting for collection. Defaults to :collection/:path which is the filename. Note: do not name the collection “tags” as that leads to errors.</li>
-  <li>style is defined in _sass where it can be imported using @import “style.sass”. Html styles can be defined internally using &lt;div style="align: center"&gt; for single use.</li>
+  <li>style is defined in _sass where it can be imported using @import “style.sass”. Html styles can be defined internally using <code class="language-plaintext highlighter-rouge">&lt;div style="align: center"&gt;</code> for single use.</li>
   <li>_drafts has pages that are published during local build using: jekyll serve –draft</li>
   <li>MathJax can be included by adding this to the page:
     <ul>
