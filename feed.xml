@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2023-09-28T16:37:11-05:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Sampling and Processing of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Processing of Point Clouds" /><published>2023-09-13T00:00:00-05:00</published><updated>2023-09-13T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;!-- define the style for images container --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2023-09-28T16:41:39-05:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Sampling and Processing of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Processing of Point Clouds" /><published>2023-09-13T00:00:00-05:00</published><updated>2023-09-13T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;!-- define the style for images container --&gt;
 &lt;head&gt;
 &lt;style&gt;
   div.container {
@@ -418,10 +418,6 @@ Sensitivity of the neural network models to the input size. Here, $m$ is the num
 
 &lt;/div&gt;
 
-
-&lt;/d-article&gt;
-&lt;/body&gt;
-
 &lt;h2&gt; Publications &lt;/h2&gt;
 
 &lt;p&gt;
@@ -429,7 +425,10 @@ Sensitivity of the neural network models to the input size. Here, $m$ is the num
 Liu, L., Ly, L., Macdonald, C. &amp;amp; Tsai, R. (2023) Nearest Neighbor Sampling of Point Sets using Rays. Communication on Applied Mathematics and Computation (CAMC), Focused Issue in Honor of Prof. Stanley Osher on the Occasion of His 80th Birthday. Accepted.
 &lt;/li&gt;
 
-&lt;/p&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Efficient and Robust Sensor Placement in Complex Environment</title><link href="https://tsairesearch.github.io/projects/sensor" rel="alternate" type="text/html" title="Efficient and Robust Sensor Placement in Complex Environment" /><published>2023-09-01T00:00:00-05:00</published><updated>2023-09-01T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/sensor</id><content type="html" xml:base="https://tsairesearch.github.io/projects/sensor">&lt;d-front-matter&gt;
+&lt;/p&gt;
+
+&lt;/d-article&gt;
+&lt;/body&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Efficient and Robust Sensor Placement in Complex Environment</title><link href="https://tsairesearch.github.io/projects/sensor" rel="alternate" type="text/html" title="Efficient and Robust Sensor Placement in Complex Environment" /><published>2023-09-01T00:00:00-05:00</published><updated>2023-09-01T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/sensor</id><content type="html" xml:base="https://tsairesearch.github.io/projects/sensor">&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -483,7 +482,9 @@ Liu, L., Ly, L., Macdonald, C. &amp;amp; Tsai, R. (2023) Nearest Neighbor Sampli
 &lt;h3&gt; Publications &lt;/h3&gt;
 
 &lt;p&gt;
-&lt;li&gt;  &lt;/li&gt;
+&lt;li&gt;  
+Taus, L., &amp;amp; Tsai, R. (2023) Efficient and robust Sensor Placement in Complex Environments. Preprint.
+&lt;/li&gt;
 
 &lt;/p&gt;
 
