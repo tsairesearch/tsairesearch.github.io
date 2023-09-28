@@ -972,7 +972,23 @@ distill-header .nav a {
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
-    <d-front-matter>
+    <head>
+<style>
+  div.container {
+     display:inline-block;
+   }
+
+  html,body        {height: 100%;}
+
+  .wrapper{width: 80%; max-width: 600px; height: 100%; margin: 0 auto; background: #CCC}
+
+  .h_iframe{position: relative; padding-top: 56%;}
+
+  .h_iframe iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+</style>
+</head>
+
+<d-front-matter>
 
   <script type="text/json">{
   "authors": [
@@ -1060,11 +1076,11 @@ We investigate the local linear regression on smooth function $g(\mathbf{x})$ wi
   </div>
   </figcaption>
   </figure>
+  The intuition behind is that the noise blurs the problematic structure of the manifold.
   </li>
 
   <li> For manifold with codimension $&gt;1$, we perform numerical experiments to demonstrate the importance of the awareness of extrinsic dimension and embedding dimension. These characteristics crucially affect the well-posedness of the regression algorithm. See paper for details.
   </li>
-
 
 </ol>
 </p>
