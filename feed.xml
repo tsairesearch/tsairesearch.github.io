@@ -1,237 +1,36 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2023-03-07T14:58:52-06:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Previous Photos</title><link href="https://tsairesearch.github.io/photos" rel="alternate" type="text/html" title="Previous Photos" /><published>2023-02-20T00:00:00-06:00</published><updated>2023-02-20T00:00:00-06:00</updated><id>https://tsairesearch.github.io/photos</id><content type="html" xml:base="https://tsairesearch.github.io/photos">&lt;h3&gt; 2021 &lt;/h3&gt;
-&lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Previous Photos&quot; src=&quot;https://tsairesearch.github.io/assets/images/old_profile/group_photo-2021.png&quot; /&gt;
-&lt;/figure&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2023-09-28T16:25:29-05:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Sampling and Processing of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Processing of Point Clouds" /><published>2023-09-13T00:00:00-05:00</published><updated>2023-09-13T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;!-- define the style for images container --&gt;
+&lt;head&gt;
+&lt;style&gt;
+  div.container {
+     display:inline-block;
+   }
 
-&lt;h3&gt; 2019 &lt;/h3&gt;
-&lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Previous Photos&quot; src=&quot;https://tsairesearch.github.io/assets/images/old_profile/group_photo-2019.jpg&quot; /&gt;
-&lt;/figure&gt;</content><author><name></name></author><category term="photos" /><summary type="html">2021</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Numerical Wave Propagation Aided by Deep Learning</title><link href="https://tsairesearch.github.io/projects/wavelnn" rel="alternate" type="text/html" title="Numerical Wave Propagation Aided by Deep Learning" /><published>2021-08-16T00:00:00-05:00</published><updated>2021-08-16T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/wavelnn</id><content type="html" xml:base="https://tsairesearch.github.io/projects/wavelnn">&lt;d-front-matter&gt;
+  .imgContainer{
+    float:left;
+  }
+  c {
+  text-align:center;
+  }
 
+  html,body        {height: 100%;}
+
+  .wrapper{width: 80%; max-width: 600px; height: 100%; margin: 0 auto; background: #CCC}
+
+  .h_iframe{position: relative; padding-top: 56%;}
+
+  .h_iframe iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
-      &quot;author&quot;: &quot;Hieu Nguyen&quot;,
-      &quot;authorURL&quot;: &quot;https://dmi.unibas.ch/de/personen/hieu-huu-nguyen/&quot;,
-      &quot;affiliation&quot;: &quot;Department of Mathematics and Computer Science, University of Basel&quot;,
-      &quot;affiliationURL&quot;: &quot;https://dmi.unibas.ch/en/&quot;
-    },
-    {
-      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
-      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
-      &quot;affiliation&quot;: &quot;Department of Mathematics and Oden Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
-      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
-    }
-  ]
-  }&lt;/script&gt;
-
-&lt;/d-front-matter&gt;
-
-&lt;d-title&gt;
- &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
-  &lt;h1&gt;Numerical Wave Propagation Aided by Deep Learning&lt;/h1&gt;
-    
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Numerical Wave Propagation Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io//assets/images/wavelnn/testvelmodels.png&quot; /&gt;
-    
- &lt;/div&gt;
-
-
-&lt;/d-title&gt;
-
-&lt;d-article&gt;
-
-&lt;p&gt; We propose a deep learning approach for wave propagation in media with multiscale wave speed, using a second-order linear wave equation model. We use neural networks to enhance the accuracy of a given inaccurate coarse solver, which under-resolves a class of multiscale wave media and wave fields of interest. Our approach involves generating training data by the given computationally efficient coarse solver and another sufficiently accurate solver, applied to a class of wave media (described by their wave speed profiles) and initial wave fields. We find that the trained neural networks can approximate the nonlinear dependence of the propagation on the wave speed as long as the causality is appropriately sampled in training data. We combine the neural-network-enhanced coarse solver with the parareal algorithm and demonstrate that the coupled approach improves the stability of parareal algorithms for wave propagation and improves the accuracy of the enhanced coarse solvers. &lt;/p&gt;
-
-
-&lt;h3&gt; Simulation &lt;/h3&gt;
-
-
-&lt;div style=&quot;column-grid: middle &quot;&gt;
-&lt;figure&gt;
-&lt;div style=&quot;display: block; width: 90%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;881px&quot; height=&quot;703px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io//assets/images/wavelnn/testvelmodels.png&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;figcaption&gt;
-
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
-
-&lt;/div&gt;
-
-&lt;h3&gt; Training databases &lt;/h3&gt;
-&lt;p&gt;
-&lt;a href=&quot;https://utexas.box.com/s/av7cnf3shgwf9m42snrzfh49pyt9x9y0&quot;&gt; Click Here&lt;/a&gt; to get the training databases. &lt;/p&gt;
-
-
-
-
-&lt;h3&gt; Publications &lt;/h3&gt;
-
-&lt;p&gt;
-&lt;li&gt; Nguyen, H., &amp;amp; Tsai, R. (2023). Numerical wave propagation aided by deep learning. Journal of Computational Physics, 475, 111828. &lt;/li&gt;
-&lt;/p&gt;
-
-&lt;!-- H. Nguyen and R. Tsai. Numerical Wave Propagation Aided by Deep Learning. ArXiv:2107.13184, 2021--&gt;
-
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Deep learning and the Low Dimensional Manifold Hypothesis</title><link href="https://tsairesearch.github.io/projects/lowdim" rel="alternate" type="text/html" title="Deep learning and the Low Dimensional Manifold Hypothesis" /><published>2021-06-30T00:00:00-05:00</published><updated>2021-06-30T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/lowdim</id><content type="html" xml:base="https://tsairesearch.github.io/projects/lowdim">&lt;d-front-matter&gt;
-
-  &lt;script type=&quot;text/json&quot;&gt;{
-  &quot;authors&quot;: [
-    {
-      &quot;author&quot;: &quot;Juncai He&quot;,
-      &quot;authorURL&quot;: &quot;https://juncaihe.github.io/&quot;,
-      &quot;affiliation&quot;: &quot;Department of Mathematics, University of Texas at Austin&quot;,
-      &quot;affiliationURL&quot;: &quot;https://www.ma.utexas.edu/&quot;
-    },
-    {
-      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
-      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
-      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
-      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
-    },
-    {
-      &quot;author&quot;: &quot;Rachel Ward&quot;,
-      &quot;authorURL&quot;: &quot;https://sites.google.com/prod/view/rward&quot;,
-      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
-      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
-    }
-  ]
-  }&lt;/script&gt;
-&lt;/d-front-matter&gt;
-
-&lt;d-title&gt;
-
-&lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
-  &lt;h1&gt;Deep learning and the Low Dimensional Manifold Hypothesis&lt;/h1&gt;
-    
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Deep learning and the Low Dimensional Manifold Hypothesis&quot; src=&quot;https://tsairesearch.github.io//assets/images/lowdim/streamplot_sigma.png&quot; /&gt;
-    
- &lt;/div&gt;
-&lt;/d-title&gt;
-
-&lt;d-article&gt;
-
-&lt;p&gt;
-The low dimensional manifold hypothesis posits that the data found in many applications, such as those involving natural images, lie (approximately) on low dimensional manifolds embedded in a high dimensional Euclidean space. In this setting, a typical neural network defines a function that takes a finite number of vectors in the embedding space as input. 
-However, one often needs to consider evaluating the optimized network at points outside the training distribution. This project considers the case in which the training data is dis- tributed in a linear subspace of Rd. We derive estimates on the variation of the learning function, defined by a neural network, in the direction transversal to the subspace. We study the potential regularization effects associated with the network’s depth and noise in the codimension of the data manifold. We also present additional side effects in training due to the presence of noise.
-&lt;/p&gt;
-&lt;h3&gt; Main results &lt;/h3&gt;
-
-&lt;p&gt;
-&lt;ol&gt;
-  &lt;li&gt;If the data points, including noise, lie on $M$, the linear network’s depth may
-provide certain regularization or side effects. For ReLU neural networks, we prove that $\frac{\partial f}{\partial n_M}$ is sensitive to the initialization of a set of “untrainable” parameters.&lt;/li&gt;
-  &lt;li&gt;If the noise has a small positive variance in the orthogonal complement of $M$,
-then:
-&lt;ul&gt;
-  &lt;li&gt;$\frac{\partial f}{\partial n_M}$ can be made arbitrarily small, provided that the number of data points scales according to some inverse power of the variance for deep linear neural networks and nonlinear deep linear neural networks;&lt;/li&gt;
-  &lt;li&gt;For linear neural network models, it may take a gradient descent algorithm exponentially (in the reciprocal of the variance) long to converge to the unique optimal model parameters, which yield small $\frac{\partial f}{\partial n_M}$. In addition, it may also need a long time to escape the near region of origin.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-  &lt;li&gt;The stability-accuracy trade-off. The role of noise can be interpreted as a stabilizer for a model when evaluated on points outside of the (clean) data distribution. However, adding noise to the data set will impact of the accuracy of the network's generalization error (for evaluation within the data distribution). For nonlinear data manifolds, uniform noise may render the labeled data incompatible.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/p&gt;
-&lt;h3&gt; Publications &lt;/h3&gt;
-
-&lt;p&gt;
-&lt;li&gt; He, J., Tsai, R., &amp;amp; Ward, R. (2023). Side effects of learning from low-dimensional data embedded in a Euclidean space. Research in the Mathematical Sciences, 10(1), 13.
-&lt;/li&gt;
-&lt;/p&gt;
-&lt;!--J. He, R. Tsai and R. Ward. &quot;Side-effects of Learning from Low Dimensional Data Embedded in an Euclidean Space&quot;. ArXiv: 2203.00614, 2022. 
---&gt;
-
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and surveillance&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019.
-&lt;a href=&quot;https://arxiv.org/abs/1809.06025&quot;&gt;[paper]&lt;/a&gt;
-&lt;a href=&quot;http://helper.ipam.ucla.edu/publications/glws3/glws3_15672.pdf&quot;&gt;[slides]&lt;/a&gt;
-&lt;a href=&quot;http://www.ipam.ucla.edu/abstract/?tid=15672&amp;amp;pcode=GLWS3&quot;&gt;[talk]&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Strategy synthesis for surveillance-evasion games with learning-enabled visibility optimization. Suda Bharadwaj, Louis Ly, Bo Wu, Yen-Hsi Richard Tai, and Ufuk Topcu. 2019 Conference on Decisions and Control (CDC). IEEE, 2019.
-&lt;a href=&quot;https://arxiv.org/abs/1911.07394&quot;&gt;[paper]&lt;/a&gt;
-&lt;a href=&quot;http://helper.ipam.ucla.edu/publications/glws3/glws3_15672.pdf&quot;&gt;[slides]&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;An efficient algorithm for a visibility-based surveillance-evasion game. Ryo Takei, Yen-Hsi Richard Tsai, Zhengyuan Zhou, and Yanina Landa. Communications in Mathematical Sciences 12.7 (2014): 1303-1327.
-&lt;a href=&quot;https://www.intlpress.com/site/pub/pages/journals/items/cms/content/vols/0012/0007/a007/&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;A practical path-planning algorithm for a simple car: a Hamilton-Jacobi approach. Ryo Takei, Yen-Hsi Richard Tsai, Haochong Shen, and Yanina Landa. Proceedings of the 2010 American control conference. IEEE, 2010.
-&lt;a href=&quot;ftp://ftp.math.ucla.edu/pub/camreport/cam09-74.pdf&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;point-sets&quot;&gt;Point sets&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;Nearest neighbor sampling of point sets using random rays. Liangchen Liu, Louis Ly, Colin Macdonald, and Yen-Hsi Richard Tsai. Preprint 2019
-&lt;a href=&quot;https://arxiv.org/abs/1911.10737&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;source-localization&quot;&gt;Source localization&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;Autonomous source discovery and navigation in complicated environments. Yanina Landa,  Haochong Shen, Ryo Takei, Yen-Hsi Richard Tsai. Preprint 2009.
-&lt;a href=&quot;ftp://ftp.math.ucla.edu/pub/camreport/cam09-73.pdf&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Discovery of point sources in the Helmholtz equation posed in unknown domains with obstacles. Yanina Landa, Nicolay Tanushev, Yen-Hsi Richard Tsai. Communications in Mathematical Sciences 9.3 (2011): 903-928.
-&lt;a href=&quot;https://www.intlpress.com/site/pub/pages/journals/items/cms/content/vols/0009/0003/a011/&quot;&gt;[paper]&lt;/a&gt;
-&lt;a href=&quot;https://www.dropbox.com/s/h3pesvk99rom90r/inverse_source_problem_nonlinear-helmholtz.pdf?dl=0&quot;&gt;[slides]&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Point source identification in nonlinear advection–diffusion–reaction systems. Alexander Mamonov and Yen-Hsi Richard Tsai. Inverse Problems 29.3 (2013): 035009.
-&lt;a href=&quot;ftp://ftp.math.ucla.edu/pub/camreport/cam12-15.pdf&quot;&gt;[paper]&lt;/a&gt;
-&lt;a href=&quot;https://www.dropbox.com/s/mnk5a3j3xiozh43/srcid-talk-richard.pdf?dl=0&quot;&gt;[slides]&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Heat source identification based onconstrained minimization. Yingying Li, Stanley Osher, and Yen-Hsi Richard Tsai. Inverse Problems and Imaging 8.1 (2014): 199-221.
-&lt;a href=&quot;https://www.researchgate.net/profile/Richard_Tsai3/publication/264998169_Heat_source_identification_based_on_L1_constrained_minimization/links/54cbafab0cf24601c088b3d8/Heat-source-identification-based-on-L1-constrained-minimization.pdf&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;multiscale-coupling-algorithms&quot;&gt;Multiscale coupling algorithms&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;A stable parareal-like method for the second order wave equation. Hieu Nguyen and Richard Tsai. Journal of Computational Physics (2020). Accepted.
-&lt;a href=&quot;https://doi.org/10.1016/j.jcp.2019.109156&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;deep-neural-networks-and-finite-element-methods&quot;&gt;Deep neural networks and finite element methods&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;ReLU deep neural networks from the hierarchical basis perspective. Juncai He, Lin Li and Jinchao Xu. Preprint 2021. &lt;a href=&quot;https://arxiv.org/abs/2105.04156&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;ReLU deep neural networks and linear finite elements. Juncai He, Lin Li, Jinchao Xu and Chunyue Zheng. Journal of Computational Mathematics 38.3 (2020): 502-527. &lt;a href=&quot;https://www.global-sci.org/intro/article_detail/jcm/15798.html&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Power series expansion neural network. Qipin Chen, Wenrui Hao and Juncai He. Preprint 2021. &lt;a href=&quot;https://arxiv.org/abs/2102.13221&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;convolutional-neural-networks-and-multigrid&quot;&gt;Convolutional neural networks and multigrid&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Constrained Linear Data-feature Mapping in Image Classification. Juncai He, Yuyan Chen, Lian Zhang and Jinchao Xu. Preprint 2020. &lt;a href=&quot;https://arxiv.org/abs/1911.10428&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;MgNet: a unified framework of multigrid and convolutional neural network. Juncai He and Jinchao Xu.  Science China Mathematics 62.7 (2019): 1331–1354. &lt;a href=&quot;https://link.springer.com/article/10.1007%2Fs11425-019-9547-2&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;training-algorithms-in-deep-learning&quot;&gt;Training algorithms in deep learning&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Make &lt;img src=&quot;https://juncaihe.github.io/eqs/2349274112114421517-130.png&quot; alt=&quot;ell_1&quot; /&gt; regularization effective in training sparse CNN. Juncai He, Xiaodong Jia, Jinchao Xu, Liang Zhao and Lian Zhang. Computational Optimization and Applications (2020). &lt;a href=&quot;https://link.springer.com/article/10.1007/s10589-020-00202-1&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;the-low-dimensional-manifold-hypothesis-and-neural-networks&quot;&gt;The low dimensional manifold hypothesis and neural networks&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Side-effects of Learning from Low Dimensional Data Embedded in an Euclidean Space. Juncai He, Richard Tsai and Rachel Ward. ArXiv: 2203.00614, 2022. [&lt;a href=&quot;https://arxiv.org/abs/2203.00614&quot;&gt;paper&lt;/a&gt;]&lt;/li&gt;
-&lt;/ul&gt;</content><author><name></name></author><category term="papers" /><summary type="html">Exploration and surveillance Autonomous exploration, reconstruction, and surveillance of 3d environments aided by deep learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019. [paper] [slides] [talk]</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Sampling and Classification of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Classification of Point Clouds" /><published>2019-11-06T00:00:00-06:00</published><updated>2019-11-06T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;d-front-matter&gt;
-  &lt;script type=&quot;text/json&quot;&gt;{
-  &quot;authors&quot;: [
-    {
-      &quot;author&quot;: &quot;Lewis Liu&quot;,
-      &quot;authorURL&quot;: &quot;https://www.iam.ubc.ca/liangchen-liu/&quot;,
-      &quot;affiliation&quot;: &quot;Department of Mathematics, The University of British Columbia&quot;,
-      &quot;affiliationURL&quot;: &quot;https://ubc.ca&quot;
+      &quot;author&quot;: &quot;Liangchen (Lewis) Liu&quot;,
+      &quot;authorURL&quot;: &quot;https://lclewis.github.io&quot;,
+      &quot;affiliation&quot;: &quot;Department of Mathematics, The University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;http://ma.utexas.edu/&quot;
     },
     {
       &quot;author&quot;: &quot;Louis Ly&quot;,
@@ -256,38 +55,47 @@ then:
   }&lt;/script&gt;
 &lt;/d-front-matter&gt;
 
+
 &lt;d-title&gt;
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
-  &lt;h1&gt;Sampling and Classification of Point Clouds&lt;/h1&gt;
+  &lt;h1&gt;Sampling and Processing of Point Clouds&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Sampling and Classification of Point Clouds&quot; src=&quot;https://tsairesearch.github.io//assets/images/rays/airplane_ray.png&quot; /&gt;
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Sampling and Processing of Point Clouds&quot; src=&quot;https://tsairesearch.github.io//assets/images/rays/airplane_ray.png&quot; /&gt;
     
  &lt;/div&gt;
 
 
 &lt;/d-title&gt;
 
+
 &lt;d-article&gt;
 
-&lt;p&gt; We propose a new framework for the sampling, compression, and analysis of
-distributions of point sets embedded in Euclidean spaces. A set of randomly
-selected rays are projected onto their closest points in the data set and thus
-form the signature of the data set. From the signature, statistical
-information about the data set, as well as certain geometrical information can
-be extracted, independent of the ray set. We show that the cost of the sampling
-approach is asymptotically independent of the ray sets.  Finally, we present a
-neural network model using the  signature for classification of point
-sets in three dimensions. &lt;/p&gt;
+&lt;p&gt; We propose a new framework for the sampling, compression, and analysis of distributions of point sets and other geometric objects embedded in Euclidean spaces. Our approach involves constructing a tensor called the RaySense sketch, which captures nearest neighbors from the underlying geometry of points along a set of rays. We explore various operations that can be performed on the RaySense sketch, leading to different properties and potential applications. Statistical information about the data set can be extracted from the sketch, independent of the ray set. Line integrals on point sets can be efficiently computed using the sketch. We also present several examples illustrating applications of the proposed strategy in practical scenarios. &lt;/p&gt;
 
-&lt;h3&gt; Examples &lt;/h3&gt;
+&lt;h2&gt;  Visualizations of Method &lt;/h2&gt;
 
-
+&lt;h3&gt; Sampling Visualization with rays and Features &lt;/h3&gt;
 &lt;div style=&quot;grid-column: screen &quot;&gt;
 
-&lt;figure&gt;
-&lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
+&lt;!-- &lt;figure&gt;
+&lt;div style=&quot;display: block; width: 80%; text-align: center&quot;&gt;
 &lt;iframe width=&quot;1296px&quot; height=&quot;850px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/grid.png&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt; --&gt;
+
+
+&lt;figure&gt;
+&lt;div style=&quot;display: block; width: 80%; margin-right: auto; margin-left: auto; text-align: center&quot;&gt;
+&lt;img src=&quot;https://tsairesearch.github.io/assets/images/rays/grid.png&quot; width=&quot;338px&quot; height=&quot;648px&quot; /&gt;
 &lt;/div&gt;
+
+&lt;!-- &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;div class=&quot;h_iframe&quot;&gt;
+      &lt;iframe height=&quot;4&quot; width=&quot;8&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/grid.png&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+&lt;/div&gt; --&gt;
+&lt;!-- &lt;div class=&quot;container&quot;&gt;
+    &lt;img src=&quot;https://tsairesearch.github.io/assets/images/rays/grid.png&quot; height=&quot;1024&quot; width=&quot;768&quot;/&gt;
+&lt;/div&gt; --&gt;
 
 &lt;figcaption&gt;
 &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
@@ -297,6 +105,7 @@ sets in three dimensions. &lt;/p&gt;
 &lt;/figure&gt;
 &lt;/div&gt;
 
+&lt;h3&gt; Visualization of Voronoi Cell with Rays &lt;/h3&gt;
 &lt;div style=&quot;grid-column: screen &quot;&gt;
 
 &lt;figure&gt;
@@ -315,11 +124,14 @@ point pairs are shown in green and red.
 &lt;/div&gt;
 &lt;/figcaption&gt;
 &lt;/figure&gt;
+&lt;/div&gt;
 
+&lt;h3&gt; Visualization of Sampling Frequencies&lt;/h3&gt;
+&lt;div style=&quot;grid-column: screen &quot;&gt;
 
 &lt;figure&gt;
-&lt;div style=&quot;display: block; width: 100%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;1000px&quot; height=&quot;500px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/rays/airplane_side.png&quot;&gt;&lt;/iframe&gt;
+&lt;div style=&quot;display: block; width: 50%; margin-right: auto; margin-left: auto; text-align: center&quot;&gt;
+&lt;img src=&quot;https://tsairesearch.github.io/assets/images/rays/airplane_side.png&quot; width=&quot;210px&quot; height=&quot;350px&quot; /&gt;
 &lt;/div&gt;
 
 &lt;figcaption&gt;
@@ -331,6 +143,115 @@ We can control the number of points by increasing the number of rays. Each ray c
 &lt;/figure&gt;
 &lt;/div&gt;
 
+
+
+&lt;h2&gt; Downstream Applications &lt;/h2&gt;
+
+
+  &lt;h3&gt; Salient Points Detection &lt;/h3&gt;
+
+    &lt;figure class=&quot;half&quot; style=&quot;display:flex&quot;&gt;
+
+      &lt;div class=&quot;container&quot;&gt;
+
+        &lt;div style=&quot;display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center&quot;&gt;
+        &lt;img src=&quot;https://tsairesearch.github.io/assets/images/rays/MNIST_Salient_RaySense_top10_01cube-202210-noFreq.png&quot; width=&quot;210px&quot; height=&quot;350px&quot; /&gt;
+        &lt;/div&gt;
+
+
+        &lt;figcaption&gt;
+        &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+          RaySense Sampling with Top 10 Frequencies
+
+        &lt;/div&gt;
+        &lt;/figcaption&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;container&quot;&gt;
+        &lt;div style=&quot;display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center&quot;&gt;
+        &lt;img src=&quot;https://tsairesearch.github.io/assets/images/rays/MNIST_random_10-202210-noFreq.png&quot; width=&quot;210px&quot; height=&quot;350px&quot; /&gt;
+        &lt;/div&gt;
+
+        &lt;figcaption&gt;
+        &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+          Uniformly Random Sampling
+          &lt;/div&gt;
+        &lt;/figcaption&gt;
+    &lt;/div&gt;
+    &lt;/figure&gt;
+
+        &lt;figure&gt;
+          &lt;figcaption&gt;
+          &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 100%; text-align: center&quot;&gt;
+          Comparison of RaySense sampled points and points from uniformly random sampling of the MNIST dataset. RaySense sampled points are those with the highest RaySense sampling frequencies for each class. These points correspond to digits written using unusual strokes, hence giving a notion of salient points of the dataset.
+          &lt;/div&gt;
+          &lt;/figcaption&gt;
+        &lt;/figure&gt;
+
+
+
+    &lt;h3&gt; Radon Transform and Reconstruction&lt;/h3&gt;
+
+        &lt;figure class=&quot;half&quot; style=&quot;display:flex&quot;&gt;
+
+          &lt;div class=&quot;container&quot;&gt;
+
+            &lt;div style=&quot;display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center&quot;&gt;
+            &lt;img src=&quot;https://tsairesearch.github.io/assets/images/rays/point_cloud_and_density.png&quot; width=&quot;210px&quot; height=&quot;160px&quot; /&gt;
+            &lt;/div&gt;
+
+
+            &lt;figcaption&gt;
+            &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+              Underlying density and point sets
+            &lt;/div&gt;
+            &lt;/figcaption&gt;
+          &lt;/div&gt;
+
+          &lt;div class=&quot;container&quot;&gt;
+            &lt;div style=&quot;display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center&quot;&gt;
+            &lt;img src=&quot;https://tsairesearch.github.io/assets/images/rays/example_M21.png&quot; width=&quot;210px&quot; height=&quot;160px&quot; /&gt;
+            &lt;/div&gt;
+
+            &lt;figcaption&gt;
+            &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+              RaySensed points from uniform lines
+              &lt;/div&gt;
+            &lt;/figcaption&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;container&quot;&gt;
+          &lt;div style=&quot;display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center&quot;&gt;
+          &lt;img src=&quot;https://tsairesearch.github.io/assets/images/rays/sonogram_92441_M101_K64_dt1.png&quot; width=&quot;210px&quot; height=&quot;160px&quot; /&gt;
+          &lt;/div&gt;
+
+          &lt;figcaption&gt;
+          &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+            Integral transformed / spectrum
+            &lt;/div&gt;
+          &lt;/figcaption&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&quot;container&quot;&gt;
+          &lt;div style=&quot;display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center&quot;&gt;
+          &lt;img src=&quot;https://tsairesearch.github.io/assets/images/rays/fbp_92441_M101_K64_dt1_trim.png&quot; width=&quot;210px&quot; height=&quot;160px&quot; /&gt;
+          &lt;/div&gt;
+
+          &lt;figcaption&gt;
+          &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+            Reconstruction results
+            &lt;/div&gt;
+          &lt;/figcaption&gt;
+        &lt;/div&gt;
+        &lt;/figure&gt;
+
+            &lt;figure&gt;
+              &lt;figcaption&gt;
+              &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 100%; text-align: center&quot;&gt;
+            Approximate Radon transform computed with RaySense from point cloud data (a)–(c) and filtered back projection reconstruction (d). Our theoretical analysis also suggests the line integral error from RaySense approximation of an $N$-size point cloud in $\mathbb R^d$ converge in a rate of $\mathcal O\left(N^{-\frac{1}d}\right)$.
+              &lt;/div&gt;
+              &lt;/figcaption&gt;
+            &lt;/figure&gt;
 
 
 &lt;h3&gt; Classification using Deep Neural Networks &lt;/h3&gt;
@@ -505,7 +426,402 @@ Sensitivity of the neural network models to the input size. Here, $m$ is the num
 &lt;/div&gt;
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Mathematics in Deep Learning —Syllabus</title><link href="https://tsairesearch.github.io/notes/syllabus" rel="alternate" type="text/html" title="Mathematics in Deep Learning —Syllabus" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/notes/syllabus</id><content type="html" xml:base="https://tsairesearch.github.io/notes/syllabus">&lt;p&gt;Welcome to the zoo!&lt;/p&gt;
+&lt;/d-article&gt;
+&lt;/body&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Efficient and Robust Sensor Placement in Complex Environment</title><link href="https://tsairesearch.github.io/projects/sensor" rel="alternate" type="text/html" title="Efficient and Robust Sensor Placement in Complex Environment" /><published>2023-09-01T00:00:00-05:00</published><updated>2023-09-01T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/sensor</id><content type="html" xml:base="https://tsairesearch.github.io/projects/sensor">&lt;d-front-matter&gt;
+  &lt;script type=&quot;text/json&quot;&gt;{
+  &quot;authors&quot;: [
+    {
+      &quot;author&quot;: &quot;Lukas Taus&quot;,
+      &quot;authorURL&quot;: &quot;https://oden.utexas.edu/people/directory/Lukas-Taus&quot;,
+      &quot;affiliation&quot;: &quot;Oden Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
+      &quot;affiliation&quot;: &quot;Oden Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    }
+  ]
+  }&lt;/script&gt;
+&lt;/d-front-matter&gt;
+
+&lt;d-title&gt;
+ &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
+  &lt;h1&gt;Efficient and Robust Sensor Placement in Complex Environment&lt;/h1&gt;
+    
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Efficient and Robust Sensor Placement in Complex Environment&quot; src=&quot;https://tsairesearch.github.io//assets/images/github_avatar.jpg&quot; /&gt;
+    
+ &lt;/div&gt;
+
+
+&lt;/d-title&gt;
+
+&lt;d-article&gt;
+
+&lt;p&gt; &lt;/p&gt;
+
+&lt;h3&gt; Simulation &lt;/h3&gt;
+
+
+&lt;div style=&quot;column-grid: middle &quot;&gt;
+
+&lt;figure&gt;
+&lt;div style=&quot;text-align: center&quot;&gt;
+&lt;iframe src=&quot;https://drive.google.com/file/d/12LGm468ZypvgAKlA1CVIV5Qu1ziiytb-/preview&quot; width=&quot;640&quot; height=&quot;480&quot; allow=&quot;autoplay&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+ &lt;figcaption&gt;
+   [missing]
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+
+&lt;h3&gt; Publications &lt;/h3&gt;
+
+&lt;p&gt;
+&lt;li&gt;  &lt;/li&gt;
+
+&lt;/p&gt;
+
+
+
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Impact of the Extrinsic Geometry on Linear Regression</title><link href="https://tsairesearch.github.io/projects/extrinsic_geom" rel="alternate" type="text/html" title="Impact of the Extrinsic Geometry on Linear Regression" /><published>2023-06-30T00:00:00-05:00</published><updated>2023-06-30T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/extrinsic_geom</id><content type="html" xml:base="https://tsairesearch.github.io/projects/extrinsic_geom">&lt;d-front-matter&gt;
+
+  &lt;script type=&quot;text/json&quot;&gt;{
+  &quot;authors&quot;: [
+    {
+      &quot;author&quot;: &quot;Liangchen (Lewis) Liu&quot;,
+      &quot;authorURL&quot;: &quot;https://lclewis.github.io/&quot;,
+      &quot;affiliation&quot;: &quot;Department of Mathematics, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.ma.utexas.edu/&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Juncai He&quot;,
+      &quot;authorURL&quot;: &quot;https://juncaihe.github.io/&quot;,
+      &quot;affiliation&quot;: &quot;Applied Mathematics and Computational Sciences, The King Abdullah University of Science and Technology (KAUST)&quot;,
+      &quot;affiliationURL&quot;: &quot;https://cemse.kaust.edu.sa/amcs&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
+      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
+    }
+
+  ]
+  }&lt;/script&gt;
+&lt;/d-front-matter&gt;
+
+&lt;d-title&gt;
+
+&lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
+  &lt;h1&gt;Impact of the Extrinsic Geometry on Linear Regression&lt;/h1&gt;
+    
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Impact of the Extrinsic Geometry on Linear Regression&quot; src=&quot;https://tsairesearch.github.io//assets/images/extrinsic_geom/manifold_demo_3.pdf&quot; /&gt;
+    
+ &lt;/div&gt;
+&lt;/d-title&gt;
+
+&lt;d-article&gt;
+
+&lt;p&gt;
+In this paper, we study linear regression applied to data structured on a manifold. We assume that the data manifold is smooth and is embedded in a Euclidean space, and our objective is to reveal the impact of the data manifold's extrinsic geometry on the regression. Specifically, we analyze the impact of the manifold's curvatures (or higher order nonlinearity in the parameterization when the curvatures are locally zero) on the uniqueness of the regression solution. Our findings suggest that the corresponding linear regression does not have a unique solution when the manifold is flat. Otherwise, the manifold's curvature (or higher order nonlinearity in the embedding) may contribute significantly, particularly in the solution associated with the normal directions of the manifold. Our findings thus reveal the role of data manifold geometry in ensuring the stability of regression models for out-of-distribution inferences.
+&lt;/p&gt;
+
+&lt;h3&gt; Main results &lt;/h3&gt;
+We investigate the local linear regression on smooth function $g(\mathbf{x})$ with data points sampled from different smooth manifolds $M\subset \mathbb R^d$.
+&lt;p&gt;
+&lt;ol&gt;
+  &lt;li&gt; When $M$ is given by $M=(x, y=kx^2)\subset \mathbb R^2$, where $k$ characterizes the curvature, the linear regression has leading order solutions: $w_x = \frac{\partial g}{\partial x}$, $w_y = \frac{\partial g}{\partial y} + \frac{1}{2k}\frac{\partial^2 g}{\partial x^2}$. This implies a direct impact of the manifold's curvature on the linear regression. Numerical verifications of this result are provided below:
+
+  &lt;div style=&quot;grid-column: screen &quot;&gt;
+
+  &lt;figure&gt;
+  &lt;div style=&quot;display: block; width: 100%; margin-right: auto; margin-left: auto; text-align: center&quot;&gt;
+  &lt;iframe width=&quot;400px&quot; height=&quot;290px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/extrinsic_geom/2d_regression.pdf&quot;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+
+  &lt;figcaption&gt;
+  &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+  Numerical simulations with different $k$.
+  &lt;/div&gt;
+  &lt;/figcaption&gt;
+  &lt;/figure&gt;
+  &lt;/div&gt;
+
+
+&lt;/li&gt;
+  &lt;li&gt; For any hypersurface $M\subset\mathbb R^d$, one can obtain a quadratic approximation locally. Then a generalized solution formula for the local linear regression can be explicitly obtained:
+  $$ \begin{cases}
+ w_{x_i} = \frac{\partial g}{\partial x_i},\\
+	w_y = \frac{\partial g}{\partial y} + \frac{1}{2}\frac{\displaystyle\sum_{i=1}^{d-1}k_i \frac{\partial^2 g}{\partial x_i^2}}{\displaystyle\sum_{i=1}^{d-1}k_i^2}. \\
+\end{cases} $$
+&lt;/li&gt;
+
+  &lt;li&gt;
+  Data in practice usually contains noises. We show that a suitable scale of Gaussian noise $\sim\mathcal N(0, \sigma^2)$ can regularize the behavior caused by the problematic curvature. This balancing effect is demonstrated in the formula:
+  $$ w_y = \frac{\partial g}{\partial y} + \frac{1}{2}\frac{k}{k^2+\frac{45}4\sigma^2}\frac{\partial^2 g}{\partial x^2},$$
+  and verified in the numerical experiment:
+  &lt;figure&gt;
+  &lt;div style=&quot;display: block; width: 100%; margin-right: auto; margin-left: auto; text-align: center&quot;&gt;
+  &lt;iframe width=&quot;400px&quot; height=&quot;290px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io/assets/images/extrinsic_geom/2d_regression_noise.pdf&quot;&gt;&lt;/iframe&gt;
+  &lt;/div&gt;
+
+  &lt;figcaption&gt;
+  &lt;div style=&quot;display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center&quot;&gt;
+  Numerical simulations with different scale of noise $\sigma$.
+  &lt;/div&gt;
+  &lt;/figcaption&gt;
+  &lt;/figure&gt;
+  &lt;/li&gt;
+
+  &lt;li&gt; For manifold with codimension $&amp;gt;1$, we perform numerical experiments to demonstrate the importance of the awareness of extrinsic dimension and embedding dimension. These characteristics crucially affect the well-posedness of the regression algorithm. See paper for details.
+  &lt;/li&gt;
+
+
+&lt;/ol&gt;
+&lt;/p&gt;
+
+&lt;h3&gt; Publications &lt;/h3&gt;
+
+&lt;p&gt;
+&lt;li&gt; Liu, L., He, J., &amp;amp; Tsai, R. (2023) Linear Regression on Manifold Structured Data: the Impact of Extrinsic Geometry on Solutions. Topology, Algebra and Geometry in Machine Learning workshop, International Conference of Machine Learning
+&lt;/li&gt;
+&lt;/p&gt;
+
+
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.pdf" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.pdf" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Previous Photos</title><link href="https://tsairesearch.github.io/photos" rel="alternate" type="text/html" title="Previous Photos" /><published>2023-02-20T00:00:00-06:00</published><updated>2023-02-20T00:00:00-06:00</updated><id>https://tsairesearch.github.io/photos</id><content type="html" xml:base="https://tsairesearch.github.io/photos">&lt;h3&gt; 2021 &lt;/h3&gt;
+&lt;figure&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Previous Photos&quot; src=&quot;https://tsairesearch.github.io/assets/images/old_profile/group_photo-2021.png&quot; /&gt;
+&lt;/figure&gt;
+
+&lt;h3&gt; 2019 &lt;/h3&gt;
+&lt;figure&gt;
+&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;Previous Photos&quot; src=&quot;https://tsairesearch.github.io/assets/images/old_profile/group_photo-2019.jpg&quot; /&gt;
+&lt;/figure&gt;</content><author><name></name></author><category term="photos" /><summary type="html">2021</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Numerical Wave Propagation Aided by Deep Learning</title><link href="https://tsairesearch.github.io/projects/wavelnn" rel="alternate" type="text/html" title="Numerical Wave Propagation Aided by Deep Learning" /><published>2021-08-16T00:00:00-05:00</published><updated>2021-08-16T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/wavelnn</id><content type="html" xml:base="https://tsairesearch.github.io/projects/wavelnn">&lt;d-front-matter&gt;
+
+  &lt;script type=&quot;text/json&quot;&gt;{
+  &quot;authors&quot;: [
+    {
+      &quot;author&quot;: &quot;Hieu Nguyen&quot;,
+      &quot;authorURL&quot;: &quot;https://dmi.unibas.ch/de/personen/hieu-huu-nguyen/&quot;,
+      &quot;affiliation&quot;: &quot;Department of Mathematics and Computer Science, University of Basel&quot;,
+      &quot;affiliationURL&quot;: &quot;https://dmi.unibas.ch/en/&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
+      &quot;affiliation&quot;: &quot;Department of Mathematics and Oden Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
+    }
+  ]
+  }&lt;/script&gt;
+
+&lt;/d-front-matter&gt;
+
+&lt;d-title&gt;
+ &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
+  &lt;h1&gt;Numerical Wave Propagation Aided by Deep Learning&lt;/h1&gt;
+    
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Numerical Wave Propagation Aided by Deep Learning&quot; src=&quot;https://tsairesearch.github.io//assets/images/wavelnn/testvelmodels.png&quot; /&gt;
+    
+ &lt;/div&gt;
+
+
+&lt;/d-title&gt;
+
+&lt;d-article&gt;
+
+&lt;p&gt; We propose a deep learning approach for wave propagation in media with multiscale wave speed, using a second-order linear wave equation model. We use neural networks to enhance the accuracy of a given inaccurate coarse solver, which under-resolves a class of multiscale wave media and wave fields of interest. Our approach involves generating training data by the given computationally efficient coarse solver and another sufficiently accurate solver, applied to a class of wave media (described by their wave speed profiles) and initial wave fields. We find that the trained neural networks can approximate the nonlinear dependence of the propagation on the wave speed as long as the causality is appropriately sampled in training data. We combine the neural-network-enhanced coarse solver with the parareal algorithm and demonstrate that the coupled approach improves the stability of parareal algorithms for wave propagation and improves the accuracy of the enhanced coarse solvers. &lt;/p&gt;
+
+
+&lt;h3&gt; Simulation &lt;/h3&gt;
+
+
+&lt;div style=&quot;column-grid: middle &quot;&gt;
+&lt;figure&gt;
+&lt;div style=&quot;display: block; width: 90%; text-align: center&quot;&gt;
+&lt;iframe width=&quot;881px&quot; height=&quot;703px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io//assets/images/wavelnn/testvelmodels.png&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;figcaption&gt;
+
+&lt;/figcaption&gt;
+
+&lt;/figure&gt;
+
+&lt;/div&gt;
+
+&lt;h3&gt; Training databases &lt;/h3&gt;
+&lt;p&gt;
+&lt;a href=&quot;https://utexas.box.com/s/av7cnf3shgwf9m42snrzfh49pyt9x9y0&quot;&gt; Click Here&lt;/a&gt; to get the training databases. &lt;/p&gt;
+
+
+
+
+&lt;h3&gt; Publications &lt;/h3&gt;
+
+&lt;p&gt;
+&lt;li&gt; Nguyen, H., &amp;amp; Tsai, R. (2023). Numerical wave propagation aided by deep learning. Journal of Computational Physics, 475, 111828. &lt;/li&gt;
+&lt;/p&gt;
+
+&lt;!-- H. Nguyen and R. Tsai. Numerical Wave Propagation Aided by Deep Learning. ArXiv:2107.13184, 2021--&gt;
+
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/wavelnn/testvelmodels.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Deep learning and the Low Dimensional Manifold Hypothesis</title><link href="https://tsairesearch.github.io/projects/lowdim" rel="alternate" type="text/html" title="Deep learning and the Low Dimensional Manifold Hypothesis" /><published>2021-06-30T00:00:00-05:00</published><updated>2021-06-30T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/lowdim</id><content type="html" xml:base="https://tsairesearch.github.io/projects/lowdim">&lt;d-front-matter&gt;
+
+  &lt;script type=&quot;text/json&quot;&gt;{
+  &quot;authors&quot;: [
+    {
+      &quot;author&quot;: &quot;Juncai He&quot;,
+      &quot;authorURL&quot;: &quot;https://juncaihe.github.io/&quot;,
+      &quot;affiliation&quot;: &quot;Department of Mathematics, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.ma.utexas.edu/&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
+      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
+      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
+    },
+    {
+      &quot;author&quot;: &quot;Rachel Ward&quot;,
+      &quot;authorURL&quot;: &quot;https://sites.google.com/prod/view/rward&quot;,
+      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
+      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
+    }
+  ]
+  }&lt;/script&gt;
+&lt;/d-front-matter&gt;
+
+&lt;d-title&gt;
+
+&lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
+  &lt;h1&gt;Deep learning and the Low Dimensional Manifold Hypothesis&lt;/h1&gt;
+    
+    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Deep learning and the Low Dimensional Manifold Hypothesis&quot; src=&quot;https://tsairesearch.github.io//assets/images/lowdim/streamplot_sigma.png&quot; /&gt;
+    
+ &lt;/div&gt;
+&lt;/d-title&gt;
+
+&lt;d-article&gt;
+
+&lt;p&gt;
+The low dimensional manifold hypothesis posits that the data found in many applications, such as those involving natural images, lie (approximately) on low dimensional manifolds embedded in a high dimensional Euclidean space. In this setting, a typical neural network defines a function that takes a finite number of vectors in the embedding space as input.
+However, one often needs to consider evaluating the optimized network at points outside the training distribution. This project considers the case in which the training data is distributed in a linear subspace of Rd. We derive estimates on the variation of the learning function, defined by a neural network, in the direction transversal to the subspace. We study the potential regularization effects associated with the network’s depth and noise in the codimension of the data manifold. We also present additional side effects in training due to the presence of noise.
+&lt;/p&gt;
+&lt;h3&gt; Main results &lt;/h3&gt;
+
+&lt;p&gt;
+&lt;ol&gt;
+  &lt;li&gt;If the data points, including noise, lie on $M$, the linear network’s depth may
+provide certain regularization or side effects. For ReLU neural networks, we prove that $\frac{\partial f}{\partial n_M}$ is sensitive to the initialization of a set of “untrainable” parameters.&lt;/li&gt;
+  &lt;li&gt;If the noise has a small positive variance in the orthogonal complement of $M$,
+then:
+&lt;ul&gt;
+  &lt;li&gt;$\frac{\partial f}{\partial n_M}$ can be made arbitrarily small, provided that the number of data points scales according to some inverse power of the variance for deep linear neural networks and nonlinear deep linear neural networks;&lt;/li&gt;
+  &lt;li&gt;For linear neural network models, it may take a gradient descent algorithm exponentially (in the reciprocal of the variance) long to converge to the unique optimal model parameters, which yield small $\frac{\partial f}{\partial n_M}$. In addition, it may also need a long time to escape the near region of origin.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+  &lt;li&gt;The stability-accuracy trade-off. The role of noise can be interpreted as a stabilizer for a model when evaluated on points outside of the (clean) data distribution. However, adding noise to the data set will impact of the accuracy of the network's generalization error (for evaluation within the data distribution). For nonlinear data manifolds, uniform noise may render the labeled data incompatible.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/p&gt;
+&lt;h3&gt; Publications &lt;/h3&gt;
+
+&lt;p&gt;
+&lt;li&gt; He, J., Tsai, R., &amp;amp; Ward, R. (2023). Side effects of learning from low-dimensional data embedded in a Euclidean space. Research in the Mathematical Sciences, 10(1), 13.
+&lt;/li&gt;
+&lt;/p&gt;
+&lt;!--J. He, R. Tsai and R. Ward. &quot;Side-effects of Learning from Low Dimensional Data Embedded in an Euclidean Space&quot;. ArXiv: 2203.00614, 2022.
+--&gt;
+
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Selected Papers</title><link href="https://tsairesearch.github.io/papers" rel="alternate" type="text/html" title="Selected Papers" /><published>2019-11-09T00:00:00-06:00</published><updated>2019-11-09T00:00:00-06:00</updated><id>https://tsairesearch.github.io/papers</id><content type="html" xml:base="https://tsairesearch.github.io/papers">&lt;h3 id=&quot;exploration-and-surveillance&quot;&gt;Exploration and Surveillance&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Efficient and robust Sensor Placement in Complex Environments. Lukas Taus and Yen-Hsi Richard Tsai. Preprint 2023 &lt;a href=&quot;https://arxiv.org/abs/2309.08545&quot;&gt;[paper]&lt;/a&gt;&lt;a href=&quot;https://drive.google.com/file/d/12LGm468ZypvgAKlA1CVIV5Qu1ziiytb-/view&quot;&gt;[video]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Autonomous Exploration, Reconstruction, and Surveillance of 3d Environments aided by Deep Learning. Louis Ly and Yen-Hsi Richard Tsai. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019.
+&lt;a href=&quot;https://arxiv.org/abs/1809.06025&quot;&gt;[paper]&lt;/a&gt;
+&lt;a href=&quot;http://helper.ipam.ucla.edu/publications/glws3/glws3_15672.pdf&quot;&gt;[slides]&lt;/a&gt;
+&lt;a href=&quot;http://www.ipam.ucla.edu/abstract/?tid=15672&amp;amp;pcode=GLWS3&quot;&gt;[talk]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Strategy Synthesis for Surveillance-evasion Games with Learning-enabled Visibility Optimization. Suda Bharadwaj, Louis Ly, Bo Wu, Yen-Hsi Richard Tai, and Ufuk Topcu. 2019 Conference on Decisions and Control (CDC). IEEE, 2019.
+&lt;a href=&quot;https://arxiv.org/abs/1911.07394&quot;&gt;[paper]&lt;/a&gt;
+&lt;a href=&quot;http://helper.ipam.ucla.edu/publications/glws3/glws3_15672.pdf&quot;&gt;[slides]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;An Efficient Algorithm for a Visibility-based Surveillance-evasion Game. Ryo Takei, Yen-Hsi Richard Tsai, Zhengyuan Zhou, and Yanina Landa. Communications in Mathematical Sciences 12.7 (2014): 1303-1327.
+&lt;a href=&quot;https://www.intlpress.com/site/pub/pages/journals/items/cms/content/vols/0012/0007/a007/&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;A Practical Path-planning Algorithm for a Simple Car: a Hamilton-Jacobi Approach. Ryo Takei, Yen-Hsi Richard Tsai, Haochong Shen, and Yanina Landa. Proceedings of the 2010 American control conference. IEEE, 2010.
+&lt;a href=&quot;ftp://ftp.math.ucla.edu/pub/camreport/cam09-74.pdf&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;point-cloud-processing&quot;&gt;Point Cloud Processing&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Nearest Neighbor Sampling of Point Sets using Rays. Liangchen Liu, Louis Ly, Colin Macdonald, and Yen-Hsi Richard Tsai. Communications on Applied Mathematics and Computation 2023,
+&lt;a href=&quot;https://arxiv.org/abs/1911.10737&quot;&gt;[paper]&lt;/a&gt;&lt;a href=&quot;https://drive.google.com/file/d/1U3imtMJiJrSDqYZ5knMYNCKo9vTbWbdZ/view?usp=share_link&quot;&gt;[poster]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;manifold-structured-data-and-its-impact-on-learning&quot;&gt;Manifold Structured Data and its Impact on Learning&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Linear Regression on Manifold Structured Data: the Impact of Extrinsic Geometry on Solutions. Liangchen Liu, Juncai He, and Richard Tsai. Topology, Algebra and Geometry in Machine Learning workshop, ICML2023 &lt;a href=&quot;https://arxiv.org/abs/2307.02478&quot;&gt;[paper]&lt;/a&gt;&lt;a href=&quot;https://icml.cc/media/PosterPDFs/ICML%202023/27589.png?t=1691533674.7285285&quot;&gt;[poster]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Side-effects of Learning from Low Dimensional Data Embedded in an Euclidean Space. Juncai He, Richard Tsai and Rachel Ward. Research in Mathematical Science 10.13 (2023).  &lt;a href=&quot;https://doi.org/10.1007/s40687-023-00378-y&quot;&gt;[paper]&lt;/a&gt;]&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;source-localization&quot;&gt;Source Localization&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Autonomous Source Discovery and Navigation in Complicated Environments. Yanina Landa,  Haochong Shen, Ryo Takei, Yen-Hsi Richard Tsai. Preprint 2009.
+&lt;a href=&quot;ftp://ftp.math.ucla.edu/pub/camreport/cam09-73.pdf&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Discovery of Point Sources in the Helmholtz Equation posed in Unknown Domains with Obstacles. Yanina Landa, Nicolay Tanushev, Yen-Hsi Richard Tsai. Communications in Mathematical Sciences 9.3 (2011): 903-928.
+&lt;a href=&quot;https://www.intlpress.com/site/pub/pages/journals/items/cms/content/vols/0009/0003/a011/&quot;&gt;[paper]&lt;/a&gt;
+&lt;a href=&quot;https://www.dropbox.com/s/h3pesvk99rom90r/inverse_source_problem_nonlinear-helmholtz.pdf?dl=0&quot;&gt;[slides]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Point Source Identification in Nonlinear Advection–Diffusion–Reaction Systems. Alexander Mamonov and Yen-Hsi Richard Tsai. Inverse Problems 29.3 (2013): 035009.
+&lt;a href=&quot;ftp://ftp.math.ucla.edu/pub/camreport/cam12-15.pdf&quot;&gt;[paper]&lt;/a&gt;
+&lt;a href=&quot;https://www.dropbox.com/s/mnk5a3j3xiozh43/srcid-talk-richard.pdf?dl=0&quot;&gt;[slides]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Heat Source Identification based on Constrained Minimization. Yingying Li, Stanley Osher, and Yen-Hsi Richard Tsai. Inverse Problems and Imaging 8.1 (2014): 199-221.
+&lt;a href=&quot;https://www.researchgate.net/profile/Richard_Tsai3/publication/264998169_Heat_source_identification_based_on_L1_constrained_minimization/links/54cbafab0cf24601c088b3d8/Heat-source-identification-based-on-L1-constrained-minimization.pdf&quot;&gt;[paper]&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;multiscale-coupling-algorithms&quot;&gt;Multiscale Coupling Algorithms&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;A Stable Parareal-like Method for the Second Order Wave Equation. Hieu Nguyen and Richard Tsai. Journal of Computational Physics (2020). Accepted.
+&lt;a href=&quot;https://doi.org/10.1016/j.jcp.2019.109156&quot;&gt;[paper]&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--
+### Deep Neural Networks and Finite Element Methods
+
+- ReLU deep neural networks from the hierarchical basis perspective. Juncai He, Lin Li and Jinchao Xu. Preprint 2021. [[paper]](https://arxiv.org/abs/2105.04156)
+- ReLU deep neural networks and linear finite elements. Juncai He, Lin Li, Jinchao Xu and Chunyue Zheng. Journal of Computational Mathematics 38.3 (2020): 502-527. [[paper]](https://www.global-sci.org/intro/article_detail/jcm/15798.html)
+- Power series expansion neural network. Qipin Chen, Wenrui Hao and Juncai He. Preprint 2021. [[paper]](https://arxiv.org/abs/2102.13221)
+
+### Convolutional neural networks and multigrid
+
+- Constrained Linear Data-feature Mapping in Image Classification. Juncai He, Yuyan Chen, Lian Zhang and Jinchao Xu. Preprint 2020. [[paper]](https://arxiv.org/abs/1911.10428)
+- MgNet: a unified framework of multigrid and convolutional neural network. Juncai He and Jinchao Xu.  Science China Mathematics 62.7 (2019): 1331–1354. [[paper]](https://link.springer.com/article/10.1007%2Fs11425-019-9547-2)
+
+### Training algorithms in deep learning
+
+-  Make ![ell_1](https://juncaihe.github.io/eqs/2349274112114421517-130.png) regularization effective in training sparse CNN. Juncai He, Xiaodong Jia, Jinchao Xu, Liang Zhao and Lian Zhang. Computational Optimization and Applications (2020). [[paper]](https://link.springer.com/article/10.1007/s10589-020-00202-1) --&gt;</content><author><name></name></author><category term="papers" /><summary type="html">Exploration and Surveillance Efficient and robust Sensor Placement in Complex Environments. Lukas Taus and Yen-Hsi Richard Tsai. Preprint 2023 [paper][video]</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Mathematics in Deep Learning —Syllabus</title><link href="https://tsairesearch.github.io/notes/syllabus" rel="alternate" type="text/html" title="Mathematics in Deep Learning —Syllabus" /><published>2019-10-20T00:00:00-05:00</published><updated>2019-10-20T00:00:00-05:00</updated><id>https://tsairesearch.github.io/notes/syllabus</id><content type="html" xml:base="https://tsairesearch.github.io/notes/syllabus">&lt;p&gt;Welcome to the zoo!&lt;/p&gt;
 
 &lt;p&gt;A tentative list of topics to be covered in this course.&lt;/p&gt;
 
@@ -799,244 +1115,4 @@ On the right video, the agent must also patrol the environment, in addition to t
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/evasion/patrol.gif" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/evasion/patrol.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">AI-enabled Exploration and Surveillance</title><link href="https://tsairesearch.github.io/projects/autonomous" rel="alternate" type="text/html" title="AI-enabled Exploration and Surveillance" /><published>2018-06-15T00:00:00-05:00</published><updated>2018-06-15T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/autonomous</id><content type="html" xml:base="https://tsairesearch.github.io/projects/autonomous">&lt;d-front-matter&gt;
-  &lt;script type=&quot;text/json&quot;&gt;{
-  &quot;authors&quot;: [
-    {
-      &quot;author&quot;: &quot;Louis Ly&quot;,
-      &quot;authorURL&quot;: &quot;https://longlouisly.github.io/&quot;,
-      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
-      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
-    },
-    {
-      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
-      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
-      &quot;affiliation&quot;: &quot;Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
-      &quot;affiliationURL&quot;: &quot;https://www.ices.utexas.edu&quot;
-    }
-  ]
-  }&lt;/script&gt;
-&lt;/d-front-matter&gt;
-
-&lt;d-title&gt;
- &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
-  &lt;h1&gt;AI-enabled Exploration and Surveillance&lt;/h1&gt;
-    
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io//assets/images/autonomous/3d.gif&quot; /&gt;
-    
- &lt;/div&gt;
-
-
-&lt;/d-title&gt;
-
-&lt;d-article&gt;
-
-&lt;p&gt;We develop a new state-of-the-art deep learning strategy for prescribing vantage points for optimal sensor placement. This approach uses a robust volumetric visibility computation to efficiently model arbitrary geometries. We present several simulations on urban environments below.&lt;/p&gt;
-
-&lt;h3&gt; 2D Urban Simulations &lt;/h3&gt;
-
-
-&lt;div style=&quot;grid-column: text;&quot;&gt;
-
-&lt;figure&gt;
-&lt;div style=&quot;display: inline; float: left; width: 50%; text-align: center&quot;&gt;
-&lt;iframe frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://drive.google.com/file/d/1-dvc6IDh0ItwHaS78-vBv2u5VY8ojRmb/preview&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;div style=&quot;display: inline; float: left; width: 50%; text-align: center&quot;&gt;
-&lt;iframe frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://drive.google.com/file/d/1hm9AromseSBybcNxtV7DK-pWTb_gcCeW/preview&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;figcaption&gt;
-A demonstration of two different policies for generating vantage points using deep learning, set over an aerial view of a 150m x 150m area in Austin. The agent starts in an initially unknown environment. At prescribed vantage point, it takes an omni-directional sensor measurement encoding line-of-sight information. Red dot indicates current position. Blue disks are previous vantage points. White regions are visible at the current positon. Light gray regions were visible at previous vantage points. Dark gray regions are currently occluded. Black lines indicate boundaries of reconstructed buildings.
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
-
-&lt;/div&gt;
-
-&lt;h3&gt; 3D Urban Simulations &lt;/h3&gt;
-
-A 3D simulation of a 250m x 250m environment based on Castle Square Parks in Boston.
-
-&lt;div style=&quot;column-grid: middle &quot;&gt;
-&lt;figure&gt;
-&lt;div style=&quot;text-align: center&quot;&gt;
-&lt;iframe width=&quot;720px&quot; height=&quot;480px&quot; allowfullscreen=&quot;true&quot; src=&quot;https://drive.google.com/file/d/1PK5kPckAaKWrTSu3-REEeBlbd39rZSrD/preview&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
- &lt;figcaption&gt;
-   Video demonstrating the exploration of an initially unknown environment using sparse sensor measurements. The green spheres indicate the vantage point. The gray surface is the reconstruction of the environment based on line of sight measurements taken from the sequence of vantage points. New vantage points are computed in virtually real time using our new deep learning strategy. Best viewed in full screen. 
- &lt;/figcaption&gt;
-&lt;/figure&gt;
-
-
-
-&lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/sight1.jpg&quot; /&gt;
-&lt;figcaption&gt;
-Surveillance of urban environment using 2 sensors represented by green spheres. Yellow regions are visible from one of the sensors. Red regions are visible from both sensors. For clarity, visualization only includes visibility of regions near ground level. Two sample paths across the courtyard are shown. The cyan path uses the shadows of structure to minimize detection while the magenta path naively crosses through.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;h3&gt; 3D MOUT Site &lt;/h3&gt;
-
-Realistic LiDAR simulations of a virtual Military Operations in Urban Terrain (MOUT) site. Vantage points are generated using a previous approach.
-
-
-&lt;div style=&quot;grid-column: text;&quot;&gt;
-
-&lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
-&lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout1_textured.jpg&quot; /&gt;
-&lt;figcaption&gt;
-A 20m region around a patio area with tree cover from the virtual MOUT site.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
-&lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout1_points.jpg&quot; /&gt;
-&lt;figcaption&gt;
-The integrated visibility volume of the patio area generated from 16 vantage points, shown as red circles.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-
-&lt;div style=&quot;grid-column: text;&quot;&gt;
-
-&lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
-&lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout3_textured.jpg&quot; /&gt;
-&lt;figcaption&gt;
-A close-up of the patio area with complex geometries such as columns and tree trunks.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
-&lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout3_recon.jpg&quot; /&gt;
-&lt;figcaption&gt;
-A coarse reconstruction of the patio generated from the visibility volume.
-Despite the low resolution, the topology of the structures are preserved.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-
-
-&lt;div style=&quot;grid-column: text;&quot;&gt;
-
-&lt;div style=&quot;display: inline; float: left; width: 45%; text-align: center&quot;&gt;
-&lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout2_textured.jpg&quot; /&gt;
-&lt;figcaption&gt;
-A larger, 50m region around a church with several buildings.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;div style=&quot;display: inline; float: right; width: 45%; text-align: center&quot;&gt;
-&lt;figure&gt;
-&lt;img style=&quot;display: block; max-width: 100%; margin-top: 3rem; margin-bottom: 1rem; margin-left: auto; margin-right: auto&quot; alt=&quot;AI-enabled Exploration and Surveillance&quot; src=&quot;https://tsairesearch.github.io/assets/images/autonomous/mout2_recon.jpg&quot; /&gt;
-&lt;figcaption&gt;
-A reconstruction of the building surface using 1,896,786 points generated from 11 vantage locations.
-&lt;/figcaption&gt;
-&lt;/figure&gt;
-&lt;/div&gt;
-
-&lt;/div&gt;
-
-
-
-
-&lt;h3&gt; Publications &lt;/h3&gt;
-
-&lt;p&gt;
-&lt;li&gt; L. Ly and R. Tsai. Autonomous exploration, reconstruction, and surveillance of 3D environments aided by deep learning. 2019 International Conference on Robotics and Automation (ICRA). IEEE, 2019.&lt;/li&gt;
-&lt;li&gt; M. Hielsberg, R. Tsai, P. Guo, and C. Chen. Visibility-based urban exploration and learning using point clouds. 2013.  &lt;/li&gt;
-&lt;li&gt; L. Valente, R. Tsai, and S. Soatto. Information-seeking control under visibility-based uncertainty. Journal of Mathematical Imaging and Vision, 48(2), 339-358, 2014 &lt;/li&gt;
-&lt;li&gt; R. Takei, R. Tsai, Z. Zhou, and Y. Landa. An efficient algorithm for a visibility-based surveillance-evasion game. Communications in Mathematical Sciences, Vol (12) No 7, pp.1303-1327, 2014 &lt;/li&gt;
-&lt;li&gt; Y. Landa and R. Tsai. Visibility of point clouds and exploratory path planning in unknown environments. Communications in Mathematical Sciences., 6(4), 2008.
-&lt;li&gt; C.-Y. Kao and R. Tsai. Properties of a level set algorithm for the visibility problems. Journal of Scientiﬁc Computing, 35(2-3), June 2008.
-&lt;li&gt; Y. Landa, D. Galkowski, Y. Huang, A. Joshi, C. Lee, K. Leung, G. Malla, J. Treanor, V. Voroninski, A. Bertozzi, and Y.-H. Tsai. Robotic path planning and visibility with limited sensor data. American Control Conference, 2007. ACC ’07, pages 5425–5430, July 2007.
-&lt;li&gt; Y. Landa, R. Tsai, and L. Cheng. Visibility of point clouds and mapping of unknown environments. In Springer Notes in Computational Science and Engineering, pages 1014–1025, 2006.
-&lt;li&gt; L.-T. Cheng and Y.-H. Tsai. Visibility optimization using variational approaches. Commun. Math. Sci., 3(3):425–451, 2005
-&lt;li&gt; Y.-H. R. Tsai, L.-T. Cheng, S. Osher, P. Burchard, and G. Sapiro. Visibility and its dynamics in a PDE based implicit framework. J. Comput. Phys., 199(1):260–290, 2004.
-&lt;li&gt; H. Jin, A. J. Yezzi, Y.-H. Tsai, L.-T. Cheng, and S. Soatto. Estimation of 3D surface shape and smooth radiance from 2D images: a level set approach. J. Sci. Comput., 19(1-3):267–292, 2003. &lt;/li&gt;
-&amp;lt;/p&amp;gt;
-
-&lt;h3&gt; Acknowledgements &lt;/h3&gt;
-&lt;p&gt;This work is supported by ARO MURI W911NF-07-1-0185 and W911NF-12-1-0519 grants.
-&lt;/p&gt;
-&amp;lt;/d-article&amp;gt;
-&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/li&gt;&lt;/p&gt;&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/autonomous/3d.gif" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/autonomous/3d.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Point source identification in non-linear advection-diffusion-reaction systems</title><link href="https://tsairesearch.github.io/projects/source" rel="alternate" type="text/html" title="Point source identification in non-linear advection-diffusion-reaction systems" /><published>2012-02-14T00:00:00-06:00</published><updated>2012-02-14T00:00:00-06:00</updated><id>https://tsairesearch.github.io/projects/source</id><content type="html" xml:base="https://tsairesearch.github.io/projects/source">&lt;d-front-matter&gt;
-  &lt;script type=&quot;text/json&quot;&gt;{
-  &quot;authors&quot;: [
-    {
-      &quot;author&quot;: &quot;Alexander Mamonov&quot;,
-      &quot;authorURL&quot;: &quot;https://www.math.uh.edu/~mamonov/&quot;,
-      &quot;affiliation&quot;: &quot;Department of Mathematics, University of Houston&quot;,
-      &quot;affiliationURL&quot;: &quot;http://www.uh.edu/&quot;
-    },
-    {
-      &quot;author&quot;: &quot;Yen-Hsi Richard Tsai&quot;,
-      &quot;authorURL&quot;: &quot;https://www.ma.utexas.edu/users/ytsai/&quot;,
-      &quot;affiliation&quot;: &quot;Oden Institute for Computational Engineering and Sciences, University of Texas at Austin&quot;,
-      &quot;affiliationURL&quot;: &quot;https://www.oden.utexas.edu&quot;
-    }
-  ]
-  }&lt;/script&gt;
-&lt;/d-front-matter&gt;
-
-&lt;d-title&gt;
- &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
-  &lt;h1&gt;Point source identification in non-linear advection-diffusion-reaction systems&lt;/h1&gt;
-    
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Point source identification in non-linear advection-diffusion-reaction systems&quot; src=&quot;https://tsairesearch.github.io//assets/images/point/fig7.png&quot; /&gt;
-    
- &lt;/div&gt;
-
-
-&lt;/d-title&gt;
-
-&lt;d-article&gt;
-
-&lt;p&gt; We consider a problem of identification of point sources in time dependent advection-diffusion systems with a non-linear reaction term. The linear counterpart of the problem in question can be reduced to solving a system of non-linear algebraic equations via the use of adjoint equations. We extend this approach by constructing an algorithm that solves the problem iteratively to account for the non-linearity of the reaction term. We study the question of improving the quality of source identification by adding more measurements adaptively using the solution obtained previously with a smaller number of measurements. &lt;/p&gt;
-
-
-&lt;h3&gt; Simulation &lt;/h3&gt;
-
-
-&lt;div style=&quot;column-grid: middle &quot;&gt;
-
-&lt;figure&gt;
-&lt;div style=&quot;display: block; width: 90%; text-align: center&quot;&gt;
-&lt;iframe width=&quot;547px&quot; height=&quot;547px&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;true&quot; src=&quot;https://tsairesearch.github.io//assets/images/point/fig7.png&quot;&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-
-&lt;figcaption&gt;
-
-&lt;/figcaption&gt;
-
-&lt;/figure&gt;
-
-&lt;/div&gt;
-
-
-&lt;h3&gt; Publications &lt;/h3&gt;
-
-&lt;p&gt;
-&lt;li&gt; A. Mamonov and R. Tsai. Point Source Identification in Non-Linear Advection-Diffusion-Reaction Systems.  Inverse Problems 29, 2013  &lt;/li&gt;
-&lt;/p&gt;
-
-
-
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/point/fig7.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/point/fig7.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
+&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/evasion/patrol.gif" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/evasion/patrol.gif" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

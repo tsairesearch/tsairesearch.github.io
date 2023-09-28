@@ -928,23 +928,23 @@ distill-header .nav a {
     <meta name=author content="The Scientific AI Research Group">
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Sampling and Classification of Point Clouds | The Scientific AI Research Group</title>
+<title>Sampling and Processing of Point Clouds | The Scientific AI Research Group</title>
 <meta name="generator" content="Jekyll v3.9.2" />
-<meta property="og:title" content="Sampling and Classification of Point Clouds" />
+<meta property="og:title" content="Sampling and Processing of Point Clouds" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="We propose a new framework for the sampling, compression, and analysis of distributions of point sets embedded in Euclidean spaces. A set of randomly selected rays are projected onto their closest points in the data set and thus form the signature of the data set." />
-<meta property="og:description" content="We propose a new framework for the sampling, compression, and analysis of distributions of point sets embedded in Euclidean spaces. A set of randomly selected rays are projected onto their closest points in the data set and thus form the signature of the data set." />
+<meta name="description" content="We propose a new framework for the sampling, compression, and analysis of distributions of point sets embedded in Euclidean spaces. Our approach involves constructing a tensor called the RaySense sketch, which captures nearest neighbors from the underlying geometry of points along a set of rays" />
+<meta property="og:description" content="We propose a new framework for the sampling, compression, and analysis of distributions of point sets embedded in Euclidean spaces. Our approach involves constructing a tensor called the RaySense sketch, which captures nearest neighbors from the underlying geometry of points along a set of rays" />
 <link rel="canonical" href="https://tsairesearch.github.io/projects/rays" />
 <meta property="og:url" content="https://tsairesearch.github.io/projects/rays" />
 <meta property="og:site_name" content="The Scientific AI Research Group" />
 <meta property="og:image" content="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-11-06T00:00:00-06:00" />
+<meta property="article:published_time" content="2023-09-13T00:00:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" />
-<meta property="twitter:title" content="Sampling and Classification of Point Clouds" />
+<meta property="twitter:title" content="Sampling and Processing of Point Clouds" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2019-11-06T00:00:00-06:00","datePublished":"2019-11-06T00:00:00-06:00","description":"We propose a new framework for the sampling, compression, and analysis of distributions of point sets embedded in Euclidean spaces. A set of randomly selected rays are projected onto their closest points in the data set and thus form the signature of the data set.","headline":"Sampling and Classification of Point Clouds","image":"https://tsairesearch.github.io/assets/images/rays/airplane_ray.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/projects/rays"},"url":"https://tsairesearch.github.io/projects/rays"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-09-13T00:00:00-05:00","datePublished":"2023-09-13T00:00:00-05:00","description":"We propose a new framework for the sampling, compression, and analysis of distributions of point sets embedded in Euclidean spaces. Our approach involves constructing a tensor called the RaySense sketch, which captures nearest neighbors from the underlying geometry of points along a set of rays","headline":"Sampling and Processing of Point Clouds","image":"https://tsairesearch.github.io/assets/images/rays/airplane_ray.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/projects/rays"},"url":"https://tsairesearch.github.io/projects/rays"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -972,14 +972,39 @@ distill-header .nav a {
     <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
-    <d-front-matter>
+    <!-- define the style for images container -->
+<head>
+<style>
+  div.container {
+     display:inline-block;
+   }
+
+  .imgContainer{
+    float:left;
+  }
+  c {
+  text-align:center;
+  }
+
+  html,body        {height: 100%;}
+
+  .wrapper{width: 80%; max-width: 600px; height: 100%; margin: 0 auto; background: #CCC}
+
+  .h_iframe{position: relative; padding-top: 56%;}
+
+  .h_iframe iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+</style>
+</head>
+
+<body>
+<d-front-matter>
   <script type="text/json">{
   "authors": [
     {
-      "author": "Lewis Liu",
-      "authorURL": "https://www.iam.ubc.ca/liangchen-liu/",
-      "affiliation": "Department of Mathematics, The University of British Columbia",
-      "affiliationURL": "https://ubc.ca"
+      "author": "Liangchen (Lewis) Liu",
+      "authorURL": "https://lclewis.github.io",
+      "affiliation": "Department of Mathematics, The University of Texas at Austin",
+      "affiliationURL": "http://ma.utexas.edu/"
     },
     {
       "author": "Louis Ly",
@@ -1004,38 +1029,47 @@ distill-header .nav a {
   }</script>
 </d-front-matter>
 
+
 <d-title>
  <div style="grid-column: screen; text-align: center">
-  <h1>Sampling and Classification of Point Clouds</h1>
+  <h1>Sampling and Processing of Point Clouds</h1>
     
-    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Sampling and Classification of Point Clouds" src="https://tsairesearch.github.io//assets/images/rays/airplane_ray.png" />
+    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Sampling and Processing of Point Clouds" src="https://tsairesearch.github.io//assets/images/rays/airplane_ray.png" />
     
  </div>
 
 
 </d-title>
 
+
 <d-article>
 
-<p> We propose a new framework for the sampling, compression, and analysis of
-distributions of point sets embedded in Euclidean spaces. A set of randomly
-selected rays are projected onto their closest points in the data set and thus
-form the signature of the data set. From the signature, statistical
-information about the data set, as well as certain geometrical information can
-be extracted, independent of the ray set. We show that the cost of the sampling
-approach is asymptotically independent of the ray sets.  Finally, we present a
-neural network model using the  signature for classification of point
-sets in three dimensions. </p>
+<p> We propose a new framework for the sampling, compression, and analysis of distributions of point sets and other geometric objects embedded in Euclidean spaces. Our approach involves constructing a tensor called the RaySense sketch, which captures nearest neighbors from the underlying geometry of points along a set of rays. We explore various operations that can be performed on the RaySense sketch, leading to different properties and potential applications. Statistical information about the data set can be extracted from the sketch, independent of the ray set. Line integrals on point sets can be efficiently computed using the sketch. We also present several examples illustrating applications of the proposed strategy in practical scenarios. </p>
 
-<h3> Examples </h3>
+<h2>  Visualizations of Method </h2>
 
-
+<h3> Sampling Visualization with rays and Features </h3>
 <div style="grid-column: screen ">
 
-<figure>
-<div style="display: block; width: 100%; text-align: center">
+<!-- <figure>
+<div style="display: block; width: 80%; text-align: center">
 <iframe width="1296px" height="850px" frameborder="0" allowfullscreen="true" src="https://tsairesearch.github.io/assets/images/rays/grid.png"></iframe>
+</div> -->
+
+
+<figure>
+<div style="display: block; width: 80%; margin-right: auto; margin-left: auto; text-align: center">
+<img src="https://tsairesearch.github.io/assets/images/rays/grid.png" width="338px" height="648px" />
 </div>
+
+<!-- <div class="wrapper">
+    <div class="h_iframe">
+      <iframe height="4" width="8" src="https://tsairesearch.github.io/assets/images/rays/grid.png" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div> -->
+<!-- <div class="container">
+    <img src="https://tsairesearch.github.io/assets/images/rays/grid.png" height="1024" width="768"/>
+</div> -->
 
 <figcaption>
 <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
@@ -1045,6 +1079,7 @@ sets in three dimensions. </p>
 </figure>
 </div>
 
+<h3> Visualization of Voronoi Cell with Rays </h3>
 <div style="grid-column: screen ">
 
 <figure>
@@ -1063,11 +1098,14 @@ point pairs are shown in green and red.
 </div>
 </figcaption>
 </figure>
+</div>
 
+<h3> Visualization of Sampling Frequencies</h3>
+<div style="grid-column: screen ">
 
 <figure>
-<div style="display: block; width: 100%; text-align: center">
-<iframe width="1000px" height="500px" frameborder="0" allowfullscreen="true" src="https://tsairesearch.github.io/assets/images/rays/airplane_side.png"></iframe>
+<div style="display: block; width: 50%; margin-right: auto; margin-left: auto; text-align: center">
+<img src="https://tsairesearch.github.io/assets/images/rays/airplane_side.png" width="210px" height="350px" />
 </div>
 
 <figcaption>
@@ -1079,6 +1117,115 @@ We can control the number of points by increasing the number of rays. Each ray c
 </figure>
 </div>
 
+
+
+<h2> Downstream Applications </h2>
+
+
+  <h3> Salient Points Detection </h3>
+
+    <figure class="half" style="display:flex">
+
+      <div class="container">
+
+        <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
+        <img src="https://tsairesearch.github.io/assets/images/rays/MNIST_Salient_RaySense_top10_01cube-202210-noFreq.png" width="210px" height="350px" />
+        </div>
+
+
+        <figcaption>
+        <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+          RaySense Sampling with Top 10 Frequencies
+
+        </div>
+        </figcaption>
+      </div>
+
+      <div class="container">
+        <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
+        <img src="https://tsairesearch.github.io/assets/images/rays/MNIST_random_10-202210-noFreq.png" width="210px" height="350px" />
+        </div>
+
+        <figcaption>
+        <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+          Uniformly Random Sampling
+          </div>
+        </figcaption>
+    </div>
+    </figure>
+
+        <figure>
+          <figcaption>
+          <div style="display: block; margin-right: auto; margin-left: auto; width: 100%; text-align: center">
+          Comparison of RaySense sampled points and points from uniformly random sampling of the MNIST dataset. RaySense sampled points are those with the highest RaySense sampling frequencies for each class. These points correspond to digits written using unusual strokes, hence giving a notion of salient points of the dataset.
+          </div>
+          </figcaption>
+        </figure>
+
+
+
+    <h3> Radon Transform and Reconstruction</h3>
+
+        <figure class="half" style="display:flex">
+
+          <div class="container">
+
+            <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
+            <img src="https://tsairesearch.github.io/assets/images/rays/point_cloud_and_density.png" width="210px" height="160px" />
+            </div>
+
+
+            <figcaption>
+            <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+              Underlying density and point sets
+            </div>
+            </figcaption>
+          </div>
+
+          <div class="container">
+            <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
+            <img src="https://tsairesearch.github.io/assets/images/rays/example_M21.png" width="210px" height="160px" />
+            </div>
+
+            <figcaption>
+            <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+              RaySensed points from uniform lines
+              </div>
+            </figcaption>
+        </div>
+
+        <div class="container">
+          <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
+          <img src="https://tsairesearch.github.io/assets/images/rays/sonogram_92441_M101_K64_dt1.png" width="210px" height="160px" />
+          </div>
+
+          <figcaption>
+          <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+            Integral transformed / spectrum
+            </div>
+          </figcaption>
+        </div>
+
+        <div class="container">
+          <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
+          <img src="https://tsairesearch.github.io/assets/images/rays/fbp_92441_M101_K64_dt1_trim.png" width="210px" height="160px" />
+          </div>
+
+          <figcaption>
+          <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+            Reconstruction results
+            </div>
+          </figcaption>
+        </div>
+        </figure>
+
+            <figure>
+              <figcaption>
+              <div style="display: block; margin-right: auto; margin-left: auto; width: 100%; text-align: center">
+            Approximate Radon transform computed with RaySense from point cloud data (a)–(c) and filtered back projection reconstruction (d). Our theoretical analysis also suggests the line integral error from RaySense approximation of an $N$-size point cloud in $\mathbb R^d$ converge in a rate of $\mathcal O\left(N^{-\frac{1}d}\right)$.
+              </div>
+              </figcaption>
+            </figure>
 
 
 <h3> Classification using Deep Neural Networks </h3>
@@ -1254,6 +1401,7 @@ Sensitivity of the neural network models to the input size. Here, $m$ is the num
 
 
 </d-article>
+</body>
 
 
     

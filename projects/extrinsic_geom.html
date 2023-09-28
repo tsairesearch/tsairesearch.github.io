@@ -928,24 +928,28 @@ distill-header .nav a {
     <meta name=author content="The Scientific AI Research Group">
 
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>segmentation | The Scientific AI Research Group</title>
+<title>Impact of the Extrinsic Geometry on Linear Regression | The Scientific AI Research Group</title>
 <meta name="generator" content="Jekyll v3.9.2" />
-<meta property="og:title" content="segmentation" />
+<meta property="og:title" content="Impact of the Extrinsic Geometry on Linear Regression" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="https://tsairesearch.github.io/notes/segmentation" />
-<meta property="og:url" content="https://tsairesearch.github.io/notes/segmentation" />
+<meta name="description" content="We study linear regression applied to data structured on a manifold. Our objective is to reveal the impact of the data manifold’s extrinsic geometry on the regression." />
+<meta property="og:description" content="We study linear regression applied to data structured on a manifold. Our objective is to reveal the impact of the data manifold’s extrinsic geometry on the regression." />
+<link rel="canonical" href="https://tsairesearch.github.io/projects/extrinsic_geom" />
+<meta property="og:url" content="https://tsairesearch.github.io/projects/extrinsic_geom" />
 <meta property="og:site_name" content="The Scientific AI Research Group" />
+<meta property="og:image" content="https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.pdf" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-09-28T16:25:29-05:00" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="segmentation" />
+<meta property="article:published_time" content="2023-06-30T00:00:00-05:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.pdf" />
+<meta property="twitter:title" content="Impact of the Extrinsic Geometry on Linear Regression" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-09-28T16:25:29-05:00","datePublished":"2023-09-28T16:25:29-05:00","headline":"segmentation","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/notes/segmentation"},"url":"https://tsairesearch.github.io/notes/segmentation"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-30T00:00:00-05:00","datePublished":"2023-06-30T00:00:00-05:00","description":"We study linear regression applied to data structured on a manifold. Our objective is to reveal the impact of the data manifold’s extrinsic geometry on the regression.","headline":"Impact of the Extrinsic Geometry on Linear Regression","image":"https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.pdf","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/projects/extrinsic_geom"},"url":"https://tsairesearch.github.io/projects/extrinsic_geom"}</script>
 <!-- End Jekyll SEO tag -->
 
     
     <link rel="icon" href="https://tsairesearch.github.io/assets/images/favicon/favicon.ico" />
-    <link rel="canonical" href="https://tsairesearch.github.io/notes/segmentation">
+    <link rel="canonical" href="https://tsairesearch.github.io/projects/extrinsic_geom">
     <link rel="alternate" type="application/rss+xml" title="" href="https://tsairesearch.github.io/feed.xml" />
 
 
@@ -960,56 +964,119 @@ distill-header .nav a {
     <distill-header> </distill-header>  <!-- This gets called to generate it, but it is defined in style.html -->
 
     
-
-    <d-article>
-
-<div style="grid-column: middle; margin-top: 0">
-<h1 style="text-align: center; border-bottom: none"> Notes </h1>
-
-<style>
-
-.tags {
-    border-bottom: none;
-    border-radius: 3px;
-    padding: 0px 3px;
-    margin: 5px 1px;
-    background: #ededed;
-}
-.tags:hover {
-    color: #28f;
-    border-bottom: none;
-}
-
-</style>
-
- <div style="grid-column: middle; text-align: center">
-
-Filter by topic: &nbsp;
-
-            
-                <a class="tags" href="https://tsairesearch.github.io/notes">all</a>
-            
-
-    
-    
-        
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+    </script>
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
+    <d-front-matter>
 
+  <script type="text/json">{
+  "authors": [
+    {
+      "author": "Liangchen (Lewis) Liu",
+      "authorURL": "https://lclewis.github.io/",
+      "affiliation": "Department of Mathematics, University of Texas at Austin",
+      "affiliationURL": "https://www.ma.utexas.edu/"
+    },
+    {
+      "author": "Juncai He",
+      "authorURL": "https://juncaihe.github.io/",
+      "affiliation": "Applied Mathematics and Computational Sciences, The King Abdullah University of Science and Technology (KAUST)",
+      "affiliationURL": "https://cemse.kaust.edu.sa/amcs"
+    },
+    {
+      "author": "Yen-Hsi Richard Tsai",
+      "authorURL": "https://www.ma.utexas.edu/users/ytsai/",
+      "affiliation": "Institute for Computational Engineering and Sciences, University of Texas at Austin",
+      "affiliationURL": "https://www.ices.utexas.edu"
+    }
+
+  ]
+  }</script>
+</d-front-matter>
+
+<d-title>
+
+<div style="grid-column: screen; text-align: center">
+  <h1>Impact of the Extrinsic Geometry on Linear Regression</h1>
     
+    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Impact of the Extrinsic Geometry on Linear Regression" src="https://tsairesearch.github.io//assets/images/extrinsic_geom/manifold_demo_3.pdf" />
     
+ </div>
+</d-title>
 
-</div>
+<d-article>
 
-<div style="margin-bottom: 2rem"> </div>
+<p>
+In this paper, we study linear regression applied to data structured on a manifold. We assume that the data manifold is smooth and is embedded in a Euclidean space, and our objective is to reveal the impact of the data manifold's extrinsic geometry on the regression. Specifically, we analyze the impact of the manifold's curvatures (or higher order nonlinearity in the parameterization when the curvatures are locally zero) on the uniqueness of the regression solution. Our findings suggest that the corresponding linear regression does not have a unique solution when the manifold is flat. Otherwise, the manifold's curvature (or higher order nonlinearity in the embedding) may contribute significantly, particularly in the solution associated with the normal directions of the manifold. Our findings thus reveal the role of data manifold geometry in ensuring the stability of regression models for out-of-distribution inferences.
+</p>
+
+<h3> Main results </h3>
+We investigate the local linear regression on smooth function $g(\mathbf{x})$ with data points sampled from different smooth manifolds $M\subset \mathbb R^d$.
+<p>
+<ol>
+  <li> When $M$ is given by $M=(x, y=kx^2)\subset \mathbb R^2$, where $k$ characterizes the curvature, the linear regression has leading order solutions: $w_x = \frac{\partial g}{\partial x}$, $w_y = \frac{\partial g}{\partial y} + \frac{1}{2k}\frac{\partial^2 g}{\partial x^2}$. This implies a direct impact of the manifold's curvature on the linear regression. Numerical verifications of this result are provided below:
+
+  <div style="grid-column: screen ">
+
+  <figure>
+  <div style="display: block; width: 100%; margin-right: auto; margin-left: auto; text-align: center">
+  <iframe width="400px" height="290px" frameborder="0" allowfullscreen="true" src="https://tsairesearch.github.io/assets/images/extrinsic_geom/2d_regression.pdf"></iframe>
+  </div>
+
+  <figcaption>
+  <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+  Numerical simulations with different $k$.
+  </div>
+  </figcaption>
+  </figure>
+  </div>
 
 
+</li>
+  <li> For any hypersurface $M\subset\mathbb R^d$, one can obtain a quadratic approximation locally. Then a generalized solution formula for the local linear regression can be explicitly obtained:
+  $$ \begin{cases}
+ w_{x_i} = \frac{\partial g}{\partial x_i},\\
+	w_y = \frac{\partial g}{\partial y} + \frac{1}{2}\frac{\displaystyle\sum_{i=1}^{d-1}k_i \frac{\partial^2 g}{\partial x_i^2}}{\displaystyle\sum_{i=1}^{d-1}k_i^2}. \\
+\end{cases} $$
+</li>
+
+  <li>
+  Data in practice usually contains noises. We show that a suitable scale of Gaussian noise $\sim\mathcal N(0, \sigma^2)$ can regularize the behavior caused by the problematic curvature. This balancing effect is demonstrated in the formula:
+  $$ w_y = \frac{\partial g}{\partial y} + \frac{1}{2}\frac{k}{k^2+\frac{45}4\sigma^2}\frac{\partial^2 g}{\partial x^2},$$
+  and verified in the numerical experiment:
+  <figure>
+  <div style="display: block; width: 100%; margin-right: auto; margin-left: auto; text-align: center">
+  <iframe width="400px" height="290px" frameborder="0" allowfullscreen="true" src="https://tsairesearch.github.io/assets/images/extrinsic_geom/2d_regression_noise.pdf"></iframe>
+  </div>
+
+  <figcaption>
+  <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
+  Numerical simulations with different scale of noise $\sigma$.
+  </div>
+  </figcaption>
+  </figure>
+  </li>
+
+  <li> For manifold with codimension $&gt;1$, we perform numerical experiments to demonstrate the importance of the awareness of extrinsic dimension and embedding dimension. These characteristics crucially affect the well-posedness of the regression algorithm. See paper for details.
+  </li>
 
 
+</ol>
+</p>
+
+<h3> Publications </h3>
+
+<p>
+<li> Liu, L., He, J., &amp; Tsai, R. (2023) Linear Regression on Manifold Structured Data: the Impact of Extrinsic Geometry on Solutions. Topology, Algebra and Geometry in Machine Learning workshop, International Conference of Machine Learning
+</li>
+</p>
 
 
-
-</div>
 </d-article>
 
 
