@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2023-11-23T22:06:24-06:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Sampling and Processing of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Processing of Point Clouds" /><published>2023-09-13T00:00:00-05:00</published><updated>2023-09-13T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;!-- define the style for images container --&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="https://tsairesearch.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="https://tsairesearch.github.io/" rel="alternate" type="text/html" /><updated>2024-03-22T00:14:56-05:00</updated><id>https://tsairesearch.github.io/feed.xml</id><title type="html">The Scientific AI Research Group</title><entry><title type="html">Sampling and Processing of Point Clouds</title><link href="https://tsairesearch.github.io/projects/rays" rel="alternate" type="text/html" title="Sampling and Processing of Point Clouds" /><published>2023-09-13T00:00:00-05:00</published><updated>2023-09-13T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/rays</id><content type="html" xml:base="https://tsairesearch.github.io/projects/rays">&lt;!-- define the style for images container --&gt;
 &lt;head&gt;
 &lt;style&gt;
   div.container {
@@ -428,7 +428,48 @@ Liu, L., Ly, L., Macdonald, C. &amp;amp; Tsai, R. (2023) Nearest Neighbor Sampli
 &lt;/p&gt;
 
 &lt;/d-article&gt;
-&lt;/body&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Efficient and Robust Sensor Placement in Complex Environment</title><link href="https://tsairesearch.github.io/projects/sensor" rel="alternate" type="text/html" title="Efficient and Robust Sensor Placement in Complex Environment" /><published>2023-09-01T00:00:00-05:00</published><updated>2023-09-01T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/sensor</id><content type="html" xml:base="https://tsairesearch.github.io/projects/sensor">&lt;d-front-matter&gt;
+&lt;/body&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Optimizing Sensor Network Design for Multiple Coverage</title><link href="https://tsairesearch.github.io/projects/sensor" rel="alternate" type="text/html" title="Optimizing Sensor Network Design for Multiple Coverage" /><published>2023-09-01T00:00:00-05:00</published><updated>2023-09-01T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/sensor</id><content type="html" xml:base="https://tsairesearch.github.io/projects/sensor">&lt;head&gt;
+&lt;style&gt;
+  div.container {
+     display:inline-block;
+   }
+
+  html,body        {height: 100%;}
+
+  .wrapper{width: 80%; max-width: 600px; height: 100%; margin: 0 auto; background: #CCC}
+
+  .h_iframe{position: relative; padding-top: 56%;}
+
+  .h_iframe iframe{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+&lt;!-- &lt;/style&gt;
+&lt;style&gt; --&gt;
+  .bordered {
+        border: 1px solid black; /* 1px solid black border */
+        padding: 10px; /* Optional: Add padding inside the border */
+        margin: 10px; /* Optional: Add margin outside the border */
+        background-color: #f0f0f0;
+    }
+    /* CSS to style the pre tag */
+    pre {
+        font-family: Courier, monospace;
+        background-color: #f8f8f8;
+        padding: 10px;
+        border: 1px solid #ddd;
+        white-space: pre-wrap; /* Preserve line breaks */
+    }
+    /* Add padding to the body */
+    body {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .container {
+        display: flex;
+    }
+&lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;d-front-matter&gt;
   &lt;script type=&quot;text/json&quot;&gt;{
   &quot;authors&quot;: [
     {
@@ -449,34 +490,101 @@ Liu, L., Ly, L., Macdonald, C. &amp;amp; Tsai, R. (2023) Nearest Neighbor Sampli
 
 &lt;d-title&gt;
  &lt;div style=&quot;grid-column: screen; text-align: center&quot;&gt;
-  &lt;h1&gt;Efficient and Robust Sensor Placement in Complex Environment&lt;/h1&gt;
+  &lt;h1&gt;Optimizing Sensor Network Design for Multiple Coverage&lt;/h1&gt;
     
-    &lt;img style=&quot;display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%&quot; alt=&quot;Efficient and Robust Sensor Placement in Complex Environment&quot; src=&quot;https://tsairesearch.github.io//assets/images/github_avatar.jpg&quot; /&gt;
+    &lt;center&gt;
+    &lt;video width=&quot;1000&quot; height=&quot;500&quot; controls=&quot;&quot;&gt;
+        &lt;source src=&quot;/assets/images/sensors/ParGreedy_Video.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+        Your browser does not support the video tag.
+    &lt;/video&gt;
+    &lt;/center&gt;
     
  &lt;/div&gt;
 
-
 &lt;/d-title&gt;
+
 
 &lt;d-article&gt;
 
-&lt;p&gt; &lt;/p&gt;
-
-&lt;h3&gt; Simulation &lt;/h3&gt;
-
-
-&lt;div style=&quot;column-grid: middle &quot;&gt;
-
-&lt;figure&gt;
-&lt;div style=&quot;text-align: center&quot;&gt;
-&lt;iframe src=&quot;https://drive.google.com/file/d/12LGm468ZypvgAKlA1CVIV5Qu1ziiytb-/preview&quot; width=&quot;640&quot; height=&quot;480&quot; allow=&quot;autoplay&quot;&gt;&lt;/iframe&gt;
+&lt;div class=&quot;bordered&quot;&gt;
+    &lt;h2 style=&quot;color: black&quot;&gt;Abstract&lt;/h2&gt;
+    &lt;p&gt;Sensor placement optimization methods have been studied extensively. They can be applied to a wide range of applications, including surveillance of known environments, optimal locations for 5G towers, and placement of missile defense systems. However, few works explore the robustness and efficiency of the resulting sensor network concerning sensor failure or adversarial attacks. This paper addresses this issue by optimizing for the least number of sensors to achieve multiple coverage of non-simply connected domains by a prescribed number of sensors. We introduce a new objective function for the greedy (next-best-view) algorithm to design efficient and robust sensor networks and derive theoretical bounds on the network's optimality.
+    We further introduce a Deep Learning model to accelerate the algorithm for near real-time computations. The Deep Learning model requires the generation of training examples. Correspondingly, we show that understanding the geometric properties of the training data set provides important insights into the performance and training process of deep learning techniques. Finally, we demonstrate that a simple parallel version of the greedy approach using a simpler objective can be highly competitive.&lt;/p&gt;
 &lt;/div&gt;
- &lt;figcaption&gt;
-   [missing]
- &lt;/figcaption&gt;
-&lt;/figure&gt;
 
+
+&lt;h2&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;In the multi-coverage sensor placement problem the goal is to compute optimal sensor locations such that the majority of the free space is observed by at least \( k \) sensors. For this we assume that an environment \( \Omega \) consists of regions occluded by obstacles \( \Omega_\text{obs} \) and free space \( \Omega_\text{free} \).&lt;/p&gt;
+
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div&gt;
+        &lt;p&gt;A point \( x \in \Omega_\text{free} \) is visible to another point \( y \in \Omega_\text{free} \) if there is an unobstructed straight line between them.&lt;/p&gt;
+        &lt;p&gt;\[ \mathbf{x} \overset{\text{vis}}{\sim} \mathbf{y} \iff  \forall t \in [0,1] \text{: } t\mathbf{x} + (1-t)\mathbf{y} \in \Omega_\text{free}. \]&lt;/p&gt;
+
+        &lt;p&gt;The order of visibility function \( \mathcal{O}_\text{vis} \) returns the number of sensors in a set of sensor \( P \) that observe a given point.&lt;/p&gt;
+        &lt;p&gt;\[ \mathcal{O}_\text{vis}(\mathbf{y}; P) = \sum_{x \in P} \phi_{\mathbf{x}}(\mathbf{y}) \]&lt;/p&gt;
+        &lt;p&gt;where&lt;/p&gt;
+        &lt;p&gt;\[ \phi_{\mathbf{x}}(\mathbf{y}) = \begin{cases} 1, &amp;amp; \text{if } \mathbf{x} \overset{\text{vis}}{\sim} \mathbf{y},\\ 0, &amp;amp; \text{else.} \end{cases} \]&lt;/p&gt;
+        &lt;p&gt;The multi-coverage sensor placement problem can then be described as&lt;/p&gt;
+        &lt;div class=&quot;bordered&quot;&gt;
+            &lt;h4&gt;Multiple coverage optimization:&lt;/h4&gt;
+            &lt;p&gt;Find the minimal set of sensors \( P = \{x_1,...,x_n\} \) such that&lt;/p&gt;
+            &lt;p&gt;\[ \text{Vol} \left( \left\{y\in \Omega \vert~ \mathcal{O}_\text{vis}(y; P) \geq k \right\} \right) \le (1 - \delta) \text{Vol}(\Omega_{\text{free}}), \]&lt;/p&gt;
+            &lt;p&gt;for some given threshold \( \delta \in (0,1). \) &lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;img src=&quot;/assets/images/sensors/OvisK.png&quot; align=&quot;right&quot; width=&quot;700&quot; height=&quot;525&quot; /&gt;
+    &lt;/div&gt;
 &lt;/div&gt;
+&lt;h2 style=&quot;color: black&quot;&gt;Greedy Algorithm&lt;/h2&gt;
+&lt;p&gt;Even the single coverage problem is known to be NP-complete for general environments. To address the challenge of efficient computation of sensor location we relax the problem using the next-best-view principle where sequences of sensors are generated instead of sets. This leads to the development of the \( \epsilon \)-greedy algorithm.&lt;/p&gt;
+&lt;pre&gt;
+    def eps_greedy_alg(eps, k):
+        P = list()
+        while Vol(O_vis(P) &amp;gt;= k) &amp;lt;= delta:
+            G = compute_objective_G(P, k)
+            M = max(G)
+            feasible = [x for x in PossibleLocations if G(x) &amp;gt;= (1-eps)*M]
+            x = feasible[randint(0, len(feasible))]
+            P.append(x)
+        return P&lt;/pre&gt;
+&lt;p&gt;This algorithm chooses the next sensor by (somewhat) greedily maximizing a objective function (using function  &lt;span style=&quot;font-family: monospace;&quot;&gt;compute_objective_G&lt;/span&gt;). In our case the objective function return the gained volume of regions of order up to target order \( k \) by placing a new sensor in a given location.&lt;/p&gt;
+&lt;p&gt;\[ \mathcal{G}_k(x, P) = \sum_{i=1}^k w_i \int_{\Omega_\text{free}} 1_{\{\mathcal{O}_{\text{vis}}(\mathbf{z}, P \cup \{x\}) \geq i\}} - 1_{\{\mathcal{O}_{\text{vis}}(\mathbf{z}, P) \geq i\}} d\mathbf{z}. \]&lt;/p&gt;
+&lt;p&gt;Here the integrals descirbe the gain in the volume of regions of order at least \( i \) which are weighted by weights \( w_i \). The weights describe the priority of different orders of visiblity in the algorithm.&lt;/p&gt;
+&lt;p&gt;To measure the quality of a set of sensors we use a function \( f_k \) closely realted to the objective function \( \mathcal{G}_k \).&lt;/p&gt;
+&lt;p&gt;\[ f_k(P) = \sum_{i=1}^k w_i \int_{\Omega_\text{free}} 1_{\{\mathcal{O}_{\text{vis}}(\mathbf{z}, P) \geq i\}} d\mathbf{z}. \]&lt;/p&gt;
+&lt;p&gt;It describes a weighted sum of volumes of regions with specified minimal achieved order. If a region is not observed by any sensor it assigns value \( 0 \). If a region is observed by at least one sensor it assigns value \( w_1 \), if observed by at least two sensors the assigned value is \( w_1 + w_2 \) and so on. This allows us to measure the value of partial coverage and we are able to analyze the quality of the sensor set produced by the greedy algorithm.&lt;/p&gt;
+&lt;div class=&quot;bordered&quot;&gt;
+    &lt;h4&gt;Effectivity guarantee&lt;/h4&gt;
+    &lt;p&gt;Let \( P_n = \{x_1,...,x_n\} \) be the set of $n$ sensors placed according to the greedy algorithm using \( \mathcal{G}_k \) and parameter \( \epsilon \in [0,1) \).&lt;/p&gt;
+    &lt;p&gt;\[ P_l^* = \{x_1^*,...,x_l^*\}\in \underset{P \subseteq \Omega_\text{free}, \vert P \vert = l}{\operatorname{argmax}}  f_k(P) \implies f_k(P_n) \geq \left( 1 -  e^{-(1-\epsilon)\frac{n}{l}} \right) f_K(P_l^*). \]&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;Also for empirical examples the algorithm produces promising results. In the example shown 10 sensor are sufficient to cover 45% of \(\Omega_\text{free}\) with order 3 visiblity (left). After 24 sensors are placed 90% of the free space is observed by at least 3 sensors and the greedy algorithm terminates (right).&lt;/p&gt;
+&lt;center&gt;
+    &lt;img src=&quot;/assets/images/sensors/Greedy_Results.jpg&quot; width=&quot;700&quot; height=&quot;343&quot; align=&quot;left&quot; /&gt;
+&lt;/center&gt;
+&lt;h2&gt;Parallel Greedy Algorithm&lt;/h2&gt;
+&lt;p&gt;Another approach we looked at was to split the multi-coverage problem into multiple single coverage problems. Solving the &lt;a href=&quot;https://arxiv.org/abs/2010.09001&quot;&gt;single coverage problem&lt;/a&gt; using the greedy algorithm using objective function \( G_1 \) has been expensively studied in the past and promises to be effective. Since practice we want to avoid sensors being placed too close or at the same location, we place the first sensor in each run randomly to introduce variability in the sensor network.&lt;/p&gt;
+&lt;pre&gt;
+    def par_greedy_alg(eps, k):
+        P = list()
+        for i in range(k):
+            S = eps_greedy_alg(eps, 1)
+            P += S
+        return P&lt;/pre&gt;
+&lt;p&gt;Note that the calculations inside the for loop are independent of eachother and can therefore be performed in parallel which significantly increases the speed. Here 9 sensors were needed to observe 43% of the \( \Omega_\text{free} \) with at least 3 sensors which is slightly worse that the result of the order 3 greedy algorithm. However the termination criterion of 90% observed by at least 3 sensors is reached using only 18 sensors.&lt;/p&gt;
+&lt;center&gt;
+    &lt;img src=&quot;/assets/images/sensors/RoundRobin_Results.jpg&quot; width=&quot;700&quot; height=&quot;343&quot; align=&quot;left&quot; /&gt;
+&lt;/center&gt;
+&lt;h2&gt;Learning the Objective Function using Deep Learning&lt;/h2&gt;
+&lt;p&gt;In the algorithms discussed above the evaluation of the objective function \( \mathcal{G}_k \) and \( \mathcal{G}_k \) is still computationally expensive. We use deep learning techniques to compute approximations of $\( \mathcal{G}_k \) which significantly imporves the speed of the algorithm once trained. In this approach we use the &lt;a href=&quot;https://arxiv.org/abs/1611.09326&quot;&gt;TiraFL&lt;/a&gt; network architecture to approximate the objective function \( \mathcal{G}_k \).&lt;/p&gt;
+&lt;p&gt;\[ \mathcal{G}^\theta_k(x, P, \Omega_\text{free}) \approx G_k(x, P) \]&lt;/p&gt;
+&lt;p&gt;The approximation of \( \mathcal{G}_1 \) has been discussed in &lt;a href=&quot;https://arxiv.org/abs/2010.09001&quot;&gt;&quot;Visibility Optimization for Surveillance-Evasion Games&quot;&lt;/a&gt;. To compare the different methods we used 50 sample maps generated by assigning random heights to random crops of &lt;a href=&quot;https://www.cs.toronto.edu/~vmnih/docs/Mnih_Volodymyr_PhD_Thesis.pdf&quot;&gt;Massachusetts building footprints&lt;/a&gt;.&lt;/p&gt;
+&lt;center&gt;
+    &lt;img src=&quot;/assets/images/sensors/Boxplot_90.png&quot; width=&quot;700&quot; height=&quot;343&quot; align=&quot;left&quot; /&gt;
+&lt;/center&gt;
+&lt;p&gt;The boxplots illustrate the number of sensor needed to reach the threshold of 90% order 3 coverage. Both the greedy and parallel greedy algorithm are shown to be very effective. The network approximation, while not as effective, still consistently produces good results. As reference we also show the results for random placement of sensors.&lt;/p&gt;
 
 
 &lt;h3&gt; Publications &lt;/h3&gt;
@@ -490,7 +598,24 @@ Taus, L., &amp;amp; Tsai, R. (2023) Efficient and robust Sensor Placement in Com
 
 
 
-&lt;/d-article&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/github_avatar.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Impact of the Extrinsic Geometry on Linear Regression</title><link href="https://tsairesearch.github.io/projects/extrinsic_geom" rel="alternate" type="text/html" title="Impact of the Extrinsic Geometry on Linear Regression" /><published>2023-06-30T00:00:00-05:00</published><updated>2023-06-30T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/extrinsic_geom</id><content type="html" xml:base="https://tsairesearch.github.io/projects/extrinsic_geom">&lt;head&gt;
+&lt;/d-article&gt;
+&lt;/body&gt;
+
+&lt;!-- &lt;h3&gt; Simulation &lt;/h3&gt;
+
+
+&lt;div style=&quot;column-grid: middle &quot;&gt;
+
+&lt;figure &gt;
+&lt;div style=&quot;text-align: center&quot;&gt;
+&lt;iframe src=&quot;https://drive.google.com/file/d/12LGm468ZypvgAKlA1CVIV5Qu1ziiytb-/preview&quot; width=&quot;640&quot; height=&quot;480&quot; allow=&quot;autoplay&quot;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+ &lt;figcaption &gt;
+   [missing]
+ &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;/div&gt; --&gt;</content><author><name></name></author><category term="projects" /><summary type="html"></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://tsairesearch.github.io/assets/images/sensors/OvisK.png" /><media:content medium="image" url="https://tsairesearch.github.io/assets/images/sensors/OvisK.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Impact of the Extrinsic Geometry on Linear Regression</title><link href="https://tsairesearch.github.io/projects/extrinsic_geom" rel="alternate" type="text/html" title="Impact of the Extrinsic Geometry on Linear Regression" /><published>2023-06-30T00:00:00-05:00</published><updated>2023-06-30T00:00:00-05:00</updated><id>https://tsairesearch.github.io/projects/extrinsic_geom</id><content type="html" xml:base="https://tsairesearch.github.io/projects/extrinsic_geom">&lt;head&gt;
 &lt;style&gt;
   div.container {
      display:inline-block;
