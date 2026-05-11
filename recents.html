@@ -1037,23 +1037,60 @@ Homepage: <a href="/projects/communication.html" title="Project page">Project pa
 
 <div style="grid-column: text;">
 <figure>
-<div style="display: inline; float: left; width: 50%; text-align: center">
+<div style="text-align: center; margin-bottom: 0.5em;">
 <img src="/assets/images/communication/sf_map.png" style="width: 100%; border-radius: 4px;" alt="High-fidelity 3D model of San Francisco used for ray-tracing simulations">
 <figcaption>High-fidelity 3D model of San Francisco used for ray-tracing simulations.</figcaption>
 </div>
 
-<div style="display: inline; float: left; width: 50%; text-align: center">
+<div style="text-align: center; margin-bottom: 1em;">
 <img src="/assets/images/communication/DataRate_ATT_MAX.png" style="width: 100%;" alt="Data rate coverage maps: AT&T baseline vs. IA-SPA optimized placement">
-<figcaption>Data rate coverage maps: AT&amp;T baseline vs. IA-SPA optimized placement.</figcaption>
-</div>
-</figure>
+<figcaption>Data rate coverage maps: AT&amp;T baseline (left) vs. IA-SPA optimized placement (right).</figcaption>
 </div>
 
-<div style="grid-column: middle; clear: both;">
-<figure>
-<div style="text-align: center">
-<img src="/assets/images/communication/single_sensor.jpeg" width="360px" alt="Ray-traced signal propagation in an urban environment" style="border-radius: 4px;">
-<figcaption>Ray-traced signal propagation in an urban environment — each colored path represents a signal ray bouncing between buildings.</figcaption>
+<div style="text-align: center;">
+<table style="border-collapse: collapse; width: 100%; font-size: 13px; margin: 0 auto;">
+<thead>
+  <tr>
+    <th style="text-align:left; padding: 4px 8px; border-bottom: 2px solid #333;">Metric</th>
+    <th style="padding: 4px 8px; border-bottom: 2px solid #333;">AT&amp;T Baseline</th>
+    <th style="padding: 4px 8px; border-bottom: 2px solid #333;">IA-SPA</th>
+    <th style="padding: 4px 8px; border-bottom: 2px solid #333;">Change</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td colspan="4" style="font-style:italic; padding: 6px 8px 2px; color: #555;">Throughput [MBps]</td>
+  </tr>
+  <tr>
+    <td style="text-align:left; padding: 3px 8px;">Mean Rate</td>
+    <td style="text-align:center; padding: 3px 8px;">21.17</td>
+    <td style="text-align:center; padding: 3px 8px;">36.12</td>
+    <td style="text-align:center; padding: 3px 8px; color:green; font-weight:bold;">+70.62%</td>
+  </tr>
+  <tr>
+    <td style="text-align:left; padding: 3px 8px;">Edge Rate (5th pct.)</td>
+    <td style="text-align:center; padding: 3px 8px;">3.57</td>
+    <td style="text-align:center; padding: 3px 8px;">8.38</td>
+    <td style="text-align:center; padding: 3px 8px; color:green; font-weight:bold;">+134.58%</td>
+  </tr>
+  <tr>
+    <td colspan="4" style="font-style:italic; padding: 6px 8px 2px; color: #555;">Interference [nW]</td>
+  </tr>
+  <tr>
+    <td style="text-align:left; padding: 3px 8px;">Mean Interference</td>
+    <td style="text-align:center; padding: 3px 8px;">2.24</td>
+    <td style="text-align:center; padding: 3px 8px;">2.19</td>
+    <td style="text-align:center; padding: 3px 8px; color:green; font-weight:bold;">−2.04%</td>
+  </tr>
+  <tr>
+    <td style="text-align:left; padding: 3px 8px;">Max Interference</td>
+    <td style="text-align:center; padding: 3px 8px;">495.86</td>
+    <td style="text-align:center; padding: 3px 8px;">473.93</td>
+    <td style="text-align:center; padding: 3px 8px; color:green; font-weight:bold;">−4.42%</td>
+  </tr>
+</tbody>
+</table>
+<figcaption style="margin-top: 0.5em;">IA-SPA vs. AT&amp;T real-world deployment in San Francisco — same number of towers.</figcaption>
 </div>
 </figure>
 </div>
