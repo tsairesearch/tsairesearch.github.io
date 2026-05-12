@@ -1006,11 +1006,27 @@ distill-header .nav a {
     }
     /* Add padding to the body */
     body {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 8px;
+        padding-right: 8px;
     }
     .container {
         display: flex;
+    }
+    @media(min-width: 1000px) {
+      .base-grid, distill-header, d-title, d-abstract, d-article,
+      d-appendix, distill-appendix, d-byline, d-footnote-list,
+      d-citation-list, distill-footer {
+        grid-template-columns: [screen-start] 1fr [page-start kicker-start] 60px [middle-start] 60px [text-start kicker-end] 60px 60px 60px 60px 60px 60px 60px 60px [text-end gutter-start] 60px [middle-end] 60px [page-end gutter-end] 1fr [screen-end];
+        grid-column-gap: 16px;
+      }
+    }
+    @media(min-width: 1180px) {
+      .base-grid, distill-header, d-title, d-abstract, d-article,
+      d-appendix, distill-appendix, d-byline, d-footnote-list,
+      d-citation-list, distill-footer {
+        grid-template-columns: [screen-start] 1fr [page-start kicker-start] 75px [middle-start] 75px [text-start kicker-end] 75px 75px 75px 75px 75px 75px 75px 75px [text-end gutter-start] 75px [middle-end] 75px [page-end gutter-end] 1fr [screen-end];
+        grid-column-gap: 32px;
+      }
     }
 </style>
 </head>
@@ -1196,8 +1212,8 @@ where \(f(y)\) is a spatial density encoding region importance and \(\bar{W}(\ka
 </center>
 
 
-<h2>5. Case Study: Florence</h2>
-<p>For Florence, we demonstrate IA-SPA's ability to handle <strong>exclusionary zones</strong> (historical landmarks where tower placement is prohibited) and <strong>continuous deployment</strong> scenarios (expanding an existing network around pre-placed towers).</p>
+<h2>5. Florence — Exclusionary Zones</h2>
+<p>For Florence, we demonstrate IA-SPA's ability to handle <strong>exclusionary zones</strong> — historical landmarks where tower placement is prohibited.</p>
 
 <center>
     <img src="/assets/images/communication/fl_map.png" style="max-width: 700px; width: 100%;" alt="3D Map of Florence">
@@ -1211,13 +1227,6 @@ where \(f(y)\) is a spatial density encoding region importance and \(\bar{W}(\ka
                  style="width: 100%; height: 100%; object-fit: cover;" alt="Exclusion Zone Florence">
         </div>
         <p><i>Exclusionary zone (red) where tower placement is prohibited.</i></p>
-    </div>
-    <div style="text-align: center; width: 420px;">
-        <div style="height: 250px; overflow: hidden;">
-            <img src="/assets/images/communication/Tower_Init.png"
-                 style="width: 100%; height: 100%; object-fit: cover;" alt="Existing Towers Florence">
-        </div>
-        <p><i>Continuous deployment scenario with existing towers (red points).</i></p>
     </div>
 </div>
 
@@ -1233,19 +1242,33 @@ where \(f(y)\) is a spatial density encoding region importance and \(\bar{W}(\ka
     <p><i>Interference maps with exclusionary zone: Iliad baseline (left) vs. IA-SPA (right).</i></p>
 </center>
 
-<h3>Coverage Results: Florence Continuous Deployment</h3>
-<center>
-    <img src="/assets/images/communication/DataRate_Iliad_Tinit.png"
-         style="max-width: 100%; background: white; padding: 5px;" alt="FL Coverage Continuous Deployment">
-    <p><i>Data rate coverage in continuous deployment scenario: Iliad baseline (left) vs. IA-SPA (right).</i></p>
-</center>
+
+<h2>6. San Francisco — Continuous Deployment</h2>
+<p>
+In practice, transmitters are rarely deployed in empty environments without existing infrastructure. Instead, operators typically face a <em>continuous deployment</em> setting, where new transmitters must be placed to augment an existing network. To evaluate IA-SPA in this more realistic scenario, we initialize the system with the 9 transmitter locations deployed in San Francisco by AT&amp;T. Starting from this baseline, IA-SPA sequentially determines up to 5 additional transmitter locations to improve network coverage. We assess performance by comparing against random transmitter placement, reporting results averaged over 10 independent trials to reduce variability due to randomness.
+</p>
+
+<div class="container" style="gap: 20px; align-items: flex-start;">
+    <div style="flex: 1; text-align: center;">
+        <img src="/assets/images/communication/fig2a_mean_coverage-1.png" style="width: 100%;" alt="Average data rate vs. number of added transmitters">
+    </div>
+    <div style="flex: 1; text-align: center;">
+        <img src="/assets/images/communication/fig2c_edge_rate-1.png" style="width: 100%;" alt="Edge rate (5th percentile) vs. number of added transmitters">
+    </div>
+</div>
+<p style="text-align: center; font-style: italic; font-size: 0.9em; margin-top: 0.5em;">
+Comparison of IA-SPA against the mean performance over 10 trials of random transmitter placement. The x-axis indicates the number of additional towers placed on top of the 9 existing AT&amp;T towers in San Francisco. (Left) Average data rate achieved by each method. (Right) Edge rate performance measured at the 5th percentile.
+</p>
+
+<p>
+The left plot shows the average data rate as a function of the number of added transmitters. The blue curve corresponds to IA-SPA, while the orange curve shows the mean performance of random placement. Even with the addition of a single transmitter, IA-SPA yields a substantial improvement over random placement. The right plot presents the same comparison for the edge rate (5th percentile) — the performance experienced by the worst-served users in the network. IA-SPA again consistently outperforms random placement, with significant gains observed even when only a single transmitter is added. This highlights the algorithm's ability to identify high-impact locations rather than relying on chance.
+</p>
 
 
 <h3>Publications</h3>
 <p>
 <li>
 Taus, L., &amp; Tsai, R., &amp Andrews J. (2026). Optimal Transmitter Placement in Realistic Urban Environments.
-<em>Submitted to IEEE Transactions on Wireless Communications.</em>
 <a href="https://arxiv.org/abs/2604.28153">[arXiv preprint]</a>
 </li>
 </p>
