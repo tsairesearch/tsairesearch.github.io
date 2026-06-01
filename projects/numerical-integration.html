@@ -1,0 +1,2338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Artifacts of Numerical Integration in Learning Dynamical Systems | The Scientific AI Research Group</title>
+
+  <meta name="description" content="When we learn a dynamical system from data, the numerical integrator we use inside the optimizer can change the answer. A damped oscillator can be mistaken for an anti-damped one. We explain why, and what to do about it.">
+  <meta property="og:title" content="Artifacts of Numerical Integration in Learning Dynamical Systems">
+  <meta property="og:description" content="A damped, decaying oscillation can be confidently learned as an anti-damped, growing one — the integrator is to blame. Here is what is going on, and how to fix it.">
+  <meta property="og:type" content="article">
+
+  <!-- Distill template (gives us d-title, d-article styling) -->
+  <script src="https://distill.pub/template.v2.js"></script>
+
+  <!-- MathJax v3 for equations -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+  <style>
+    /* Shrink Distill's default h1 in d-title so the long paper title fits on one line */
+    d-title h1 {
+      font-size: 36px !important;
+      line-height: 1.15 !important;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    @media (max-width: 900px) {
+      d-title h1 { font-size: 28px !important; }
+    }
+    @media (max-width: 600px) {
+      d-title h1 { font-size: 22px !important; }
+    }
+
+    /* Site-friendly accents on top of Distill defaults */
+    :root {
+      --accent: #b35900;
+      --accent-soft: #f6efe6;
+      --true-color: #1f4f8b;
+      --learned-color: #c0392b;
+      --neutral-grid: #d8d8d8;
+      --good-color: #1f8b4f;
+    }
+
+    d-article a {
+      color: var(--accent);
+    }
+
+    .hero-figure {
+      display: block;
+      margin: 2.5rem auto 1rem auto;
+      max-width: 760px;
+      width: 100%;
+    }
+
+    .arxiv-banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0 0 0;
+      background: var(--accent-soft);
+      border-left: 4px solid var(--accent);
+      border-radius: 4px;
+    }
+    .arxiv-banner .label {
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+    .arxiv-banner code {
+      background: white;
+      padding: 0.15em 0.4em;
+      border-radius: 3px;
+      font-size: 0.95em;
+    }
+
+    .demo-card {
+      border: 1px solid #e5e5e5;
+      border-radius: 6px;
+      padding: 1.25rem 1.25rem 1rem 1.25rem;
+      margin: 1.5rem 0;
+      background: #fafafa;
+    }
+    .demo-card h4 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+    }
+    .demo-card .demo-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .demo-card .demo-controls label {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      font-weight: 500;
+      color: #333;
+    }
+    .demo-card .demo-controls input[type=range] {
+      width: 180px;
+    }
+    .demo-card .demo-controls select,
+    .demo-card .demo-controls button {
+      font-size: 0.9rem;
+      padding: 0.25rem 0.5rem;
+    }
+    .demo-card .demo-controls .value-readout {
+      font-variant-numeric: tabular-nums;
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .demo-card canvas {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 3px;
+    }
+    .demo-card .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: #444;
+    }
+    .demo-card .legend .swatch {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 2px;
+      vertical-align: middle;
+      margin-right: 0.35rem;
+    }
+    .demo-card .verdict {
+      margin-top: 0.6rem;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.92rem;
+      background: #fff;
+      border: 1px solid #ddd;
+    }
+    .demo-card .verdict.bad {
+      background: #fdecea;
+      border-color: #f5b7b1;
+      color: #7c2d12;
+    }
+    .demo-card .verdict.good {
+      background: #ecf7f0;
+      border-color: #b7dec4;
+      color: #14532d;
+    }
+
+    .pull-quote {
+      border-left: 3px solid var(--accent);
+      padding-left: 1rem;
+      color: #444;
+      font-style: italic;
+      margin: 1.5rem 0;
+    }
+
+    .citation-box {
+      background: #f4f4f4;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 0.85rem;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    .audience-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.75rem 0 0 0;
+      font-size: 0.8rem;
+    }
+    .audience-tags span {
+      background: #eef0f3;
+      color: #2c3e50;
+      padding: 0.2rem 0.6rem;
+      border-radius: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .demo-card .demo-controls input[type=range] { width: 140px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<d-front-matter>
+  <script type="text/json">{
+    "title": "Artifacts of Numerical Integration in Learning Dynamical Systems",
+    "description": "When we learn a dynamical system from data, the numerical integrator we use inside the optimizer can change the answer. A damped oscillator can be mistaken for an anti-damped one. We explain why, and what to do about it.",
+    "authors": [
+      {
+        "author": "Bing-Ze Lu",
+        "authorURL": "https://arxiv.org/a/lu_b_1.html",
+        "affiliation": "Department of Mathematics, National Chung Cheng University",
+        "affiliationURL": "https://www.math.ccu.edu.tw/"
+      },
+      {
+        "author": "Yen-Hsi Richard Tsai",
+        "authorURL": "https://www.ma.utexas.edu/users/ytsai/",
+        "affiliation": "Oden Institute & Department of Mathematics, University of Texas at Austin",
+        "affiliationURL": "https://www.oden.utexas.edu"
+      }
+    ]
+  }</script>
+</d-front-matter>
+
+<d-title>
+  <div style="grid-column: screen; text-align: center;">
+    <h1>Artifacts of Numerical Integration in Learning Dynamical Systems</h1>
+    <p style="max-width: 720px; margin: 1rem auto 0 auto; color: #555; font-size: 1.05rem;">
+      A short, illustrated tour of how the numerical method hidden inside the
+      training loop of a <strong>neural ODE</strong>&nbsp;&mdash; or any
+      data-driven dynamical-system model&nbsp;&mdash; can quietly turn a system that
+      <em>spirals in</em> into a system that <em>spirals out</em>, and what to
+      do about it.
+    </p>
+    <div class="audience-tags" style="justify-content: center;">
+      <span>Neural ODE practitioners</span>
+      <span>Applied math &amp; CSE</span>
+      <span>Scientific machine learning</span>
+      <span>Curious readers</span>
+    </div>
+  </div>
+
+  <!-- Hero figure: animated phase portrait -->
+  <div style="grid-column: text;">
+    <canvas id="hero-canvas" class="hero-figure" width="1520" height="760" aria-label="Phase-plane simulation. Black dots are the data. A green RK4-at-step-h trajectory passes through the data dots. A red RK4-at-step-h-over-100 trajectory of the same learned system spirals outward."></canvas>
+    <p style="text-align: center; color: #666; font-size: 0.9rem; margin: 0.25rem auto 0 auto; max-width: 760px;">
+      <strong>Same learned system, two integrator step sizes.</strong> Black
+      dots are data sampled from a damped oscillator. A neural-ODE-style
+      training loop fits a continuous-time $\hat A$ so that classical RK4 at
+      step $h = 1.0$ reproduces those dots&nbsp;&mdash; the
+      <span style="color: var(--good-color); font-weight: 700;">green curve</span>
+      shows that fit and sits exactly on the data. But run the
+      <em>same</em> learned $\hat A$ with RK4 at step $h/100$&nbsp;&mdash; close to
+      the exact flow&nbsp;&mdash; and the
+      <span style="color: var(--learned-color); font-weight: 700;">red curve</span>
+      spirals outward. The learned ODE is genuinely anti-damped; only the
+      training-step integrator hid that fact.
+    </p>
+  </div>
+
+  <div style="grid-column: text;">
+    <div class="arxiv-banner">
+      <span class="label">Preprint</span>
+      <span>
+        Bing-Ze Lu and Richard Tsai. <em>Artifacts of Numerical Integration in Learning Dynamical Systems.</em>
+        Available on arXiv as
+        <a href="https://arxiv.org/abs/2507.14491" target="_blank" rel="noopener"><code>arXiv:2507.14491</code></a>
+        (math.NA / cs.LG).
+        <a href="https://arxiv.org/pdf/2507.14491" target="_blank" rel="noopener">[PDF]</a>
+      </span>
+    </div>
+    <div style="background: #eef4f8; border-left: 4px solid var(--true-color); padding: 1rem 1.25rem; border-radius: 4px; margin: 1rem 0 0 0; font-size: 0.95rem; color: #2c3e50;">
+      <strong style="color: var(--true-color);">If you train a neural ODE,
+      this affects you.</strong> Whenever the training loop calls a numerical
+      integrator to roll out the candidate vector field&nbsp;&mdash; which is exactly
+      how neural ODEs, neural flows, SINDy with weak-form objectives, and most
+      neural-network-based system identification work&nbsp;&mdash; the analysis in
+      this paper applies directly. With a popular default integrator like RK4
+      and a step size that looks innocuous, the trained model can have the
+      wrong sign of dissipation. The figure above is the <em>linear scalar</em>
+      version of that failure; the same mechanism transfers to nonlinear
+      neural-ODE training, as we show below with the Lotka&ndash;Volterra
+      experiment.
+    </div>
+  </div>
+</d-title>
+
+<d-article>
+
+<h2>The setting</h2>
+
+<p>
+  A great many problems in science and engineering reduce to the same template:
+  we observe a system at a handful of moments in time, and we want to recover
+  the underlying rule that drives it. Population sizes, the swing of a
+  pendulum, climate variables, the chemistry of a reactor&nbsp;&mdash; all of these
+  are modeled by a dynamical system, written compactly as
+  $\dot{x}(t) = f(x(t))$⁠. The standard recipe is to pick a flexible family of
+  candidate $f$&apos;s&nbsp;&mdash; <strong>neural networks (the &ldquo;neural ODE&rdquo;
+  approach)</strong>, sparse dictionaries, polynomials, Gaussian processes,
+  you name it&nbsp;&mdash; and then to <em>tune</em> the parameters of $f$ so that
+  predictions match the observations. The most popular instance of this
+  template today, by far, is the
+  <a href="https://arxiv.org/abs/1806.07366" target="_blank" rel="noopener">neural
+  ODE</a>: $f$ is a neural network, the parameters are its weights, and the
+  loss compares predicted samples to observed ones at the data times.
+</p>
+
+<p>
+  But here is the catch that this paper is about: to compare a candidate $f$
+  to data, the training loop has to <em>simulate</em> $f$ forward in time, and
+  that simulation requires a numerical integrator. Forward Euler.
+  Runge&ndash;Kutta. Implicit midpoint. Whichever method you reach for becomes
+  silently stitched into the loss function. Different integrators give
+  different losses, and therefore prefer different $f$&apos;s. The result is that
+  the integrator can shape, and sometimes mis-shape, what you learn&nbsp;&mdash;
+  whether your $f$ is a neural network with a million parameters or a
+  three-coefficient polynomial.
+</p>
+
+<div class="pull-quote">
+  Picking a numerical integrator is not just an implementation detail. It is
+  part of the model. This is true for every neural ODE you have ever trained.
+</div>
+
+<h2>What is the trained model used for?</h2>
+
+<p>
+  Before we dig into the artifact, it is worth being explicit about why a
+  reader should care. Once a candidate $\hat f$ has been fit, it gets used in
+  one of two qualitatively different ways:
+</p>
+
+<ol>
+  <li>
+    <strong>To understand the rule.</strong> The trained $\hat f$ is itself
+    the object of interest&nbsp;&mdash; one inspects it as a continuous-time
+    differential equation $\dot x = \hat f(x)$ and reads off scientific
+    structure from it: equilibria and their stability, conserved quantities,
+    growth or decay rates, oscillation frequencies, sensitivities to
+    parameters. This is the &ldquo;equation discovery&rdquo; or &ldquo;system
+    identification&rdquo; usage: <em>what law is the data obeying?</em> Here
+    the qualitative properties of $\hat f$ are the deliverable, and getting
+    the sign of dissipation wrong is a fatal error.
+  </li>
+  <li>
+    <strong>To simulate further.</strong> The trained model is used as a
+    <em>discrete</em> dynamical system &mdash; the integrator $S_h[\hat f]$ at
+    the training step $h$ &mdash; to roll the state forward beyond the
+    observation window, perhaps from new initial conditions, perhaps over
+    longer horizons, perhaps as a fast surrogate inside a control or design
+    loop. This is the forecasting / surrogate-modeling usage: <em>what will
+    the system do next?</em> Here the deliverable is predicted trajectories
+    rather than the form of $\hat f$.
+  </li>
+</ol>
+
+<p>
+  These two usages are not equally robust to integrator artifacts. Usage&nbsp;(1)
+  is fragile: the analysis below shows that the integrator inside the training
+  loop can flip the sign of $\mathrm{Re}\,\hat\lambda$ in the linearization of
+  $\hat f$, so any conclusion drawn from the
+  continuous-time form of $\hat f$ may be qualitatively wrong. Usage&nbsp;(2)
+  looks safer at first&nbsp;&mdash; if you keep using the same integrator at the
+  same step $h$, the discrete predictions $S_h^n[\hat f]\, y_0$ are well-fit
+  to the training data&nbsp;&mdash; but it stops being safe the moment you
+  change the simulation step, switch integrators, or run from initial
+  conditions outside the training set, all of which the demos below
+  illustrate. In short, the integrator artifact eventually bites both
+  usages, just at different moments.
+</p>
+
+<h2>The optimization problem</h2>
+
+<p>
+  It will help to make the training problem explicit, in a form general enough
+  to cover neural ODEs, sparse regression, kernel models, and any other
+  trajectory-fitting setup&nbsp;&mdash; not just the linear scalar special case we
+  will analyse afterward.
+</p>
+
+<p>
+  Suppose we observe a system at a finite collection of times. We sample the
+  true trajectory at evenly spaced moments $t_n = n H$⁠, for $n = 0, 1, \ldots,
+  N$, possibly starting from $M$ different initial conditions
+  $y_0 \in U_M$⁠. The dataset is
+</p>
+
+\[
+  \mathcal{D}_N \;=\; \big\{\, \bigl(t_n,\; y(t_n; y_0)\bigr)\,:\, n = 1, \ldots, N,\; y_0 \in U_M \,\big\}.
+\]
+
+<p>
+  We choose a function class $\mathcal{F}$&nbsp;&mdash; the class of neural networks
+  with a chosen architecture, the span of a sparse dictionary of candidate
+  terms, a reproducing kernel Hilbert space, or anything else&nbsp;&mdash; and we
+  look for the $\hat f \in \mathcal{F}$ whose flow best reproduces the data.
+  Idealised, that means
+</p>
+
+\[
+  \min_{\hat f \in \mathcal{F}}\;
+  \frac{1}{N M}\,\sum_{y_0 \in U_M}\sum_{n = 1}^{N}\,
+  \bigl|\,\phi_{t_n}[\hat f]\, y_0 \;-\; y(t_n;\, y_0)\,\bigr|^{2},
+\]
+
+<p>
+  where $\phi_{t}[\hat f]\, y_0$ is the exact continuous-time flow of
+  $\dot x = \hat f(x)$ from $y_0$ to time $t$⁠. This is the form of the
+  problem people <em>imagine</em> they are solving when they write a
+  neural-ODE training loop.
+</p>
+
+<p>
+  But the exact flow $\phi_t[\hat f]$ has no closed form for a generic
+  $\hat f$⁠, so the training loop has to <strong>approximate</strong> it.
+  Pick a numerical integrator, call its one-step propagator $S_h[\hat f]$⁠,
+  and replace the exact flow by repeated application of $S_h$⁠:
+</p>
+
+\[
+  \min_{\hat f \in \mathcal{F}}\;
+  \frac{1}{N M}\,\sum_{y_0 \in U_M}\sum_{n = 1}^{N}\,
+  \bigl|\,S_h^{m n}[\hat f]\, y_0 \;-\; y(t_n;\, y_0)\,\bigr|^{2},
+  \qquad m h = H.
+\]
+
+<p>
+  This is the problem actually solved by the optimizer. Now $S_h[\hat f]$
+ &nbsp;&mdash; whether forward Euler, classical RK4, the implicit midpoint rule,
+  Leap Frog, or anything else&nbsp;&mdash; is welded into the loss function.
+  Different choices of $S_h$ produce different losses, and therefore different
+  global minimizers $\hat f$⁠. The minimizer of this second problem can differ
+  from the minimizer of the first by a lot, and this paper is about exactly
+  how it differs and what to do about it.
+</p>
+
+<p>
+  The rest of the page concentrates on the simplest case in which the gap
+  between the two problems is unambiguous: a one-dimensional linear scalar
+  $\dot z = \lambda z$⁠. Even there, the integrator can move the inferred
+  $\hat\lambda$ across the imaginary axis&nbsp;&mdash; flipping the sign of damping
+ &nbsp;&mdash; without leaving any sign of trouble in the loss value. That is the
+  cleanest possible example of a much more general phenomenon: the integrator
+  is part of the model.
+</p>
+
+<h2>A surprise: damped becomes anti-damped</h2>
+
+<p>
+  The cleanest way to see the trouble is with a system whose true behavior is
+  uncontroversial. Take a damped oscillator in the plane:
+</p>
+
+\[ \dot{x} = -\alpha\, x - \omega\, y, \qquad \dot{y} = \omega\, x - \alpha\, y. \]
+
+<p>
+  With $\alpha &gt; 0$ this spirals inward toward the origin&nbsp;&mdash; classic damping.
+  Now sample its trajectory at evenly spaced times, hand those samples to a
+  training loop, and ask the loop to recover the underlying linear dynamics.
+  The training loss is the difference between the observed samples and the
+  predictions made by the integrator at the training step $h$⁠. Many different
+  continuous-time $\hat A$ can give zero loss: any $\hat A$ for which the
+  integrator's discrete iteration at step $h$ lands on the data dots. For
+  classical RK4 there are <em>four</em> such $\hat A$ for a generic $h$⁠. Some
+  of them have negative damping. Some rotate in the opposite direction. They
+  are global minima of the training loss, every bit as valid to the optimizer
+  as the truth.
+</p>
+
+<p>
+  The illustration above the abstract makes this concrete. We sampled a
+  damped oscillator at evenly spaced times (the black dots), then asked an
+  RK4-based optimizer to fit a continuous-time $\hat A$⁠. With the step size
+  set to $h = 1.0$⁠, the optimizer settled on a $\hat A$ whose four candidate
+  eigenvalues include $\hat\lambda \approx 0.105 + 1.927i$&nbsp;&mdash; positive real
+  part. The
+  <span style="color: var(--good-color); font-weight: 700;">green curve</span>
+  is RK4 at the training step $h$ run on this $\hat A$⁠; it passes exactly
+  through the data, and from inside the training loop nothing is amiss. The
+  <span style="color: var(--learned-color); font-weight: 700;">red curve</span>
+  is RK4 at step $h/100$ on the very same $\hat A$&nbsp;&mdash; close enough to the
+  exact flow that what you see is what the learned ODE genuinely does. It
+  spirals outward.
+</p>
+
+<p>
+  Even forward Euler, which has only a single candidate $\hat\lambda$⁠, can
+  land far from the truth: the recovered system stays damped, but with a
+  decay rate much larger than the truth's. The same green-vs-red trick
+  exposes that artifact too&nbsp;&mdash; you can watch it happen below.
+</p>
+
+<!-- Demo 1: vary the simulation step (tilde h), training step h is fixed -->
+<div class="demo-card">
+  <h4>Try it: shrink the simulation step $\tilde h$ and watch the learned ODE reveal itself</h4>
+  <p style="margin: 0 0 0.75rem 0; font-size: 0.92rem; color: #444;">
+    The training step is fixed at $h = 1.0$⁠, exactly as in the figure above the abstract. The
+    optimizer fits a continuous-time $\hat A$ so that the chosen integrator at
+    step $h$ reproduces the data dots. The
+    <span style="color: var(--good-color); font-weight: 700;">green</span>
+    trajectory is exactly that fit. The
+    <span style="color: var(--learned-color); font-weight: 700;">red</span>
+    trajectory uses the <em>same integrator on the same $\hat A$</em>, but with
+    a smaller step $\tilde h$⁠. As $\tilde h$ shrinks, the integrator becomes
+    more and more accurate&nbsp;&mdash; in the limit it is the exact flow of the
+    learned ODE. So as you drag $\tilde h$ down from $h$⁠, the red curve peels
+    away from the green one and reveals what the learned ODE is actually
+    doing.
+  </p>
+  <div class="demo-controls">
+    <label>
+      Integrator
+      <select id="d1-integrator">
+        <option value="fe">Forward Euler</option>
+        <option value="rk2">RK2 (Heun)</option>
+        <option value="rk4" selected>Classical RK4</option>
+        <option value="im">Implicit midpoint</option>
+      </select>
+    </label>
+    <label>
+      Simulation step $\tilde h$ <span class="value-readout" id="d1-tildeh-readout">0.010</span>
+      <input type="range" id="d1-tildeh" min="0.005" max="1.000" step="0.005" value="0.010">
+    </label>
+    <label>
+      True damping $\alpha$ <span class="value-readout" id="d1-alpha-readout">0.10</span>
+      <input type="range" id="d1-alpha" min="0.00" max="0.40" step="0.01" value="0.10">
+    </label>
+    <label>
+      True frequency $\omega$ <span class="value-readout" id="d1-omega-readout">2.00</span>
+      <input type="range" id="d1-omega" min="0.5" max="4.0" step="0.05" value="2.00">
+    </label>
+  </div>
+  <canvas id="demo1-canvas" class="hero-figure" width="1520" height="760"></canvas>
+  <div class="legend">
+    <span><span class="swatch" style="background: #222;"></span>Data dots</span>
+    <span><span class="swatch" style="background: #1f8b4f;"></span>Integrator at training step $h = 1.0$ on learned $\hat A$ (the training fit)</span>
+    <span><span class="swatch" style="background: #c0392b;"></span>Same integrator at simulation step $\tilde h$ on the same $\hat A$ (the learned ODE itself)</span>
+    <span><span class="swatch" style="background: rgba(31,79,139,0.45);"></span>True continuous trajectory (faint)</span>
+  </div>
+  <div id="demo1-verdict" class="verdict"></div>
+</div>
+
+<h2>Where does the artifact come from?</h2>
+
+<p>
+  Every numerical integrator turns the continuous-time question
+  &ldquo;given $f$⁠, where is the trajectory at time $t+h$⁠?&rdquo; into a
+  discrete map of the form $x_{n+1} = R(hA)\, x_n$⁠, where $A$ is the local
+  linearization of $f$ and $R$ depends on the integrator.
+  Forward Euler chooses $R(z) = 1 + z$⁠. Classical RK4 chooses
+  $R(z) = 1 + z + z^2/2 + z^3/6 + z^4/24$⁠. The implicit midpoint method chooses
+  $R(z) = (2+z)/(2-z)$⁠.
+</p>
+
+<p>
+  Each $R$ has a <strong>stability region</strong> in the complex plane: the
+  set of values $z$ for which $|R(z)| \le 1$⁠, so that the discrete iteration
+  decays rather than blows up. When you train a model from sampled data, the
+  optimizer is essentially solving an inverse problem on $R$⁠. For the
+  trajectory to <em>decay</em> the way the data does, the optimizer needs the
+  product $h \lambda(\hat A)$&nbsp;&mdash; where $\lambda(\hat A)$ runs over the
+  eigenvalues of the learned dynamics&nbsp;&mdash; to land inside the stability region.
+  And here is the trap: parts of these stability regions can lie in the
+  <em>right</em> half complex plane, where $\mathrm{Re}\,\lambda &gt; 0$⁠. A
+  positive real part is the mathematical signature of <em>anti-damping</em>.
+</p>
+
+<!-- Demo 2: stability regions -->
+<div class="demo-card">
+  <h4>Try it: where do the stability regions live?</h4>
+  <p style="margin: 0 0 0.75rem 0; font-size: 0.92rem; color: #444;">
+    The shaded area is the stability region of the chosen integrator. Decay of
+    the discrete map is guaranteed inside it. The
+    <span style="color: var(--true-color); font-weight: 600;">blue dot</span>
+    is $h\lambda$ for the true (damped) system. As $h$ grows, blue can drift
+    out of the stability region; the training loop responds by moving
+    $h\lambda(\hat A)$&nbsp;&mdash; the
+    <span style="color: var(--learned-color); font-weight: 600;">red dot</span>&nbsp;&mdash;
+    back inside. Notice how often the only way for it to do that is to cross
+    into the right half plane.
+  </p>
+  <div class="demo-controls">
+    <label>
+      Integrator
+      <select id="d2-integrator">
+        <option value="fe">Forward Euler ($R = 1+z$⁠)</option>
+        <option value="rk2">RK2 / Heun ($R = 1+z+z^2/2$⁠)</option>
+        <option value="rk4" selected>Classical RK4</option>
+        <option value="im">Implicit midpoint ($R = (2+z)/(2-z)$⁠)</option>
+      </select>
+    </label>
+    <label>
+      Step size $h$ <span class="value-readout" id="d2-h-readout">1.00</span>
+      <input type="range" id="d2-h" min="0.05" max="2.0" step="0.01" value="1.00">
+    </label>
+    <label>
+      True frequency $\omega$ <span class="value-readout" id="d2-omega-readout">2.0</span>
+      <input type="range" id="d2-omega" min="0.5" max="6.0" step="0.05" value="2.0">
+    </label>
+    <label>
+      True damping $\alpha$ <span class="value-readout" id="d2-alpha-readout">0.10</span>
+      <input type="range" id="d2-alpha" min="0.0" max="1.0" step="0.01" value="0.10">
+    </label>
+  </div>
+  <canvas id="demo2-canvas" width="1440" height="780"></canvas>
+  <div class="legend">
+    <span><span class="swatch" style="background: rgba(0,0,0,0.15); border: 1px solid #888;"></span>Stability region $\{z : |R(z)| \le 1\}$</span>
+    <span><span class="swatch" style="background: #1f4f8b;"></span>True $h\lambda$ (and its conjugate)</span>
+    <span><span class="swatch" style="background: #c0392b;"></span>All candidate $h\hat\lambda$ that satisfy $R(h\hat\lambda) = e^{h\lambda}$</span>
+  </div>
+  <div id="demo2-verdict" class="verdict"></div>
+</div>
+
+<h2>Why a smaller step size is not always the answer</h2>
+
+<p>
+  The first instinct of any numerical analyst, when something looks unstable,
+  is to shrink $h$⁠. That works in this setting too&nbsp;&mdash; eventually. But
+  &ldquo;eventually&rdquo; can be costly, because the data is only sampled
+  every so often, and small $h$ means many integrator steps between
+  observations.
+</p>
+
+<p>
+  The second instinct is to switch to a higher-order explicit integrator, such
+  as RK4. The hope is that more accurate per-step prediction will mean less
+  artifact. The opposite turns out to be true in general. The stability
+  regions of explicit Runge&ndash;Kutta methods bulge <em>further</em> into the
+  right half plane as the order increases. So a higher-order explicit
+  integrator gives the optimizer <em>more</em> room to land on a learned $\hat
+  A$ with positive real part&nbsp;&mdash; that is, more anti-damped solutions look
+  acceptable, not fewer. You can see this in Demo 2 above: switch from
+  forward Euler to RK4 and watch the right-half-plane lobe grow.
+</p>
+
+<h2>The principled fix: use a structure-preserving integrator</h2>
+
+<p>
+  The implicit midpoint method has a stability region equal to the entire
+  closed left half plane. Stable continuous dynamics&nbsp;&mdash; those with
+  $\mathrm{Re}\,\lambda \le 0$&nbsp;&mdash; map to stable discrete dynamics, and unstable
+  to unstable. Nothing crosses sides. As a consequence, when implicit midpoint
+  is used inside the training loop, the qualitative character of the data is
+  preserved: a damped oscillator stays damped under the learned model, and a
+  conservative system stays conservative. This holds even when the only prior
+  information about the system is that it is autonomous&nbsp;&mdash; no special
+  knowledge of energy, dissipation, or symplectic structure is needed in
+  advance.
+</p>
+
+<!-- Demo 3: three-way comparison FE | Implicit Euler | Implicit midpoint -->
+<div class="demo-card">
+  <h4>Try it: forward Euler vs. implicit Euler vs. implicit midpoint, side by side</h4>
+  <p style="margin: 0 0 0.75rem 0; font-size: 0.92rem; color: #444;">
+    Same data on all three panels. On each panel the
+    <span style="color: var(--good-color); font-weight: 700;">green curve</span>
+    is the integrator at step $h$ applied to the learned $\hat A$ on that side
+    (it sits on the data, by construction); the
+    <span style="color: var(--learned-color); font-weight: 700;">red curve</span>
+    is the same integrator at step $h/100$ on the same $\hat A$ (a near-exact
+    rendering of the learned ODE). Three integrators, three artifacts: forward
+    Euler over-decays (left), implicit Euler over-grows (centre), implicit
+    midpoint stays faithful (right).
+  </p>
+  <div class="demo-controls">
+    <label>
+      Step size $h$ <span class="value-readout" id="d3-h-readout">0.40</span>
+      <input type="range" id="d3-h" min="0.05" max="1.5" step="0.01" value="0.40">
+    </label>
+    <label>
+      True damping $\alpha$ <span class="value-readout" id="d3-alpha-readout">0.10</span>
+      <input type="range" id="d3-alpha" min="0.0" max="0.5" step="0.01" value="0.10">
+    </label>
+  </div>
+  <canvas id="demo3-canvas" width="1800" height="640"></canvas>
+  <div class="legend">
+    <span><span class="swatch" style="background: #222;"></span>Data dots</span>
+    <span><span class="swatch" style="background: #1f8b4f;"></span>Integrator at step $h$ on the learned $\hat A$ (the training fit)</span>
+    <span><span class="swatch" style="background: #c0392b;"></span>Same integrator at step $h/100$ on the same $\hat A$ (the truth of the learned ODE)</span>
+    <span><span class="swatch" style="background: rgba(31,79,139,0.40);"></span>True continuous trajectory (faint)</span>
+  </div>
+</div>
+
+<h2>Multi-step methods: a parasitic mode lying in wait</h2>
+
+<p>
+  Everything above involved <em>one-step</em> integrators&nbsp;&mdash; methods that
+  compute the next state from just the current one. Many widely used schemes
+  are <em>multi-step</em>: they advance using the last several states. The
+  classical <em>Leap Frog</em> scheme is the simplest example,
+  $\;z_{n+1} = z_{n-1} + 2h\, \hat\lambda\, z_n$⁠. It is two-step, second order,
+  and it is everywhere&nbsp;&mdash; molecular dynamics, plasma simulations, structured
+  Hamiltonian solvers, parts of every introductory PDE course.
+</p>
+
+<p>
+  A two-step recurrence has <em>two</em> characteristic roots for each true
+  eigenvalue. For Leap Frog applied to the data of a damped oscillator, the
+  optimizer ends up using
+  $\hat\lambda = \sinh(h\lambda)/h$⁠,
+  and the recurrence has roots $\zeta_+ = e^{h\lambda}$ (the
+  &ldquo;physical&rdquo; mode that decays in step with the data) and
+  $\zeta_- = -e^{-h\lambda}$ (a &ldquo;parasitic&rdquo; mode that grows by a
+  factor $e^{h\alpha}$ each step). Their product is fixed at
+  $\zeta_+ \zeta_- = -1$⁠, so whenever the physical mode decays, the parasitic
+  one grows by exactly the same factor.
+</p>
+
+<p>
+  When the leap-frog iteration starts from the same initial conditions
+  $(z_0, z_1)$ that the data was generated from, the parasitic mode has
+  coefficient zero and stays silent forever. Change the initial conditions
+  even slightly&nbsp;&mdash; perturb $z_1$ by a small amount&nbsp;&mdash; and the parasitic
+  mode wakes up. Once awake, it dominates the trajectory exponentially.
+</p>
+
+<!-- Demo 4: Leap Frog parasitic mode -->
+<div class="demo-card">
+  <h4>Try it: a tiny perturbation in $z_1$ wakes up the spurious root</h4>
+  <p style="margin: 0 0 0.75rem 0; font-size: 0.92rem; color: #444;">
+    Same data, same learned $\hat\lambda$⁠. The
+    <span style="color: var(--good-color); font-weight: 700;">green curve</span>
+    is Leap Frog started from the data's own initial pair $(z_0, z_1)$&nbsp;&mdash; only
+    the physical root is excited, and the trajectory hugs the data and its
+    continuation indefinitely. The
+    <span style="color: var(--learned-color); font-weight: 700;">red curve</span>
+    starts from the same $z_0$ but with $z_1$ shifted by $\varepsilon$ in the
+    real direction. As you increase $\varepsilon$ from $0$⁠, the red trajectory
+    starts to break away from the data and eventually diverges&nbsp;&mdash; that's the
+    parasitic mode showing up. Increase the perturbation, or watch later in
+    time, to see how strongly it dominates.
+  </p>
+  <div class="demo-controls">
+    <label>
+      Perturbation $\varepsilon$ on $z_1$ <span class="value-readout" id="d4-eps-readout">0.020</span>
+      <input type="range" id="d4-eps" min="0" max="0.2" step="0.001" value="0.020">
+    </label>
+    <label>
+      True damping $\alpha$ <span class="value-readout" id="d4-alpha-readout">0.30</span>
+      <input type="range" id="d4-alpha" min="0.0" max="0.6" step="0.01" value="0.30">
+    </label>
+    <label>
+      True frequency $\omega$ <span class="value-readout" id="d4-omega-readout">2.50</span>
+      <input type="range" id="d4-omega" min="0.5" max="5.0" step="0.05" value="2.50">
+    </label>
+  </div>
+  <canvas id="demo4-canvas" width="1700" height="900"></canvas>
+  <div class="legend">
+    <span><span class="swatch" style="background: #222;"></span>Data dots (training window)</span>
+    <span><span class="swatch" style="background: #1f8b4f;"></span>Leap Frog from exact $(z_0, z_1)$&nbsp;&mdash; physical mode only</span>
+    <span><span class="swatch" style="background: #c0392b;"></span>Leap Frog from $(z_0, z_1 + \varepsilon)$&nbsp;&mdash; parasitic mode awake</span>
+    <span><span class="swatch" style="background: rgba(31,79,139,0.40);"></span>True continuous trajectory (faint)</span>
+  </div>
+  <div id="demo4-verdict" class="verdict"></div>
+</div>
+
+<p>
+  This is the qualitative difference between one-step and multi-step methods
+  in the learning context. With a one-step integrator the artifact lives in
+  $\hat\lambda$ itself. With a multi-step integrator, $\hat\lambda$ may be
+  exactly faithful to the training data, yet the resulting discrete model has
+  a parasitic root that any nontrivial perturbation of the initial state can
+  ignite. In practice such perturbations are unavoidable: they come from
+  measurement noise, from bringing the model to a slightly different starting
+  condition, from any mismatch between training-time and deployment-time
+  initial data.
+</p>
+
+<h2>The same artifact in a nonlinear system: Lotka&ndash;Volterra</h2>
+
+<p>
+  Everything above was the linear scalar problem&nbsp;&mdash; the simplest setting in
+  which the artifact can be analyzed cleanly. To see that the same mechanism
+  shows up in real nonlinear systems trained with neural ODEs, the paper runs
+  the experiment on the textbook predator&ndash;prey model first written down
+  by Lotka and Volterra in the 1920s.
+</p>
+
+<p>
+  The Lotka&ndash;Volterra equations describe how a population of prey $x$ and
+  a population of predators $y$ feed back on each other:
+</p>
+
+\[
+  \dot x \;=\; \alpha\, x \;-\; \beta\, x y, \qquad
+  \dot y \;=\; \delta\, x y \;-\; \gamma\, y.
+\]
+
+<p>
+  Each prey individual reproduces at rate $\alpha$ and is eaten at rate
+  proportional to the predator population. Each predator dies at rate $\gamma$
+  and is born at rate proportional to how many prey it can find. With
+  positive constants $\alpha, \beta, \gamma, \delta$⁠, the system has one
+  non-trivial equilibrium where birth and death exactly balance, and every
+  other trajectory traces a <strong>closed loop</strong> in the
+  $(x, y)$ plane around that equilibrium&nbsp;&mdash; populations cycle forever, prey
+  rising then predators rising then prey falling then predators falling. The
+  loops never spiral in and never spiral out. The system is
+  <em>conservative</em>: it has an exactly preserved quantity (a generalised
+  energy) along every orbit.
+</p>
+
+<p>
+  That makes Lotka&ndash;Volterra a particularly clean test for the
+  integrator-induced artifact. There is no &ldquo;true&rdquo; damping the
+  optimizer could discover&nbsp;&mdash; the right answer is closed orbits and
+  nothing else. So if the trained model produces a trajectory that spirals
+  inward, that spiral is entirely an integrator artifact; there is no
+  dissipation in the data to fit.
+</p>
+
+<p>
+  In the experiment from the paper, three Lotka&ndash;Volterra trajectories
+ &nbsp;&mdash; three nested closed orbits&nbsp;&mdash; are sampled at evenly spaced times
+  and used to train a neural-network vector field. The training fit at the
+  sample points is excellent in every case. But running the <em>learned</em>
+  vector field with a fine-step integrator (essentially the exact flow) tells
+  three very different stories depending on which integrator was inside the
+  training loop.
+</p>
+
+<figure style="margin: 1.5rem 0;">
+  <div style="display: flex; gap: 1rem; align-items: flex-start; justify-content: center; flex-wrap: wrap;">
+    <div style="flex: 1 1 260px; max-width: 360px;">
+      <img src="/assets/images/numerical-integration/lotka_true.png" alt="True Lotka-Volterra: three closed periodic orbits" style="width: 100%; height: auto; border: 1px solid #e5e5e5; border-radius: 4px; background: white;">
+      <p style="text-align: center; font-size: 0.88rem; color: #555; margin: 0.4rem 0 0 0;">
+        <strong>Truth:</strong> three closed predator&ndash;prey orbits in the $(x, y)$ phase plane. Populations cycle indefinitely with no decay.
+      </p>
+    </div>
+    <div style="flex: 1 1 260px; max-width: 360px;">
+      <img src="/assets/images/numerical-integration/lotka_learned.png" alt="Learned Lotka-Volterra with RK4: three trajectories spiraling inward" style="width: 100%; height: auto; border: 1px solid #e5e5e5; border-radius: 4px; background: white;">
+      <p style="text-align: center; font-size: 0.88rem; color: #555; margin: 0.4rem 0 0 0;">
+        <strong>Learned with RK4:</strong> the same three initial conditions, integrated with the learned vector field at fine resolution, spiral inward toward equilibrium&nbsp;&mdash; a non-physical dissipation that came from the integrator, not the data.
+      </p>
+    </div>
+    <div style="flex: 1 1 260px; max-width: 360px;">
+      <img src="/assets/images/numerical-integration/lotka_implicit_midpoint.png" alt="Learned Lotka-Volterra with implicit midpoint: closed orbit preserved" style="width: 100%; height: auto; border: 1px solid #e5e5e5; border-radius: 4px; background: white;">
+      <p style="text-align: center; font-size: 0.88rem; color: #555; margin: 0.4rem 0 0 0;">
+        <strong>Learned with implicit midpoint:</strong> the learned vector field (arrows) and a high-resolution trajectory (purple) sitting almost exactly on the true closed orbit (blue). The conservative structure is preserved.
+      </p>
+    </div>
+  </div>
+  <figcaption style="text-align: center; color: #666; font-size: 0.88rem; margin-top: 0.8rem; max-width: 900px; margin-left: auto; margin-right: auto;">
+    Same Lotka&ndash;Volterra data, two integrators, two qualitatively different
+    learned models. RK4 collapses the closed orbits into spirals; the implicit
+    midpoint rule reproduces them faithfully. The fix is the same one we saw
+    in the linear scalar analysis above&nbsp;&mdash; switch to a structure-preserving
+    integrator inside the training loop. Figures from the paper.
+  </figcaption>
+</figure>
+
+<h2>What this means in practice</h2>
+
+<p>
+  If you build models of physical or scientific systems from time-sampled data
+ &nbsp;&mdash; whether you call the model a neural ODE, a SINDy-style sparse
+  regressor, a Gaussian process flow, or anything else&nbsp;&mdash; the integrator
+  inside your training loop is part of your model class. It comes with biases,
+  and for autonomous systems those biases can flip the sign of damping or the
+  direction of rotation without flagging a single warning.
+</p>
+
+<p>
+  Two practical takeaways follow:
+</p>
+
+<ol>
+  <li>
+    <strong>Treat the integrator as a modeling choice, not a default.</strong>
+    Document which integrator and which step size you used, just as you would
+    document your loss function or your network architecture.
+  </li>
+  <li>
+    <strong>Prefer a numerical integrator whose stability region is exactly
+    the left half complex plane.</strong> That is the geometric criterion the
+    analysis in this paper points to: when the stability region coincides with
+    $\{z : \mathrm{Re}\, z \le 0\}$, the learned eigenvalues automatically
+    inherit the correct sign of dissipation from the data, without any
+    structural prior beyond autonomy. Among classical methods, the implicit
+    midpoint rule satisfies this exactly; it is a safe default when the only
+    thing you know about the system is that it is autonomous.
+  </li>
+</ol>
+
+<p>
+  We are pursuing these questions in the
+  <a href="https://tsairesearch.github.io/">Scientific AI Research Group</a>
+  at the Oden Institute and the Department of Mathematics at UT Austin, where
+  much of our work sits at the boundary
+  <strong>where numerical analysis impacts deep learning practices</strong>:
+  characterising how classical numerical methods shape what data-driven models
+  can and cannot represent, and using that understanding to design training
+  pipelines that learn more reliably. The conviction running through the
+  group is that <strong>numerical analysis can help bring more effective
+  learning</strong> to data-driven models of dynamical systems &mdash; and that
+  the integrator choice studied in this paper is just one of several places
+  where that contribution is concrete.
+</p>
+
+<h2>Reference</h2>
+
+<p>
+  Bing-Ze Lu and Richard Tsai.
+  <a href="https://arxiv.org/abs/2507.14491" target="_blank" rel="noopener">
+    <em>Artifacts of Numerical Integration in Learning Dynamical Systems.</em>
+  </a>
+  arXiv:2507.14491 [math.NA / cs.LG], 2025.
+  <a href="https://arxiv.org/pdf/2507.14491" target="_blank" rel="noopener">[PDF]</a>
+</p>
+
+<div class="citation-box">@article{lu2025artifacts,
+  author  = {Lu, Bing-Ze and Tsai, Richard},
+  title   = {Artifacts of Numerical Integration in Learning Dynamical Systems},
+  journal = {arXiv preprint arXiv:2507.14491},
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2507.14491}
+}</div>
+
+</d-article>
+
+<script>
+"use strict";
+
+// =============================================================================
+// Shared math: discrete and continuous dynamics for a 2D rotation-with-decay
+// =============================================================================
+
+// The true continuous-time generator A(alpha, omega) =
+//   [ -alpha   -omega ;
+//      omega   -alpha ]
+// Trajectory: x(t) = exp(-alpha t) * R(omega t) * x0, where R is rotation.
+
+function trueContinuousState(t, x0, alpha, omega) {
+  const decay = Math.exp(-alpha * t);
+  const c = Math.cos(omega * t), s = Math.sin(omega * t);
+  return [
+    decay * (c * x0[0] - s * x0[1]),
+    decay * (s * x0[0] + c * x0[1])
+  ];
+}
+
+// Sample N data points evenly spaced at step h from the true trajectory.
+function sampleData(x0, alpha, omega, h, N) {
+  const out = [];
+  for (let n = 0; n < N; n++) {
+    out.push(trueContinuousState(n * h, x0, alpha, omega));
+  }
+  return out;
+}
+
+// Apply one step of integrator I with linearization A_hat = (-aHat, -wHat; wHat, -aHat).
+// We work in the eigenvalue lambda_hat = -aHat + i*wHat representation, since R(hA) for
+// this specific 2x2 matrix has eigenvalues R(h*lambda_hat) and R(h*conj(lambda_hat)),
+// and the complex factor R(h*lambda_hat) acts on the complex variable z = x + i y.
+
+function complexMul(a, b) { return [a[0]*b[0]-a[1]*b[1], a[0]*b[1]+a[1]*b[0]]; }
+function complexAdd(a, b) { return [a[0]+b[0], a[1]+b[1]]; }
+function complexDiv(a, b) {
+  const d = b[0]*b[0]+b[1]*b[1];
+  return [(a[0]*b[0]+a[1]*b[1])/d, (a[1]*b[0]-a[0]*b[1])/d];
+}
+function complexAbs(a) { return Math.sqrt(a[0]*a[0]+a[1]*a[1]); }
+
+// Stability function R(z) for each integrator.
+function R_fe(z)  { return [1 + z[0], z[1]]; }
+function R_rk2(z) {
+  const z2 = complexMul(z, z);
+  return [1 + z[0] + 0.5*z2[0], z[1] + 0.5*z2[1]];
+}
+function R_rk4(z) {
+  const z2 = complexMul(z, z);
+  const z3 = complexMul(z2, z);
+  const z4 = complexMul(z3, z);
+  return [
+    1 + z[0] + z2[0]/2 + z3[0]/6 + z4[0]/24,
+    z[1] + z2[1]/2 + z3[1]/6 + z4[1]/24
+  ];
+}
+function R_im(z)  {
+  // (2 + z) / (2 - z)
+  const num = [2 + z[0], z[1]];
+  const den = [2 - z[0], -z[1]];
+  return complexDiv(num, den);
+}
+function R_be(z)  {
+  // Implicit (backward) Euler:  R(z) = 1 / (1 - z) = (1 - z̄) / |1 - z|^2
+  const a = 1 - z[0];
+  const b = -z[1];
+  const d = a*a + b*b;
+  return [a/d, -b/d];
+}
+const Rfuncs = { fe: R_fe, rk2: R_rk2, rk4: R_rk4, im: R_im, be: R_be };
+const RnameLong = {
+  fe: "forward Euler",
+  rk2: "RK2 (Heun)",
+  rk4: "classical RK4",
+  im: "implicit midpoint",
+  be: "implicit Euler"
+};
+
+// Find ALL roots of R(w) = target, where R is the integrator's stability function.
+// FE has 1 root; RK2 has 2; RK4 has 4; implicit midpoint has 1. We then pick a root
+// according to a strategy: "near_truth" returns the root closest to h*lambda_guess;
+// "anti_damped" returns a root in the right half plane if one exists (otherwise the
+// most distorted one, in the sense of being farthest from truth).
+//
+// For polynomial R's we use the analytical formula or Durand–Kerner; for the implicit
+// midpoint Mobius transform, the inverse is closed form.
+
+function rootsFor(integrator, target, h) {
+  if (integrator === "fe") {
+    // R(w) = 1 + w
+    const w = [target[0] - 1, target[1]];
+    return [[w[0]/h, w[1]/h]];
+  }
+  if (integrator === "im") {
+    // R(w) = (2+w)/(2-w)  =>  w = 2(target-1)/(target+1)
+    const num = [2*(target[0] - 1), 2*target[1]];
+    const den = [target[0] + 1, target[1]];
+    const w = complexDiv(num, den);
+    return [[w[0]/h, w[1]/h]];
+  }
+  if (integrator === "be") {
+    // R(w) = 1/(1-w) = target  =>  w = 1 - 1/target = (target - 1)/target
+    const tMag2 = target[0]*target[0] + target[1]*target[1];
+    const inv_target = [target[0]/tMag2, -target[1]/tMag2];
+    const w = [1 - inv_target[0], -inv_target[1]];
+    return [[w[0]/h, w[1]/h]];
+  }
+  if (integrator === "rk2") {
+    // R(w) = 1 + w + w^2/2 = target  =>  w^2 + 2w + 2(1-target) = 0
+    //   w = -1 ± sqrt(2*target - 1)
+    const inside = [2*target[0] - 1, 2*target[1]];
+    const sr = csqrt(inside);
+    const w1 = [-1 + sr[0], sr[1]];
+    const w2 = [-1 - sr[0], -sr[1]];
+    return [[w1[0]/h, w1[1]/h], [w2[0]/h, w2[1]/h]];
+  }
+  if (integrator === "rk4") {
+    // R(w) = 1 + w + w^2/2 + w^3/6 + w^4/24 = target
+    // Multiply by 24: w^4 + 4 w^3 + 12 w^2 + 24 w + 24(1 - target) = 0
+    // Solve via Durand–Kerner with complex coefficients.
+    const c0 = [24*(1 - target[0]), -24*target[1]];
+    const c = [1, 4, 12, 24]; // real coefficients of w^4..w^1
+    let roots = [[0.6, 0.7], [-0.7, 0.6], [0.7, -0.6], [-0.6, -0.7]];
+    for (let iter = 0; iter < 250; iter++) {
+      let maxCorr = 0;
+      for (let i = 0; i < 4; i++) {
+        // Evaluate p(roots[i]) by Horner: p = w^4 + 4w^3 + 12w^2 + 24w + c0
+        let p = [c[0], 0];
+        for (let k = 1; k < 4; k++) {
+          p = complexMul(p, roots[i]);
+          p[0] += c[k];
+        }
+        // last step: p*w + c0
+        p = complexMul(p, roots[i]);
+        p = [p[0] + c0[0], p[1] + c0[1]];
+        // denominator
+        let denom = [1, 0];
+        for (let j = 0; j < 4; j++) if (j !== i) {
+          const d = [roots[i][0]-roots[j][0], roots[i][1]-roots[j][1]];
+          denom = complexMul(denom, d);
+        }
+        const corr = complexDiv(p, denom);
+        roots[i] = [roots[i][0] - corr[0], roots[i][1] - corr[1]];
+        const cm = complexAbs(corr);
+        if (cm > maxCorr) maxCorr = cm;
+      }
+      if (maxCorr < 1e-13) break;
+    }
+    return roots.map(w => [w[0]/h, w[1]/h]);
+  }
+  return [];
+}
+
+// Square root of a complex number (principal branch).
+function csqrt(a) {
+  const r = Math.sqrt(a[0]*a[0] + a[1]*a[1]);
+  const re = Math.sqrt((r + a[0]) / 2);
+  let im = Math.sqrt(Math.max(0, (r - a[0]) / 2));
+  if (a[1] < 0) im = -im;
+  return [re, im];
+}
+
+// Pick a single learned eigenvalue from among all roots.
+//   strategy "near_truth" : closest to lambda_guess
+//   strategy "anti_damped": prefer Re(lambda) > 0; among those, prefer rotation in
+//                            same direction as lambda_guess; tiebreak by |lambda - guess|.
+function pickRoot(roots, lambda_guess, strategy) {
+  if (roots.length === 1) return roots[0];
+  if (strategy === "anti_damped") {
+    // Prefer roots with Re > 0 (anti-damped), same sign of imaginary part as guess
+    const sameRot = roots.filter(r => Math.sign(r[1]) === Math.sign(lambda_guess[1]));
+    const ad = sameRot.filter(r => r[0] > 0);
+    if (ad.length > 0) {
+      // pick smallest |Re|
+      ad.sort((a,b) => Math.abs(a[0]) - Math.abs(b[0]));
+      return ad[0];
+    }
+    // fall through to near-truth
+  }
+  if (strategy === "reversed") {
+    // pick a root whose imaginary part has the OPPOSITE sign from the guess
+    const rev = roots.filter(r => Math.sign(r[1]) === -Math.sign(lambda_guess[1]));
+    if (rev.length > 0) {
+      rev.sort((a,b) => Math.abs(a[1]) - Math.abs(b[1]));
+      return rev[0];
+    }
+  }
+  // "near_truth": pick the root that is qualitatively faithful — same sign of
+  // damping (Re ≤ 0 if truth is damped) AND same sign of imaginary part —
+  // and closest among those. Fall back to plain Euclidean closest if none qualify.
+  const qualOK = roots.filter(r =>
+    Math.sign(r[1]) === Math.sign(lambda_guess[1]) &&
+    (lambda_guess[0] >= 0 ? r[0] >= -1e-9 : r[0] <= 1e-9)
+  );
+  const candidates = qualOK.length > 0 ? qualOK : roots;
+  let best = candidates[0];
+  let bestD = Infinity;
+  for (const r of candidates) {
+    const d = (r[0]-lambda_guess[0])**2 + (r[1]-lambda_guess[1])**2;
+    if (d < bestD) { bestD = d; best = r; }
+  }
+  return best;
+}
+
+// Convenience: legacy name used elsewhere — returns a single eigenvalue (near-truth).
+function inverseR(integrator, target, h, lambda_guess) {
+  const all = rootsFor(integrator, target, h);
+  return pickRoot(all, lambda_guess, "near_truth");
+}
+
+// Given lambda_hat = aHat + i*wHat, propagate continuous trajectory of the LEARNED
+// dynamics (its 2x2 rotation-decay system) by exact matrix exponential.
+function learnedContinuousState(t, x0, lambda_hat) {
+  const aHat = lambda_hat[0];
+  const wHat = lambda_hat[1];
+  const grow = Math.exp(aHat * t);
+  const c = Math.cos(wHat * t), s = Math.sin(wHat * t);
+  return [
+    grow * (c * x0[0] - s * x0[1]),
+    grow * (s * x0[0] + c * x0[1])
+  ];
+}
+
+// =============================================================================
+// Simulators: actually iterate the integrator on the LEARNED system A_hat.
+//
+// In the 2D rotation-decay parameterization, the matrix A_hat acts on R^2 ≅ C as
+// multiplication by the (complex) eigenvalue lambda_hat. The integrator's action
+// over one step of size dt is multiplication by R(dt * lambda_hat), where R is the
+// integrator's stability function. So we simulate by iterating
+//     z_{n+1} = R(dt * lambda_hat) * z_n  (complex multiplication).
+// This is *exactly* what an RK4/FE/IM solver would produce on the learned linear
+// system, with no approximation beyond the integrator itself.
+// =============================================================================
+
+// Simulate the LEARNED system with integrator at step dt, starting at z0,
+// for `steps` steps. Returns steps+1 complex points.
+function simulateLearned(integrator, lambda_hat, dt, z0, steps) {
+  const R = Rfuncs[integrator];
+  const factor = R([dt * lambda_hat[0], dt * lambda_hat[1]]);
+  const out = [z0.slice()];
+  let z = z0.slice();
+  for (let i = 0; i < steps; i++) {
+    z = complexMul(factor, z);
+    out.push(z);
+  }
+  return out;
+}
+
+// Simulate the LEARNED system over total time T = N*h with substepping K (K
+// integrator substeps per "data interval" of size h). Returns N*K+1 points,
+// densely sampled, suitable for plotting a smooth curve.
+function simulateLearnedFine(integrator, lambda_hat, h, z0, N, K) {
+  return simulateLearned(integrator, lambda_hat, h / K, z0, N * K);
+}
+
+// Leap Frog simulator. Two-step recurrence: z_{n+1} = z_{n-1} + 2 h lambda_hat z_n.
+// Needs both z0 and z1 to start. Returns totalSteps + 1 points (z_0, z_1, ..., z_N).
+function simulateLeapFrog(lambda_hat, h, z0, z1, totalSteps) {
+  const factor = [2 * h * lambda_hat[0], 2 * h * lambda_hat[1]];
+  const out = [z0.slice(), z1.slice()];
+  let zPrev = z0.slice();
+  let zCurr = z1.slice();
+  for (let i = 1; i < totalSteps; i++) {
+    const term = complexMul(factor, zCurr);
+    const zNext = [zPrev[0] + term[0], zPrev[1] + term[1]];
+    out.push(zNext);
+    zPrev = zCurr;
+    zCurr = zNext;
+  }
+  return out;
+}
+
+// Closed-form learned eigenvalue for Leap Frog from data of a true linear scalar
+// system z' = lambda z. Lemma 3.1 of the paper:
+//     hat_lambda = (zeta - 1/zeta) / (2h),   zeta = exp(h * lambda).
+// Equivalently, hat_lambda = sinh(h*lambda) / h.
+function leapFrogLearnedLambda(alpha, omega, h) {
+  // lambda = -alpha + i*omega
+  const re = h * (-alpha), im = h * omega;
+  // exp(h*lambda)
+  const eP = [Math.exp(re) * Math.cos(im), Math.exp(re) * Math.sin(im)];
+  // exp(-h*lambda) = 1/exp(h*lambda) (complex)
+  const eN = [Math.exp(-re) * Math.cos(-im), Math.exp(-re) * Math.sin(-im)];
+  return [(eP[0] - eN[0]) / (2 * h), (eP[1] - eN[1]) / (2 * h)];
+}
+
+// =============================================================================
+// Helper: world-to-canvas transform
+// =============================================================================
+
+function makeAxes(canvas, xMin, xMax, yMin, yMax, padding) {
+  padding = padding || {l: 50, r: 20, t: 20, b: 35};
+  const W = canvas.width, H = canvas.height;
+  const pw = W - padding.l - padding.r;
+  const ph = H - padding.t - padding.b;
+  const sx = pw / (xMax - xMin);
+  const sy = ph / (yMax - yMin);
+  return {
+    toCanvas: (x, y) => [padding.l + (x - xMin) * sx, padding.t + (yMax - y) * sy],
+    fromCanvas: (px, py) => [(px - padding.l)/sx + xMin, yMax - (py - padding.t)/sy],
+    padding, sx, sy, xMin, xMax, yMin, yMax
+  };
+}
+
+function drawGrid(ctx, ax, opts) {
+  opts = opts || {};
+  const dx = opts.dx || 1;
+  const dy = opts.dy || 1;
+  ctx.save();
+  ctx.strokeStyle = "#ececec";
+  ctx.lineWidth = 1;
+  for (let x = Math.ceil(ax.xMin/dx)*dx; x <= ax.xMax; x += dx) {
+    const [px,] = ax.toCanvas(x, 0);
+    ctx.beginPath();
+    ctx.moveTo(px, ax.padding.t);
+    ctx.lineTo(px, ax.padding.t + (ax.yMax-ax.yMin)*ax.sy);
+    ctx.stroke();
+  }
+  for (let y = Math.ceil(ax.yMin/dy)*dy; y <= ax.yMax; y += dy) {
+    const [, py] = ax.toCanvas(0, y);
+    ctx.beginPath();
+    ctx.moveTo(ax.padding.l, py);
+    ctx.lineTo(ax.padding.l + (ax.xMax-ax.xMin)*ax.sx, py);
+    ctx.stroke();
+  }
+  // Axes
+  ctx.strokeStyle = "#888";
+  ctx.lineWidth = 1.2;
+  const [, py0] = ax.toCanvas(0, 0);
+  const [px0,] = ax.toCanvas(0, 0);
+  ctx.beginPath();
+  ctx.moveTo(ax.padding.l, py0);
+  ctx.lineTo(ax.padding.l + (ax.xMax-ax.xMin)*ax.sx, py0);
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(px0, ax.padding.t);
+  ctx.lineTo(px0, ax.padding.t + (ax.yMax-ax.yMin)*ax.sy);
+  ctx.stroke();
+  // Tick labels
+  ctx.fillStyle = "#555";
+  ctx.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+  ctx.textAlign = "center";
+  for (let x = Math.ceil(ax.xMin/dx)*dx; x <= ax.xMax; x += dx) {
+    if (Math.abs(x) < 1e-9) continue;
+    const [px,] = ax.toCanvas(x, 0);
+    ctx.fillText(x.toString(), px, py0 + 22);
+  }
+  ctx.textAlign = "right";
+  for (let y = Math.ceil(ax.yMin/dy)*dy; y <= ax.yMax; y += dy) {
+    if (Math.abs(y) < 1e-9) continue;
+    const [, py] = ax.toCanvas(0, y);
+    ctx.fillText(y.toString(), px0 - 10, py + 6);
+  }
+  ctx.restore();
+}
+
+function drawCurve(ctx, ax, points, color, lineWidth, dashed) {
+  ctx.save();
+  ctx.strokeStyle = color;
+  ctx.lineWidth = lineWidth || 2;
+  if (dashed) ctx.setLineDash([6, 4]);
+  ctx.beginPath();
+  for (let i = 0; i < points.length; i++) {
+    const [cx, cy] = ax.toCanvas(points[i][0], points[i][1]);
+    if (i === 0) ctx.moveTo(cx, cy);
+    else ctx.lineTo(cx, cy);
+  }
+  ctx.stroke();
+  ctx.restore();
+}
+
+function drawDots(ctx, ax, points, color, radius) {
+  ctx.save();
+  ctx.fillStyle = color;
+  for (const p of points) {
+    const [cx, cy] = ax.toCanvas(p[0], p[1]);
+    ctx.beginPath();
+    ctx.arc(cx, cy, radius || 3, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.restore();
+}
+
+// =============================================================================
+// Hero canvas: animated phase portrait
+// =============================================================================
+
+(function heroAnim() {
+  const canvas = document.getElementById("hero-canvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const ax = makeAxes(canvas, -3.5, 3.5, -3.5, 3.5, {l: 60, r: 40, t: 30, b: 50});
+
+  // Setup: damped oscillator, sampled at evenly spaced times; the optimizer then
+  // fits a continuous-time linear system A_hat such that RK4 at the SAME step h
+  // reproduces the discrete samples. We pick the anti-damped root (Re λ̂ > 0),
+  // which is one of four candidate eigenvalues of A_hat that all fit the data
+  // exactly under RK4. This is the "global minimum that fools you" case from the
+  // paper.
+  const x0 = [1.0, 0.0];
+  const alpha = 0.10;
+  const omega = 2.0;
+  const h = 1.00;
+  const N = 9;            // number of data intervals (we plot N+1 dots)
+  const K_FINE = 100;     // RK4 substeps per data interval for the "true sim"
+
+  // True data via the analytical flow of the TRUE system.
+  const data = sampleData(x0, alpha, omega, h, N + 1);
+
+  // Learned eigenvalue: an anti-damped RK4 root.
+  const lambdaTrue = [-alpha, omega];
+  const targetFactor = [Math.exp(-alpha*h)*Math.cos(omega*h),
+                        Math.exp(-alpha*h)*Math.sin(omega*h)];
+  const allRoots = rootsFor("rk4", targetFactor, h);
+  const lambdaHat = pickRoot(allRoots, lambdaTrue, "anti_damped");
+
+  // GREEN curve: RK4 at the training step h, applied to the learned system.
+  // By construction, this trajectory passes exactly through the data dots.
+  const greenPts = simulateLearned("rk4", lambdaHat, h, x0, N);
+
+  // RED curve: RK4 at step h/K_FINE on the SAME learned system. With K_FINE
+  // substeps per data interval, RK4 is essentially exact on the linear system,
+  // so the red curve traces the true continuous flow of A_hat. Because Re λ̂ > 0,
+  // it spirals outward.
+  const redPts = simulateLearnedFine("rk4", lambdaHat, h, x0, N, K_FINE);
+
+  // Faint TRUE continuous trajectory of the actual system, for context.
+  const Mres = 700;
+  const truePts = [];
+  for (let i = 0; i <= Mres; i++) {
+    const t = i / Mres * (N * h);
+    truePts.push(trueContinuousState(t, x0, alpha, omega));
+  }
+
+  let frame = 0;
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#fcfcfa";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    drawGrid(ctx, ax, {dx: 1.0, dy: 1.0});
+
+    // True trajectory in faint blue (background context)
+    drawCurve(ctx, ax, truePts, "rgba(31, 79, 139, 0.45)", 1.6, true);
+
+    // Animate the red curve drawing in over time, so the viewer sees it expand.
+    const T = (frame % 480) / 480;
+    const upTo = Math.floor(T * (redPts.length - 1));
+    drawCurve(ctx, ax, redPts.slice(0, upTo + 1), "#c0392b", 4.0);
+
+    // Green curve: training-step RK4 trajectory of the learned system.
+    drawCurve(ctx, ax, greenPts, "#1f8b4f", 3.5);
+    // Mark the discrete RK4 samples so the reader sees they sit on the data dots.
+    drawDots(ctx, ax, greenPts, "#1f8b4f", 7.0);
+
+    // Data dots on top, with white outline.
+    drawDots(ctx, ax, data, "#222", 8.0);
+    ctx.save();
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 2.0;
+    for (const p of data) {
+      const [cx, cy] = ax.toCanvas(p[0], p[1]);
+      ctx.beginPath();
+      ctx.arc(cx, cy, 8.0, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    ctx.fillStyle = "rgba(31, 79, 139, 0.85)";
+    ctx.font = "italic 22px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText("(faint blue: true continuous trajectory)", ax.padding.l + 18, ax.padding.t + 32);
+    ctx.fillStyle = "#1f8b4f";
+    ctx.font = "bold 26px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText("RK4 at step h = 1.0 on the learned system: sits on the data", ax.padding.l + 18, ax.padding.t + 70);
+    ctx.fillStyle = "#c0392b";
+    ctx.fillText("RK4 at step h/100 on the SAME learned system: spirals outward", ax.padding.l + 18, ax.padding.t + 108);
+    ctx.fillStyle = "#444";
+    ctx.font = "22px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText(`Learned λ̂ = ${lambdaHat[0].toFixed(3)} + ${lambdaHat[1].toFixed(3)}i   (Re λ̂ > 0 ⇒ anti-damped)`,
+      ax.padding.l + 18, ax.padding.t + 144);
+
+    frame++;
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+// =============================================================================
+// Demo 1: interactive learned-vs-true trajectories
+// =============================================================================
+
+(function demo1() {
+  const canvas = document.getElementById("demo1-canvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+
+  const integratorEl = document.getElementById("d1-integrator");
+  const tildeHEl = document.getElementById("d1-tildeh");
+  const alphaEl = document.getElementById("d1-alpha");
+  const omegaEl = document.getElementById("d1-omega");
+  const tildeHReadout = document.getElementById("d1-tildeh-readout");
+  const alphaReadout = document.getElementById("d1-alpha-readout");
+  const omegaReadout = document.getElementById("d1-omega-readout");
+  const verdictEl = document.getElementById("demo1-verdict");
+
+  // Fixed training step — the optimizer fits A_hat using the chosen integrator
+  // at this step. Same value as in the hero figure.
+  const TRAIN_H = 1.0;
+  // Same fixed canvas range as the hero, so the visual style matches.
+  const AX_LIM = 3.5;
+  const N = 9;            // number of data intervals; we plot N+1 dots
+
+  // State that the animation loop reads each frame.
+  let state = null;
+  let frame = 0;
+
+  // Auto-pick the most pathological root of R(h*lambda_hat) = exp(h*lambda).
+  function pickPathological(allRoots, lambdaTrue) {
+    if (allRoots.length === 1) return allRoots[0];
+    const sameRot = allRoots.filter(r => Math.sign(r[1]) === Math.sign(lambdaTrue[1]));
+    const ad = sameRot.filter(r => r[0] > 0.005);
+    if (ad.length > 0) {
+      ad.sort((a,b) => Math.abs(a[0]) - Math.abs(b[0]));
+      return ad[0];
+    }
+    const rev = allRoots.filter(r => Math.sign(r[1]) !== Math.sign(lambdaTrue[1]));
+    if (rev.length > 0) {
+      rev.sort((a,b) => Math.abs(a[1]) - Math.abs(b[1]));
+      return rev[0];
+    }
+    let best = allRoots[0], bestD = Infinity;
+    for (const r of allRoots) {
+      const d = (r[0]-lambdaTrue[0])**2 + (r[1]-lambdaTrue[1])**2;
+      if (d < bestD) { bestD = d; best = r; }
+    }
+    return best;
+  }
+
+  function recompute() {
+    const integrator = integratorEl.value;
+    const tildeH = Math.max(0.001, parseFloat(tildeHEl.value));
+    const alpha = parseFloat(alphaEl.value);
+    const omega = parseFloat(omegaEl.value);
+    tildeHReadout.textContent = tildeH.toFixed(3);
+    alphaReadout.textContent = alpha.toFixed(2);
+    omegaReadout.textContent = omega.toFixed(2);
+
+    const x0 = [1.0, 0.0];
+    const data = sampleData(x0, alpha, omega, TRAIN_H, N + 1);
+
+    // Training: fit lambdaHat at the FIXED training step h
+    const lambdaTrue = [-alpha, omega];
+    const targetFactor = [
+      Math.exp(-alpha*TRAIN_H) * Math.cos(omega*TRAIN_H),
+      Math.exp(-alpha*TRAIN_H) * Math.sin(omega*TRAIN_H)
+    ];
+    const allRoots = rootsFor(integrator, targetFactor, TRAIN_H);
+    const lambdaHat = pickPathological(allRoots, lambdaTrue);
+
+    // GREEN: integrator at the TRAINING step h on the learned A_hat.
+    // By construction this trajectory passes through the data dots.
+    const greenPts = simulateLearned(integrator, lambdaHat, TRAIN_H, x0, N);
+
+    // RED: SAME integrator on the SAME A_hat, but with simulation step tildeH.
+    // Run for total time T = N*h, so the number of substeps = T / tildeH.
+    const T = N * TRAIN_H;
+    const numRedSteps = Math.max(1, Math.round(T / tildeH));
+    const redPts = simulateLearned(integrator, lambdaHat, tildeH, x0, numRedSteps);
+
+    // Faint true continuous trajectory for context
+    const truePts = [];
+    const Mres = 500;
+    for (let i = 0; i <= Mres; i++) {
+      const t = i / Mres * T;
+      truePts.push(trueContinuousState(t, x0, alpha, omega));
+    }
+
+    // Verdict: how does the red trajectory at the end of the time horizon
+    // compare with the data (which the green sits on)?
+    const finalGreenMag = Math.sqrt(greenPts[N][0]**2 + greenPts[N][1]**2);
+    const finalRedMag   = Math.sqrt(redPts[redPts.length-1][0]**2 + redPts[redPts.length-1][1]**2);
+    const ratio = finalRedMag / Math.max(1e-9, finalGreenMag);
+    const aHat = -lambdaHat[0];
+    const wHat = lambdaHat[1];
+    const reversed = Math.sign(wHat) !== Math.sign(omega);
+    const closeTotildeH = Math.abs(tildeH - TRAIN_H) < 1e-6;
+
+    let verdictKind = "", verdictText = "";
+    if (closeTotildeH) {
+      verdictKind = "good";
+      verdictText = `At $\\tilde h = h$ the simulation just reproduces the training fit, so red and green coincide. Drag $\\tilde h$ down to see what the learned ODE actually does.`;
+    } else if (lambdaHat[0] > 0.005) {
+      verdictKind = "bad";
+      verdictText = `Anti-damping artifact. With $\\tilde h = ${tildeH.toFixed(3)}$ (h/${(TRAIN_H/tildeH).toFixed(0)}), the red trajectory ends up about ${ratio.toFixed(1)}× the green one. The learned ODE has Re λ̂ = ${lambdaHat[0].toFixed(3)} > 0 — it grows; the green fit only matches the data because the integrator at the training step happens to land on the data points.` +
+        (allRoots.length > 1 ? ` (Anti-damped root selected from ${allRoots.length} candidates.)` : "");
+    } else if (reversed) {
+      verdictKind = "bad";
+      verdictText = `Reversed rotation. With $\\tilde h = ${tildeH.toFixed(3)}$⁠, red rotates the wrong way (Im λ̂ = ${wHat.toFixed(3)} has the opposite sign from ω = ${omega.toFixed(2)}).`;
+    } else if (Math.abs(aHat - alpha) < 0.02 && Math.abs(wHat - omega) < 0.05) {
+      verdictKind = "good";
+      verdictText = `Faithful. Even at the small step $\\tilde h = ${tildeH.toFixed(3)}$⁠, red still tracks the data. Learned (α̂, ω̂) = (${aHat.toFixed(3)}, ${wHat.toFixed(3)}).`;
+    } else if (aHat > alpha + 0.05) {
+      verdictText = `Over-damping artifact. The learned ODE has damping α̂ = ${aHat.toFixed(3)} (truth α = ${alpha.toFixed(2)}). At $\\tilde h = ${tildeH.toFixed(3)}$ the red trajectory ends up only ${(ratio*100).toFixed(0)}% the size of green — it decays much faster than the data.`;
+    } else {
+      verdictText = `Mildly distorted. Learned (α̂, ω̂) = (${aHat.toFixed(3)}, ${wHat.toFixed(3)}) vs. truth (α, ω) = (${alpha.toFixed(2)}, ${omega.toFixed(2)}).`;
+    }
+    verdictEl.className = "verdict" + (verdictKind ? " " + verdictKind : "");
+    verdictEl.textContent = verdictText;
+
+    state = {
+      integrator, tildeH, alpha, omega, lambdaHat, allRoots,
+      data, greenPts, redPts, truePts
+    };
+    frame = 0;  // restart red-curve animation when params change
+  }
+
+  function draw() {
+    if (!state) return;
+    const { integrator, tildeH, alpha, omega, lambdaHat, allRoots,
+            data, greenPts, redPts, truePts } = state;
+
+    const ax = makeAxes(canvas, -AX_LIM, AX_LIM, -AX_LIM, AX_LIM, {l: 60, r: 40, t: 30, b: 50});
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#fcfcfa";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    drawGrid(ctx, ax, {dx: 1.0, dy: 1.0});
+
+    drawCurve(ctx, ax, truePts, "rgba(31, 79, 139, 0.45)", 1.6, true);
+
+    // Animate the red curve drawing in over time.
+    const T = (frame % 480) / 480;
+    const upTo = Math.floor(T * (redPts.length - 1));
+    drawCurve(ctx, ax, redPts.slice(0, upTo + 1), "#c0392b", 4.0);
+
+    drawCurve(ctx, ax, greenPts, "#1f8b4f", 3.5);
+    drawDots(ctx, ax, greenPts, "#1f8b4f", 7.0);
+
+    drawDots(ctx, ax, data, "#222", 8.0);
+    ctx.save();
+    ctx.strokeStyle = "white"; ctx.lineWidth = 2.0;
+    for (const p of data) {
+      const [cx, cy] = ax.toCanvas(p[0], p[1]);
+      ctx.beginPath();
+      ctx.arc(cx, cy, 8.0, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    // Big labels
+    ctx.fillStyle = "rgba(31, 79, 139, 0.85)";
+    ctx.font = "italic 22px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText("(faint blue: true continuous trajectory)", ax.padding.l + 18, ax.padding.t + 32);
+
+    ctx.fillStyle = "#1f8b4f";
+    ctx.font = "bold 26px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText(
+      `${RnameLong[integrator]} at training step h = ${TRAIN_H.toFixed(2)} on learned system: sits on data`,
+      ax.padding.l + 18, ax.padding.t + 70
+    );
+    ctx.fillStyle = "#c0392b";
+    const ratioStr = (TRAIN_H/tildeH).toFixed(0);
+    ctx.fillText(
+      `${RnameLong[integrator]} at simulation step h̃ = ${tildeH.toFixed(3)} (= h/${ratioStr}) on SAME learned system`,
+      ax.padding.l + 18, ax.padding.t + 108
+    );
+
+    ctx.fillStyle = "#444";
+    ctx.font = "22px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    let suffix = "";
+    if (allRoots.length > 1) {
+      let kind = "closest-to-truth";
+      if (lambdaHat[0] > 0.005) kind = "anti-damped";
+      else if (Math.sign(lambdaHat[1]) !== Math.sign(omega)) kind = "reversed-rotation";
+      suffix = `   [${kind} root, ${allRoots.length} candidates]`;
+    }
+    ctx.fillText(
+      `Learned λ̂ = ${lambdaHat[0].toFixed(3)} + ${lambdaHat[1].toFixed(3)}i${suffix}`,
+      ax.padding.l + 18, ax.padding.t + 144
+    );
+  }
+
+  function tick() {
+    draw();
+    frame++;
+    requestAnimationFrame(tick);
+  }
+
+  integratorEl.addEventListener("change", recompute);
+  tildeHEl.addEventListener("input", recompute);
+  alphaEl.addEventListener("input", recompute);
+  omegaEl.addEventListener("input", recompute);
+
+  recompute();
+  tick();
+})();
+
+// =============================================================================
+// Demo 2: stability regions in the complex plane
+// =============================================================================
+
+(function demo2() {
+  const canvas = document.getElementById("demo2-canvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const ax = makeAxes(canvas, -3.5, 2.0, -3.5, 3.5, {l: 60, r: 40, t: 30, b: 50});
+
+  const integratorEl = document.getElementById("d2-integrator");
+  const hEl = document.getElementById("d2-h");
+  const omegaEl = document.getElementById("d2-omega");
+  const alphaEl = document.getElementById("d2-alpha");
+  const hReadout = document.getElementById("d2-h-readout");
+  const omegaReadout = document.getElementById("d2-omega-readout");
+  const alphaReadout = document.getElementById("d2-alpha-readout");
+  const verdictEl = document.getElementById("demo2-verdict");
+
+  function render() {
+    const integrator = integratorEl.value;
+    const h = parseFloat(hEl.value);
+    const omega = parseFloat(omegaEl.value);
+    const alpha = parseFloat(alphaEl.value);
+
+    hReadout.textContent = h.toFixed(2);
+    omegaReadout.textContent = omega.toFixed(2);
+    alphaReadout.textContent = alpha.toFixed(2);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#fcfcfa"; ctx.fillRect(0,0,canvas.width,canvas.height);
+    drawGrid(ctx, ax, {dx: 1, dy: 1});
+
+    // Highlight right half plane
+    ctx.save();
+    ctx.fillStyle = "rgba(192, 57, 43, 0.06)";
+    const [px0, py0] = ax.toCanvas(0, ax.yMax);
+    const [px1, py1] = ax.toCanvas(ax.xMax, ax.yMin);
+    ctx.fillRect(px0, py0, px1 - px0, py1 - py0);
+    ctx.fillStyle = "#c0392b";
+    ctx.font = "italic 22px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText("right half plane: anti-damped", px0 + 14, py0 + 28);
+    ctx.restore();
+
+    // Compute and shade stability region by sampling
+    const R = Rfuncs[integrator];
+    const sampleW = canvas.width;
+    const sampleH = canvas.height;
+    const img = ctx.createImageData(sampleW, sampleH);
+    for (let py = 0; py < sampleH; py++) {
+      for (let px = 0; px < sampleW; px++) {
+        const [zx, zy] = ax.fromCanvas(px, py);
+        if (zx < ax.xMin || zx > ax.xMax || zy < ax.yMin || zy > ax.yMax) continue;
+        const r = R([zx, zy]);
+        const mag = Math.sqrt(r[0]*r[0] + r[1]*r[1]);
+        if (mag <= 1.0) {
+          const idx = (py * sampleW + px) * 4;
+          // Light gray fill
+          img.data[idx]   = 90;
+          img.data[idx+1] = 90;
+          img.data[idx+2] = 90;
+          img.data[idx+3] = 55;
+        }
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+
+    // Re-draw axes lines on top
+    ctx.save();
+    ctx.strokeStyle = "#666";
+    ctx.lineWidth = 1.4;
+    const [, py0a] = ax.toCanvas(0, 0);
+    const [px0a,] = ax.toCanvas(0, 0);
+    ctx.beginPath();
+    ctx.moveTo(ax.padding.l, py0a);
+    ctx.lineTo(canvas.width - ax.padding.r, py0a);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(px0a, ax.padding.t);
+    ctx.lineTo(px0a, canvas.height - ax.padding.b);
+    ctx.stroke();
+    ctx.restore();
+
+    // Outline of stability region (boundary)
+    ctx.save();
+    ctx.strokeStyle = "#444";
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    let prevSign = null;
+    const stepPx = 2;
+    // Boundary detection: find pixels where neighbor crosses |R|=1
+    for (let py = 0; py < sampleH-stepPx; py += stepPx) {
+      for (let px = 0; px < sampleW-stepPx; px += stepPx) {
+        const [zx, zy] = ax.fromCanvas(px, py);
+        const [zx2, zy2] = ax.fromCanvas(px+stepPx, py);
+        const [zx3, zy3] = ax.fromCanvas(px, py+stepPx);
+        const m1 = complexAbs(R([zx, zy]));
+        const m2 = complexAbs(R([zx2, zy2]));
+        const m3 = complexAbs(R([zx3, zy3]));
+        if ((m1 - 1) * (m2 - 1) < 0 || (m1 - 1) * (m3 - 1) < 0) {
+          ctx.moveTo(px, py);
+          ctx.lineTo(px + 1, py);
+        }
+      }
+    }
+    ctx.stroke();
+    ctx.restore();
+
+    // True h*lambda
+    const trueZ = [-alpha * h, omega * h];
+    // Conjugate is at -omega*h; mark both for completeness.
+    function drawPoint(z, color, label) {
+      const [cx, cy] = ax.toCanvas(z[0], z[1]);
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 11, 0, Math.PI*2);
+      ctx.fill();
+      ctx.strokeStyle = "white";
+      ctx.lineWidth = 2.2;
+      ctx.beginPath();
+      ctx.arc(cx, cy, 11, 0, Math.PI*2);
+      ctx.stroke();
+      if (label) {
+        ctx.fillStyle = color;
+        ctx.font = "bold 22px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+        ctx.fillText(label, cx + 18, cy - 12);
+      }
+    }
+    drawPoint(trueZ, "#1f4f8b", "hλ true");
+    drawPoint([trueZ[0], -trueZ[1]], "#1f4f8b", null);
+
+    // Compute ALL solutions of R(h*lambda_hat) = exp(h*lambda_true) and mark
+    // each one with equal prominence. The optimizer doesn't make a "choice"
+    // among them in any well-defined sense; they are all global minima of the
+    // training loss with zero residual, and which one a gradient method
+    // settles on depends on initialization. So we just show the full picture.
+    const targetFactor = [Math.exp(-alpha*h)*Math.cos(omega*h), Math.exp(-alpha*h)*Math.sin(omega*h)];
+    const lambdaTrue = [-alpha, omega];
+    const allRoots = rootsFor(integrator, targetFactor, h);
+
+    // Each root and its complex conjugate are both candidate eigenvalues of A_hat
+    // (since A_hat is real, eigenvalues come in conjugate pairs). Draw the
+    // upper-half-plane roots labelled and their conjugates unlabelled.
+    let labelIdx = 0;
+    const labels = ["λ̂₁", "λ̂₂", "λ̂₃", "λ̂₄"];
+    for (const r of allRoots) {
+      const z = [h*r[0], h*r[1]];
+      // Skip conjugates of already-labelled roots — only label the one with
+      // larger imaginary part to keep the diagram readable.
+      if (z[1] >= 0) {
+        drawPoint(z, "#c0392b", labels[labelIdx++] || "");
+      } else {
+        drawPoint(z, "#c0392b", null);
+      }
+    }
+    // For each root, also draw its conjugate (which is the second eigenvalue
+    // of the corresponding 2×2 A_hat matrix).
+    for (const r of allRoots) {
+      const z = [h*r[0], -h*r[1]];
+      if (allRoots.some(other => Math.abs(h*other[0] - z[0]) < 1e-9 && Math.abs(h*other[1] - z[1]) < 1e-9)) {
+        // already drawn above as part of allRoots — skip duplicate
+        continue;
+      }
+      drawPoint(z, "#c0392b", null);
+    }
+
+    // Title overlay
+    ctx.fillStyle = "#222";
+    ctx.font = "bold 22px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText(
+      `${RnameLong[integrator]},   h = ${h.toFixed(2)},   true λ = ${(-alpha).toFixed(2)} + ${omega.toFixed(2)}i`,
+      ax.padding.l + 12, 28
+    );
+    ctx.fillStyle = "#555";
+    ctx.font = "20px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    const rootsList = allRoots.map(r => `(${r[0].toFixed(3)} + ${r[1].toFixed(3)}i)`).join(",  ");
+    ctx.fillText(
+      `${allRoots.length} candidate λ̂ : ${rootsList}`,
+      ax.padding.l + 12, canvas.height - 18
+    );
+
+    // Verdict: describe the structure of the full root set.
+    const antiDamped = allRoots.filter(r => r[0] > 0.005);
+    const reversed   = allRoots.filter(r => Math.sign(r[1]) !== Math.sign(omega));
+    const faithful   = allRoots.filter(r => r[0] < -0.005 && Math.sign(r[1]) === Math.sign(omega));
+    if (antiDamped.length > 0) {
+      verdictEl.className = "verdict bad";
+      verdictEl.textContent = `Trouble: ${antiDamped.length} of the ${allRoots.length} candidate eigenvalues lie in the right half plane (Re λ̂ > 0, anti-damped). A training run that converges to one of those is a global minimum of the loss with zero residual — and reports a model that grows in time, even though the data decays.`;
+    } else if (reversed.length > 0) {
+      verdictEl.className = "verdict bad";
+      verdictEl.textContent = `Trouble: ${reversed.length} of the ${allRoots.length} candidate eigenvalues spin the wrong way (Im λ̂ has the opposite sign from the truth).`;
+    } else if (faithful.length === allRoots.length && allRoots.length === 1) {
+      verdictEl.className = "verdict good";
+      verdictEl.textContent = `Faithful: the only candidate eigenvalue is in the left half plane and consistent with the truth (Re λ̂ = ${allRoots[0][0].toFixed(3)}).`;
+    } else {
+      verdictEl.className = "verdict";
+      verdictEl.textContent = `All ${allRoots.length} candidate eigenvalues stay in the left half plane, but with distortion: the optimizer can land on any of them.`;
+    }
+  }
+
+  integratorEl.addEventListener("change", render);
+  hEl.addEventListener("input", render);
+  omegaEl.addEventListener("input", render);
+  alphaEl.addEventListener("input", render);
+  render();
+})();
+
+// =============================================================================
+// Demo 3: side-by-side forward Euler vs implicit midpoint
+// =============================================================================
+
+(function demo3() {
+  const canvas = document.getElementById("demo3-canvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+
+  const N_PANELS = 3;
+  const panelW = canvas.width / N_PANELS;
+  const padding = {l: 40, r: 25, t: 50, b: 50};
+
+  function axesFor(offsetX) {
+    const W = panelW;
+    const H = canvas.height;
+    const pw = W - padding.l - padding.r;
+    const ph = H - padding.t - padding.b;
+    // Wide enough to show BE's anti-damped expansion at moderate h, while
+    // still keeping the data dots visible in the centre.
+    const xMin = -2.0, xMax = 2.0, yMin = -2.0, yMax = 2.0;
+    const sx = pw / (xMax - xMin);
+    const sy = ph / (yMax - yMin);
+    return {
+      toCanvas: (x, y) => [offsetX + padding.l + (x - xMin) * sx, padding.t + (yMax - y) * sy],
+      padding, sx, sy, xMin, xMax, yMin, yMax,
+      offsetX
+    };
+  }
+
+  // Clip drawing to a single panel's interior so the red curve doesn't bleed
+  // into a neighbour when it expands beyond the visible region.
+  function withPanelClip(offsetX, drawFn) {
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(
+      offsetX + padding.l,
+      padding.t,
+      panelW - padding.l - padding.r,
+      canvas.height - padding.t - padding.b
+    );
+    ctx.clip();
+    drawFn();
+    ctx.restore();
+  }
+
+  function drawGridLocal(ax, dx, dy) {
+    ctx.save();
+    ctx.strokeStyle = "#ececec";
+    ctx.lineWidth = 1;
+    for (let x = Math.ceil(ax.xMin/dx)*dx; x <= ax.xMax; x += dx) {
+      const [px,] = ax.toCanvas(x, 0);
+      ctx.beginPath();
+      ctx.moveTo(px, ax.padding.t);
+      ctx.lineTo(px, ax.padding.t + (ax.yMax-ax.yMin)*ax.sy);
+      ctx.stroke();
+    }
+    for (let y = Math.ceil(ax.yMin/dy)*dy; y <= ax.yMax; y += dy) {
+      const [, py] = ax.toCanvas(0, y);
+      ctx.beginPath();
+      ctx.moveTo(ax.padding.l + ax.offsetX, py);
+      ctx.lineTo(ax.padding.l + ax.offsetX + (ax.xMax-ax.xMin)*ax.sx, py);
+      ctx.stroke();
+    }
+    ctx.strokeStyle = "#888";
+    ctx.lineWidth = 1.2;
+    const [, py0] = ax.toCanvas(0, 0);
+    const [px0,] = ax.toCanvas(0, 0);
+    ctx.beginPath();
+    ctx.moveTo(ax.padding.l + ax.offsetX, py0);
+    ctx.lineTo(ax.padding.l + ax.offsetX + (ax.xMax-ax.xMin)*ax.sx, py0);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(px0, ax.padding.t);
+    ctx.lineTo(px0, ax.padding.t + (ax.yMax-ax.yMin)*ax.sy);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawCurveLocal(ax, points, color, lw) {
+    ctx.save();
+    ctx.strokeStyle = color;
+    ctx.lineWidth = lw || 2;
+    ctx.beginPath();
+    for (let i = 0; i < points.length; i++) {
+      const [cx, cy] = ax.toCanvas(points[i][0], points[i][1]);
+      if (i === 0) ctx.moveTo(cx, cy);
+      else ctx.lineTo(cx, cy);
+    }
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawDotsLocal(ax, points, color, r) {
+    ctx.save();
+    ctx.fillStyle = color;
+    for (const p of points) {
+      const [cx, cy] = ax.toCanvas(p[0], p[1]);
+      ctx.beginPath();
+      ctx.arc(cx, cy, r || 3.5, 0, Math.PI*2);
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+
+  const hEl = document.getElementById("d3-h");
+  const alphaEl = document.getElementById("d3-alpha");
+  const hReadout = document.getElementById("d3-h-readout");
+  const alphaReadout = document.getElementById("d3-alpha-readout");
+
+  function panelRender(ax, integrator, integratorLabel, h, alpha) {
+    const omega = 2.0;
+    const N = 9;
+    const K_FINE = 100;
+    const x0 = [1.0, 0.0];
+
+    const data = sampleData(x0, alpha, omega, h, N + 1);
+    const targetFactor = [Math.exp(-alpha*h)*Math.cos(omega*h), Math.exp(-alpha*h)*Math.sin(omega*h)];
+    const lambdaHat = inverseR(integrator, targetFactor, h, [-alpha, omega]);
+
+    // Faint true continuous trajectory
+    const truePts = [];
+    const Mres = 300;
+    for (let i = 0; i <= Mres; i++) {
+      const t = i / Mres * (N * h);
+      truePts.push(trueContinuousState(t, x0, alpha, omega));
+    }
+
+    // GREEN: integrator at step h on the learned system (matches data)
+    const greenPts = simulateLearned(integrator, lambdaHat, h, x0, N);
+    // RED: same integrator at step h/K_FINE on the same learned system
+    const redPts = simulateLearnedFine(integrator, lambdaHat, h, x0, N, K_FINE);
+
+    // Grid is drawn first (no clipping needed)
+    drawGridLocal(ax, 1.0, 1.0);
+
+    // Trajectories clipped to the panel rectangle, so the BE red curve doesn't
+    // spill into the IM panel as it expands.
+    withPanelClip(ax.offsetX, () => {
+      drawCurveLocal(ax, truePts, "rgba(31, 79, 139, 0.40)", 2.0);
+      drawCurveLocal(ax, redPts, "#c0392b", 3.5);
+      drawCurveLocal(ax, greenPts, "#1f8b4f", 3.0);
+      drawDotsLocal(ax, greenPts, "#1f8b4f", 5.0);
+      drawDotsLocal(ax, data, "#222", 6.5);
+    });
+
+    // Headers and footers (unclipped so they always show)
+    ctx.fillStyle = "#222";
+    ctx.font = "bold 24px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText(integratorLabel, ax.padding.l + ax.offsetX + 12, padding.t - 22);
+
+    // Quick characterisation of the artifact
+    const aHat = -lambdaHat[0];
+    let kindStr = "faithful";
+    if (lambdaHat[0] > 0.005) kindStr = "anti-damped (Re λ̂ > 0)";
+    else if (aHat > alpha + 0.05) kindStr = "over-damped";
+    ctx.fillStyle = "#666";
+    ctx.font = "italic 18px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText(kindStr, ax.padding.l + ax.offsetX + 12, padding.t - 2);
+
+    ctx.fillStyle = "#555";
+    ctx.font = "17px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText(
+      `learned λ̂ = ${lambdaHat[0].toFixed(3)} + ${lambdaHat[1].toFixed(3)}i`,
+      ax.padding.l + ax.offsetX + 12, canvas.height - 14
+    );
+  }
+
+  function render() {
+    const h = parseFloat(hEl.value);
+    const alpha = parseFloat(alphaEl.value);
+    hReadout.textContent = h.toFixed(2);
+    alphaReadout.textContent = alpha.toFixed(2);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#fcfcfa"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Dividers between panels
+    ctx.save();
+    ctx.strokeStyle = "#ddd";
+    for (let i = 1; i < N_PANELS; i++) {
+      const x = i * panelW;
+      ctx.beginPath();
+      ctx.moveTo(x, 10);
+      ctx.lineTo(x, canvas.height - 10);
+      ctx.stroke();
+    }
+    ctx.restore();
+
+    panelRender(axesFor(0 * panelW),  "fe", "Forward Euler",     h, alpha);
+    panelRender(axesFor(1 * panelW),  "be", "Implicit Euler",    h, alpha);
+    panelRender(axesFor(2 * panelW),  "im", "Implicit midpoint", h, alpha);
+  }
+
+  hEl.addEventListener("input", render);
+  alphaEl.addEventListener("input", render);
+  render();
+})();
+
+// =============================================================================
+// Demo 4: Leap Frog and the parasitic mode awakened by initial-condition shifts
+// =============================================================================
+
+(function demo4() {
+  const canvas = document.getElementById("demo4-canvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+
+  const epsEl = document.getElementById("d4-eps");
+  const alphaEl = document.getElementById("d4-alpha");
+  const omegaEl = document.getElementById("d4-omega");
+  const epsReadout = document.getElementById("d4-eps-readout");
+  const alphaReadout = document.getElementById("d4-alpha-readout");
+  const omegaReadout = document.getElementById("d4-omega-readout");
+  const verdictEl = document.getElementById("demo4-verdict");
+
+  const h = 0.7;
+  const N_DATA = 11;
+  const N_TOTAL = 22;
+
+  // Two stacked time-series panels: top = Re(z) vs t, bottom = Im(z) vs t.
+  function panelAxes(rowIdx, tMin, tMax, yMin, yMax) {
+    const padding = {l: 70, r: 40, t: 50, b: 50};
+    const totalH = canvas.height;
+    const panelH = (totalH - 80) / 2;     // leave 80px between/around panels
+    const offsetY = 50 + rowIdx * (panelH + 30);
+    const W = canvas.width;
+    const pw = W - padding.l - padding.r;
+    const ph = panelH - padding.t + 50 - padding.b;
+    const sx = pw / (tMax - tMin);
+    const sy = ph / (yMax - yMin);
+    return {
+      toCanvas: (t, y) => [padding.l + (t - tMin) * sx, offsetY + padding.t - 50 + (yMax - y) * sy],
+      padding, sx, sy, tMin, tMax, yMin, yMax, offsetY, panelH, pw, ph
+    };
+  }
+
+  function drawTimePanel(ax, title, data_t, data_y, green_t, green_y, red_t, red_y, true_t, true_y) {
+    // Background
+    ctx.save();
+    ctx.fillStyle = "#fcfcfa";
+    ctx.fillRect(ax.padding.l, ax.offsetY + ax.padding.t - 50, ax.pw, ax.ph);
+    ctx.restore();
+
+    // Grid
+    ctx.save();
+    ctx.strokeStyle = "#ececec";
+    ctx.lineWidth = 1;
+    const dt = ax.tMax > 10 ? 2 : 1;
+    for (let t = Math.ceil(ax.tMin/dt)*dt; t <= ax.tMax; t += dt) {
+      const [px,] = ax.toCanvas(t, 0);
+      ctx.beginPath();
+      ctx.moveTo(px, ax.offsetY + ax.padding.t - 50);
+      ctx.lineTo(px, ax.offsetY + ax.padding.t - 50 + ax.ph);
+      ctx.stroke();
+    }
+    const dy = (ax.yMax - ax.yMin) > 6 ? 2 : 1;
+    for (let y = Math.ceil(ax.yMin/dy)*dy; y <= ax.yMax; y += dy) {
+      const [, py] = ax.toCanvas(0, y);
+      ctx.beginPath();
+      ctx.moveTo(ax.padding.l, py);
+      ctx.lineTo(ax.padding.l + ax.pw, py);
+      ctx.stroke();
+    }
+    // Zero line + axes
+    ctx.strokeStyle = "#888";
+    ctx.lineWidth = 1.2;
+    const [, py0] = ax.toCanvas(0, 0);
+    ctx.beginPath();
+    ctx.moveTo(ax.padding.l, py0);
+    ctx.lineTo(ax.padding.l + ax.pw, py0);
+    ctx.stroke();
+    // Left axis
+    ctx.beginPath();
+    ctx.moveTo(ax.padding.l, ax.offsetY + ax.padding.t - 50);
+    ctx.lineTo(ax.padding.l, ax.offsetY + ax.padding.t - 50 + ax.ph);
+    ctx.stroke();
+    ctx.restore();
+
+    // Tick labels
+    ctx.save();
+    ctx.fillStyle = "#555";
+    ctx.font = "18px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.textAlign = "center";
+    for (let t = Math.ceil(ax.tMin/dt)*dt; t <= ax.tMax; t += dt) {
+      const [px,] = ax.toCanvas(t, ax.yMin);
+      ctx.fillText(t.toString(), px, ax.offsetY + ax.padding.t - 50 + ax.ph + 22);
+    }
+    ctx.textAlign = "right";
+    for (let y = Math.ceil(ax.yMin/dy)*dy; y <= ax.yMax; y += dy) {
+      const [, py] = ax.toCanvas(0, y);
+      ctx.fillText(y.toString(), ax.padding.l - 10, py + 6);
+    }
+    ctx.restore();
+
+    // Title
+    ctx.fillStyle = "#222";
+    ctx.font = "bold 22px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText(title, ax.padding.l + 8, ax.offsetY + ax.padding.t - 60);
+
+    // Clip drawings to panel rectangle
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(ax.padding.l, ax.offsetY + ax.padding.t - 50, ax.pw, ax.ph);
+    ctx.clip();
+
+    // True curve (faint)
+    ctx.strokeStyle = "rgba(31, 79, 139, 0.45)";
+    ctx.lineWidth = 1.6;
+    ctx.setLineDash([6, 4]);
+    ctx.beginPath();
+    for (let i = 0; i < true_t.length; i++) {
+      const [cx, cy] = ax.toCanvas(true_t[i], true_y[i]);
+      if (i === 0) ctx.moveTo(cx, cy); else ctx.lineTo(cx, cy);
+    }
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Red beneath green
+    ctx.strokeStyle = "#c0392b";
+    ctx.lineWidth = 3.2;
+    ctx.beginPath();
+    for (let i = 0; i < red_t.length; i++) {
+      const [cx, cy] = ax.toCanvas(red_t[i], red_y[i]);
+      if (i === 0) ctx.moveTo(cx, cy); else ctx.lineTo(cx, cy);
+    }
+    ctx.stroke();
+    ctx.fillStyle = "#c0392b";
+    for (let i = 0; i < red_t.length; i++) {
+      const [cx, cy] = ax.toCanvas(red_t[i], red_y[i]);
+      ctx.beginPath();
+      ctx.arc(cx, cy, 4.0, 0, Math.PI*2);
+      ctx.fill();
+    }
+
+    // Green
+    ctx.strokeStyle = "#1f8b4f";
+    ctx.lineWidth = 3.0;
+    ctx.beginPath();
+    for (let i = 0; i < green_t.length; i++) {
+      const [cx, cy] = ax.toCanvas(green_t[i], green_y[i]);
+      if (i === 0) ctx.moveTo(cx, cy); else ctx.lineTo(cx, cy);
+    }
+    ctx.stroke();
+    ctx.fillStyle = "#1f8b4f";
+    for (let i = 0; i < green_t.length; i++) {
+      const [cx, cy] = ax.toCanvas(green_t[i], green_y[i]);
+      ctx.beginPath();
+      ctx.arc(cx, cy, 5.0, 0, Math.PI*2);
+      ctx.fill();
+    }
+
+    // Data dots on top
+    ctx.fillStyle = "#222";
+    ctx.strokeStyle = "white";
+    ctx.lineWidth = 1.8;
+    for (let i = 0; i < data_t.length; i++) {
+      const [cx, cy] = ax.toCanvas(data_t[i], data_y[i]);
+      ctx.beginPath();
+      ctx.arc(cx, cy, 7.0, 0, Math.PI*2);
+      ctx.fill();
+      ctx.stroke();
+    }
+
+    // Vertical line at end of training window
+    ctx.restore();
+    const tTrainEnd = (N_DATA - 1) * h;
+    const [pxT,] = ax.toCanvas(tTrainEnd, 0);
+    ctx.save();
+    ctx.strokeStyle = "rgba(0,0,0,0.25)";
+    ctx.setLineDash([8, 6]);
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    ctx.moveTo(pxT, ax.offsetY + ax.padding.t - 50);
+    ctx.lineTo(pxT, ax.offsetY + ax.padding.t - 50 + ax.ph);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = "rgba(0,0,0,0.55)";
+    ctx.font = "italic 16px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText("end of training window", pxT + 8, ax.offsetY + ax.padding.t - 50 + 22);
+    ctx.restore();
+  }
+
+  function render() {
+    const eps = parseFloat(epsEl.value);
+    const alpha = parseFloat(alphaEl.value);
+    const omega = parseFloat(omegaEl.value);
+    epsReadout.textContent = eps.toFixed(3);
+    alphaReadout.textContent = alpha.toFixed(2);
+    omegaReadout.textContent = omega.toFixed(2);
+
+    const x0 = [1.0, 0.0];
+    const data = sampleData(x0, alpha, omega, h, N_DATA);
+    const lambdaHat = leapFrogLearnedLambda(alpha, omega, h);
+
+    const z0 = data[0];
+    const z1_exact = data[1];
+    const greenPts = simulateLeapFrog(lambdaHat, h, z0, z1_exact, N_TOTAL);
+
+    const z1_pert = [z1_exact[0] + eps, z1_exact[1]];
+    const redPts = simulateLeapFrog(lambdaHat, h, z0, z1_pert, N_TOTAL);
+
+    // Time arrays for the discrete iterations
+    const data_t  = data.map((_, i) => i * h);
+    const green_t = greenPts.map((_, i) => i * h);
+    const red_t   = redPts.map((_, i) => i * h);
+
+    // True continuous trajectory in time
+    const Mres = 600;
+    const true_t = new Array(Mres + 1);
+    const true_z = new Array(Mres + 1);
+    for (let i = 0; i <= Mres; i++) {
+      const t = i / Mres * (N_TOTAL * h);
+      true_t[i] = t;
+      true_z[i] = trueContinuousState(t, x0, alpha, omega);
+    }
+
+    // Find y-extent for each panel (auto-scale, capped)
+    let maxAbsRe = 1.5, maxAbsIm = 1.5;
+    for (const p of redPts)   { maxAbsRe = Math.max(maxAbsRe, Math.abs(p[0])); maxAbsIm = Math.max(maxAbsIm, Math.abs(p[1])); }
+    for (const p of greenPts) { maxAbsRe = Math.max(maxAbsRe, Math.abs(p[0])); maxAbsIm = Math.max(maxAbsIm, Math.abs(p[1])); }
+    const yLimRe = Math.min(15, Math.ceil(maxAbsRe * 1.1));
+    const yLimIm = Math.min(15, Math.ceil(maxAbsIm * 1.1));
+    const tMax = N_TOTAL * h;
+
+    // Build axes
+    const axRe = panelAxes(0, 0, tMax, -yLimRe, yLimRe);
+    const axIm = panelAxes(1, 0, tMax, -yLimIm, yLimIm);
+
+    // Clear canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = "#fff";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Header line
+    ctx.fillStyle = "#222";
+    ctx.font = "bold 22px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText(
+      `Leap Frog,   h = ${h.toFixed(2)},   true λ = ${(-alpha).toFixed(2)} + ${omega.toFixed(2)}i,   learned λ̂ = ${lambdaHat[0].toFixed(3)} + ${lambdaHat[1].toFixed(3)}i`,
+      40, 28
+    );
+    ctx.fillStyle = "#666";
+    ctx.font = "italic 18px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText(
+      `physical root |ζ₊| = ${Math.exp(-alpha*h).toFixed(3)} per step,   parasitic root |ζ₋| = ${Math.exp(alpha*h).toFixed(3)} per step`,
+      40, 50
+    );
+
+    // Axis labels
+    drawTimePanel(
+      axRe, "Re z(t)",
+      data_t, data.map(p => p[0]),
+      green_t, greenPts.map(p => p[0]),
+      red_t,   redPts.map(p => p[0]),
+      true_t,  true_z.map(p => p[0])
+    );
+    drawTimePanel(
+      axIm, "Im z(t)",
+      data_t, data.map(p => p[1]),
+      green_t, greenPts.map(p => p[1]),
+      red_t,   redPts.map(p => p[1]),
+      true_t,  true_z.map(p => p[1])
+    );
+
+    // x-axis label "t" below bottom panel
+    ctx.fillStyle = "#444";
+    ctx.font = "italic 20px -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    ctx.fillText("time t", canvas.width - 90, axIm.offsetY + axIm.padding.t - 50 + axIm.ph + 44);
+
+    // Verdict
+    const greenEndMag = Math.sqrt(greenPts[N_TOTAL][0]**2 + greenPts[N_TOTAL][1]**2);
+    const redEndMag   = Math.sqrt(redPts[N_TOTAL][0]**2 + redPts[N_TOTAL][1]**2);
+    const ratio = redEndMag / Math.max(1e-9, greenEndMag);
+    if (eps === 0 || ratio < 1.05) {
+      verdictEl.className = "verdict good";
+      verdictEl.textContent =
+        `Quiet parasitic mode. With ε = ${eps.toFixed(3)}, the red trajectory ends about ${ratio.toFixed(2)}× the green. The parasitic root is barely excited; both trajectories track the data faithfully.`;
+    } else if (ratio < 5) {
+      verdictEl.className = "verdict";
+      verdictEl.textContent =
+        `Parasitic mode awake. The perturbation ε = ${eps.toFixed(3)} on z₁ produced a red endpoint about ${ratio.toFixed(1)}× the green endpoint. The training-window fit still looks fine, but the trajectory drifts after.`;
+    } else {
+      verdictEl.className = "verdict bad";
+      verdictEl.textContent =
+        `Parasitic mode dominates. Even though ε = ${eps.toFixed(3)} is small, the red trajectory is about ${ratio.toFixed(0)}× the green at the end. The learned discrete model is unstable under any non-data initial conditions.`;
+    }
+  }
+
+  epsEl.addEventListener("input", render);
+  alphaEl.addEventListener("input", render);
+  omegaEl.addEventListener("input", render);
+  render();
+})();
+</script>
+
+</body>
+</html>

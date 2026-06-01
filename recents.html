@@ -1030,6 +1030,24 @@ distill-header .nav a {
 <!-- https://arxiv.org/abs/2406.10758 -->
 <!-- https://drive.google.com/file/d/1VFbmtH5nxu9Bo8qzsd_YwPDfbOATYluO/view?usp=share_link -->
 
+<h3> Artifacts of Numerical Integration in Learning Dynamical Systems </h3>
+
+<p>Paper: <a href="https://arxiv.org/abs/2507.14491" title="arXiv preprint">https://arxiv.org/abs/2507.14491</a>.
+Homepage: <a href="/projects/numerical-integration" title="Project page">Project page</a>.</p>
+
+<p>When learning a dynamical system from data, the numerical integrator inside the training loop silently shapes what is learned. A damped oscillator can be confidently identified as anti-damped; a conservative predator&ndash;prey model can be learned with spurious dissipation. The key insight is that different integrators (forward Euler, RK4, implicit midpoint) have different stability regions, and the optimizer finds parameters that satisfy the discrete map &mdash; not the continuous-time ODE. The fix is to use a structure-preserving integrator whose stability region matches the left half complex plane, such as the implicit midpoint rule.</p>
+
+<div style="grid-column: text;">
+<figure>
+<div style="text-align: center; margin-bottom: 1em;">
+<img src="/assets/images/numerical-integration/lotka_learned.png" style="width: 100%;" alt="Learned Lotka-Volterra with RK4: trajectories spiraling inward due to integrator artifact">
+<figcaption>Learned Lotka&ndash;Volterra model trained with RK4. The true orbits are closed loops, but the learned vector field produces trajectories that spiral inward &mdash; a non-physical dissipation introduced entirely by the integrator.</figcaption>
+</div>
+</figure>
+</div>
+
+<hr>
+
 <h3> Optimal 6G Transmitter Placement in Realistic Urban Environments </h3>
 
 <p>Paper: <a href="https://arxiv.org/abs/2604.28153" title="arXiv preprint">https://arxiv.org/abs/2604.28153</a>.
