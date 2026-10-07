@@ -656,6 +656,9 @@ distill-header .nav a {
   </a>
   <nav class="nav">
     <a href="/">Home</a>
+    <a href="/recents.html">Research</a>
+    <a href="/papers.html">Papers</a>
+    <a href="/#people">People</a>
   </nav>
 </div>
 `,!1);class jr extends Ar(HTMLElement){}const Or=`
@@ -969,7 +972,7 @@ distill-header .nav a {
       tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
     });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     <d-front-matter>
@@ -995,7 +998,7 @@ distill-header .nav a {
  <div style="grid-column: screen; text-align: center">
   <h1>Multiscale coupling algorithms using parareal style structures</h1>
     
-    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Multiscale coupling algorithms using parareal style structures" src="https://tsairesearch.github.io//assets/images/wave/waveinmarmousi.gif" />
+    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Multiscale coupling algorithms using parareal style structures" src="https://tsairesearch.github.io/assets/images/wave/waveinmarmousi.gif" />
     
  </div>
 
@@ -1004,7 +1007,7 @@ distill-header .nav a {
 
 <d-article>
 
-<p>We are developing a data-driven parallel-in-time iterative method to solve the homogeneous second-order wave equation. The new method involves a coarse-scale propagator and a fine-scale propagator which fully resolves the medium using finer spatial grid and shorter time steps. The fine-scale propagator is run in parallel for short time subintervals. The two propagators are coupled in an iterative way similar to the standard parareal method. We train a Neural Network, which structure mimics the physics of wave propagation, to enhance the accuracy of the coarse-scale propagator such that the parareal iteration stabilizes and hence converges.</p>
+<p>We are developing a data-driven parallel-in-time iterative method to solve the homogeneous second-order wave equation. The new method involves a coarse-scale propagator and a fine-scale propagator which fully resolves the medium using finer spatial grid and shorter time steps. The fine-scale propagator is run in parallel for short time subintervals. The two propagators are coupled in an iterative way similar to the standard parareal method. We train a Neural Network, whose structure mimics the physics of wave propagation, to enhance the accuracy of the coarse-scale propagator such that the parareal iteration stabilizes and hence converges.</p>
 
 <h3> Simulation </h3>
 
@@ -1028,8 +1031,8 @@ Wave propagating through Marmousi velocity profile.
 <h3> Publications </h3>
 
 <p>
-<li> H. Nguyen, and R. Tsai. "A stable parareal-like method for the second order wave equation." Journal of Computational Physics (2020). Accepted.</li>
-<li> G. Ariel, H. Nguyen, and R. Tsai. "\theta-parareal schemes." arXiv preprint arXiv:1704.06882 (2017). </li>
+<li> H. Nguyen, and R. Tsai. "A stable parareal-like method for the second order wave equation." Journal of Computational Physics 405 (2020): 109156.</li>
+<li> G. Ariel, H. Nguyen, and R. Tsai. "θ-parareal schemes." arXiv preprint arXiv:1704.06882 (2017). </li>
 </p>
 
 

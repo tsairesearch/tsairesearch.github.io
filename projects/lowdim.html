@@ -656,6 +656,9 @@ distill-header .nav a {
   </a>
   <nav class="nav">
     <a href="/">Home</a>
+    <a href="/recents.html">Research</a>
+    <a href="/papers.html">Papers</a>
+    <a href="/#people">People</a>
   </nav>
 </div>
 `,!1);class jr extends Ar(HTMLElement){}const Or=`
@@ -969,7 +972,7 @@ distill-header .nav a {
       tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
     });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     <d-front-matter>
@@ -1003,7 +1006,7 @@ distill-header .nav a {
 <div style="grid-column: screen; text-align: center">
   <h1>Deep learning and the Low Dimensional Manifold Hypothesis</h1>
     
-    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Deep learning and the Low Dimensional Manifold Hypothesis" src="https://tsairesearch.github.io//assets/images/lowdim/streamplot_sigma.png" />
+    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Deep learning and the Low Dimensional Manifold Hypothesis" src="https://tsairesearch.github.io/assets/images/lowdim/streamplot_sigma.png" />
     
  </div>
 </d-title>
@@ -1012,7 +1015,7 @@ distill-header .nav a {
 
 <p>
 The low dimensional manifold hypothesis posits that the data found in many applications, such as those involving natural images, lie (approximately) on low dimensional manifolds embedded in a high dimensional Euclidean space. In this setting, a typical neural network defines a function that takes a finite number of vectors in the embedding space as input.
-However, one often needs to consider evaluating the optimized network at points outside the training distribution. This project considers the case in which the training data is distributed in a linear subspace of Rd. We derive estimates on the variation of the learning function, defined by a neural network, in the direction transversal to the subspace. We study the potential regularization effects associated with the network’s depth and noise in the codimension of the data manifold. We also present additional side effects in training due to the presence of noise.
+However, one often needs to consider evaluating the optimized network at points outside the training distribution. This project considers the case in which the training data is distributed in a linear subspace of ℝ<sup>d</sup>. We derive estimates on the variation of the learning function, defined by a neural network, in the direction transversal to the subspace. We study the potential regularization effects associated with the network’s depth and noise in the codimension of the data manifold. We also present additional side effects in training due to the presence of noise.
 </p>
 <h3> Main results </h3>
 
@@ -1027,7 +1030,7 @@ then:
   <li>For linear neural network models, it may take a gradient descent algorithm exponentially (in the reciprocal of the variance) long to converge to the unique optimal model parameters, which yield small $\frac{\partial f}{\partial n_M}$. In addition, it may also need a long time to escape the near region of origin.</li>
 </ul>
 </li>
-  <li>The stability-accuracy trade-off. The role of noise can be interpreted as a stabilizer for a model when evaluated on points outside of the (clean) data distribution. However, adding noise to the data set will impact of the accuracy of the network's generalization error (for evaluation within the data distribution). For nonlinear data manifolds, uniform noise may render the labeled data incompatible.</li>
+  <li>The stability-accuracy trade-off. The role of noise can be interpreted as a stabilizer for a model when evaluated on points outside of the (clean) data distribution. However, adding noise to the data set will impact the accuracy of the network's generalization error (for evaluation within the data distribution). For nonlinear data manifolds, uniform noise may render the labeled data incompatible.</li>
 </ol>
 </p>
 <h3> Publications </h3>

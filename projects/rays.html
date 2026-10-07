@@ -656,6 +656,9 @@ distill-header .nav a {
   </a>
   <nav class="nav">
     <a href="/">Home</a>
+    <a href="/recents.html">Research</a>
+    <a href="/papers.html">Papers</a>
+    <a href="/#people">People</a>
   </nav>
 </div>
 `,!1);class jr extends Ar(HTMLElement){}const Or=`
@@ -969,7 +972,7 @@ distill-header .nav a {
       tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
     });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     <!-- define the style for images container -->
@@ -1027,7 +1030,7 @@ distill-header .nav a {
  <div style="grid-column: screen; text-align: center">
   <h1>Sampling and Processing of Point Clouds</h1>
     
-    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Sampling and Processing of Point Clouds" src="https://tsairesearch.github.io//assets/images/rays/airplane_ray.png" />
+    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Sampling and Processing of Point Clouds" src="https://tsairesearch.github.io/assets/images/rays/airplane_ray.png" />
     
  </div>
 
@@ -1052,7 +1055,7 @@ distill-header .nav a {
 
 <figure>
 <div style="display: block; width: 80%; margin-right: auto; margin-left: auto; text-align: center">
-<img src="https://tsairesearch.github.io/assets/images/rays/grid.png" width="338px" height="648px" />
+<img alt="Rays through point clouds sampled from various objects, with closest-point pairs" loading="lazy" src="https://tsairesearch.github.io/assets/images/rays/grid.png" width="338px" height="648px" />
 </div>
 
 <!-- <div class="wrapper">
@@ -1061,12 +1064,12 @@ distill-header .nav a {
     </div>
 </div> -->
 <!-- <div class="container">
-    <img src="https://tsairesearch.github.io/assets/images/rays/grid.png" height="1024" width="768"/>
+    <img alt="Rays through point clouds sampled from various objects, with closest-point pairs" loading="lazy" src="https://tsairesearch.github.io/assets/images/rays/grid.png" height="1024" width="768"/>
 </div> -->
 
 <figcaption>
 <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
-(Row 1) Visualization of a two rays (black) through points sampled from various objects (gray). Closest point pairs are shown in green and red. (Row 2) Plot of distance from points along the ray to the corresponding closest points on the object. (Rows 3-5) The $x$, $y$, and $z$ coordinates of the closest points to the ray.
+(Row 1) Visualization of two rays (black) through points sampled from various objects (gray). Closest point pairs are shown in green and red. (Row 2) Plot of distance from points along the ray to the corresponding closest points on the object. (Rows 3-5) The $x$, $y$, and $z$ coordinates of the closest points to the ray.
 </div>
 </figcaption>
 </figure>
@@ -1098,7 +1101,7 @@ point pairs are shown in green and red.
 
 <figure>
 <div style="display: block; width: 50%; margin-right: auto; margin-left: auto; text-align: center">
-<img src="https://tsairesearch.github.io/assets/images/rays/airplane_side.png" width="210px" height="350px" />
+<img alt="Airplane point cloud sampled by RaySense" loading="lazy" src="https://tsairesearch.github.io/assets/images/rays/airplane_side.png" width="210px" height="350px" />
 </div>
 
 <figcaption>
@@ -1122,7 +1125,7 @@ We can control the number of points by increasing the number of rays. Each ray c
       <div class="container">
 
         <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
-        <img src="https://tsairesearch.github.io/assets/images/rays/MNIST_Salient_RaySense_top10_01cube-202210-noFreq.png" width="210px" height="350px" />
+        <img alt="MNIST points sampled by RaySense (top 10 frequencies)" loading="lazy" src="https://tsairesearch.github.io/assets/images/rays/MNIST_Salient_RaySense_top10_01cube-202210-noFreq.png" width="210px" height="350px" />
         </div>
 
 
@@ -1136,7 +1139,7 @@ We can control the number of points by increasing the number of rays. Each ray c
 
       <div class="container">
         <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
-        <img src="https://tsairesearch.github.io/assets/images/rays/MNIST_random_10-202210-noFreq.png" width="210px" height="350px" />
+        <img alt="MNIST points from uniformly random sampling" loading="lazy" src="https://tsairesearch.github.io/assets/images/rays/MNIST_random_10-202210-noFreq.png" width="210px" height="350px" />
         </div>
 
         <figcaption>
@@ -1164,7 +1167,7 @@ We can control the number of points by increasing the number of rays. Each ray c
           <div class="container">
 
             <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
-            <img src="https://tsairesearch.github.io/assets/images/rays/point_cloud_and_density.png" width="210px" height="160px" />
+            <img alt="Underlying density and point set" loading="lazy" src="https://tsairesearch.github.io/assets/images/rays/point_cloud_and_density.png" width="210px" height="160px" />
             </div>
 
 
@@ -1177,7 +1180,7 @@ We can control the number of points by increasing the number of rays. Each ray c
 
           <div class="container">
             <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
-            <img src="https://tsairesearch.github.io/assets/images/rays/example_M21.png" width="210px" height="160px" />
+            <img alt="Points sampled by RaySense from uniform lines" loading="lazy" src="https://tsairesearch.github.io/assets/images/rays/example_M21.png" width="210px" height="160px" />
             </div>
 
             <figcaption>
@@ -1189,19 +1192,19 @@ We can control the number of points by increasing the number of rays. Each ray c
 
         <div class="container">
           <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
-          <img src="https://tsairesearch.github.io/assets/images/rays/sonogram_92441_M101_K64_dt1.png" width="210px" height="160px" />
+          <img alt="Approximate Radon transform (sinogram) computed with RaySense" loading="lazy" src="https://tsairesearch.github.io/assets/images/rays/sonogram_92441_M101_K64_dt1.png" width="210px" height="160px" />
           </div>
 
           <figcaption>
           <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
-            Integral transformed / spectrum
+            Approximate Radon transform (sinogram)
             </div>
           </figcaption>
         </div>
 
         <div class="container">
           <div style="display: block; width: 90%; margin-right: auto; margin-left: auto; text-align: center">
-          <img src="https://tsairesearch.github.io/assets/images/rays/fbp_92441_M101_K64_dt1_trim.png" width="210px" height="160px" />
+          <img alt="Filtered back projection reconstruction" loading="lazy" src="https://tsairesearch.github.io/assets/images/rays/fbp_92441_M101_K64_dt1_trim.png" width="210px" height="160px" />
           </div>
 
           <figcaption>
@@ -1215,7 +1218,7 @@ We can control the number of points by increasing the number of rays. Each ray c
             <figure>
               <figcaption>
               <div style="display: block; margin-right: auto; margin-left: auto; width: 100%; text-align: center">
-            Approximate Radon transform computed with RaySense from point cloud data (a)–(c) and filtered back projection reconstruction (d). Our theoretical analysis also suggests the line integral error from RaySense approximation of an $N$-size point cloud in $\mathbb R^d$ converge in a rate of $\mathcal O\left(N^{-\frac{1}d}\right)$.
+            Approximate Radon transform computed with RaySense from point cloud data (a)–(c) and filtered back projection reconstruction (d). Our theoretical analysis also suggests the line integral error from RaySense approximation of an $N$-size point cloud in $\mathbb R^d$ converges at a rate of $\mathcal O\left(N^{-\frac{1}d}\right)$.
               </div>
               </figcaption>
             </figure>
@@ -1245,7 +1248,7 @@ Neural network architecture for point cloud classification based on ray signatur
 <figcaption>
 <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
 Comparison of our neural network (RayNN) against other prominent methods on ModelNet40 dataset with missing data.
-Our model is robust, even when the data consists of only a few number of points.
+Our model is robust, even when the data consists of only a few points.
 
 </div>
 </figcaption>
@@ -1396,7 +1399,7 @@ Sensitivity of the neural network models to the input size. Here, $m$ is the num
 
 <p>
 <li>  
-Liu, L., Ly, L., Macdonald, C. &amp; Tsai, R. (2023) Nearest Neighbor Sampling of Point Sets using Rays. Communication on Applied Mathematics and Computation (CAMC), Focused Issue in Honor of Prof. Stanley Osher on the Occasion of His 80th Birthday. Accepted.
+Liu, L., Ly, L., Macdonald, C. &amp; Tsai, R. (2023) Nearest Neighbor Sampling of Point Sets using Rays. Communications on Applied Mathematics and Computation (CAMC), Focused Issue in Honor of Prof. Stanley Osher on the Occasion of His 80th Birthday, 6(2), 1131–1174 (2024).
 </li>
 
 </p>

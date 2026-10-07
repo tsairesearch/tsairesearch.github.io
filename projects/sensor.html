@@ -656,6 +656,9 @@ distill-header .nav a {
   </a>
   <nav class="nav">
     <a href="/">Home</a>
+    <a href="/recents.html">Research</a>
+    <a href="/papers.html">Papers</a>
+    <a href="/#people">People</a>
   </nav>
 </div>
 `,!1);class jr extends Ar(HTMLElement){}const Or=`
@@ -969,7 +972,7 @@ distill-header .nav a {
       tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
     });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     <head>
@@ -1037,7 +1040,7 @@ distill-header .nav a {
   <h1>Optimizing Sensor Network Design for Multiple Coverage</h1>
     
     <center>
-    <video width="1000" height="500" controls="">
+    <video width="1000" height="500" controls="" preload="metadata">
         <source src="/assets/images/sensors/ParGreedy_Video.mp4" type="video/mp4" />
         Your browser does not support the video tag.
     </video>
@@ -1073,12 +1076,12 @@ distill-header .nav a {
         <div class="bordered">
             <h4>Multiple coverage optimization:</h4>
             <p>Find the minimal set of sensors \( P = \{x_1,...,x_n\} \) such that</p>
-            <p>\[ \text{Vol} \left( \left\{y\in \Omega \vert~ \mathcal{O}_\text{vis}(y; P) \geq k \right\} \right) \le (1 - \delta) \text{Vol}(\Omega_{\text{free}}), \]</p>
+            <p>\[ \text{Vol} \left( \left\{y\in \Omega \vert~ \mathcal{O}_\text{vis}(y; P) \geq k \right\} \right) \ge (1 - \delta) \text{Vol}(\Omega_{\text{free}}), \]</p>
             <p>for some given threshold \( \delta \in (0,1). \) </p>
         </div>
     </div>
     <div>
-        <img src="/assets/images/sensors/OvisK.png" align="right" width="700" height="525" />
+        <img alt="Visibility count: number of sensors observing each point of the domain" loading="lazy" src="/assets/images/sensors/OvisK.png" align="right" width="700" height="525" />
     </div>
 </div>
 <h2 style="color: black">Greedy Algorithm</h2>
@@ -1086,30 +1089,30 @@ distill-header .nav a {
 <pre>
     def eps_greedy_alg(eps, k):
         P = list()
-        while Vol(O_vis(P) &gt;= k) &lt;= delta:
+        while Vol(O_vis(P) &gt;= k) &lt; (1 - delta) * Vol(Omega_free):
             G = compute_objective_G(P, k)
             M = max(G)
             feasible = [x for x in PossibleLocations if G(x) &gt;= (1-eps)*M]
             x = feasible[randint(0, len(feasible))]
             P.append(x)
         return P</pre>
-<p>This algorithm chooses the next sensor by (somewhat) greedily maximizing a objective function (using function  <span style="font-family: monospace;">compute_objective_G</span>). In our case the objective function return the gained volume of regions of order up to target order \( k \) by placing a new sensor in a given location.</p>
+<p>This algorithm chooses the next sensor by (somewhat) greedily maximizing an objective function (using function  <span style="font-family: monospace;">compute_objective_G</span>). In our case the objective function returns the gained volume of regions of order up to target order \( k \) by placing a new sensor in a given location.</p>
 <p>\[ \mathcal{G}_k(x, P) = \sum_{i=1}^k w_i \int_{\Omega_\text{free}} 1_{\{\mathcal{O}_{\text{vis}}(\mathbf{z}, P \cup \{x\}) \geq i\}} - 1_{\{\mathcal{O}_{\text{vis}}(\mathbf{z}, P) \geq i\}} d\mathbf{z}. \]</p>
-<p>Here the integrals descirbe the gain in the volume of regions of order at least \( i \) which are weighted by weights \( w_i \). The weights describe the priority of different orders of visiblity in the algorithm.</p>
-<p>To measure the quality of a set of sensors we use a function \( f_k \) closely realted to the objective function \( \mathcal{G}_k \).</p>
+<p>Here the integrals describe the gain in the volume of regions of order at least \( i \) which are weighted by weights \( w_i \). The weights describe the priority of different orders of visibility in the algorithm.</p>
+<p>To measure the quality of a set of sensors we use a function \( f_k \) closely related to the objective function \( \mathcal{G}_k \).</p>
 <p>\[ f_k(P) = \sum_{i=1}^k w_i \int_{\Omega_\text{free}} 1_{\{\mathcal{O}_{\text{vis}}(\mathbf{z}, P) \geq i\}} d\mathbf{z}. \]</p>
 <p>It describes a weighted sum of volumes of regions with specified minimal achieved order. If a region is not observed by any sensor it assigns value \( 0 \). If a region is observed by at least one sensor it assigns value \( w_1 \), if observed by at least two sensors the assigned value is \( w_1 + w_2 \) and so on. This allows us to measure the value of partial coverage and we are able to analyze the quality of the sensor set produced by the greedy algorithm.</p>
 <div class="bordered">
     <h4>Effectivity guarantee</h4>
     <p>Let \( P_n = \{x_1,...,x_n\} \) be the set of $n$ sensors placed according to the greedy algorithm using \( \mathcal{G}_k \) and parameter \( \epsilon \in [0,1) \).</p>
-    <p>\[ P_l^* = \{x_1^*,...,x_l^*\}\in \underset{P \subseteq \Omega_\text{free}, \vert P \vert = l}{\operatorname{argmax}}  f_k(P) \implies f_k(P_n) \geq \left( 1 -  e^{-(1-\epsilon)\frac{n}{l}} \right) f_K(P_l^*). \]</p>
+    <p>\[ P_l^* = \{x_1^*,...,x_l^*\}\in \underset{P \subseteq \Omega_\text{free}, \vert P \vert = l}{\operatorname{argmax}}  f_k(P) \implies f_k(P_n) \geq \left( 1 -  e^{-(1-\epsilon)\frac{n}{l}} \right) f_k(P_l^*). \]</p>
 </div>
-<p>Also for empirical examples the algorithm produces promising results. In the example shown 10 sensor are sufficient to cover 45% of \(\Omega_\text{free}\) with order 3 visiblity (left). After 24 sensors are placed 90% of the free space is observed by at least 3 sensors and the greedy algorithm terminates (right).</p>
+<p>Also for empirical examples the algorithm produces promising results. In the example shown 10 sensors are sufficient to cover 45% of \(\Omega_\text{free}\) with order 3 visibility (left). After 24 sensors are placed 90% of the free space is observed by at least 3 sensors and the greedy algorithm terminates (right).</p>
 <center>
-    <img src="/assets/images/sensors/Greedy_Results.jpg" width="700" height="343" align="left" />
+    <img alt="Sensor placements from the greedy algorithm with 10 and 24 sensors" loading="lazy" src="/assets/images/sensors/Greedy_Results.jpg" width="700" height="343" align="left" />
 </center>
 <h2>Parallel Greedy Algorithm</h2>
-<p>Another approach we looked at was to split the multi-coverage problem into multiple single coverage problems. Solving the <a href="https://arxiv.org/abs/2010.09001">single coverage problem</a> using the greedy algorithm using objective function \( G_1 \) has been expensively studied in the past and promises to be effective. Since practice we want to avoid sensors being placed too close or at the same location, we place the first sensor in each run randomly to introduce variability in the sensor network.</p>
+<p>Another approach we looked at was to split the multi-coverage problem into multiple single coverage problems. Solving the <a href="https://arxiv.org/abs/2010.09001">single coverage problem</a> using the greedy algorithm using objective function \( G_1 \) has been extensively studied in the past and promises to be effective. Since in practice we want to avoid sensors being placed too close or at the same location, we place the first sensor in each run randomly to introduce variability in the sensor network.</p>
 <pre>
     def par_greedy_alg(eps, k):
         P = list()
@@ -1117,18 +1120,18 @@ distill-header .nav a {
             S = eps_greedy_alg(eps, 1)
             P += S
         return P</pre>
-<p>Note that the calculations inside the for loop are independent of eachother and can therefore be performed in parallel which significantly increases the speed. Here 9 sensors were needed to observe 43% of the \( \Omega_\text{free} \) with at least 3 sensors which is slightly worse that the result of the order 3 greedy algorithm. However the termination criterion of 90% observed by at least 3 sensors is reached using only 18 sensors.</p>
+<p>Note that the calculations inside the for loop are independent of each other and can therefore be performed in parallel which significantly increases the speed. Here 9 sensors were needed to observe 43% of the \( \Omega_\text{free} \) with at least 3 sensors which is slightly worse than the result of the order 3 greedy algorithm. However the termination criterion of 90% observed by at least 3 sensors is reached using only 18 sensors.</p>
 <center>
-    <img src="/assets/images/sensors/RoundRobin_Results.jpg" width="700" height="343" align="left" />
+    <img alt="Sensor placements from the parallel greedy algorithm" loading="lazy" src="/assets/images/sensors/RoundRobin_Results.jpg" width="700" height="343" align="left" />
 </center>
 <h2>Learning the Objective Function using Deep Learning</h2>
-<p>In the algorithms discussed above the evaluation of the objective function \( \mathcal{G}_k \) and \( \mathcal{G}_k \) is still computationally expensive. We use deep learning techniques to compute approximations of $\( \mathcal{G}_k \) which significantly imporves the speed of the algorithm once trained. In this approach we use the <a href="https://arxiv.org/abs/1611.09326">TiraFL</a> network architecture to approximate the objective function \( \mathcal{G}_k \).</p>
+<p>In the algorithms discussed above the evaluation of the objective function \( \mathcal{G}_k \) is still computationally expensive. We use deep learning techniques to compute approximations of \( \mathcal{G}_k \) which significantly improves the speed of the algorithm once trained. In this approach we use the <a href="https://arxiv.org/abs/1611.09326">TiraFL</a> network architecture to approximate the objective function \( \mathcal{G}_k \).</p>
 <p>\[ \mathcal{G}^\theta_k(x, P, \Omega_\text{free}) \approx G_k(x, P) \]</p>
 <p>The approximation of \( \mathcal{G}_1 \) has been discussed in <a href="https://arxiv.org/abs/2010.09001">"Visibility Optimization for Surveillance-Evasion Games"</a>. To compare the different methods we used 50 sample maps generated by assigning random heights to random crops of <a href="https://www.cs.toronto.edu/~vmnih/docs/Mnih_Volodymyr_PhD_Thesis.pdf">Massachusetts building footprints</a>.</p>
 <center>
-    <img src="/assets/images/sensors/Boxplot_90.png" width="700" height="343" align="left" />
+    <img alt="Box plots of the number of sensors needed to reach 90% order-3 coverage" loading="lazy" src="/assets/images/sensors/Boxplot_90.png" width="700" height="343" align="left" />
 </center>
-<p>The boxplots illustrate the number of sensor needed to reach the threshold of 90% order 3 coverage. Both the greedy and parallel greedy algorithm are shown to be very effective. The network approximation, while not as effective, still consistently produces good results. As reference we also show the results for random placement of sensors.</p>
+<p>The boxplots illustrate the number of sensors needed to reach the threshold of 90% order 3 coverage. Both the greedy and parallel greedy algorithm are shown to be very effective. The network approximation, while not as effective, still consistently produces good results. As reference we also show the results for random placement of sensors.</p>
 
 
 <h3> Publications </h3>

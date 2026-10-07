@@ -483,7 +483,7 @@
 </p>
 
 <p>
-  The illustration above the abstract makes this concrete. We sampled a
+  The illustration at the top of this page makes this concrete. We sampled a
   damped oscillator at evenly spaced times (the black dots), then asked an
   RK4-based optimizer to fit a continuous-time $\hat A$⁠. With the step size
   set to $h = 1.0$⁠, the optimizer settled on a $\hat A$ whose four candidate
@@ -509,7 +509,7 @@
 <div class="demo-card">
   <h4>Try it: shrink the simulation step $\tilde h$ and watch the learned ODE reveal itself</h4>
   <p style="margin: 0 0 0.75rem 0; font-size: 0.92rem; color: #444;">
-    The training step is fixed at $h = 1.0$⁠, exactly as in the figure above the abstract. The
+    The training step is fixed at $h = 1.0$⁠, exactly as in the figure at the top of this page. The
     optimizer fits a continuous-time $\hat A$ so that the chosen integrator at
     step $h$ reproduces the data dots. The
     <span style="color: var(--good-color); font-weight: 700;">green</span>
@@ -644,7 +644,7 @@
   right half plane as the order increases. So a higher-order explicit
   integrator gives the optimizer <em>more</em> room to land on a learned $\hat
   A$ with positive real part&nbsp;&mdash; that is, more anti-damped solutions look
-  acceptable, not fewer. You can see this in Demo 2 above: switch from
+  acceptable, not fewer. You can see this in the stability-region demo above: switch from
   forward Euler to RK4 and watch the right-half-plane lobe grow.
 </p>
 
@@ -830,7 +830,7 @@
   and used to train a neural-network vector field. The training fit at the
   sample points is excellent in every case. But running the <em>learned</em>
   vector field with a fine-step integrator (essentially the exact flow) tells
-  three very different stories depending on which integrator was inside the
+  two very different stories depending on which integrator was inside the
   training loop.
 </p>
 

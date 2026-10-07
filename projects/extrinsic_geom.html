@@ -656,6 +656,9 @@ distill-header .nav a {
   </a>
   <nav class="nav">
     <a href="/">Home</a>
+    <a href="/recents.html">Research</a>
+    <a href="/papers.html">Papers</a>
+    <a href="/#people">People</a>
   </nav>
 </div>
 `,!1);class jr extends Ar(HTMLElement){}const Or=`
@@ -937,14 +940,14 @@ distill-header .nav a {
 <link rel="canonical" href="https://tsairesearch.github.io/projects/extrinsic_geom" />
 <meta property="og:url" content="https://tsairesearch.github.io/projects/extrinsic_geom" />
 <meta property="og:site_name" content="The Scientific AI Research Group" />
-<meta property="og:image" content="https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.pdf" />
+<meta property="og:image" content="https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.png" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2023-06-30T00:00:00-05:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.pdf" />
+<meta property="twitter:image" content="https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.png" />
 <meta property="twitter:title" content="Impact of the Extrinsic Geometry on Linear Regression" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-30T00:00:00-05:00","datePublished":"2023-06-30T00:00:00-05:00","description":"We study linear regression applied to data structured on a manifold. Our objective is to reveal the impact of the data manifold’s extrinsic geometry on the regression.","headline":"Impact of the Extrinsic Geometry on Linear Regression","image":"https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.pdf","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/projects/extrinsic_geom"},"url":"https://tsairesearch.github.io/projects/extrinsic_geom"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-06-30T00:00:00-05:00","datePublished":"2023-06-30T00:00:00-05:00","description":"We study linear regression applied to data structured on a manifold. Our objective is to reveal the impact of the data manifold’s extrinsic geometry on the regression.","headline":"Impact of the Extrinsic Geometry on Linear Regression","image":"https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/projects/extrinsic_geom"},"url":"https://tsairesearch.github.io/projects/extrinsic_geom"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -969,7 +972,7 @@ distill-header .nav a {
       tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
     });
     </script>
-    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     
 
     <head>
@@ -1020,7 +1023,7 @@ distill-header .nav a {
 <div style="grid-column: screen; text-align: center">
   <h1>Impact of the Extrinsic Geometry on Linear Regression</h1>
     
-    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Impact of the Extrinsic Geometry on Linear Regression" src="https://tsairesearch.github.io//assets/images/extrinsic_geom/manifold_demo_3.pdf" />
+    <img style="display: block; max-width: 15%; margin-top: 3rem; margin-bottom: 3rem; margin-left: auto; margin-right: auto; border-radius: 5%" alt="Impact of the Extrinsic Geometry on Linear Regression" src="https://tsairesearch.github.io/assets/images/extrinsic_geom/manifold_demo_3.png" />
     
  </div>
 </d-title>
@@ -1062,7 +1065,7 @@ We investigate the local linear regression on smooth function $g(\mathbf{x})$ wi
 </li>
 
   <li>
-  Data in practice usually contains noises. We show that a suitable scale of Gaussian noise $\sim\mathcal N(0, \sigma^2)$ can regularize the behavior caused by the problematic curvature. This balancing effect is demonstrated in the formula:
+  Data in practice usually contains noise. We show that a suitable scale of Gaussian noise $\sim\mathcal N(0, \sigma^2)$ can regularize the behavior caused by the problematic curvature. This balancing effect is demonstrated in the formula:
   $$ w_y = \frac{\partial g}{\partial y} + \frac{1}{2}\frac{k}{k^2+\frac{45}4\sigma^2}\frac{\partial^2 g}{\partial x^2},$$
   and verified in the numerical experiment:
   <figure>
@@ -1072,14 +1075,14 @@ We investigate the local linear regression on smooth function $g(\mathbf{x})$ wi
 
   <figcaption>
   <div style="display: block; margin-right: auto; margin-left: auto; width: 50%; text-align: center">
-  Numerical simulations with different scale of noise $\sigma$.
+  Numerical simulations with different scales of noise $\sigma$.
   </div>
   </figcaption>
   </figure>
-  The intuition behind is that the noise blurs the problematic structure of the manifold.
+  The intuition behind this is that the noise blurs the problematic structure of the manifold.
   </li>
 
-  <li> For manifold with codimension $&gt;1$, we perform numerical experiments to demonstrate the importance of the awareness of extrinsic dimension and embedding dimension. These characteristics crucially affect the well-posedness of the regression algorithm. See paper for details.
+  <li> For manifolds with codimension $&gt;1$, we perform numerical experiments to demonstrate the importance of the awareness of extrinsic dimension and embedding dimension. These characteristics crucially affect the well-posedness of the regression algorithm. See paper for details.
   </li>
 
 </ol>
@@ -1088,7 +1091,7 @@ We investigate the local linear regression on smooth function $g(\mathbf{x})$ wi
 <h3> Publications </h3>
 
 <p>
-<li> Liu, L., He, J., &amp; Tsai, R. (2023) Linear Regression on Manifold Structured Data: the Impact of Extrinsic Geometry on Solutions. Topology, Algebra and Geometry in Machine Learning workshop, International Conference of Machine Learning
+<li> Liu, L., He, J., &amp; Tsai, R. (2023) Linear Regression on Manifold Structured Data: the Impact of Extrinsic Geometry on Solutions. Topology, Algebra and Geometry in Machine Learning workshop, International Conference on Machine Learning
 </li>
 </p>
 
