@@ -935,8 +935,8 @@ distill-header .nav a {
 <meta name="generator" content="Jekyll v3.9.2" />
 <meta property="og:title" content="Optimal 6G Transmitter Placement in Realistic Urban Environments" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="We develop a mathematically rigorous framework for optimally placing wireless transmitters in 3D urban environments, combining physics-accurate ray tracing with submodular optimization theory." />
-<meta property="og:description" content="We develop a mathematically rigorous framework for optimally placing wireless transmitters in 3D urban environments, combining physics-accurate ray tracing with submodular optimization theory." />
+<meta name="description" content="We develop a mathematically rigorous framework for placing wireless transmitters in 3D urban environments, combining physics-based ray tracing with submodular optimization theory." />
+<meta property="og:description" content="We develop a mathematically rigorous framework for placing wireless transmitters in 3D urban environments, combining physics-based ray tracing with submodular optimization theory." />
 <link rel="canonical" href="https://tsairesearch.github.io/projects/communication" />
 <meta property="og:url" content="https://tsairesearch.github.io/projects/communication" />
 <meta property="og:site_name" content="The Scientific AI Research Group" />
@@ -947,7 +947,7 @@ distill-header .nav a {
 <meta property="twitter:image" content="https://tsairesearch.github.io/assets/images/communication/sf_map.png" />
 <meta property="twitter:title" content="Optimal 6G Transmitter Placement in Realistic Urban Environments" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-07T00:00:00-05:00","datePublished":"2026-05-07T00:00:00-05:00","description":"We develop a mathematically rigorous framework for optimally placing wireless transmitters in 3D urban environments, combining physics-accurate ray tracing with submodular optimization theory.","headline":"Optimal 6G Transmitter Placement in Realistic Urban Environments","image":"https://tsairesearch.github.io/assets/images/communication/sf_map.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/projects/communication"},"url":"https://tsairesearch.github.io/projects/communication"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2026-05-07T00:00:00-05:00","datePublished":"2026-05-07T00:00:00-05:00","description":"We develop a mathematically rigorous framework for placing wireless transmitters in 3D urban environments, combining physics-based ray tracing with submodular optimization theory.","headline":"Optimal 6G Transmitter Placement in Realistic Urban Environments","image":"https://tsairesearch.github.io/assets/images/communication/sf_map.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://tsairesearch.github.io/projects/communication"},"url":"https://tsairesearch.github.io/projects/communication"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -1057,27 +1057,28 @@ distill-header .nav a {
 <div class="bordered">
     <h2 style="color: black">Overview</h2>
     <p>Imagine you are a telecom engineer tasked with placing a handful of wireless towers across a dense city like San Francisco. Where should they go? Place them poorly and whole neighborhoods lose signal; place them naively and towers drown each other out with interference. This project answers that question with mathematics.</p>
-    <p>We develop a rigorous framework that treats the tower placement problem as a mathematical optimization. Using <strong>physics-accurate ray tracing</strong>, we simulate exactly how radio signals bounce off real buildings, diffract over rooftops, and scatter through glass and concrete. On top of this realistic propagation model, we prove that our objective has a special mathematical property called <strong>submodularity</strong> — a diminishing-returns structure that guarantees our greedy placement algorithm (IA-SPA) always finds a solution within a provable factor of optimal.</p>
-    <p>Tested against the real-world tower deployments of AT&amp;T and T-Mobile in San Francisco, IA-SPA achieves up to <strong>70% higher mean data rates</strong> and slightly improved interference levels (<strong>2% lower interference</strong>) using the same number of towers.</p>
+    <p>We develop a rigorous framework that treats the tower placement problem as a mathematical optimization. Using <strong>physics-based ray tracing</strong> on detailed 3D city models, we simulate how radio signals propagate around real buildings, including multipath and blockage. On top of this site-specific propagation model, we prove that our objective has a special mathematical property called <strong>submodularity</strong> — a diminishing-returns structure that gives our greedy placement algorithm (IA-SPA) a provable approximation guarantee relative to the optimum of this objective.</p>
+    <p>Tested against real-world tower deployments with the same number of towers, IA-SPA raises the mean data rate by <strong>70%</strong> over AT&amp;T's network and by <strong>215%</strong> over T-Mobile's in San Francisco, and the edge rate (the 5th-percentile rate over covered locations) by <strong>88%</strong> and <strong>758%</strong>, while also lowering mean interference. In Florence, it improves on the Iliad network by <strong>27–30%</strong> in mean data rate even with protected historic areas off-limits. In San Francisco the gains over AT&amp;T hold up under fading and modeling errors, and in both cities IA-SPA outperforms random placement when towers are added to an existing network.</p>
 </div>
 
 
 <h2>1. High-Fidelity Signal Propagation</h2>
-<p>Standard placement heuristics often rely on simplified "disk" models. Our method utilizes <strong>Sionna RT</strong> to perform site-specific ray tracing. This accounts for:</p>
+<p>Standard placement heuristics often rely on simplified line-of-sight models, which classify locations as covered or blocked, sometimes with a distance-based path-loss law. Such models do not capture energy arriving along indirect paths. Our method instead uses <strong>Sionna RT</strong> to perform site-specific ray tracing, which:</p>
 <ul>
-    <li>Diffuse scattering and specular reflections from building facades.</li>
-    <li>Material-specific attenuation (e.g., concrete vs. glass).</li>
-    <li>Complex 3D diffraction over rooftops (Knife-edge diffraction).</li>
+    <li>traces multiple propagation paths through a 3D scene of the city;</li>
+    <li>accounts for reflection, diffraction, transmission, and scattering at material boundaries;</li>
+    <li>captures multipath propagation and attenuation caused by blockage, at far lower cost than solving Maxwell's equations directly.</li>
 </ul>
+<p>The optimization framework itself is not tied to ray tracing: it works with any propagation model that provides the received-power field \(P(y,x)\).</p>
 
-<div class="container" style="gap: 20px; align-items: flex-start;">
-    <div style="flex: 1;">
-        <p>The figure on the right illustrates ray-traced signal propagation in an urban environment. Each colored path represents a signal ray bouncing between buildings, capturing the complexity that simple disk models miss entirely.</p>
+<center>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-end; gap: 12px;">
+        <img src="/assets/images/communication/toy_map.jpg" loading="lazy" style="height: 160px; max-width: 100%; border-radius: 4px;" alt="Toy urban scene with six buildings, 3D view">
+        <img src="/assets/images/communication/toy_map_topdown.jpeg" loading="lazy" style="height: 160px; max-width: 100%; border-radius: 4px;" alt="Toy urban scene, top-down view">
+        <img src="/assets/images/communication/single_sensor_2.png" loading="lazy" style="height: 160px; max-width: 100%; border-radius: 4px;" alt="Achievable data rate produced by a single transmitter in the toy scene">
     </div>
-    <div style="flex: 1; text-align: center;">
-        <img src="/assets/images/communication/single_sensor.jpeg" width="100%" alt="Ray Tracing Example" style="border-radius: 4px;">
-    </div>
-</div>
+    <p><i>A toy urban scene, shown as a 3D view, a top-down view, and the achievable-rate field produced by a single transmitter (red marker), computed from the site-specific propagation field \(P(y,x)\). The buildings block and redirect the signal in ways that line-of-sight and distance-based models cannot capture.</i></p>
+</center>
 
 
 <h2>2. The Objective Functional \(\mathcal{S}(T)\)</h2>
@@ -1099,7 +1100,7 @@ A natural performance measure is the Signal-to-Interference-and-Noise Ratio (SIN
 </p>
 
 <p>
-While physically accurate, this formulation induces a <strong>non-convex optimization landscape</strong> with many local optima. To overcome this, we introduce a family of <strong>aggregated surrogate measures</strong> \(\mathcal{P}_{\text{MAX}}\) and \(\mathcal{P}_{\text{SUM}}\), and define a spatially aggregated objective functional:
+Directly optimizing the SINR over transmitter locations is a difficult <strong>non-convex</strong> subset-selection problem. To make it tractable, we introduce two <strong>aggregated surrogate measures</strong>: \(\mathcal{P}_{\text{MAX}}(y,T) = \max_{x \in T} P(y,x)\), the strongest received signal (the SINR numerator, ignoring interference), and \(\mathcal{P}_{\text{SUM}}(y,T) = \sum_{x \in T} P(y,x)\), the total received power. From either one we define a spatially aggregated objective functional:
 </p>
 
 <p style="text-align:center;">
@@ -1109,57 +1110,53 @@ While physically accurate, this formulation induces a <strong>non-convex optimiz
 </p>
 
 <p>
-where \(f(y)\) is a spatial density encoding region importance and \(\bar{W}(\kappa) = \int_0^\kappa w(s)\,ds\) is the anti-derivative of a monotone utility function \(w\). We formulate two equivalent placement problems:
+where \(f(y)\) is a spatial density weighting receiver locations (it can be read as the probability density of user locations), and \(\bar{W}(\kappa) = \int_0^\kappa w(s)\,ds\) is the anti-derivative of a weight function \(w\) that gives the marginal utility of network quality \(\kappa\). Restricting transmitters to a feasible set of candidate sites \(\mathcal{X}\), two natural resource-constrained formulations are to minimize the number of transmitters needed to reach a prescribed utility level, or to maximize utility under a budget:
 </p>
 
 <p style="text-align:center;">
 \[
-\min_{T \subseteq \Omega} |T| \quad \text{s.t.} \quad \mathcal{S}(T) \geq \beta
+\min_{T \subseteq \mathcal{X}} |T| \quad \text{s.t.} \quad \mathcal{S}(T) \geq \beta
 \qquad \text{or} \qquad
-\max_{T \subseteq \Omega} \mathcal{S}(T) \quad \text{s.t.} \quad |T| \leq \beta.
+\max_{T \subseteq \mathcal{X}} \mathcal{S}(T) \quad \text{s.t.} \quad |T| \leq \beta.
 \]
 </p>
 
 <div class="bordered">
     <h4>Key theoretical results</h4>
     <ul>
-        <li><strong>Convexity:</strong> Under mild concavity assumptions on \(\bar{W}\), the continuous relaxation admits a <strong>unique globally optimal solution</strong>.</li>
-        <li><strong>Submodularity:</strong> \(\mathcal{S}(T)\) is <strong>monotone submodular</strong>, yielding a greedy approximation guarantee of at least \((1 - 1/e) \approx 63\%\) of optimal.</li>
+        <li><strong>Submodularity:</strong> If \(\bar{W}\) is concave and non-decreasing, \(\mathcal{S}(T)\) is <strong>monotone submodular</strong> for both surrogates. Consequently, a greedy deployment of \(k\) transmitters built from scratch achieves at least \((1 - 1/e) \approx 63\%\) of the best possible value of \(\mathcal{S}\) with \(k\) transmitters (for \(\varepsilon = 0\)). This is a worst-case guarantee for the surrogate objective, not a prediction of the SINR-based data rates reported below.</li>
+        <li><strong>Convex relaxation:</strong> For the \(\mathcal{P}_{\text{SUM}}\) surrogate with concave \(\bar{W}\), replacing the discrete transmitter set by a non-negative measure makes \(\mathcal{S}\) <strong>concave</strong>, so the relaxed placement problem is a convex optimization problem whose optimum bounds the discrete one. (This relaxation is not used in the experiments below.)</li>
     </ul>
 </div>
 
 
 <h2>3. IA-SPA: Interference-Aware Submodular Placement Algorithm</h2>
-<p>Placement isn't just about coverage — it's about managing interference. IA-SPA specifically targets areas where the SINR is lowest, ensuring robust "edge-of-cell" performance for every user in the network.</p>
+<p>IA-SPA builds the deployment one transmitter at a time, each time choosing a site whose marginal gain in \(\mathcal{S}\) is within a factor \((1-\varepsilon)\) of the best available. Because \(\bar{W}\) is concave, an equal increase in aggregated received power is worth more in poorly served regions than in well-served ones, so the algorithm favors strengthening weak areas over piling more signal onto strong ones. Performance is then evaluated with the full SINR, including interference.</p>
+<p>The same algorithm covers several practical settings: with no existing transmitters it designs a network from scratch; with \(T_{\text{fixed}}\) set to an operator's current towers it chooses where to add new ones; and prohibited areas (for example, protected historic sites) are handled simply by removing their candidate sites from \(\mathcal{X}\).</p>
 
 <div class="bordered" style="background-color: #1d1d1d; border-color: #444; border-left: 4px solid #a074f0; color: #ccc;">
     <div style="font-weight: bold; border-bottom: 1px solid #555; margin-bottom: 10px; color: #eee; font-family: monospace;">Algorithm 1: IA-SPA</div>
     <div style="font-family: monospace; font-size: 0.9em; line-height: 1.9;">
-        <strong style="color:#eee">Input:</strong> Initial deployment \(T_0\), budget or coverage requirement \(\beta\)<br>
-        1: &nbsp;Let \(T = T_0\)<br>
-        2: &nbsp;<strong style="color:#eee">While</strong> budget or coverage requirement not met <strong style="color:#eee">do</strong><br>
-        3: &nbsp;&nbsp;&nbsp;&nbsp;Compute \(\mathcal{G}(x \mid T) = \mathcal{S}(T \cup \{x\}) - \mathcal{S}(T)\) for all \(x \in \mathcal{V}\)<br>
-        4: &nbsp;&nbsp;&nbsp;&nbsp;Let \(\Omega_\varepsilon = \{y \in \Omega \mid \mathcal{G}(y \mid T) \geq (1-\varepsilon)\max_{z} \mathcal{G}(z \mid T)\}\)<br>
-        5: &nbsp;&nbsp;&nbsp;&nbsp;Choose \(x^* \in \Omega_\varepsilon\) uniformly at random<br>
-        6: &nbsp;&nbsp;&nbsp;&nbsp;\(T \leftarrow T \cup \{x^*\}\)<br>
+        <strong style="color:#eee">Input:</strong> feasible candidate sites \(\mathcal{X}\), existing transmitters \(T_{\text{fixed}}\), surrogate \(\mathcal{P}\), parameter \(\varepsilon \in [0,1)\), termination rule (budget or utility level \(\beta\))<br>
+        1: &nbsp;Let \(A = \emptyset\)<br>
+        2: &nbsp;<strong style="color:#eee">While</strong> not terminated and \(\mathcal{X} \setminus (T_{\text{fixed}} \cup A) \neq \emptyset\) <strong style="color:#eee">do</strong><br>
+        3: &nbsp;&nbsp;&nbsp;&nbsp;Let \(T = T_{\text{fixed}} \cup A\)<br>
+        4: &nbsp;&nbsp;&nbsp;&nbsp;Compute \(\mathcal{G}(x \mid T) = \mathcal{S}(T \cup \{x\}) - \mathcal{S}(T)\) for all \(x \in \mathcal{X} \setminus T\)<br>
+        5: &nbsp;&nbsp;&nbsp;&nbsp;Let \(\mathcal{X}_\varepsilon = \{x \in \mathcal{X} \setminus T \mid \mathcal{G}(x \mid T) \geq (1-\varepsilon)\max_{z \in \mathcal{X} \setminus T} \mathcal{G}(z \mid T)\}\)<br>
+        6: &nbsp;&nbsp;&nbsp;&nbsp;Choose \(x^* \in \mathcal{X}_\varepsilon\) uniformly at random and set \(A \leftarrow A \cup \{x^*\}\)<br>
         7: &nbsp;<strong style="color:#eee">End While</strong><br>
-        8: &nbsp;<strong style="color:#eee">Return</strong> \(T\)
+        8: &nbsp;<strong style="color:#eee">Return</strong> \(T_{\text{fixed}} \cup A\)
     </div>
 </div>
 
 
 <h2>4. Case Study: San Francisco</h2>
-<p>To establish a realistic baseline, we utilized building footprint data and existing tower locations for AT&amp;T and T-Mobile sourced from <a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/Existing-Commercial-Wireless-Telecommunication-Ser/aa26-h926/about_data">open-source network datasets</a>. This allows us to compare IA-SPA directly against real-world engineering deployments in a dense 3D environment.</p>
-
-<center>
-    <img src="/assets/images/communication/sf_map.png" style="max-width: 800px; width: 100%;" alt="3D Map of San Francisco">
-    <p><i>High-fidelity 3D model of San Francisco used for ray-tracing simulations.</i></p>
-</center>
+<p>We use the 3D model of San Francisco included with Sionna (shown at the top of this page). The reference deployments are built from transmitter coordinates reported by the City and County of San Francisco's <a href="https://data.sfgov.org/Geographic-Locations-and-Boundaries/Existing-Commercial-Wireless-Telecommunication-Ser/aa26-h926/about_data">open-data portal</a> and the <a href="https://opencellid.org/">OpenCellID</a> database: 9 AT&amp;T and 7 T-Mobile transmitters. This allows us to compare IA-SPA directly against real-world engineering deployments.</p>
 
 <h3>Quantitative Comparison against Real-World Baselines</h3>
-<p>The table below summarizes performance of IA-SPA compared to existing carrier deployments using the same number of towers.</p>
+<p>The table below compares IA-SPA with each carrier's deployment using the same number of towers. The edge rate is the 5th percentile of the data rate over covered receiver locations, a measure of what the worst-served users experience. All statistics are averaged over receiver heights of 1.5, 5, 10, and 20 m.</p>
 
-<div class="table-wrapper">
+<div class="table-wrapper" style="overflow-x: auto;">
     <table style="border-collapse: collapse; width: 100%; font-size: 14px;">
     <thead>
         <tr>
@@ -1175,106 +1172,161 @@ where \(f(y)\) is a spatial density encoding region importance and \(\bar{W}(\ka
     </thead>
     <tbody>
         <tr>
-        <td colspan="7" style="font-style:italic; padding-top:8px;">Throughput [MBps]</td>
+        <td colspan="7" style="font-style:italic; padding-top:8px;">Data Rate [Mbps]</td>
         </tr>
         <tr>
         <td style="text-align:left;">Mean Rate</td>
-        <td>21.17</td><td>36.12</td><td style="color:green;font-weight:bold;">+70.62%</td>
-        <td>10.06</td><td>31.72</td><td style="color:green;font-weight:bold;">+215.49%</td>
+        <td>21.18</td><td>36.10</td><td style="color:green;font-weight:bold;">+70.4%</td>
+        <td>10.06</td><td>31.72</td><td style="color:green;font-weight:bold;">+215.5%</td>
         </tr>
         <tr>
         <td style="text-align:left;">Edge Rate (5th pct.)</td>
-        <td>3.57</td><td>8.38</td><td style="color:green;font-weight:bold;">+134.58%</td>
-        <td>1.11</td><td>9.55</td><td style="color:green;font-weight:bold;">+758.39%</td>
+        <td>5.51</td><td>10.36</td><td style="color:green;font-weight:bold;">+88.0%</td>
+        <td>1.11</td><td>9.55</td><td style="color:green;font-weight:bold;">+758.4%</td>
         </tr>
         <tr>
         <td colspan="7" style="font-style:italic; padding-top:8px;">Interference [nW]</td>
         </tr>
         <tr>
         <td style="text-align:left;">Mean Interference</td>
-        <td>2.24</td><td>2.19</td><td style="color:green;font-weight:bold;">−2.04%</td>
-        <td>17.54</td><td>1.11</td><td style="color:green;font-weight:bold;">−93.70%</td>
+        <td>2.24</td><td>2.19</td><td style="color:green;font-weight:bold;">−2.0%</td>
+        <td>17.54</td><td>1.11</td><td style="color:green;font-weight:bold;">−93.7%</td>
         </tr>
         <tr>
         <td style="text-align:left;">Max Interference</td>
-        <td>495.86</td><td>473.93</td><td style="color:green;font-weight:bold;">−4.42%</td>
-        <td>20491.9</td><td>214.04</td><td style="color:green;font-weight:bold;">−98.96%</td>
+        <td>495.86</td><td>473.93</td><td style="color:green;font-weight:bold;">−4.4%</td>
+        <td>20491.9</td><td>214.04</td><td style="color:green;font-weight:bold;">−99.0%</td>
         </tr>
     </tbody>
     </table>
 </div>
 
+<p>The throughput gains do not come from simply turning up useful signal at the cost of more interference: mean interference also drops, slightly against AT&amp;T and by 94% against T-Mobile. The maximum data rate is somewhat lower with IA-SPA in both comparisons; this is not a contradiction, since the maximum is set by a single receiver location and can be dominated by an isolated high-SINR spot, while the mean and edge rates reflect performance across the whole city.</p>
+
 <center>
-    <img src="/assets/images/communication/DataRate_ATT_MAX-web.jpg" style="max-width: 100%; margin-top: 1em;" alt="SF Coverage Comparison">
-    <p><i>Data rate coverage maps: AT&amp;T baseline (left) vs. IA-SPA optimized placement (right) in San Francisco.</i></p>
+    <img src="/assets/images/communication/DataRate_ATT_MAX-web.jpg" loading="lazy" style="max-width: 100%; margin-top: 1em;" alt="Data rate maps in San Francisco for the AT&amp;T deployment, the IA-SPA deployment, and their difference">
+    <p><i>Data rate across San Francisco: AT&amp;T reference deployment (left), IA-SPA deployment (center), and the difference (right). Red crosses mark transmitter locations.</i></p>
 </center>
 
 <center>
-    <img src="/assets/images/communication/Interf_ATT_MAX-web.jpg" style="max-width: 100%; margin-top: 0.5em;" alt="SF Interference Comparison">
-    <p><i>Interference maps: AT&amp;T baseline (left) vs. IA-SPA optimized placement (right). IA-SPA dramatically reduces peak interference.</i></p>
+    <img src="/assets/images/communication/Interf_ATT_MAX-web.jpg" loading="lazy" style="max-width: 100%; margin-top: 0.5em;" alt="Interference maps in San Francisco for the AT&amp;T deployment, the IA-SPA deployment, and their difference">
+    <p><i>Interference across San Francisco for the same two deployments (AT&amp;T left, IA-SPA center, difference right).</i></p>
 </center>
 
 
-<h2>5. Florence — Exclusionary Zones</h2>
-<p>For Florence, we demonstrate IA-SPA's ability to handle <strong>exclusionary zones</strong> — historical landmarks where tower placement is prohibited.</p>
+<h2>5. Florence — Exclusion Zones</h2>
+<p>In historic city centers, towers often cannot go everywhere: real-estate availability, permitting, and heritage protection rule out some sites. In Florence we compare IA-SPA with the existing network of the carrier <strong>Iliad</strong> (33 transmitters) while prohibiting new towers inside <strong>exclusion zones</strong>. Candidate sites inside a zone are simply removed from \(\mathcal{X}\); the propagation model is unchanged, and IA-SPA uses the same number of transmitters (33).</p>
 
 <center>
-    <img src="/assets/images/communication/fl_map.png" style="max-width: 700px; width: 100%;" alt="3D Map of Florence">
+    <img src="/assets/images/communication/fl_map.png" loading="lazy" style="max-width: 700px; width: 100%;" alt="3D model of Florence">
     <p><i>High-fidelity 3D model of Florence used for ray-tracing simulations.</i></p>
 </center>
 
-<div class="container" style="gap: 20px; flex-wrap: wrap; justify-content: center; margin: 1em 0;">
-    <div style="text-align: center; width: 420px;">
-        <div style="height: 250px; overflow: hidden;">
-            <img src="/assets/images/communication/fl_region.png"
-                 style="width: 100%; height: 100%; object-fit: cover;" alt="Exclusion Zone Florence">
-        </div>
-        <p><i>Exclusionary zone (red) where tower placement is prohibited.</i></p>
-    </div>
-</div>
+<p>We test two levels of restriction: a single zone around the Basilica di San Lorenzo and its piazza, and then three separate zones, adding one to the northwest and one to the south. None of Iliad's existing sites falls inside the two additional zones, so the reference network is the same in both tests.</p>
 
-<h3>Coverage Results: Florence with Exclusionary Zone</h3>
 <center>
-    <img src="/assets/images/communication/DataRate_Iliad_Excluded-web.jpg"
-         style="max-width: 100%; background: white; padding: 5px;" alt="FL Coverage Exclusionary Zone">
-    <p><i>Data rate coverage with exclusionary zone: Iliad baseline (left) vs. IA-SPA (right).</i></p>
-</center>
-<center>
-    <img src="/assets/images/communication/Interf_Iliad_Excluded-web.jpg"
-         style="max-width: 100%; background: white; padding: 5px;" alt="FL Interference Exclusionary Zone">
-    <p><i>Interference maps with exclusionary zone: Iliad baseline (left) vs. IA-SPA (right).</i></p>
+    <img src="/assets/images/communication/fl_exclusion_zones.png" loading="lazy" style="max-width: 420px; width: 100%;" alt="Florence building footprints with the three exclusion zones">
+    <p><i>The three exclusion zones over Florence's building footprints: the original San Lorenzo zone (red) and the additional northwest (orange) and south (magenta) zones.</i></p>
 </center>
 
-
-<h2>6. San Francisco — Continuous Deployment</h2>
-<p>
-In practice, transmitters are rarely deployed in empty environments without existing infrastructure. Instead, operators typically face a <em>continuous deployment</em> setting, where new transmitters must be placed to augment an existing network. To evaluate IA-SPA in this more realistic scenario, we initialize the system with the 9 transmitter locations deployed in San Francisco by AT&amp;T. Starting from this baseline, IA-SPA sequentially determines up to 5 additional transmitter locations to improve network coverage. We assess performance by comparing against random transmitter placement, reporting results averaged over 10 independent trials to reduce variability due to randomness.
-</p>
-
-<div class="container" style="gap: 20px; align-items: flex-start;">
-    <div style="flex: 1; text-align: center;">
-        <img src="/assets/images/communication/fig2a_mean_coverage-1.png" style="width: 100%;" alt="Average data rate vs. number of added transmitters">
-    </div>
-    <div style="flex: 1; text-align: center;">
-        <img src="/assets/images/communication/fig2c_edge_rate-1.png" style="width: 100%;" alt="Edge rate (5th percentile) vs. number of added transmitters">
-    </div>
+<div class="table-wrapper" style="overflow-x: auto;">
+    <table style="border-collapse: collapse; width: 100%; font-size: 14px;">
+    <thead>
+        <tr>
+        <th></th>
+        <th colspan="3" style="text-align:center; border-bottom: 1px solid #ccc;">One zone (San Lorenzo)</th>
+        <th colspan="3" style="text-align:center; border-bottom: 1px solid #ccc;">Three zones</th>
+        </tr>
+        <tr>
+        <th style="text-align:left;">Metric</th>
+        <th>Iliad</th><th>IA-SPA</th><th>Change</th>
+        <th>Iliad</th><th>IA-SPA</th><th>Change</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td colspan="7" style="font-style:italic; padding-top:8px;">Data Rate [Mbps]</td>
+        </tr>
+        <tr>
+        <td style="text-align:left;">Mean Rate</td>
+        <td>39.21</td><td>50.96</td><td style="color:green;font-weight:bold;">+30.0%</td>
+        <td>39.15</td><td>49.77</td><td style="color:green;font-weight:bold;">+27.1%</td>
+        </tr>
+        <tr>
+        <td style="text-align:left;">Edge Rate (5th pct.)</td>
+        <td>7.41</td><td>11.53</td><td style="color:green;font-weight:bold;">+55.6%</td>
+        <td>7.43</td><td>11.21</td><td style="color:green;font-weight:bold;">+50.9%</td>
+        </tr>
+        <tr>
+        <td colspan="7" style="font-style:italic; padding-top:8px;">Interference [nW]</td>
+        </tr>
+        <tr>
+        <td style="text-align:left;">Mean Interference</td>
+        <td>85.44</td><td>59.40</td><td style="color:green;font-weight:bold;">−30.5%</td>
+        <td>88.10</td><td>63.12</td><td style="color:green;font-weight:bold;">−28.3%</td>
+        </tr>
+        <tr>
+        <td style="text-align:left;">Max Interference</td>
+        <td>4998.62</td><td>2490.50</td><td style="color:green;font-weight:bold;">−50.2%</td>
+        <td>5064.36</td><td>1858.59</td><td style="color:green;font-weight:bold;">−63.3%</td>
+        </tr>
+    </tbody>
+    </table>
 </div>
-<p style="text-align: center; font-style: italic; font-size: 0.9em; margin-top: 0.5em;">
-Comparison of IA-SPA against the mean performance over 10 trials of random transmitter placement. The x-axis indicates the number of additional towers placed on top of the 9 existing AT&amp;T towers in San Francisco. (Left) Average data rate achieved by each method. (Right) Edge rate performance measured at the 5th percentile.
+
+<p>Adding two more zones costs surprisingly little: the mean-rate gain over Iliad drops only from about 30% to 27%, and the edge-rate gain from about 56% to 51%.</p>
+
+<center>
+    <img src="/assets/images/communication/fl_rate_3zones.jpg" loading="lazy" style="max-width: 100%; margin-top: 1em;" alt="Data rate maps in Florence with three exclusion zones for the Iliad deployment, the IA-SPA deployment, and their difference">
+    <p><i>Data rate across Florence with three exclusion zones (dashed ellipses): Iliad reference deployment (left), IA-SPA deployment (center), and the gain from IA-SPA (right). Triangles mark transmitter locations.</i></p>
+</center>
+<center>
+    <img src="/assets/images/communication/fl_interf_3zones.jpg" loading="lazy" style="max-width: 100%; margin-top: 0.5em;" alt="Interference maps in Florence with three exclusion zones for the Iliad deployment, the IA-SPA deployment, and their difference">
+    <p><i>Interference across Florence for the same two deployments (Iliad left, IA-SPA center, difference in dB right).</i></p>
+</center>
+
+
+<h2>6. Robustness</h2>
+<p>A placement is only useful if its advantage survives the gap between the model and the real city. Keeping both the IA-SPA and AT&amp;T tower locations fixed, we re-evaluated them in thirteen perturbed versions of San Francisco: the conductivity or the permittivity of all surfaces scaled, one at a time, by −25%, −10%, +10%, or +25% (eight cases); 300 street-level "vehicles" added at random (three draws); and one central building removed or a new one added (two cases). Across all of them, IA-SPA's mean-rate advantage over AT&amp;T stays between <strong>66.7% and 71.7%</strong> (70.4% nominally), and its edge-rate advantage between <strong>62.3% and 92.4%</strong> (88.0% nominally).</p>
+
+<center>
+    <img src="/assets/images/communication/sf_robustness.png" loading="lazy" style="max-width: 100%; margin-top: 0.5em;" alt="Bar charts of IA-SPA's advantage over AT&amp;T in mean and edge data rate under thirteen perturbations of the San Francisco environment">
+    <p><i>IA-SPA's advantage over the AT&amp;T deployment in mean data rate (left) and edge rate (right) when the environment differs from the one used for optimization. The dashed line marks the nominal advantage.</i></p>
+</center>
+
+<p>The advantage also persists under small-scale fading. In the most severe case tested (Rayleigh fading with diversity order \(L = 1\)), IA-SPA's edge rate remains about 81% higher than AT&amp;T's, compared with 88% without fading.</p>
+
+<h2>7. Adding Towers to an Existing Network</h2>
+<p>
+In practice, operators rarely build a network from scratch; they add transmitters to one that already exists. We test this by starting from substantial existing networks and adding just <strong>three</strong> towers, chosen either by IA-SPA or at random (averaged over 10 random trials): in San Francisco, the combined 16-tower network of AT&amp;T (9) and T-Mobile (7); in Florence, Iliad's 33-tower network.
 </p>
 
+<center>
+    <img src="/assets/images/communication/sf_incremental.png" loading="lazy" style="max-width: 100%;" alt="Mean and edge data rate versus number of towers added to the 16-tower San Francisco network, IA-SPA versus random placement">
+    <p><i>San Francisco: mean data rate (left) and edge rate (right) as towers are added to the existing 16-tower AT&amp;T + T-Mobile network.</i></p>
+</center>
+
 <p>
-The left plot shows the average data rate as a function of the number of added transmitters. The blue curve corresponds to IA-SPA, while the orange curve shows the mean performance of random placement. Even with the addition of a single transmitter, IA-SPA yields a substantial improvement over random placement. The right plot presents the same comparison for the edge rate (5th percentile) — the performance experienced by the worst-served users in the network. IA-SPA again consistently outperforms random placement, with significant gains observed even when only a single transmitter is added. This highlights the algorithm's ability to identify high-impact locations rather than relying on chance.
+In San Francisco, both strategies start from a mean rate of about 28.7 Mbps. After three additions, IA-SPA reaches <strong>40.0 Mbps</strong>, versus 31.5 Mbps for random placement (27% higher), and its edge rate is 26% higher. Random placement actually <em>lowers</em> the edge rate after the first added tower before partly recovering, while IA-SPA raises it with every addition: adding towers indiscriminately to an interference-limited network can hurt the worst-served users.
+</p>
+
+<center>
+    <img src="/assets/images/communication/fl_incremental.png" loading="lazy" style="max-width: 100%;" alt="Mean and edge data rate versus number of towers added to the 33-tower Florence network, IA-SPA versus random placement">
+    <p><i>Florence: mean data rate (left) and edge rate (right) as towers are added to the existing 33-tower Iliad network.</i></p>
+</center>
+
+<p>
+Florence starts from a much denser network. There, random additions <em>reduce</em> the mean rate, from about 39.2 to 37.9 Mbps, consistent with indiscriminate densification adding interference without a matching gain in coverage. IA-SPA instead raises it to <strong>42.7 Mbps</strong>, 12.7% above random placement, with about 9% lower mean interference and a modestly higher edge rate (+5%).
 </p>
 
 
 <h3>Publications</h3>
-<p>
+<ul>
 <li>
-Taus, L., Tsai, R., &amp; Andrews, J. (2026). Optimal Transmitter Placement in Realistic Urban Environments.
+Taus, L., Tsai, R., &amp; Andrews, J. G. (2026). Optimal Transmitter Placement in Realistic Urban Environments.
 <a href="https://arxiv.org/abs/2604.28153">[arXiv preprint]</a>
 </li>
-</p>
+</ul>
 
 
 </d-article>
